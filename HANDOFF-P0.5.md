@@ -5,10 +5,15 @@ P1 gate-1 questions were not touched. Every claim below carries the command that
 
 Status: **all five items delivered; gate green.**
 
-- push run **38156591126** on `441af25` → **success, 22/22 steps**
-- PR run **38156595667** on `441af25` → **success**
-- this commit adds the upload-artifact fix + the generated PR body + this file; its run id is
-  recorded in `docs/CLAIMS.md`-style evidence in the final report.
+| run | commit | result | annotations |
+| --- | --- | --- | --- |
+| **38156763106** | `445c87a` | **success, 22/22 steps, 0 non-success** | 1 failure (advisory control-name audit), **no Node 20 warning, no ubuntu-latest notice** |
+| 38156591126 | `441af25` | success, 22/22 steps | 1 failure (advisory), 1 warning (Node 20 on upload-artifact@v5) |
+| 38156595667 | `441af25` (PR) | success | same |
+
+The two annotation classes this phase existed to remove are gone: pinning `ubuntu-24.04`
+silenced the migration notice, and moving `upload-artifact` to the Node 24 line silenced the
+deprecation. What remains is the single documented advisory annotation (C-004).
 
 ## ITEM 1 — date bomb defused, gate made hermetic
 
