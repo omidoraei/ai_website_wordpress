@@ -36,8 +36,8 @@ $ gh api repos/omidoraei/ai_website_wordpress/pulls/1 --jq .body | sha256sum
 Live title: `Aurora AI — Elementor-native template kit (39 templates + 1 Kit document, EN + FA/RTL)`.
 Live body equals the locally regenerated body after whitespace normalisation (6196 vs 6195 chars =
 trailing newline only), i.e. **the P1.5 PATCH did land**; the snapshot in the phase prompt predates
-it. **After** the P1.6 re-patch the live body hash is `4b53f5f0…`-class (see the PR; the guard reads
-it live). No further re-patch was needed for the defects — one was needed for the alt correction
+it. **After** the P1.6 re-patch the live body hash is `9abca96daa49554a5a9f59fef41c7f0d16154c16a32eee7a661c7acfff47f230` (fetched body,
+2026-10-12; the `4b53f5f0` prefix written before the fetch is corrected here). No further re-patch was needed for the defects — one was needed for the alt correction
 (below).
 
 ## Item 1 — attribution repaired
