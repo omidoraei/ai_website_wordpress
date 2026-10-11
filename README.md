@@ -8,7 +8,7 @@ JavaScript** anywhere in the kit.
 * **40 Elementor documents** — 9 pages, 2 headers, 2 footers, a single-post and archive
   layout, a search-results layout, an exit-intent popup and 22 reusable section blocks
 * **962 containers, 1 280 widgets** — every one of them editable in the Elementor panel
-* **Global design system** — 4 system colours, 14 custom colours, 18 typography styles
+* **Global design system** — 4 system colours, 15 custom colours, 15 global typography styles
 * **Bilingual** — a full English (LTR) set and a full Persian (RTL) set
 * **Theme Builder ready** — header, footer, single, archive, search and popup documents
 * **Fully responsive** — separate desktop / tablet / mobile values, not a scaled-down desktop
@@ -38,6 +38,7 @@ media/_raw/                the original PNG renders (not needed to install)
 
 tools/                     the generator that produced every JSON file
   build.py                 build + validate the whole kit
+  verify.py                independent verification of the generated JSON
   media.py                 optimise media/_raw/*.png -> media/*.jpg
   preview.py               render a browser preview of the templates
   aurora/                  Elementor JSON DSL, tokens, sections, pages, theme parts
@@ -134,13 +135,22 @@ Change a value there and run:
 
 ```bash
 python3 tools/build.py      # rebuild templates/ + dist/ + INDEX.md
+python3 tools/verify.py     # independent check of the generated JSON
 python3 tools/media.py      # optional: re-optimise images
 python3 tools/preview.py    # optional: re-render preview/
 ```
 
-The build validates every document before writing it: unique element ids, a known
-`widgetType` for every widget, containers with an explicit `isInner`, and no `null`
-settings anywhere.
+`build.py` validates while it writes; `verify.py` then re-reads the files on disk and
+checks the things reviewers care about — unique element ids per document, a known
+`widgetType` for every widget, widgets with no children, containers that declare
+`isInner`, no `null` settings, every `globals/colors?id=` and `globals/typography?id=`
+reference resolving to a global the kit itself defines, valid CSS colours and
+dimensions, and every image URL present in `media/`. It exits non-zero on any problem, so
+it works as a pre-commit or CI gate:
+
+```bash
+python3 tools/verify.py --quiet && echo "kit is releasable"
+```
 
 ---
 

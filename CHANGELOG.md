@@ -10,7 +10,7 @@ First public release.
 
 ### Added
 - **Design system** in `templates/kit/aurora-site-settings.json`:
-  4 system global colours, 14 custom global colours, 18 global typography styles
+  4 system global colours, 15 custom global colours (19 total), 15 global typography styles
   (including 4 Persian/Arad styles), content width 1240 px, tablet and mobile
   breakpoints, page background, H1-H6 ladder, body/link/button/form-field styles.
 - **9 pages**: Home (EN), Home (FA/RTL), About, Services, Case Studies, Pricing,

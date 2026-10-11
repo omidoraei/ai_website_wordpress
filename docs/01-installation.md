@@ -67,15 +67,15 @@ outbound requests.
 
 That single import sets:
 
-* 4 system colours + 14 custom colours
-* 18 global typography styles (including 4 Arabic/Persian styles)
+* 4 system colours + 15 custom colours (19 total)
+* 15 global typography styles (4 system slots + 11 named styles, 4 of them Persian)
 * content width 1240 px and tablet/mobile breakpoints
 * the H1–H6 ladder, body, link, button and form-field styles
 * the page background
 
 **If your Elementor version has no Import Kit screen**, apply the same values by hand —
 the complete table is in [02-design-system.md](02-design-system.md#applying-the-globals-by-hand).
-It is 18 colours and 18 typography styles and takes about four minutes.
+It is 19 colours and 15 typography styles and takes about four minutes.
 
 Verify with **Elementor → Site Settings → Global Colors**: you should see *Amber*,
 *Ink*, *Stone* and *Coral* as the four system colours.
