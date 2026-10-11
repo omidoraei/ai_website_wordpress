@@ -1,0 +1,9 @@
+# Python caches
+__pycache__/
+*.py[cod]
+
+# Local scratch
+.DS_Store
+Thumbs.db
+*.log
+.env

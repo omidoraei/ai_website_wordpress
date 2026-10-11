@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Aurora | Journal - Aurora AI Elementor Kit preview</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<style>
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%%}
+body{margin:0;background:#FFFBF5;color:#57534E;font-family:Inter,system-ui,sans-serif;
+  font-size:17px;line-height:1.75;-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4,h5,h6{font-family:Sora,"Inter",system-ui,sans-serif;color:#1C1917;margin:0;
+  line-height:1.12;letter-spacing:-.02em}
+p{margin:0 0 1.05em}
+a{color:inherit;text-decoration:none}
+img{max-width:100%%;height:auto;display:block}
+.e-con{display:flex;flex-wrap:wrap;min-width:0}
+.e-con.root{width:100%%}
+.c-link{display:contents}
+.btn{transition:background .25s ease,color .25s ease,transform .25s ease}
+.btn:hover{background:#D98A14 !important;transform:translateY(-1px)}
+.txt a{color:#1C1917;text-decoration:underline;text-underline-offset:3px}
+.txt>p:last-child{margin-bottom:0}
+.icon-list{list-style:none;margin:0;padding:0}
+.icon-list li{display:flex;gap:10px;align-items:flex-start}
+.icon-list li .ico{flex:0 0 auto;line-height:1.5}
+.acc-wrap{display:flex;flex-direction:column;gap:14px;width:100%%}
+details.acc{background:#fff;border:1px solid #E8DCCC;border-radius:16px;overflow:hidden}
+details.acc summary{display:flex;justify-content:space-between;align-items:center;gap:16px;
+  padding:18px 22px;cursor:pointer;list-style:none;font-family:Sora,sans-serif;font-weight:600;
+  color:#1C1917}
+details.acc summary::-webkit-details-marker{display:none}
+details.acc summary i.fa-minus{display:none}
+details.acc[open] summary i.fa-plus{display:none}
+details.acc[open] summary i.fa-minus{display:inline-block;color:#F4A62A}
+details.acc[open] summary{color:#D98A14}
+.acc-body{padding:0 22px 22px}
+.tab-nav{display:flex;gap:8px;flex-wrap:wrap;justify-content:center}
+.tab{padding:12px 20px;border:1px solid #E8DCCC;background:#fff;border-radius:999px;
+  cursor:pointer;font-family:Sora,sans-serif;font-weight:600}
+.tab.active{background:#1C1917;color:#fff;border-color:#1C1917}
+.tab-panel{display:none;padding-top:22px}
+.tab-panel.active{display:block}
+.social a{transition:background .2s ease,color .2s ease}
+.social a:hover{background:#F4A62A !important;color:#1C1917 !important}
+.aurora-form{width:100%%}
+.form-grid{display:flex;flex-wrap:wrap;gap:16px;margin-bottom:18px}
+.field{display:flex;flex-direction:column;gap:7px}
+.field label{font-size:13px;font-weight:600;color:#1C1917;letter-spacing:.02em}
+input,textarea,select{width:100%%;padding:15px 17px;border:1px solid #E8DCCC;border-radius:12px;
+  font:inherit;background:#fff;color:#1C1917}
+input:focus,textarea:focus,select:focus{outline:none;border-color:#F4A62A;
+  box-shadow:0 0 0 3px rgba(244,166,42,.18)}
+.check{display:flex;gap:10px;align-items:flex-start;font-size:15px;color:#57534E}
+.check input{width:auto;margin-top:4px}
+.form-btn{padding:16px 28px;background:#F4A62A;color:#1C1917;border:none;border-radius:999px;
+  font:inherit;font-weight:600;cursor:pointer;width:100%%}
+.inline{display:flex;gap:10px}
+.inline input{flex:1}
+.logo-mark{display:block;width:100%%;aspect-ratio:1;border-radius:12px;
+  background:linear-gradient(135deg,#F4A62A,#EF6C4D)}
+.logo-widget{display:flex}
+.nav-menu a{color:#1C1917;opacity:.82}
+.nav-menu a.active{color:#D98A14;opacity:1}
+.crumbs a{text-decoration:none;color:#8C8177}
+.counter .num{line-height:1.05}
+.counter .lbl{margin-top:6px}
+.posts-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;width:100%%}
+.post-card{background:#fff;border:1px solid #E8DCCC;border-radius:22px;padding:18px;
+  display:flex;flex-direction:column;gap:10px}
+.post-card .thumb{aspect-ratio:3/2;border-radius:16px;
+  background:linear-gradient(135deg,#FDF0DA,#F3E9DB)}
+.post-card h3{font-size:19px}
+.post-card p{font-size:15.5px;margin:0}
+.post-card .meta,.post-card .more{font-size:12px;letter-spacing:.1em;text-transform:uppercase;
+  font-weight:700;color:#D98A14}
+.post-card .more{display:inline-flex;gap:8px;align-items:center}
+.post-info,.crumbs{font-size:14px}
+.prose h2{margin:1.6em 0 .5em;font-size:28px}
+.prose blockquote{margin:1.4em 0;padding:18px 24px;border-left:3px solid #F4A62A;
+  background:#FAF4EA;border-radius:0 14px 14px 0;font-size:19px;color:#1C1917}
+.author-box{display:flex;gap:16px;align-items:flex-start;background:#FAF4EA;border-radius:18px;
+  padding:22px;width:100%%}
+.author-box .avatar{width:64px;height:64px;border-radius:50%%;flex:0 0 64px;
+  background:linear-gradient(135deg,#F4A62A,#EF6C4D)}
+.author-box p{margin:6px 0 0;font-size:15px}
+.post-nav a{font-weight:600;color:#1C1917}
+.comments h3{font-size:22px}
+.muted{color:#8C8177}
+.testimonial .quote{font-size:18px}
+.ib-icon{font-size:26px;color:#D98A14}
+.unknown{background:#FDF0DA;border:1px dashed #F4A62A;padding:14px;border-radius:10px;
+  font-size:13px;color:#8C8177}
+[data-anim]{animation:reveal .7s ease both}
+@keyframes reveal{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+@media(max-width:1024px){.posts-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:767px){.posts-grid{grid-template-columns:1fr}.form-grid{gap:14px}}
+/* preview chrome only */
+.pv-bar{position:sticky;top:0;z-index:99;background:#141110;color:#fff;
+  display:flex;gap:6px;align-items:center;padding:10px 16px;flex-wrap:wrap;
+  font-family:Inter,sans-serif;font-size:13px}
+.pv-bar a{color:#A8A29E;padding:6px 11px;border-radius:999px;white-space:nowrap}
+.pv-bar a.on,.pv-bar a:hover{background:rgba(244,166,42,.18);color:#F4A62A}
+.pv-bar .sp{flex:1}
+.pv-note{font-size:12px;color:#57534E;background:#FDF0DA;padding:8px 14px;
+  border-radius:8px;margin:14px 16px 0}
+</style>
+</head>
+<body>
+<div class="pv-bar"><a href="index.html" class="on">Home</a><a href="home-fa.html" class="">خانه (فارسی)</a><a href="about.html" class="">About</a><a href="services.html" class="">Services</a><a href="portfolio.html" class="">Case Studies</a><a href="pricing.html" class="">Pricing</a><a href="blog.html" class="">Journal</a><a href="contact.html" class="">Contact</a><a href="404.html" class="">404</a><span class="sp"></span><span style="color:#57534E">preview of the Elementor JSON &mdash; not the deliverable</span></div>
+<style>#e1337{padding:72px 24px 72px 24px ; background-image:linear-gradient(155deg, #FFFBF5 0%, #F6E7D2 100%) ; width:100%}@media(max-width:1024px){#e1337{padding:56px 24px 56px 24px}}@media(max-width:767px){#e1337{padding:40px 20px 40px 20px}}</style><section id="e1337" class="e-con root" ><style>#e1336{flex-direction:column ; max-width:1240px ; width:100% ; margin-inline:auto}@media(max-width:1024px){#e1336{max-width:100% ; width:100% ; margin-inline:auto}}@media(max-width:767px){#e1336{max-width:100% ; width:100% ; margin-inline:auto}}</style><div id="e1336" class="e-con inner" ><style>#e1335{flex-direction:column ; align-items:center ; gap:22px 22px}</style><div id="e1335" class="e-con inner" ><style>#e1328{text-align:center ; font-family:Inter ; font-weight:400 ; font-size:14px ; line-height:1.75em ; letter-spacing:0px ; color:#8C8177}</style><div id="e1328" class="crumbs" ><a href="#">Home</a> <span>/</span> <span>Journal</span></div><style>#e1334{flex-direction:column ; align-items:center ; gap:18px 18px ; max-width:820px ; width:100% ; margin-inline:auto}@media(max-width:767px){#e1334{max-width:820px ; width:100% ; margin-inline:auto}}</style><div id="e1334" class="e-con inner" ><style>#e1331{flex-direction:row ; flex-wrap:nowrap ; justify-content:center ; align-items:center ; gap:12px 12px ; width:100%}</style><div id="e1331" class="e-con inner" ><style>#e1329{border:none ; border-top:2 solid #D98A14 ; width:26px ; margin:0px auto}</style><hr id="e1329" class="" ></hr><style>#e1330{width:auto ; font-family:Inter ; font-weight:700 ; font-size:13px ; line-height:1.3em ; letter-spacing:1.6px ; text-transform:uppercase ; color:#D98A14}</style><p id="e1330" class="" >Journal</p></div><style>#e1332{text-align:center ; font-family:Sora ; font-weight:700 ; font-size:46px ; line-height:1.12em ; letter-spacing:-1px}</style><h2 id="e1332" class="" >Writing from the team building Aurora</h2><style>#e1333{text-align:center ; font-family:Inter ; font-weight:400 ; font-size:19px ; line-height:1.7em ; color:#57534E}</style><div id="e1333" class="txt" ><p>Practical notes on agents, evaluation and shipping AI that survives contact with real users.</p></div></div></div></div></section><style>#e1346{padding:120px 24px 120px 24px ; background-color:#FFFBF5 ; width:100%}@media(max-width:1024px){#e1346{padding:80px 24px 80px 24px}}@media(max-width:767px){#e1346{padding:56px 20px 56px 20px}}</style><section id="e1346" class="e-con root" ><style>#e1345{flex-direction:column ; max-width:1240px ; width:100% ; margin-inline:auto}@media(max-width:1024px){#e1345{max-width:100% ; width:100% ; margin-inline:auto}}@media(max-width:767px){#e1345{max-width:100% ; width:100% ; margin-inline:auto}}</style><div id="e1345" class="e-con inner" ><style>#e1343{flex-direction:column ; align-items:center ; gap:18px 18px ; max-width:780px ; width:100% ; margin-inline:auto}@media(max-width:767px){#e1343{max-width:780px ; width:100% ; margin-inline:auto}}</style><div id="e1343" class="e-con inner" ><style>#e1340{flex-direction:row ; flex-wrap:nowrap ; justify-content:center ; align-items:center ; gap:12px 12px ; width:100%}</style><div id="e1340" class="e-con inner" ><style>#e1338{border:none ; border-top:2 solid #D98A14 ; width:26px ; margin:0px auto}</style><hr id="e1338" class="" ></hr><style>#e1339{width:auto ; font-family:Inter ; font-weight:700 ; font-size:13px ; line-height:1.3em ; letter-spacing:1.6px ; text-transform:uppercase ; color:#D98A14}</style><p id="e1339" class="" >Journal</p></div><style>#e1341{text-align:center ; font-family:Sora ; font-weight:700 ; font-size:46px ; line-height:1.12em ; letter-spacing:-1px}</style><h2 id="e1341" class="" >Notes from the build team</h2><style>#e1342{text-align:center ; font-family:Inter ; font-weight:400 ; font-size:19px ; line-height:1.7em ; color:#57534E}</style><div id="e1342" class="txt" ><p>Engineering deep dives, evaluation patterns and release write-ups.</p></div></div><style>#e1344{width:100%}</style><div id="e1344" class="posts-grid" ><article class="post-card"><div class="thumb"></div><span class="meta">Engineering</span><h3>How we evaluate an agent before it meets a customer</h3><p>A pragmatic walkthrough of golden sets, regression diffs and the quality gate we run on every prompt change.</p><span class="more">Read article <i class="fa-solid fa-arrow-right"></i></span></article><article class="post-card"><div class="thumb"></div><span class="meta">Engineering</span><h3>How we evaluate an agent before it meets a customer</h3><p>A pragmatic walkthrough of golden sets, regression diffs and the quality gate we run on every prompt change.</p><span class="more">Read article <i class="fa-solid fa-arrow-right"></i></span></article><article class="post-card"><div class="thumb"></div><span class="meta">Engineering</span><h3>How we evaluate an agent before it meets a customer</h3><p>A pragmatic walkthrough of golden sets, regression diffs and the quality gate we run on every prompt change.</p><span class="more">Read article <i class="fa-solid fa-arrow-right"></i></span></article></div></div></section><style>#e1358{padding:80px 24px 80px 24px ; background-color:#FAF4EA ; width:100%}@media(max-width:1024px){#e1358{padding:64px 24px 64px 24px}}@media(max-width:767px){#e1358{padding:48px 20px 48px 20px}}</style><section id="e1358" class="e-con root" ><style>#e1357{flex-direction:column ; max-width:1240px ; width:100% ; margin-inline:auto}@media(max-width:1024px){#e1357{max-width:100% ; width:100% ; margin-inline:auto}}@media(max-width:767px){#e1357{max-width:100% ; width:100% ; margin-inline:auto}}</style><div id="e1357" class="e-con inner" ><style>#e1356{flex-direction:row ; flex-wrap:wrap ; justify-content:space-between ; align-items:center ; gap:40px 40px}@media(max-width:767px){#e1356{gap:26px 26px}}</style><div id="e1356" class="e-con inner" ><style>#e1352{flex-direction:column ; align-items:flex-start ; gap:16px 16px ; flex-grow:0 ; flex-shrink:1 ; flex-basis:52%}</style><div id="e1352" class="e-con inner" ><style>#e1349{flex-direction:row ; flex-wrap:nowrap ; justify-content:flex-start ; align-items:center ; gap:12px 12px}</style><div id="e1349" class="e-con inner" ><style>#e1347{border:none ; border-top:2 solid #D98A14 ; width:26px ; margin:0px auto}</style><hr id="e1347" class="" ></hr><style>#e1348{width:auto ; font-family:Inter ; font-weight:700 ; font-size:13px ; line-height:1.3em ; letter-spacing:1.6px ; text-transform:uppercase ; color:#D98A14}</style><p id="e1348" class="" >Newsletter</p></div><style>#e1350{font-family:Sora ; font-weight:700 ; font-size:34px ; line-height:1.12em ; letter-spacing:-1px ; color:#1C1917}@media(max-width:767px){#e1350{font-size:24px}}</style><h2 id="e1350" class="" >One email a month, zero fluff</h2><style>#e1351{font-family:Inter ; font-weight:400 ; font-size:19px ; line-height:1.7em ; color:#57534E}</style><div id="e1351" class="txt" ><p>Engineering notes, evaluation patterns and release write-ups from the team building Aurora.</p></div></div><style>#e1355{gap:14px 14px ; padding:28px 28px 28px 28px ; background-color:#FFFFFF ; border:Nonepx solid #E8DCCC ; border-radius:22px 22px 22px 22px ; flex-grow:0 ; flex-shrink:1 ; flex-basis:42%}@media(max-width:1024px){#e1355{padding:28px 28px 28px 28px}}@media(max-width:767px){#e1355{padding:22px 22px 22px 22px}}</style><div id="e1355" class="e-con inner" data-anim="fadeInUp" data-delay="100" ><style>#e1353{font-family:Inter ; font-weight:400 ; font-size:17px ; line-height:1.75em ; letter-spacing:0px ; color:#8C8177}</style><p id="e1353" class="" >No spam. Unsubscribe in one click.</p><style>#e1354{width:100%}</style><form id="e1354" class="aurora-form"onsubmit="return false" ><div class="form-grid"><div class="field" style="flex-basis:100%"><label>Email *</label><input type="email" placeholder="name@company.com"></div></div><button type="button" class="btn form-btn">Subscribe</button></form></div></div></div></section>
+<script>
+document.querySelectorAll('.tab').forEach(function(b,i,n){
+  b.addEventListener('click',function(){
+    var w=b.closest('.tabs-widget');
+    w.querySelectorAll('.tab').forEach(function(x){x.classList.remove('active')});
+    w.querySelectorAll('.tab-panel').forEach(function(x){x.classList.remove('active')});
+    b.classList.add('active');w.querySelectorAll('.tab-panel')[i].classList.add('active');
+  });
+});
+</script>
+</body>
+</html>

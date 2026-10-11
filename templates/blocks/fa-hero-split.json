@@ -1,0 +1,864 @@
+{
+ "content": [
+  {
+   "id": "b1341e6",
+   "elType": "container",
+   "settings": {
+    "content_width": "full",
+    "width": {
+     "unit": "%",
+     "size": 100
+    },
+    "html_tag": "section",
+    "background_background": "gradient",
+    "background_color": "#FFFBF5",
+    "background_color_stop": {
+     "unit": "%",
+     "size": 0
+    },
+    "background_color_b": "#F6E7D2",
+    "background_color_b_stop": {
+     "unit": "%",
+     "size": 100
+    },
+    "background_gradient_type": "linear",
+    "background_gradient_angle": {
+     "unit": "deg",
+     "size": 155
+    },
+    "_element_id": "hero",
+    "padding": {
+     "top": "104",
+     "right": "24",
+     "bottom": "104",
+     "left": "24",
+     "unit": "px",
+     "isLinked": false
+    },
+    "padding_tablet": {
+     "top": "72",
+     "right": "24",
+     "bottom": "72",
+     "left": "24",
+     "unit": "px",
+     "isLinked": false
+    },
+    "padding_mobile": {
+     "top": "48",
+     "right": "20",
+     "bottom": "48",
+     "left": "20",
+     "unit": "px",
+     "isLinked": false
+    }
+   },
+   "elements": [
+    {
+     "id": "a96a6ea",
+     "elType": "container",
+     "settings": {
+      "flex_direction": "column",
+      "boxed_width": {
+       "unit": "px",
+       "size": 1240
+      },
+      "boxed_width_tablet": {
+       "unit": "%",
+       "size": 100
+      },
+      "boxed_width_mobile": {
+       "unit": "%",
+       "size": 100
+      }
+     },
+     "elements": [
+      {
+       "id": "c7221dd",
+       "elType": "container",
+       "settings": {
+        "flex_direction": "row",
+        "flex_wrap": "wrap",
+        "flex_justify_content": "space-between",
+        "flex_align_items": "center",
+        "flex_gap": {
+         "row": "56",
+         "column": "56",
+         "unit": "px",
+         "isLinked": true
+        },
+        "flex_gap_mobile": {
+         "row": "40",
+         "column": "40",
+         "unit": "px",
+         "isLinked": true
+        }
+       },
+       "elements": [
+        {
+         "id": "cc62fdd",
+         "elType": "container",
+         "settings": {
+          "flex_direction": "column",
+          "flex_align_items": "flex-start",
+          "flex_gap": {
+           "row": "26",
+           "column": "26",
+           "unit": "px",
+           "isLinked": true
+          },
+          "_flex_size": "custom",
+          "_flex_grow": 0,
+          "_flex_shrink": 1,
+          "_flex_basis_type": "custom",
+          "_flex_basis": {
+           "unit": "%",
+           "size": 52
+          },
+          "_flex_basis_type_tablet": "custom",
+          "_flex_basis_tablet": {
+           "unit": "%",
+           "size": 100
+          },
+          "_flex_basis_type_mobile": "custom",
+          "_flex_basis_mobile": {
+           "unit": "%",
+           "size": 100
+          }
+         },
+         "elements": [
+          {
+           "id": "f3ec4d9",
+           "elType": "container",
+           "settings": {
+            "flex_direction": "row",
+            "flex_wrap": "nowrap",
+            "flex_justify_content": "flex-start",
+            "flex_align_items": "center",
+            "flex_gap": {
+             "row": "8",
+             "column": "8",
+             "unit": "px",
+             "isLinked": true
+            },
+            "background_background": "classic",
+            "background_color": "globals/colors?id=amber-100",
+            "border_radius": {
+             "top": "999",
+             "right": "999",
+             "bottom": "999",
+             "left": "999",
+             "unit": "px",
+             "isLinked": true
+            },
+            "padding": {
+             "top": "7",
+             "right": "16",
+             "bottom": "7",
+             "left": "16",
+             "unit": "px",
+             "isLinked": false
+            },
+            "padding_mobile": {
+             "top": "6",
+             "right": "13",
+             "bottom": "6",
+             "left": "13",
+             "unit": "px",
+             "isLinked": false
+            },
+            "_element_width": "initial"
+           },
+           "elements": [
+            {
+             "id": "b00655f",
+             "elType": "widget",
+             "settings": {
+              "selected_icon": {
+               "value": "fas fa-bolt",
+               "library": "fa-solid"
+              },
+              "view": "default",
+              "shape": "circle",
+              "size": {
+               "unit": "px",
+               "size": 13
+              },
+              "icon_padding": {
+               "unit": "px",
+               "size": 0
+              },
+              "primary_color": "globals/colors?id=amber-600"
+             },
+             "elements": [],
+             "widgetType": "icon"
+            },
+            {
+             "id": "85bbefc",
+             "elType": "widget",
+             "settings": {
+              "title": "عاملهای آرورا ۲.۰ - اکنون در دسترس عمومی",
+              "header_size": "span",
+              "title_color": "globals/colors?id=amber-600",
+              "typography_typography": "globals/typography?id=fa-label",
+              "typography_letter_spacing": {
+               "unit": "px",
+               "size": 0
+              }
+             },
+             "elements": [],
+             "widgetType": "heading"
+            }
+           ],
+           "isInner": true
+          },
+          {
+           "id": "5badb52",
+           "elType": "widget",
+           "settings": {
+            "title": "عاملهای هوش مصنوعی که واقعاً به محصول میرسند.",
+            "header_size": "h1",
+            "title_color": "globals/colors?id=secondary",
+            "typography_typography": "globals/typography?id=fa-display",
+            "_animation": "fadeInUp",
+            "_animation_delay": 60
+           },
+           "elements": [],
+           "widgetType": "heading"
+          },
+          {
+           "id": "bf21c19",
+           "elType": "widget",
+           "settings": {
+            "editor": "<p>آرورا زیرساخت هوش مصنوعی گرم و انسانی را در اختیار تیمهای محصول میگذارد: عامل بسازید، آنها را روی دادههای خودتان مستقر کنید، هر انتشار را ارزیابی کنید و در چند روز - نه چند فصل - به تولید برسانید.</p>",
+            "text_color": "globals/colors?id=text",
+            "typography_typography": "globals/typography?id=fa-body",
+            "_animation": "fadeInUp",
+            "_animation_delay": 120
+           },
+           "elements": [],
+           "widgetType": "text-editor"
+          },
+          {
+           "id": "562c463",
+           "elType": "container",
+           "settings": {
+            "flex_direction": "row",
+            "flex_wrap": "wrap",
+            "flex_justify_content": "flex-start",
+            "flex_align_items": "center",
+            "flex_gap": {
+             "row": "14",
+             "column": "14",
+             "unit": "px",
+             "isLinked": true
+            },
+            "animation": "fadeInUp",
+            "animation_delay": 180
+           },
+           "elements": [
+            {
+             "id": "1a79bc5",
+             "elType": "widget",
+             "settings": {
+              "text": "شروع دوره آزمایشی رایگان",
+              "link": {
+               "url": "#contact",
+               "is_external": "",
+               "nofollow": ""
+              },
+              "size": "lg",
+              "selected_icon": {
+               "value": "fas fa-arrow-right",
+               "library": "fa-solid"
+              },
+              "icon_align": "right",
+              "icon_indent": {
+               "unit": "px",
+               "size": 10
+              },
+              "hover_animation": "grow",
+              "button_text_color": "globals/colors?id=ink-900",
+              "background_background": "classic",
+              "background_color": "globals/colors?id=primary",
+              "hover_color": "globals/colors?id=ink-900",
+              "button_background_hover_background": "classic",
+              "button_background_hover_color": "globals/colors?id=amber-600"
+             },
+             "elements": [],
+             "widgetType": "button"
+            },
+            {
+             "id": "753f25f",
+             "elType": "widget",
+             "settings": {
+              "text": "درخواست دموی زنده",
+              "link": {
+               "url": "#demo",
+               "is_external": "",
+               "nofollow": ""
+              },
+              "size": "lg",
+              "button_text_color": "globals/colors?id=secondary",
+              "background_background": "classic",
+              "background_color": "rgba(255,255,255,0)",
+              "border_border": "solid",
+              "border_width": {
+               "top": "1",
+               "right": "1",
+               "bottom": "1",
+               "left": "1",
+               "unit": "px",
+               "isLinked": true
+              },
+              "border_color": "globals/colors?id=line",
+              "hover_color": "globals/colors?id=secondary",
+              "button_background_hover_background": "classic",
+              "button_background_hover_color": "globals/colors?id=sand-100",
+              "button_hover_border_color": "globals/colors?id=secondary"
+             },
+             "elements": [],
+             "widgetType": "button"
+            }
+           ],
+           "isInner": true
+          },
+          {
+           "id": "485d4d5",
+           "elType": "container",
+           "settings": {
+            "flex_direction": "row",
+            "flex_wrap": "wrap",
+            "flex_justify_content": "flex-start",
+            "flex_align_items": "center",
+            "flex_gap": {
+             "row": "14",
+             "column": "14",
+             "unit": "px",
+             "isLinked": true
+            },
+            "animation": "fadeInUp",
+            "animation_delay": 240
+           },
+           "elements": [
+            {
+             "id": "75a25da",
+             "elType": "container",
+             "settings": {
+              "flex_direction": "row",
+              "flex_wrap": "nowrap",
+              "flex_justify_content": "flex-start",
+              "flex_align_items": "center",
+              "flex_gap": {
+               "row": "4",
+               "column": "4",
+               "unit": "px",
+               "isLinked": true
+              }
+             },
+             "elements": [
+              {
+               "id": "3ca085a",
+               "elType": "widget",
+               "settings": {
+                "selected_icon": {
+                 "value": "fas fa-star",
+                 "library": "fa-solid"
+                },
+                "view": "default",
+                "shape": "circle",
+                "size": {
+                 "unit": "px",
+                 "size": 13
+                },
+                "icon_padding": {
+                 "unit": "px",
+                 "size": 0
+                },
+                "primary_color": "globals/colors?id=primary"
+               },
+               "elements": [],
+               "widgetType": "icon"
+              },
+              {
+               "id": "0a5bd0b",
+               "elType": "widget",
+               "settings": {
+                "selected_icon": {
+                 "value": "fas fa-star",
+                 "library": "fa-solid"
+                },
+                "view": "default",
+                "shape": "circle",
+                "size": {
+                 "unit": "px",
+                 "size": 13
+                },
+                "icon_padding": {
+                 "unit": "px",
+                 "size": 0
+                },
+                "primary_color": "globals/colors?id=primary"
+               },
+               "elements": [],
+               "widgetType": "icon"
+              },
+              {
+               "id": "300022f",
+               "elType": "widget",
+               "settings": {
+                "selected_icon": {
+                 "value": "fas fa-star",
+                 "library": "fa-solid"
+                },
+                "view": "default",
+                "shape": "circle",
+                "size": {
+                 "unit": "px",
+                 "size": 13
+                },
+                "icon_padding": {
+                 "unit": "px",
+                 "size": 0
+                },
+                "primary_color": "globals/colors?id=primary"
+               },
+               "elements": [],
+               "widgetType": "icon"
+              },
+              {
+               "id": "944a161",
+               "elType": "widget",
+               "settings": {
+                "selected_icon": {
+                 "value": "fas fa-star",
+                 "library": "fa-solid"
+                },
+                "view": "default",
+                "shape": "circle",
+                "size": {
+                 "unit": "px",
+                 "size": 13
+                },
+                "icon_padding": {
+                 "unit": "px",
+                 "size": 0
+                },
+                "primary_color": "globals/colors?id=primary"
+               },
+               "elements": [],
+               "widgetType": "icon"
+              },
+              {
+               "id": "98a301d",
+               "elType": "widget",
+               "settings": {
+                "selected_icon": {
+                 "value": "fas fa-star",
+                 "library": "fa-solid"
+                },
+                "view": "default",
+                "shape": "circle",
+                "size": {
+                 "unit": "px",
+                 "size": 13
+                },
+                "icon_padding": {
+                 "unit": "px",
+                 "size": 0
+                },
+                "primary_color": "globals/colors?id=primary"
+               },
+               "elements": [],
+               "widgetType": "icon"
+              }
+             ],
+             "isInner": true
+            },
+            {
+             "id": "a002623",
+             "elType": "widget",
+             "settings": {
+              "title": "بیش از ۴٫۰۰۰ تیم محصول روی آرورا میسازند",
+              "header_size": "p",
+              "title_color": "globals/colors?id=muted",
+              "typography_typography": "globals/typography?id=fa-label",
+              "typography_letter_spacing": {
+               "unit": "px",
+               "size": 0
+              }
+             },
+             "elements": [],
+             "widgetType": "heading"
+            }
+           ],
+           "isInner": true
+          }
+         ],
+         "isInner": true
+        },
+        {
+         "id": "7be7a93",
+         "elType": "container",
+         "settings": {
+          "flex_direction": "column",
+          "flex_align_items": "center",
+          "flex_gap": {
+           "row": "0",
+           "column": "0",
+           "unit": "px",
+           "isLinked": true
+          },
+          "_flex_size": "custom",
+          "_flex_grow": 0,
+          "_flex_shrink": 1,
+          "_flex_basis_type": "custom",
+          "_flex_basis": {
+           "unit": "%",
+           "size": 44
+          },
+          "_flex_basis_type_tablet": "custom",
+          "_flex_basis_tablet": {
+           "unit": "%",
+           "size": 100
+          },
+          "_flex_basis_type_mobile": "custom",
+          "_flex_basis_mobile": {
+           "unit": "%",
+           "size": 100
+          }
+         },
+         "elements": [
+          {
+           "id": "f4482d2",
+           "elType": "container",
+           "settings": {
+            "flex_direction": "column",
+            "flex_align_items": "center",
+            "flex_gap": {
+             "row": "0",
+             "column": "0",
+             "unit": "px",
+             "isLinked": true
+            },
+            "background_background": "classic",
+            "background_color": "globals/colors?id=white",
+            "border_border": "solid",
+            "border_width": {
+             "top": "1",
+             "right": "1",
+             "bottom": "1",
+             "left": "1",
+             "unit": "px",
+             "isLinked": true
+            },
+            "border_color": "globals/colors?id=line",
+            "border_radius": {
+             "top": "30",
+             "right": "30",
+             "bottom": "30",
+             "left": "30",
+             "unit": "px",
+             "isLinked": true
+            },
+            "box_shadow_box_shadow_type": "yes",
+            "box_shadow_box_shadow": {
+             "horizontal": 0,
+             "vertical": 24,
+             "blur": 48,
+             "spread": -16,
+             "color": "rgba(28,25,23,0.22)"
+            },
+            "padding": {
+             "top": "12",
+             "right": "12",
+             "bottom": "12",
+             "left": "12",
+             "unit": "px",
+             "isLinked": true
+            },
+            "padding_mobile": {
+             "top": "8",
+             "right": "8",
+             "bottom": "8",
+             "left": "8",
+             "unit": "px",
+             "isLinked": true
+            }
+           },
+           "elements": [
+            {
+             "id": "b78733d",
+             "elType": "widget",
+             "settings": {
+              "image": {
+               "url": "https://github.com/omidoraei/ai_website_wordpress/releases/download/v1.0.0/hero-dashboard.jpg",
+               "id": "",
+               "size": "large",
+               "alt": "کنسول عامل آرورا در حال اجرای ارزیابی",
+               "source": "library"
+              },
+              "image_size": "large",
+              "object_fit": "cover",
+              "width": {
+               "unit": "%",
+               "size": 100
+              },
+              "image_border_radius": {
+               "top": "22",
+               "right": "22",
+               "bottom": "22",
+               "left": "22",
+               "unit": "px",
+               "isLinked": true
+              }
+             },
+             "elements": [],
+             "widgetType": "image"
+            }
+           ],
+           "isInner": true
+          },
+          {
+           "id": "9dcebcc",
+           "elType": "container",
+           "settings": {
+            "flex_direction": "row",
+            "flex_wrap": "wrap",
+            "flex_justify_content": "center",
+            "flex_align_items": "center",
+            "flex_gap": {
+             "row": "12",
+             "column": "12",
+             "unit": "px",
+             "isLinked": true
+            },
+            "margin": {
+             "top": "-34",
+             "right": "0",
+             "bottom": "0",
+             "left": "0",
+             "unit": "px",
+             "isLinked": false
+            },
+            "z_index": 2
+           },
+           "elements": [
+            {
+             "id": "1bedf00",
+             "elType": "container",
+             "settings": {
+              "flex_gap": {
+               "row": "2",
+               "column": "2",
+               "unit": "px",
+               "isLinked": true
+              },
+              "background_background": "classic",
+              "background_color": "globals/colors?id=white",
+              "border_border": "solid",
+              "border_width": {
+               "top": "1",
+               "right": "1",
+               "bottom": "1",
+               "left": "1",
+               "unit": "px",
+               "isLinked": true
+              },
+              "border_color": "globals/colors?id=line",
+              "border_radius": {
+               "top": "22",
+               "right": "22",
+               "bottom": "22",
+               "left": "22",
+               "unit": "px",
+               "isLinked": true
+              },
+              "animation": "fadeInUp",
+              "animation_delay": 320,
+              "padding": {
+               "top": "16",
+               "right": "16",
+               "bottom": "16",
+               "left": "16",
+               "unit": "px",
+               "isLinked": true
+              },
+              "padding_tablet": {
+               "top": "16",
+               "right": "16",
+               "bottom": "16",
+               "left": "16",
+               "unit": "px",
+               "isLinked": true
+              },
+              "padding_mobile": {
+               "top": "14",
+               "right": "14",
+               "bottom": "14",
+               "left": "14",
+               "unit": "px",
+               "isLinked": true
+              },
+              "flex_direction": "column",
+              "_element_width": "initial"
+             },
+             "elements": [
+              {
+               "id": "73ce76f",
+               "elType": "widget",
+               "settings": {
+                "title": "−38%",
+                "header_size": "p",
+                "title_color": "globals/colors?id=secondary",
+                "typography_typography": "globals/typography?id=h3",
+                "typography_letter_spacing": {
+                 "unit": "px",
+                 "size": -0.5
+                }
+               },
+               "elements": [],
+               "widgetType": "heading"
+              },
+              {
+               "id": "078d3dd",
+               "elType": "widget",
+               "settings": {
+                "title": "هزینه پشتیبانی",
+                "header_size": "p",
+                "title_color": "globals/colors?id=muted",
+                "typography_typography": "globals/typography?id=eyebrow",
+                "typography_letter_spacing": {
+                 "unit": "px",
+                 "size": 0
+                },
+                "typography_typography_font_size": {
+                 "unit": "px",
+                 "size": 11
+                }
+               },
+               "elements": [],
+               "widgetType": "heading"
+              }
+             ],
+             "isInner": true
+            },
+            {
+             "id": "6473028",
+             "elType": "container",
+             "settings": {
+              "flex_gap": {
+               "row": "2",
+               "column": "2",
+               "unit": "px",
+               "isLinked": true
+              },
+              "background_background": "classic",
+              "background_color": "globals/colors?id=sand-50",
+              "border_border": "solid",
+              "border_width": {
+               "top": "1",
+               "right": "1",
+               "bottom": "1",
+               "left": "1",
+               "unit": "px",
+               "isLinked": true
+              },
+              "border_color": "globals/colors?id=line",
+              "border_radius": {
+               "top": "22",
+               "right": "22",
+               "bottom": "22",
+               "left": "22",
+               "unit": "px",
+               "isLinked": true
+              },
+              "animation": "fadeInUp",
+              "animation_delay": 380,
+              "padding": {
+               "top": "16",
+               "right": "16",
+               "bottom": "16",
+               "left": "16",
+               "unit": "px",
+               "isLinked": true
+              },
+              "padding_tablet": {
+               "top": "16",
+               "right": "16",
+               "bottom": "16",
+               "left": "16",
+               "unit": "px",
+               "isLinked": true
+              },
+              "padding_mobile": {
+               "top": "14",
+               "right": "14",
+               "bottom": "14",
+               "left": "14",
+               "unit": "px",
+               "isLinked": true
+              },
+              "flex_direction": "column",
+              "_element_width": "initial"
+             },
+             "elements": [
+              {
+               "id": "aa13458",
+               "elType": "widget",
+               "settings": {
+                "title": "12 days",
+                "header_size": "p",
+                "title_color": "globals/colors?id=secondary",
+                "typography_typography": "globals/typography?id=h3",
+                "typography_letter_spacing": {
+                 "unit": "px",
+                 "size": -0.5
+                }
+               },
+               "elements": [],
+               "widgetType": "heading"
+              },
+              {
+               "id": "45e077e",
+               "elType": "widget",
+               "settings": {
+                "title": "تا نخستین انتشار",
+                "header_size": "p",
+                "title_color": "globals/colors?id=muted",
+                "typography_typography": "globals/typography?id=eyebrow",
+                "typography_letter_spacing": {
+                 "unit": "px",
+                 "size": 0
+                },
+                "typography_typography_font_size": {
+                 "unit": "px",
+                 "size": 11
+                }
+               },
+               "elements": [],
+               "widgetType": "heading"
+              }
+             ],
+             "isInner": true
+            }
+           ],
+           "isInner": true
+          }
+         ],
+         "isInner": true
+        }
+       ],
+       "isInner": true
+      }
+     ],
+     "isInner": true
+    }
+   ],
+   "isInner": false
+  }
+ ],
+ "page_settings": {},
+ "version": "0.4",
+ "title": "Block | قهرمان - دوقسمتی",
+ "type": "section"
+}

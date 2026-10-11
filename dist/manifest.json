@@ -1,0 +1,78 @@
+{
+ "manifestVersion": "2.0",
+ "title": "Aurora AI - Elementor Template Kit",
+ "description": "Aurora AI - a warm, bilingual (EN/FA) Elementor template kit for AI and SaaS products. Flexbox containers, global colors, global fonts and Theme Builder header/footer.",
+ "elementorVersion": "3.30.0",
+ "site-settings": {
+  "theme": false,
+  "globalColors": true,
+  "globalFonts": true,
+  "themeStyleSettings": true,
+  "generalSettings": true,
+  "experiments": false,
+  "customCode": false,
+  "customIcons": false,
+  "customFonts": false,
+  "classes": false,
+  "variables": false
+ },
+ "templates": {},
+ "content": {},
+ "templateIndex": {
+  "page": [
+   "Aurora | Home (English)",
+   "Aurora | Home (Persian / RTL)",
+   "Aurora | About",
+   "Aurora | Services",
+   "Aurora | Case Studies",
+   "Aurora | Pricing",
+   "Aurora | Journal",
+   "Aurora | Contact",
+   "Aurora | 404 Not Found"
+  ],
+  "header": [
+   "Aurora | Header (English)",
+   "Aurora | سربرگ (فارسی)"
+  ],
+  "footer": [
+   "Aurora | Footer (English)",
+   "Aurora | پابرگ (فارسی)"
+  ],
+  "single": [
+   "Aurora | Single Post"
+  ],
+  "archive": [
+   "Aurora | Blog Archive"
+  ],
+  "search-results": [
+   "Aurora | Search Results"
+  ],
+  "popup": [
+   "Aurora | Popup - AI Readiness Checklist"
+  ],
+  "section": [
+   "Block | Hero - Split with product shot",
+   "Block | Logo Cloud - Trusted by",
+   "Block | Feature Grid - Six icon cards",
+   "Block | Feature Zigzag - Two alternating rows",
+   "Block | Stats Band - Dark counters",
+   "Block | Capability Cards - Three services",
+   "Block | Process Steps - Four numbered stages",
+   "Block | Case Studies - Three cards",
+   "Block | Testimonials - Three quotes",
+   "Block | Pricing Table - Three plans",
+   "Block | FAQ - Accordion",
+   "Block | Call To Action - Gradient card",
+   "Block | Team Grid - Four members",
+   "Block | Contact - Form + details",
+   "Block | Newsletter - Subscribe",
+   "Block | Content - Two column story",
+   "Block | Page Hero - Inner page header",
+   "Block | قهرمان - دوقسمتی",
+   "Block | شبکه ویژگیها (فارسی)",
+   "Block | جدول قیمت (فارسی)",
+   "Block | پرسشهای پرتکرار (فارسی)",
+   "Block | فراخوان به اقدام (فارسی)"
+  ]
+ }
+}
