@@ -200,15 +200,15 @@ jobs:
           facts = json.loads(Path("docs/_generated/facts.json").read_text(encoding="utf-8"))
           docs = sorted(Path("templates").rglob("*.json"))
 
-          def widgets(node, out):
+          def elements(node, out):
               if isinstance(node, dict):
-                  if node.get("elType") == "widget":
+                  if node.get("elType"):
                       out.append(node)
                   for v in node.values():
-                      widgets(v, out)
+                      elements(v, out)
               elif isinstance(node, list):
                   for v in node:
-                      widgets(v, out)
+                      elements(v, out)
 
           def ids(node, out):
               if isinstance(node, dict):
@@ -226,7 +226,7 @@ jobs:
           for path in docs:
               data = json.loads(path.read_text(encoding="utf-8"))
               ws, anchors = [], set()
-              widgets(data, ws); ids(data, anchors)
+              elements(data, ws); ids(data, anchors)   # containers too: html_tag is a container setting
               if path.parent.name == "pages":
                   pages += 1
               h1 = 0
