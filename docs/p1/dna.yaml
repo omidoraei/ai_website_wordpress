@@ -1,0 +1,227 @@
+# Design DNA — Aurora AI template kit
+# Extracted 2026-10-11 (P1). Method: hallmark study (axis extraction) + design-dna
+# (translation, brand-fingerprint removal). References are read for STRUCTURE, never
+# copied: no logo, layout, copy or asset is reproduced from any reference.
+#
+# Sources: Nutlope/hallmark (skills/hallmark/SKILL.md, references/anti-patterns.md,
+#          references/study.md), yanliudesign/design-dna-skill (design-dna/SKILL.md),
+#          Leonxlnx/taste-skill v2 (skills/taste-skill/SKILL.md §1, §9).
+# Axes are fixed by the P1 brief: macrostructure, type-pairing, colour-anchors,
+# motion-signature, component-grammar, tonal-temperature.
+
+meta:
+  project: Aurora AI — bilingual (EN + FA/RTL) Elementor-native template kit
+  vertical: AI / SaaS infrastructure
+  audience: product and platform teams at 50-2000 person companies
+  constraint: WordPress + Elementor Free/Pro only; Flexbox Containers; no custom CSS/JS
+  last_reviewed: 2026-10-11
+
+# ---------------------------------------------------------------------------
+# POSITIVE DNA — derived from the 4 admired references
+# ---------------------------------------------------------------------------
+
+references:
+  anthropic:
+    role: tonal anchor (warmth)
+    what_is_borrowed: >
+      Warm off-white paper as the PAGE, not as an accent. Generous vertical rhythm with
+      wide side gutters. Display type that behaves like a book cover rather than a poster.
+      Restraint: colour arrives in one place per screen, never as a wash.
+    what_is_NOT_borrowed: serif display face, terracotta-as-primary, editorial article stying
+  linear:
+    role: density + precision anchor
+    what_is_borrowed: >
+      Tight, unapologetic information density in product surfaces. Hairline borders as the
+      primary separator (instead of shadows). Small uppercase labels used sparingly and
+      always above something specific.
+    what_is_NOT_borrowed: dark-first canvas, keyboard-shortcut chrome, monochrome-only accents
+  stripe:
+    role: hierarchy anchor
+    what_is_borrowed: >
+      One dominant idea per section; supporting detail pushed into a secondary column or a
+      table. Tables and comparison rows as a first-class layout, not a fallback.
+    what_is_NOT_borrowed: animated gradient hero, illustration system, dev-docs texture
+  vercel:
+    role: whitespace + geometry anchor
+    what_is_borrowed: >
+      Geometric display letterforms with tight tracking. Extreme whitespace discipline:
+      if two elements do not need to be adjacent, they are not. Monochrome base with one
+      functional accent.
+    what_is_NOT_borrowed: pure black canvas, triangle motif, brutalist type-only pages
+
+# ---------------------------------------------------------------------------
+# THE SIX AXES
+# ---------------------------------------------------------------------------
+
+macrostructure:
+  grid_logic: >
+    A 12-column container at 1240 px boxed width, but never expressed AS 12 columns.
+    Sections are single-purpose bands: full-bleed colour band > boxed content. Max three
+    nested levels (band > content > card); anything deeper is flattened into typography
+    and spacing.
+  rhythm: >
+    Alternating band temperatures (Sand 50 base, Sand 100 tinted, Ink 950 dark) with the
+    dark band appearing at most twice per long page. Section cadence is a fixed ladder:
+    120 / 80 / 56 px vertical padding at desktop / tablet / mobile.
+  section_cadence: >
+    Every page opens with a statement section (hero or page hero), immediately followed by
+    exactly ONE proof element (stats band, testimonial, or case card) before any feature
+    detail. Feature detail alternates asymmetric split (copy | media) with full-width grid.
+  whitespace_density: >
+    Airy at the band level, dense inside cards. The contrast between them is the design:
+    generous space BETWEEN components, tight, purposeful packing WITHIN a component.
+  page_archetypes:
+    home: statement > logo cloud > asymmetric feature split > stats band > bento > cases > testimonial > pricing > faq > cta
+    inner: page hero > 2-3 content bands > proof > cta
+    utility: single centred band (404) or split form band (contact)
+
+type-pairing:
+  display:
+    family_en: Sora
+    reason: >
+      Geometric grotesque with a single-storey 'a' and squarish terminals. Reads technical
+      without the cold neutrality of Inter/Helvetica, and holds up at 64 px with -1.6 px
+      tracking. Chosen to satisfy the "no Inter as the DISPLAY face" ban while keeping the
+      body legible.
+    optical_sizes: {display_h1: 64, h2: 46, h3: 22, mobile_h1: 36, mobile_h2: 28}
+    tracking: [-1.6, -1.0, -0.3]  # px at h1, h2, h3
+  body:
+    family_en: Inter
+    reason: >
+      Inter is permitted as the BODY face only: at 17 px / 1.75 line-height it is the most
+      legible option for long-form product copy, and it is already loaded by WordPress
+      admin. The ban this kit honours is on Inter as the display/personality face.
+    optical_sizes: {body: 17, lead: 19, caption: 13, mobile_body: 16}
+  case_policy: >
+    Uppercase is reserved for the eyebrow style only (13 px, +1.6 px tracking). Persian
+    has no letter case, so the FA eyebrow style sets transform:none and relies on weight
+    plus colour instead (fa-label, 15 px, weight 600).
+  numeral_policy:
+    display_metrics: Persian-Indic digits in FA display copy only
+    forms_prices_counters: Latin digits everywhere (WordPress, Elementor counters and
+      WooCommerce all parse Latin; Persian digits in an input break validation)
+  rtl_metrics:
+    note: FA styles are separate global styles, never CSS transforms
+    headings: line-height 1.5 (vs 1.12 EN)
+    body: line-height 2.0 (vs 1.75 EN)
+    tracking_floor: 0 for all FA text; negative tracking breaks Persian letter joins
+
+colour-anchors:
+  # roles and contrast intent, not a hex list (hex lives in tools/aurora/tokens.py)
+  - role: page_ground
+    intent: "warm off-white, never pure white; carries the whole page so accents stay rare"
+    contrast_intent: "body text >= 7:1 on this ground"
+  - role: ink_structure
+    intent: "near-black with a brown cast, used for type, hairlines and dark bands"
+    contrast_intent: ">= 15:1 on the page ground for headings; pure black is banned"
+  - role: primary_action
+    intent: "amber, spent ONLY on the action surface and one accent per screen"
+    contrast_intent: ">= 4.5:1 for amber as text; buttons are always dark-on-amber"
+  - role: accent_tension
+    intent: "coral, the single warm-cool counterpoint, used for data highlights and hover"
+    contrast_intent: ">= 4.5:1 on ink surfaces; never adjacent to primary at equal area"
+  - role: quiet_surface
+    intent: "tinted sand plates that separate regions without borders"
+    contrast_intent: "1.05-1.15:1 against the ground - a texture, not a signal"
+  - role: separator
+    intent: "one hairline colour used for every divider in the system"
+    contrast_intent: "1.2:1 against the ground; shadows are reserved for elevation, never separation"
+  accent_budget: "at most one amber area larger than a button per viewport section"
+  forbidden: "purple/indigo/lila hues, neon glows, decorative gradients as background washes"
+
+motion-signature:
+  allowed: Elementor Motion Effects only (fadeIn*), plus CSS transitions Elementor
+    generates for hover states. No library, no scroll-linked animation, no parallax.
+  moves: "opacity and transform only; never layout properties"
+  travel: "20 px maximum, one direction (up)"
+  duration: "450-700 ms; nothing exceeds 700 ms"
+  stagger: "80-110 ms between siblings, hard stop after the 4th item"
+  what_NEVER_moves:
+    - anything above the fold on first paint
+    - text while it is being read (no scroll-triggered letter animation)
+    - images inside a card grid (no parallax, no zoom-on-scroll)
+    - the header on scroll (no shrink-on-scroll; sticky is a Pro opt-in, documented)
+  ratio_target: "animated elements <= 25% of all elements (currently 7%)"
+  reduced_motion: "Motion Effects are omitted, not shortened, for any element that would
+    otherwise carry meaning; the design must read without them"
+
+component-grammar:
+  card_anatomy: >
+    media OR icon (not both) > label (max 1 eyebrow) > heading > one paragraph (max 4
+    lines) > optional single text link. Cards never nest: a card inside a card is a
+    BANLIST violation (hallmark 'card-in-card').
+  border_radius: {sm: 10, md: 16, lg: 22, xl: 30, pill: 999}
+  elevation_dialect: >
+    Separation is ALWAYS a 1 px hairline, never a shadow. Elevation (shadow) is reserved for
+    interactive surfaces that lift on hover, and for one hero/media frame per page.
+  divider_logic: >
+    One divider colour for the whole system. Dividers are structural (between regions,
+    inside a footer, under a table head) or they do not exist. Short rules used purely to
+    ornament an eyebrow are a BANLIST violation ('decorative dividers').
+  icon_treatment: >
+    Icons are line style, one family (Font Awesome solid through Elementor), 20-24 px,
+    inheriting the current text colour. Icon-in-a-rounded-tinted-square is banned as a
+    default pattern; an icon may sit in a tile ONLY when the tile is a real link target.
+  form_grammar: "label above field, 12 px radius, hairline border, amber focus ring, one
+    action per form"
+  data_grammar: "tables and comparison rows are first-class; numbers are tabular and right-
+    aligned; no invented figures (see honesty below)"
+
+tonal-temperature:
+  pick: technical-warm
+  justification: >
+    'Editorial' alone would be dishonest for a developer-facing product and 'atmospheric'
+    would fight the density the product needs. The kit reads as a technical instrument made
+    of warm materials: rigorous structure (Linear/Stripe density, Vercel whitespace
+    discipline) carried on a warm paper ground with an amber action colour (Anthropic's
+    tonal anchor). Concretely: hard grid, soft palette.
+  voice: "precise, specific, unhurried; no hype verbs, no exclamation, no em-dash flourish"
+  honesty_rule: >
+    Fabricated metrics, logos, testimonials and case numbers are the fastest way to read as
+    slop (hallmark 'Invented metrics', taste §9.D 'Jane Doe'). Demo copy in this kit must
+    therefore either use obviously-placeholder framing or be documented as placeholder in
+    docs/03-template-library.md.
+
+# ---------------------------------------------------------------------------
+# NEGATIVE DNA — the 2 anti-references, same axes
+# ---------------------------------------------------------------------------
+
+anti_references:
+  generic-ai-startup-template:
+    what_it_is: >
+      The default LLM/Vercel-template landing page: purple-indigo gradient mesh hero, 3D
+      blob or floating orbs, glassmorphism panels, three equal icon-in-rounded-square
+      feature cards, "Trusted by 50,000+ teams" with invented logo names.
+    macrostructure_NEGATIVE: "centred single-column hero > 3 equal cards > centred CTA; no
+      asymmetry, no band rhythm, everything boxed inside a max-width"
+    type_pairing_NEGATIVE: "Inter everywhere, oversized H1 with gradient text fill, tight
+      tracking applied to the wrong face"
+    colour_anchors_NEGATIVE: "purple/indigo as the structural colour, neon outer glow on
+      primary buttons, gradient used as a background instead of a signal"
+    motion_signature_NEGATIVE: "infinite-loop floating animation, everything animates on
+      scroll, hover:scale on every surface"
+    component_grammar_NEGATIVE: "icon-in-rounded-square tiles, evenly sized cards with no
+      hierarchy, decorative status dots, divider lines used as ornament"
+    tonal_temperature_NEGATIVE: "playful-technical pastiche; confident tone with no
+      evidence behind it"
+  legacy-enterprise-marketing:
+    what_it_is: >
+      Large-vendor product marketing: stock photo hero, icon-tile capability grid, a row of
+      three stat boxes with a coloured top border, carousel of logos, dense nav with a
+      mega-menu.
+    macrostructure_NEGATIVE: "uniform 3-4 column grids for every content type; every
+      section the same height and padding; no dark band"
+    type_pairing_NEGATIVE: "one family at three weights; body 14 px/1.5; display sizes
+      within 1.5x of body size, so hierarchy is flat"
+    colour_anchors_NEGATIVE: "blue as the only accent, tinted grey surfaces used to
+      compensate for weak type hierarchy"
+    motion_signature_NEGATIVE: "auto-rotating carousels and full-page transitions"
+    component_grammar_NEGATIVE: "cards nested in cards, coloured top borders on stat boxes,
+      icons as filler, tables replaced by card soup"
+    tonal_temperature_NEGATIVE: "corporate-neutral to the point of anonymity - the failure
+      mode this kit exists to avoid"
+
+# ---------------------------------------------------------------------------
+delta: per-axis target vs current kit — see docs/p1/delta-table.md for the full
+# scoring, severities and fix-phase assignment. This file states the TARGET only.
+# ---------------------------------------------------------------------------

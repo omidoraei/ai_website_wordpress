@@ -428,9 +428,35 @@ def write_facts(facts: Dict[str, Any]) -> str:
 
 # ---------------------------------------------------------------------------
 
+def banlist_advisory(strict: bool, rep: "Report") -> Dict[str, int]:
+    """Run BANLIST.md detectors (tools/banlist_check.py) and report the counts.
+
+    P1 is diagnosis-only, so the current kit is EXPECTED to trip FAIL-level rules
+    (they are the P2 worklist in docs/p1/delta-table.md). The enforcement path is
+    real: `--strict-banlist` turns every FAIL-level hit into a verifier error, and
+    CI flips to that flag the moment P2 empties the list.
+    """
+    import importlib
+    sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+    try:
+        banlist = importlib.import_module("banlist_check")
+    except Exception as exc:  # pragma: no cover
+        rep.error("banlist_check.py could not be imported: %s" % exc)
+        return {}
+    violations, stats = banlist.run_rules()
+    fails = {k: len(v) for k, v in violations.items() if k in banlist.FAIL_RULES}
+    warns = {k: len(v) for k, v in violations.items() if k not in banlist.FAIL_RULES}
+    if strict:
+        for rule, count in fails.items():
+            rep.error("BANLIST %s: %d violation(s) - see BANLIST.md" % (rule, count))
+    return {"stats": stats, "fail": fails, "warn": warns}
+
+
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--quiet", action="store_true")
+    ap.add_argument("--strict-banlist", action="store_true",
+                    help="treat BANLIST FAIL-level violations as errors (P2 target)")
     ap.add_argument("--report", action="store_true",
                     help="write docs/_generated/facts.md from the current build, then verify")
     args = ap.parse_args()
@@ -471,6 +497,7 @@ def main() -> int:
             print("  facts      : wrote %s" % path)
     checked = check_doc_numbers(facts, rep)
 
+    ban = banlist_advisory(args.strict_banlist, rep)
     rep.stats["documents"] = docs
     if not args.quiet:
         print("Aurora AI - kit verification")
@@ -481,6 +508,17 @@ def main() -> int:
         print("  typography : %d global styles" % rep.stats.get("typography", 0))
         print("  images     : %d referenced URLs, all present" % rep.stats.get("images", 0))
         print("  doc numbers: %d claims checked against generated facts" % checked)
+        if ban:
+            bs = ban["stats"]
+            print("  banlist    : eyebrow %.0f%% of sections | centred %.0f%% | animated %.0f%%"
+                  % (100 * bs.get("eyebrow_ratio", 0), 100 * bs.get("centred_ratio", 0),
+                     100 * bs.get("animated_ratio", 0)))
+            print("               FAIL rules tripped: %s"
+                  % (", ".join("%s x%d" % (k, v) for k, v in sorted(ban["fail"].items()))
+                     or "none"))
+            print("               WARN rules tripped: %s"
+                  % (", ".join("%s x%d" % (k, v) for k, v in sorted(ban["warn"].items()))
+                     or "none"))
 
     if rep.errors:
         print("  RESULT     : %d problem(s)" % len(rep.errors))

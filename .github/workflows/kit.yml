@@ -45,6 +45,22 @@ jobs:
       - name: bidi / Unicode safety
         run: python3 tools/bidi_check.py
 
+      # BANLIST.md is the numeric contract for taste. P1 diagnosed 9 tripped rules
+      # (docs/p1/delta-table.md); they become fatal at P2, at which point this step
+      # loses --report-only and matches verify.py --strict-banlist.
+      - name: BANLIST enforcement (diagnosis: report-only until P2)
+        run: python3 tools/banlist_check.py --report-only
+
+      - name: BANLIST report to job summary
+        if: always()
+        run: |
+          {
+            echo "### BANLIST detectors"
+            echo '```'
+            python3 tools/banlist_check.py --report-only
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"
+
       - name: verify.py --report produced no uncommitted facts
         run: |
           if ! git diff --quiet -- docs/_generated/; then

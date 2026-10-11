@@ -1,0 +1,147 @@
+# dials.toml — per-page-type taste calibration
+# P1 deliverable. Enforced by tools/banlist_check.py; rationale required for every value.
+#
+# Naming: the constitution fixes these three names. taste-skill v2 (Leonxlnx/taste-skill,
+# skills/taste-skill/SKILL.md §1) calls the third VISUAL_DENSITY — same meaning. Where a
+# downstream tool expects the v2 name, alias it; do not invent a third name.
+#
+# Scale: 1 = minimum (rigid / static / airy) … 10 = maximum (experimental / kinetic / packed).
+#
+# ELEMENTOR FLEXBOX FEASIBILITY CEILINGS (constitution: any dial that would produce a layout
+# Flexbox cannot express must be lowered, with the reason logged). Two hard ceilings apply
+# to every row below and are the reason no row exceeds them:
+#   DESIGN_VARIANCE <= 8  — 9-10 conventionally means overlapping planes, pinned/scroll-jacked
+#                           composition, or horizontal-scroll acts. Flexbox + Elementor can
+#                           express: asymmetric column ratios, order changes, wrapping bands,
+#                           z-index/offset layering and full-bleed bands. It cannot express
+#                           true overlap in normal flow or scroll-linked repositioning.
+#   MOTION_INTENSITY <= 4 — 5+ implies scroll-linked, looped or multi-stage motion. The only
+#                           sanctioned mechanism is Elementor Motion Effects (one-shot
+#                           entrance, fadeIn* family) plus hover transitions. taste-skill's
+#                           "motion claimed, motion shown" rule makes a higher claim dishonest.
+#   UI_DENSITY is uncapped: containers, gaps and type scale express any density natively.
+
+[meta]
+kit = "Aurora AI"
+generated = "2026-10-11"
+ceilings = { DESIGN_VARIANCE = 8, MOTION_INTENSITY = 4, UI_DENSITY = 10 }
+banned_by_ceiling = ["scroll-jacked hero", "pinned sections", "horizontal-scroll carousel",
+                     "parallax", "split-text reveal", "marquee"]
+
+# ---------------------------------------------------------------------------
+# Marketing pages — high variance is the point
+# ---------------------------------------------------------------------------
+
+[home.en]
+DESIGN_VARIANCE = 8
+MOTION_INTENSITY = 4
+UI_DENSITY = 4
+rationale = "The only page allowed to be a showpiece: asymmetric 52/48 hero, alternating band temperatures, a bento feature block and one dark stats band. Variance 8 (not 9) because overlap and pinned scroll are outside Flexbox; motion 4 is the ceiling, carried by staggered fadeInUp only."
+notes = "Hero must NOT become the banned centred trio: it is a left-aligned split with a real product visual, which is why variance 8 licenses the eyebrow+H1+lead+2 buttons stack."
+
+[home.fa]
+DESIGN_VARIANCE = 7
+MOTION_INTENSITY = 3
+UI_DENSITY = 4
+rationale = "One point lower than EN by design, not by mirroring: Persian reads as a continuous right-to-left flow, so a zig-zag with reversed media positions costs scanability while asymmetric column ratios keep the interest. Motion 3 because the FA hero carries no directional entrance (fadeInLeft/Right are physically mirrored and read wrong in RTL)."
+notes = "Same band rhythm and same dark-band budget as EN; the FA page re-orders the proof band earlier because Persian technical readers expect credibility before mechanics."
+
+[about]
+DESIGN_VARIANCE = 6
+MOTION_INTENSITY = 4
+UI_DENSITY = 4
+rationale = "Narrative page: one asymmetric story split plus a team grid. Variance drops because the content is the design here; motion stays at 4 to keep portrait and stat reveals alive."
+
+[services]
+DESIGN_VARIANCE = 6
+MOTION_INTENSITY = 3
+UI_DENSITY = 5
+rationale = "Buyer page, read comparatively: capability cards plus an engagements table. Density 5 so the engagement metadata (duration, team, model) stays on one screen without scrolling."
+
+[case-studies]
+DESIGN_VARIANCE = 8
+MOTION_INTENSITY = 4
+UI_DENSITY = 5
+rationale = "Proof page and the second showpiece: three full-bleed case bands with alternating media sides, each led by a real metric. Variance 8 pairs with home; density 5 because metrics, sector and stack must be scannable as a set."
+
+# ---------------------------------------------------------------------------
+# Commercial and editorial pages — low variance, high density (P1 rule)
+# ---------------------------------------------------------------------------
+
+[pricing]
+DESIGN_VARIANCE = 4
+MOTION_INTENSITY = 2
+UI_DENSITY = 6
+rationale = "The P1 rule for pricing: low variance, high density. Three plans on a shared baseline, one inverted card for the recommendation, then a comparison table that must fit without horizontal scroll. Motion 2 - a plan grid that animates is a plan grid people cannot compare."
+
+[journal]
+DESIGN_VARIANCE = 4
+MOTION_INTENSITY = 2
+UI_DENSITY = 6
+rationale = "Archive-style page: a 3/2/1 card grid with metadata, no hero theatrics. Density 6 so titles, dates, categories and reading time scan as a table would. Explicitly below the taste-skill 'editorial 6/4/3' preset because this is a product blog, not a magazine - the useful signal is the post, not the layout."
+
+[contact]
+DESIGN_VARIANCE = 4
+MOTION_INTENSITY = 2
+UI_DENSITY = 5
+rationale = "Task page: split form plus a dark details card. Variance 4 keeps the split honest (a form beside facts, not a composition); motion 2 because nothing should move while someone is filling in fields."
+
+[404]
+DESIGN_VARIANCE = 6
+MOTION_INTENSITY = 3
+UI_DENSITY = 2
+rationale = "A single centred band, so variance can be relatively high at low density: one oversized heading, one line of help, two recovery actions. Density 2 is deliberate - a 404 with dense chrome reads as broken rather than calm."
+
+[popup.exit-intent]
+DESIGN_VARIANCE = 3
+MOTION_INTENSITY = 4
+UI_DENSITY = 3
+rationale = "An interruption must justify itself in under a second: one promise, one field, one button. Variance 3 (a single centred card) and density 3; motion 4 is the product of Elementor's popup entrance/exit animation, which is motion a dialog genuinely needs for spatial continuity."
+
+# ---------------------------------------------------------------------------
+# Theme Builder surfaces — chrome, not showcase
+# ---------------------------------------------------------------------------
+
+[header]
+DESIGN_VARIANCE = 3
+MOTION_INTENSITY = 2
+UI_DENSITY = 4
+rationale = "Chrome: a hairline shell, a wordmark, one nav and one action pair. Variance 3 because navigation is a utility; density 4 fits a five-item nav plus two buttons on one 1240 px row at 1440 without crowding."
+
+[footer]
+DESIGN_VARIANCE = 3
+MOTION_INTENSITY = 2
+UI_DENSITY = 6
+rationale = "Dense by design: four columns at desktop encoding product, company, contact and legal in one glance. Variance 3 so the columns remain a grid rather than a composition; no motion beyond link hovers."
+
+[archive]
+DESIGN_VARIANCE = 4
+MOTION_INTENSITY = 2
+UI_DENSITY = 6
+rationale = "Must match [journal] so a category page and the blog index feel identical. Density 6 for the same reason: it is a listing, and listings are scanned, not admired."
+
+[single]
+DESIGN_VARIANCE = 3
+MOTION_INTENSITY = 2
+UI_DENSITY = 5
+rationale = "Reading surface: one 820 px measure, meta above, author box and navigation after. Anything above density 5 would cut the measure; anything above variance 3 would put furniture next to prose."
+
+[search]
+DESIGN_VARIANCE = 3
+MOTION_INTENSITY = 2
+UI_DENSITY = 5
+rationale = "Same contract as [archive] with a query field on top; density 5 rather than 6 because an empty-results state needs room to explain itself."
+
+# ---------------------------------------------------------------------------
+# Cross-page invariants (checked by tools/banlist_check.py, not by eye)
+# ---------------------------------------------------------------------------
+
+[invariants]
+animated_element_ratio_max = 0.25   # taste "animate-on-scroll on everything"; kit is 7%
+centred_section_ratio_max = 0.55    # hallmark "centred everything"; kit is 82% -> P2 target
+sections_with_eyebrow_ratio_max = 0.60  # taste "eyebrow on every section"; kit is 93% (88/95) -> P2
+cards_nested_max = 0                # hallmark "card-in-card"
+decorative_rule_dividers_max = 0    # P1 ban "no decorative dividers"
+em_dash_count_max = 0               # taste §9.G
+fabricated_metric_count_max = 0     # hallmark "invented metrics" / taste §9.D
+display_family_denylist = ["Inter", "Roboto", "Arial", "Helvetica", "Open Sans", "Lato"]
