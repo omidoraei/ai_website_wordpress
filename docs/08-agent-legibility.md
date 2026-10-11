@@ -127,7 +127,9 @@ Rules (apply to every image the buyer keeps):
    speaker at gate 4; never machine-transliterated.
 6. Length: aim ≤ 125 characters.
 
-**Current state: 24 of 24 image widgets have no alt text** (measured; `docs/p3/alt-text-sample.md`).
+**Current state (corrected 2026-10-12, P1.6): all 24 image widgets carry alt text at
+`settings.image.alt`** (13 distinct strings; `docs/p3/alt-text-sample.md`). The open item is
+quality - three client-name-only alts and one Persian alt in the EN set.
 The first 10 drafts are in that file for approval at gate 2; the remaining instances follow the same
 pattern, batched per block.
 

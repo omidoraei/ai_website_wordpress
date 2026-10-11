@@ -1,7 +1,10 @@
 # Alt-text sample — first 10 drafts for approval (gate 2)
 
-Measured state: **24 image widgets across 39 documents; 0 carry alt text.** Seven distinct files,
-each used in 1–6 contexts. Rule from `docs/08-agent-legibility.md` §4: per instance, descriptive,
+Measured state (corrected 2026-10-12, P1.6): **24 image widgets across 39 documents; all 24 carry
+alt text at `settings.image.alt`** (13 distinct strings). P3 measured `settings.alt`, which is
+always empty - the presence claim was wrong, and the quality claim is what survives: three
+case-study alts are client-name-only, and one alt string in the EN set is Persian. The drafts
+below are therefore a **quality upgrade proposal**, not a fix for missing text. Rule from `docs/08-agent-legibility.md` §4: per instance, descriptive,
 ≤125 characters, EN/FA paired, decorative stays empty.
 
 The ten drafts below cover all seven files plus the logo and the decorative case. Approve or edit

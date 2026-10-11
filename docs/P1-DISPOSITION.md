@@ -27,6 +27,8 @@ brief says a specific thing).
 | Accent-budget finding ("≤ 1 amber area larger than a button per section") | **SURVIVES** | A measurable system rule, independent of taste; the finding that it is violated (amber at primary-token volume) is evidence | Keep as a P2 target with a detector; enforce only against the re-derived palette |
 | Colour census (2 136 refs, per-token counts) and the P1 baseline metrics (eyebrow 93% / centred 82% / animated 7%) | **SURVIVES** | These are measurements, not taste; they remain true whatever the brief says | Nothing — re-measure after P2 |
 | Fabricated metrics (8), placeholder prices, unlabelled testimonials in copy | **VOID (content)** | Unlabelled fabricated data in a product sold to third parties; B4 list still pending | Replace with real data + sources, or visible SAMPLE labels; P2's first fix |
+| `docs/08-agent-legibility.md` | **CONDITIONAL-BY-S8** | The structure (llms.txt shape, structured-data map, policy posture) is sound and B1-agnostic; what is unsafe is the ENTITY DATA inside it - the demo company name, address, phone and email are drop-in ready and would publish a fabricated Organization into schema.org and llms.txt | **Neither file may be copied to a live site until the entity data is neutralised.** Keep the structure; neutralise the entity |
+| `docs/p3/alt-text-sample.md` | **CONDITIONAL-BY-S8** | Same condition, sharper: the ten drafts describe Aurora-specific content on demo imagery, so the pattern is reusable but the text is not buyer-ready | Same rule: entity/content neutralisation before live-site use; gate 2 still approves the pattern |
 
 **Verdict counts (16 rows):** VOID = 4 · RE-DERIVE = 1 · CONDITIONAL = 3 · SURVIVES = 8.
 

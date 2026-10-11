@@ -114,3 +114,10 @@ at laptops as a hero. Current kit: 6 flat-vector assets plus one workspace photo
 - Do not move body copy out of the body face to increase "personality"; personality belongs to
   the display face and the palette.
 - Do not introduce a third Latin family. Two families plus one Persian family is the budget.
+
+## P2 carry-forward rule (P1.6)
+
+**B5 is USER-CHOSEN and SUPERSEDES the original instruction's Arad mention. Do NOT reintroduce
+Arad in P2 to honour the earlier wording.** Arad leaves the build; the FA system is Vazirmatn
+(SIL OFL-1.1, self-hosted through Elementor Custom Fonts). Arad may return only as an optional
+documented swap if the human produces licence proof.

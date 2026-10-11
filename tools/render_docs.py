@@ -137,8 +137,10 @@ claimed and retracted is `docs/CLAIMS.md`.
 - **Animations** — Elementor Motion Effects only (`fadeInUp`, staggered delays). No external
   animation library.
 - **Performance** — no carousels, sliders or third-party libraries; {images} image files across
-  {image_widgets} image widgets, **none of which carries alt text yet** — policy and the first ten
-  drafts are in `docs/08-agent-legibility.md` §4 and `docs/p3/alt-text-sample.md`. FAQ answer
+  {image_widgets} image widgets, and every widget carries alt text (`settings.image.alt`; 13
+  distinct strings). Quality is the open item: three case-study images carry a client name only,
+  and one alt string inside the English set is Persian - the language-mix checker records it
+  (`tools/lang_mix_check.py`). FAQ answer
   blocks ship in the templates with the widget-level FAQ schema switched on; site-wide structured
   data is SEO-plugin configuration, and no Review markup is emitted because the testimonials are
   fictional (`docs/08-agent-legibility.md` §2).

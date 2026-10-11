@@ -23,6 +23,7 @@ python3 tools/verify.py --report      # regenerate docs/_generated/facts.md, the
 python3 tools/bidi_check.py           # bidi / Unicode safety (Persian strings)
 python3 tools/ia_map.py               # IA evidence: sections per document + dead CTA targets
 python3 tools/landmark_audit.py       # landmark + heading audit over every container
+python3 tools/lang_mix_check.py       # English-named docs embedding Persian copy (--strict at P8)
 python3 tools/media.py                # media/_raw/*.png -> media/*.jpg (1500x1000, q90)
 python3 tools/preview.py [--serve]    # static review render -> preview/*.html
 python3 skills/elementor-native-kit/scripts/audit_control_names.py   # control-name evidence
@@ -87,11 +88,24 @@ touched, decisions reversed. A decision reversed by evidence must be recorded as
 correction, with the command that reversed it (see `references/04-version-deltas.md` for the
 pattern).
 
-## Evidence rule
+## Evidence rule (three classes)
 
-Never write "done", "verified", "responsive" or "accessible" without a command, an exit code
-and a count. A claim without an artifact is not done. Numbers come from
-`python3 tools/verify.py --report`.
+| class | evidence | durability |
+| --- | --- | --- |
+| **A - machine-addressable** | message id, commit hash, path + sha256, git-tracked file | survives the session |
+| **B - human-attested** | the agent records the human's answer verbatim into a file; the human reviews it and confirms in the working channel; the agent appends the attestation + timestamp to the same file | survives if the file is committed |
+| **C - agent-inferred** | neither of the above | soft: MUST carry a risk rating and a reversal trigger |
+
+**Absence of evidence in a location the agent itself chose as un-auditable is not evidence of
+absence.** Before grading anything C, state which locations were searched and whether the agent
+had access to them. Never write "done", "verified", "responsive" or "accessible" without a
+command, an exit code and a count. Numbers come from `python3 tools/verify.py --report`.
+
+## Turn ledger
+
+Every turn carries a number (`[turn n/cap]`) or states why it was merged into another. A counter
+with holes is not a governance instrument. At the cap: stop and write the residue into
+`HANDOFF-<phase>.md`.
 
 ## Decision authority
 

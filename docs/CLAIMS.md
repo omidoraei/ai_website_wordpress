@@ -16,6 +16,7 @@ reads it, scans the public surfaces, prints how many files it examined, and exit
 
 <!-- RETRACTED-PHRASES (one per line; matched case-insensitively) -->
 ```retracted-phrases
+none of which carries alt text
 dual-write
 write both the 3.x
 missing from v3.35.9
@@ -26,7 +27,6 @@ missing from v3.35.9
 40 templates
 artifact digest proves
 sha256 proves determinism
-all `alt` text present
 landmarks are real elements
 with Arad typography
 FAQ schema enabled
@@ -54,8 +54,8 @@ Surfaces excluded from the guard (they are the ledger itself or recorded evidenc
 | C-009 | "Arad is available for Persian typography" | `docs/p1/type-decision.md` | **UNVERIFIED** | No licence file obtained; `gh api` check not possible for a non-repo font. Therefore Arad is referenced by family name only, never bundled, never advertised; Vazirmatn (OFL-1.1) is the audited fallback | `docs/p1/type-decision.md`, `docs/04` | 2026-10-12 |
 | C-010 | "the CI gate is hermetic" | P0 `.github/workflows/kit.yml` | **RETRACTED → VERIFIED in P0.5** | Before: the gate `git clone`d Elementor from github.com, so a network outage or upstream re-tag could change the "verified" line numbers. Now: `vendor/elementor/elementor-{3.35.9,4.0.8}-src.tar.gz` are committed, their sha256 recorded in `skills/elementor-native-kit/SKILL.md` front matter, and the CI step verifies the checksum before extracting | `.github/workflows/kit.yml`, `SKILL.md` | 2026-10-12 |
 
-| C-011 | "the human approved the taste DNA / the reference set" | not claimed (P-BRIEF) | **UNAPPROVED** | No references and no approval were received: the human selected `will_paste` with an empty payload, then skipped batch 3. DNA is VOID→RE-DERIVE per `docs/P1-DISPOSITION.md`; nothing may be described as approved without a quoted reply | `docs/P1-DISPOSITION.md`, `docs/BRIEF.md` §9 | 2026-10-12 |
-| C-012 | "B1–B5 and C1–C5 were answered by the human on 2026-10-12" | P-BRIEF interview | **VERIFIED** | Ten selections with option ids, quoted verbatim in `docs/BRIEF.md` §1–§8 and `docs/DECISIONS.md` (P-BRIEF-006…018): `sell_kit`, `equal_parity`, `book_demo`, `mixed`, `switch_vazirmatn`, `full_nine`, `will_paste`, `logo_only`, `pro_available`, `eu_strict` | `docs/BRIEF.md`, `docs/DECISIONS.md` | 2026-10-12 |
+| C-011 | "the human approved the taste DNA / the reference set" | not claimed (P-BRIEF) | **VOID (class C)** | No references and no approval were received: the human selected `will_paste` with an empty payload, then skipped batch 3. Under the P1.6 evidence classes this is class C (agent-inferred): DNA is VOID then RE-DERIVE per `docs/P1-DISPOSITION.md` | `docs/P1-DISPOSITION.md`, `docs/BRIEF.md` §9 | 2026-10-12 |
+| C-012 | "B1–B5 and C1–C5 were answered by the human on 2026-10-12" | P-BRIEF interview | **VERIFIED (class B, P1.6)** | Ten selections with option ids, quoted verbatim in `docs/BRIEF.md` §1–§8 and `docs/DECISIONS.md` (P-BRIEF-006…018): `sell_kit`, `equal_parity`, `book_demo`, `mixed`, `switch_vazirmatn`, `full_nine`, `will_paste`, `logo_only`, `pro_available`, `eu_strict` | `docs/BRIEF.md`, `docs/DECISIONS.md` | 2026-10-12 |
 | C-013 | "the palette is charcoal + amber + coral" | P1 `dna.yaml` / design notes | **VOID AS BUILD DESCRIPTION** | The token list holds all three; the build does not. Census over 2 136 colour refs: coral 15, amber-600 294, primary 299, secondary 272 (`docs/p1/delta-table.md:60-61`). No human brand exists to ratify them (B5; C3 = logo only) | `docs/P1-DISPOSITION.md`, `docs/BRIEF.md` §6 | 2026-10-12 |
 | C-014 | "the Pro-only control names are verified" | P0 references, P0.5 audit | **UNVERIFIED (open)** | No Elementor Pro install has run. The C4 answer (`pro_available`) makes verification possible in P2; until then every Pro-only control carries a Free fallback note | `docs/OPEN-QUESTIONS.md` §1 | 2026-10-12 |
 | C-015 | anti-claim: "batch 3 was answered" | not made — recorded so the absence is explicit | **NOT MADE** | Five questions were skipped by the human ("keep going") and became assumptions A4–A11; the brief marks each one ASSUMPTION with risk + reversal trigger | `docs/BRIEF.md` §12, `docs/DECISIONS.md` P-BRIEF-019 | 2026-10-12 |
@@ -68,7 +68,7 @@ Surfaces excluded from the guard (they are the ledger itself or recorded evidenc
 3. List every file that repeats the claim in `propagated-to`; if the claim is RETRACTED, add a
    line to the `retracted-phrases` block so the CI guard fails until every surface is fixed.
 4. Date in ISO form.
-| C-017 | "all `alt` text present" | PR #1 body | **RETRACTED** | P3 measured 24 image widgets across 7 image files and none carries alt text; policy and the first ten drafts are in `docs/p3/alt-text-sample.md` | `docs/p3/alt-text-sample.md` | 2026-10-11 |
+| C-017 | "all `alt` text present" (retracted in P1.5) | PR #1 body / P1.5 ledger | **CORRECTED (P1.6)** | the P1.5 retraction was itself wrong: the audit read `settings.alt`, but all 24 image widgets carry a non-empty `settings.image.alt` (13 distinct strings) and the preview render exposes them. Alt-text QUALITY remains open (client-name-only alt on three case-study images; one Persian alt string inside the EN set) | `docs/p3/alt-text-sample.md`, `HANDOFF-P1.6.md` | 2026-10-12 |
 | C-018 | "so the landmarks are real elements" | PR #1 body | **RETRACTED** | 95 of 962 containers carry an `html_tag` (section 90, header 2, footer 2, main 1); 11 page-level documents lack `main` and 7 lack an `h1` | `docs/p3/landmark-audit.md` | 2026-10-11 |
 | C-019 | "Farsi documents ... with Arad typography" | PR #1 body | **RETRACTED** | B5 (AGENT-INFERRED) switched the FA type system to Vazirmatn; the Arad licence is UNVERIFIED and Arad remains only in the template bytes until the P2 swap | `docs/p1/type-decision.md`, `docs/PBRIEF-TRANSCRIPT.md` | 2026-10-11 |
 | C-020 | "FAQ schema enabled" read as a kit feature | PR #1 body | **RETRACTED** | the widget-level FAQ schema is switched on in both FAQ blocks; site-wide structured data is SEO-plugin configuration, and no Review markup ships because the testimonials are fictional | `docs/08-agent-legibility.md` §2 | 2026-10-11 |
@@ -77,3 +77,5 @@ Surfaces excluded from the guard (they are the ledger itself or recorded evidenc
 | C-023 | "16 free and 14 Pro widget types" | PR #1, earlier revision | **RETRACTED** | the control-name audit is advisory and carries unexplained keys; no widget-type count is asserted anywhere | `docs/CLAIMS.md` C-004 | 2026-10-11 |
 | C-024 | "docs/ 7 guides" | PR #1, earlier revision | **RETRACTED** | `docs/08-agent-legibility.md` exists; no guide count is asserted | `docs/08-agent-legibility.md` | 2026-10-11 |
 | C-025 | workable CTAs (implied by silence) | PR #1 body | **RETRACTED** | `#contact` resolves on 1 of the 16 documents that use it, `#docs` on 0 of 12, two of three header buttons point nowhere, and 18 of 39 template documents carry at least one dead in-page target | `docs/p3/ia-map.md` | 2026-10-11 |
+| C-026 | "the ten P-BRIEF selections are AGENT-INFERRED" | P1.5 transcript audit | **RETRACTED** (P1.6) | false negative: the human answered in the Arena chat and confirms it; P1.5 searched only locations the agent itself had made un-auditable. The rows are class B (human-attested) and become class A when the human pastes them into `docs/BRIEF-ATTESTATION.md` | `docs/PBRIEF-TRANSCRIPT.md`, `docs/BRIEF.md`, `docs/DECISIONS.md` P1.6-001 | 2026-10-12 |
+| C-027 | "24 of 24 image widgets have no alt text" | P3 alt audit, P1.5 PR body | **RETRACTED** (P1.6) | wrong measurement key: the audit read `settings.alt` (always empty); Elementor stores per-instance alt at `settings.image.alt`, which is non-empty on all 24 widgets. The P1.5 PR body sentence built on it is replaced | `docs/p3/alt-text-sample.md`, `HANDOFF-P1.6.md` | 2026-10-12 |
