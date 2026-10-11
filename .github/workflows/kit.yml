@@ -87,7 +87,7 @@ jobs:
           if not block:
               sys.exit("docs/CLAIMS.md has no retracted-phrases block")
           def norm(text):
-              return re.sub(r"\\s+", " ", text).lower()
+              return re.sub(r"\s+", " ", text).lower()
 
           phrases = [norm(row) for row in block.group(1).splitlines() if row.strip()]
 
