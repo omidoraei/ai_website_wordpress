@@ -92,3 +92,22 @@ the same numbers.
 | `custom_html_widgets` | 0 | `python3 tools/verify.py --report` |
 _(this block is written by `python3 tools/verify.py --report && python3 tools/render_docs.py`;
 do not hand-edit — a hand-typed number here is a defect)_
+
+## 5. Phase-scoped counters (P-BRIEF, 2026-10-12)
+
+These counters describe the **interview and the phase's own artifacts**, not the kit. They are
+deliberately **outside** the `verify.py` fact set and must never be injected into the 11 generated
+files. Each value is counted from the artifact named in the last column, with the reproducing
+command where one exists.
+
+| counter | definition (exact) | value | counted from |
+| --- | --- | --- | --- |
+| `brief_questions_asked` | questions put to the human across all batches (batch 1 B1–B5, batch 2 C1–C5, batch 3 the five completion questions) | 15 | `HANDOFF-PBRIEF.md` transcript |
+| `brief_questions_answered` | questions with a recorded human selection | 10 | ANSWERED rows in `docs/BRIEF.md` |
+| `brief_questions_skipped` | questions skipped by the human ("keep going") | 5 | P-BRIEF-019 |
+| `brief_assumptions` | ASSUMPTION rows carrying a risk rating and a reversal trigger | 11 | `grep -cE '^\| A[0-9]+ \|' docs/BRIEF.md` |
+| `decision_rows_total` | rows in the decision ledger, both prefixes | 33 | `grep -cE '^\| (D-[0-9]+|P-BRIEF-[0-9]+) \|' docs/DECISIONS.md` |
+| `p1_disposition_rows` | artifacts dispositioned, by verdict | 16 (VOID 4 · RE-DERIVE 1 · CONDITIONAL 3 · SURVIVES 8) | `docs/P1-DISPOSITION.md` |
+| `notion_ledger_rows_written` | decision rows actually written to the Notion ledger page | 5 (P-BRIEF-000…005) | Notion page `3f68dd8c-323d-8119-8787-fe3ad7064d66`; later appends failed — see `HANDOFF-PBRIEF.md` |
+| `calendar_gate_events` | human-gate slots created | 5 | Google Calendar event ids in `HANDOFF-PBRIEF.md` |
+| `gmail_messages_sent` | messages sent for this phase (batch 1 only, per the phase directive) | 1 | Gmail id `1a12bdee5a2ea836` |
