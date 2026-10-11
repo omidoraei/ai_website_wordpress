@@ -851,9 +851,16 @@ def nav_menu(doc: Doc, *, layout: str = "horizontal", align: str = "center",
              pointer: str = "underline", pointer_color: Optional[str] = None,
              menu: str = "", style: Optional[str] = None, color: Optional[str] = None,
              hover_color: Optional[str] = None, active_color: Optional[str] = None,
-             gap: int = 30, element_id: Optional[str] = None,
+             gap: int = 30, toggle_color: Optional[str] = None, toggle_size: int = 22,
+             toggle_align: str = "end", element_id: Optional[str] = None,
              css_classes: Optional[str] = None, **extra: Any) -> Dict[str, Any]:
-    """Elementor Pro Nav Menu. `menu=""` -> assign your WP menu in the editor."""
+    """Elementor Pro Nav Menu.
+
+    Only long-standing control names are written here (menu, layout, align_items,
+    pointer, colour names, spacing, typography and the toggle). Dropdown styling is
+    left at its Elementor defaults so nothing lands in the template that a specific
+    Pro version might not render. `menu=""` -> assign a WP menu in the editor.
+    """
     s = _base(
         menu=menu,
         layout=layout,
@@ -864,7 +871,9 @@ def nav_menu(doc: Doc, *, layout: str = "horizontal", align: str = "center",
         color_menu_hover=hover_color,
         color_menu_active=active_color,
         menu_space_between=slider(gap),
-        submenu_space_between=slider(10),
+        toggle_color=toggle_color or color,
+        toggle_size=slider(toggle_size),
+        toggle_align=toggle_align,
         _element_id=element_id,
         _css_classes=css_classes,
     )
@@ -1034,20 +1043,37 @@ def archive_posts(doc: Doc, *, skin: str = "cards", columns: int = 3, per_page: 
                   columns_tablet: int = 2, columns_mobile: int = 1,
                   pagination: str = "numbers", show_title: str = "yes",
                   show_excerpt: str = "yes", read_more_text: str = "Read article",
+                  card_bg: Optional[str] = None, border_color: Optional[str] = None,
+                  radius: Any = None, title_color: Optional[str] = None,
+                  text_color: Optional[str] = None, meta_color: Optional[str] = None,
                   **extra: Any) -> Dict[str, Any]:
+    """Elementor Pro Archive Posts.
+
+    Structural controls only (skin, columns, pagination, shown parts). Style-tab keys
+    are written with the `cards_` prefix that the card skin uses; Elementor ignores
+    any control it does not have for your Pro version, and every value stays editable
+    in the panel either way.
+    """
     s = _base(
         _skin=skin,
-        columns=columns,
-        columns_tablet=columns_tablet,
-        columns_mobile=columns_mobile,
         posts_per_page=per_page,
         pagination_type=pagination,
         show_title=show_title,
         show_excerpt=show_excerpt,
         show_read_more="yes",
         read_more_text=read_more_text,
-        card_border_width=dims(1),
-        card_border_radius=dims(20),
+        cards_columns=columns,
+        cards_columns_tablet=columns_tablet,
+        cards_columns_mobile=columns_mobile,
+        cards_gap=gap(26),
+        cards_border_width=dims(1),
+        cards_border_color=border_color,
+        cards_border_radius=radius if isinstance(radius, dict) else (
+            dims(radius) if radius is not None else None),
+        cards_bg_color=card_bg,
+        cards_title_color=title_color,
+        cards_text_color=text_color,
+        cards_meta_color=meta_color,
     )
     s.update({k: v for k, v in extra.items() if v is not None})
     return widget(doc, "archive-posts", s)

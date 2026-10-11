@@ -114,7 +114,7 @@
    "isInner": false
   },
   {
-   "id": "f184cc2",
+   "id": "a5faa7a",
    "elType": "container",
    "settings": {
     "content_width": "full",
@@ -152,7 +152,7 @@
    },
    "elements": [
     {
-     "id": "4c329f8",
+     "id": "f184cc2",
      "elType": "container",
      "settings": {
       "flex_direction": "column",
@@ -171,19 +171,26 @@
      },
      "elements": [
       {
-       "id": "c50016a",
+       "id": "4c329f8",
        "elType": "widget",
        "settings": {
         "_skin": "cards",
-        "columns": 3,
-        "columns_tablet": 2,
-        "columns_mobile": 1,
         "posts_per_page": 9,
         "pagination_type": "numbers",
         "show_title": "yes",
         "show_excerpt": "yes",
         "show_read_more": "yes",
-        "card_border_width": {
+        "read_more_text": "Read article",
+        "cards_columns": 3,
+        "cards_columns_tablet": 2,
+        "cards_columns_mobile": 1,
+        "cards_gap": {
+         "row": "26",
+         "column": "26",
+         "unit": "px",
+         "isLinked": true
+        },
+        "cards_border_width": {
          "top": "1",
          "right": "1",
          "bottom": "1",
@@ -191,8 +198,8 @@
          "unit": "px",
          "isLinked": true
         },
-        "card_border_color": "globals/colors?id=line",
-        "card_border_radius": {
+        "cards_border_color": "globals/colors?id=line",
+        "cards_border_radius": {
          "top": "20",
          "right": "20",
          "bottom": "20",
@@ -200,7 +207,10 @@
          "unit": "px",
          "isLinked": true
         },
-        "card_bg_color": "globals/colors?id=white",
+        "cards_bg_color": "globals/colors?id=white",
+        "cards_title_color": "globals/colors?id=secondary",
+        "cards_text_color": "globals/colors?id=text",
+        "cards_meta_color": "globals/colors?id=muted",
         "_element_width": "100%"
        },
        "elements": [],
@@ -213,7 +223,7 @@
    "isInner": false
   },
   {
-   "id": "fbec93c",
+   "id": "cafdcb4",
    "elType": "container",
    "settings": {
     "content_width": "full",
@@ -252,7 +262,7 @@
    },
    "elements": [
     {
-     "id": "5243e49",
+     "id": "fbec93c",
      "elType": "container",
      "settings": {
       "flex_direction": "column",
@@ -271,7 +281,7 @@
      },
      "elements": [
       {
-       "id": "481be3b",
+       "id": "5243e49",
        "elType": "container",
        "settings": {
         "flex_direction": "row",
@@ -287,7 +297,7 @@
        },
        "elements": [
         {
-         "id": "df415b3",
+         "id": "481be3b",
          "elType": "container",
          "settings": {
           "flex_gap": {
@@ -375,7 +385,7 @@
          },
          "elements": [
           {
-           "id": "9ff23fb",
+           "id": "ade965b",
            "elType": "container",
            "settings": {
             "flex_direction": "column",
@@ -411,7 +421,7 @@
            },
            "elements": [
             {
-             "id": "d10cf4f",
+             "id": "867748c",
              "elType": "container",
              "settings": {
               "flex_direction": "row",
@@ -427,7 +437,7 @@
              },
              "elements": [
               {
-               "id": "a5faa7a",
+               "id": "6b5101c",
                "elType": "widget",
                "settings": {
                 "style": "solid",
@@ -449,7 +459,7 @@
                "widgetType": "divider"
               },
               {
-               "id": "6b5101c",
+               "id": "d10cf4f",
                "elType": "widget",
                "settings": {
                 "title": "Get started",
@@ -465,7 +475,7 @@
              "isInner": true
             },
             {
-             "id": "867748c",
+             "id": "ab4c271",
              "elType": "widget",
              "settings": {
               "title": "Ready to ship your first agent?",
@@ -490,7 +500,7 @@
              "widgetType": "heading"
             },
             {
-             "id": "ab4c271",
+             "id": "9ff23fb",
              "elType": "widget",
              "settings": {
               "editor": "<p>A 30-minute call, no commitment. Bring one use case and we will sketch the path to production on it.</p>",
@@ -506,7 +516,7 @@
            "isInner": true
           },
           {
-           "id": "dbcd796",
+           "id": "df415b3",
            "elType": "container",
            "settings": {
             "flex_direction": "column",
@@ -539,7 +549,7 @@
            },
            "elements": [
             {
-             "id": "ade965b",
+             "id": "3de98d2",
              "elType": "widget",
              "settings": {
               "text": "Book the call",
@@ -567,7 +577,7 @@
              "widgetType": "button"
             },
             {
-             "id": "3de98d2",
+             "id": "3284015",
              "elType": "widget",
              "settings": {
               "text": "Read the docs",
@@ -605,7 +615,7 @@
              "widgetType": "button"
             },
             {
-             "id": "52e8b11",
+             "id": "dbcd796",
              "elType": "container",
              "settings": {
               "flex_direction": "row",
@@ -621,7 +631,7 @@
              },
              "elements": [
               {
-               "id": "3284015",
+               "id": "4752e47",
                "elType": "widget",
                "settings": {
                 "selected_icon": {
@@ -644,7 +654,7 @@
                "widgetType": "icon"
               },
               {
-               "id": "4752e47",
+               "id": "52e8b11",
                "elType": "widget",
                "settings": {
                 "title": "Same-day reply, Mon-Fri",

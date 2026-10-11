@@ -211,6 +211,32 @@ it, if you would rather copy from the source.
 
 ---
 
+## Hosting the imagery yourself
+
+Every image widget stores a plain URL. The kit points at a permanent git tag:
+
+```
+https://github.com/omidoraei/ai_website_wordpress/raw/kit-assets-v1/media/hero-dashboard.jpg
+```
+
+Elementor downloads each file into your Media Library **on template import**, so your
+live site never requests GitHub — but you can host the source files yourself if you
+prefer. Two ways, neither of which needs code:
+
+1. **After import (recommended).** Because Elementor already localised every image,
+   nothing to do — the widgets point at your uploads folder.
+2. **Before import.** Upload the seven JPEGs from `media/` to your Media Library or CDN,
+   note the URLs, then edit each Image widget in the editor and pick your file. Or change
+   `ASSET_BASE` in `tools/aurora/tokens.py` to your own base path, run
+   `python3 tools/build.py`, and import the resulting templates — every image widget then
+   carries your URL from the start.
+
+Image slots are all 3:2 landscape (1500 × 1000). If you replace them, keep that ratio so
+the containers keep their intended height, or adjust the container's
+**Style → Height** afterwards.
+
+---
+
 ## Where the tokens live
 
 `tools/aurora/tokens.py` is the single source of truth:

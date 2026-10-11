@@ -34,6 +34,6 @@ First public release.
   Elementor Pro widgets. No HTML widget, no custom CSS, no custom JavaScript,
   no external animation library.
 - 40 documents, 962 containers, 1 280 widgets in total.
-- Demo imagery is generated, optimised to 3:2 JP/JPEG at 1500x1000 and imported
-  by Elementor from the release assets at
-  `releases/download/v1.0.0/`.
+- Demo imagery is generated, optimised to 3:2 JPEG at 1500x1000, and served from
+  the permanent `kit-assets-v1` git tag so Elementor can download it on import:
+  `https://github.com/omidoraei/ai_website_wordpress/raw/kit-assets-v1/media/`.

@@ -305,52 +305,17 @@
          "unit": "px",
          "size": 32
         },
-        "submenu_space_between": {
-         "unit": "px",
-         "size": 10
-        },
-        "menu_typography_typography": "globals/typography?id=fa-label",
-        "menu_typography_font_size": {
-         "unit": "px",
-         "size": 16
-        },
-        "indicator": "none",
-        "dropdown": "yes",
-        "dropdown_bg_color": "globals/colors?id=white",
-        "dropdown_border_color": "globals/colors?id=line",
-        "dropdown_border_width": {
-         "top": "1",
-         "right": "1",
-         "bottom": "1",
-         "left": "1",
-         "unit": "px",
-         "isLinked": true
-        },
-        "dropdown_border_radius": {
-         "top": "14",
-         "right": "14",
-         "bottom": "14",
-         "left": "14",
-         "unit": "px",
-         "isLinked": true
-        },
-        "dropdown_box_shadow_box_shadow_type": "yes",
-        "dropdown_box_shadow_box_shadow": {
-         "horizontal": 0,
-         "vertical": 10,
-         "blur": 24,
-         "spread": -8,
-         "color": "rgba(28,25,23,0.14)"
-        },
-        "color_dropdown_item": "globals/colors?id=text",
-        "color_dropdown_item_hover": "globals/colors?id=secondary",
-        "dropdown_typography_typography": "globals/typography?id=fa-label",
         "toggle_color": "globals/colors?id=secondary",
         "toggle_size": {
          "unit": "px",
          "size": 22
         },
         "toggle_align": "end",
+        "menu_typography_typography": "globals/typography?id=fa-label",
+        "menu_typography_font_size": {
+         "unit": "px",
+         "size": 16
+        },
         "_flex_size": "grow",
         "_flex_grow": 1,
         "_flex_shrink": 1

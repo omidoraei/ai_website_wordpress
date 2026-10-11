@@ -109,7 +109,7 @@
    "isInner": false
   },
   {
-   "id": "ca410ac",
+   "id": "fbc1cd8",
    "elType": "container",
    "settings": {
     "content_width": "full",
@@ -148,7 +148,7 @@
    },
    "elements": [
     {
-     "id": "0a9f3d2",
+     "id": "ca410ac",
      "elType": "container",
      "settings": {
       "flex_direction": "column",
@@ -167,20 +167,26 @@
      },
      "elements": [
       {
-       "id": "9b0b85a",
+       "id": "0a9f3d2",
        "elType": "widget",
        "settings": {
         "_skin": "cards",
-        "columns": 3,
-        "columns_tablet": 2,
-        "columns_mobile": 1,
         "posts_per_page": 9,
         "pagination_type": "numbers",
         "show_title": "yes",
         "show_excerpt": "yes",
         "show_read_more": "yes",
         "read_more_text": "Read article",
-        "card_border_width": {
+        "cards_columns": 3,
+        "cards_columns_tablet": 2,
+        "cards_columns_mobile": 1,
+        "cards_gap": {
+         "row": "26",
+         "column": "26",
+         "unit": "px",
+         "isLinked": true
+        },
+        "cards_border_width": {
          "top": "1",
          "right": "1",
          "bottom": "1",
@@ -188,8 +194,8 @@
          "unit": "px",
          "isLinked": true
         },
-        "card_border_color": "globals/colors?id=line",
-        "card_border_radius": {
+        "cards_border_color": "globals/colors?id=line",
+        "cards_border_radius": {
          "top": "20",
          "right": "20",
          "bottom": "20",
@@ -197,10 +203,10 @@
          "unit": "px",
          "isLinked": true
         },
-        "card_bg_color": "globals/colors?id=white",
-        "title_color": "globals/colors?id=secondary",
-        "text_color": "globals/colors?id=text",
-        "meta_color": "globals/colors?id=muted",
+        "cards_bg_color": "globals/colors?id=white",
+        "cards_title_color": "globals/colors?id=secondary",
+        "cards_text_color": "globals/colors?id=text",
+        "cards_meta_color": "globals/colors?id=muted",
         "_element_width": "100%"
        },
        "elements": [],
@@ -213,7 +219,7 @@
    "isInner": false
   },
   {
-   "id": "471a433",
+   "id": "11dadde",
    "elType": "container",
    "settings": {
     "content_width": "full",
@@ -252,7 +258,7 @@
    },
    "elements": [
     {
-     "id": "b4a398b",
+     "id": "471a433",
      "elType": "container",
      "settings": {
       "flex_direction": "column",
@@ -271,7 +277,7 @@
      },
      "elements": [
       {
-       "id": "3fcb624",
+       "id": "b4a398b",
        "elType": "container",
        "settings": {
         "flex_direction": "row",
@@ -293,7 +299,7 @@
        },
        "elements": [
         {
-         "id": "fd0ba5c",
+         "id": "1819914",
          "elType": "container",
          "settings": {
           "flex_direction": "column",
@@ -325,7 +331,7 @@
          },
          "elements": [
           {
-           "id": "287b5fa",
+           "id": "3ff1d91",
            "elType": "container",
            "settings": {
             "flex_direction": "row",
@@ -341,7 +347,7 @@
            },
            "elements": [
             {
-             "id": "fbc1cd8",
+             "id": "18fed69",
              "elType": "widget",
              "settings": {
               "style": "solid",
@@ -363,7 +369,7 @@
              "widgetType": "divider"
             },
             {
-             "id": "18fed69",
+             "id": "287b5fa",
              "elType": "widget",
              "settings": {
               "title": "Newsletter",
@@ -379,7 +385,7 @@
            "isInner": true
           },
           {
-           "id": "3ff1d91",
+           "id": "10a4dc9",
            "elType": "widget",
            "settings": {
             "title": "One email a month, zero fluff",
@@ -400,7 +406,7 @@
            "widgetType": "heading"
           },
           {
-           "id": "10a4dc9",
+           "id": "fd0ba5c",
            "elType": "widget",
            "settings": {
             "editor": "<p>Engineering notes, evaluation patterns and release write-ups from the team building Aurora.</p>",
@@ -414,7 +420,7 @@
          "isInner": true
         },
         {
-         "id": "85a16d7",
+         "id": "3fcb624",
          "elType": "container",
          "settings": {
           "flex_gap": {
@@ -490,7 +496,7 @@
          },
          "elements": [
           {
-           "id": "123457b",
+           "id": "85a16d7",
            "elType": "widget",
            "settings": {
             "title": "No spam. Unsubscribe in one click.",
@@ -510,7 +516,7 @@
            "widgetType": "heading"
           },
           {
-           "id": "1819914",
+           "id": "123457b",
            "elType": "widget",
            "settings": {
             "form_name": "Aurora newsletter",
@@ -596,7 +602,7 @@
    "isInner": false
   },
   {
-   "id": "a1b0c15",
+   "id": "1ea853d",
    "elType": "container",
    "settings": {
     "content_width": "full",
@@ -635,7 +641,7 @@
    },
    "elements": [
     {
-     "id": "a224f43",
+     "id": "a1b0c15",
      "elType": "container",
      "settings": {
       "flex_direction": "column",
@@ -654,7 +660,7 @@
      },
      "elements": [
       {
-       "id": "08fb7fd",
+       "id": "a224f43",
        "elType": "container",
        "settings": {
         "flex_direction": "row",
@@ -670,7 +676,7 @@
        },
        "elements": [
         {
-         "id": "4da3fc9",
+         "id": "08fb7fd",
          "elType": "container",
          "settings": {
           "flex_gap": {
@@ -758,7 +764,7 @@
          },
          "elements": [
           {
-           "id": "c4d3d4d",
+           "id": "e1629d8",
            "elType": "container",
            "settings": {
             "flex_direction": "column",
@@ -794,7 +800,7 @@
            },
            "elements": [
             {
-             "id": "4256f64",
+             "id": "d710d93",
              "elType": "container",
              "settings": {
               "flex_direction": "row",
@@ -810,7 +816,7 @@
              },
              "elements": [
               {
-               "id": "11dadde",
+               "id": "53cf9e8",
                "elType": "widget",
                "settings": {
                 "style": "solid",
@@ -832,7 +838,7 @@
                "widgetType": "divider"
               },
               {
-               "id": "53cf9e8",
+               "id": "4256f64",
                "elType": "widget",
                "settings": {
                 "title": "Get started",
@@ -848,7 +854,7 @@
              "isInner": true
             },
             {
-             "id": "d710d93",
+             "id": "32b53f8",
              "elType": "widget",
              "settings": {
               "title": "Ready to ship your first agent?",
@@ -873,7 +879,7 @@
              "widgetType": "heading"
             },
             {
-             "id": "32b53f8",
+             "id": "c4d3d4d",
              "elType": "widget",
              "settings": {
               "editor": "<p>A 30-minute call, no commitment. Bring one use case and we will sketch the path to production on it.</p>",
@@ -889,7 +895,7 @@
            "isInner": true
           },
           {
-           "id": "66f7e07",
+           "id": "4da3fc9",
            "elType": "container",
            "settings": {
             "flex_direction": "column",
@@ -922,7 +928,7 @@
            },
            "elements": [
             {
-             "id": "e1629d8",
+             "id": "d0151a0",
              "elType": "widget",
              "settings": {
               "text": "Book the call",
@@ -950,7 +956,7 @@
              "widgetType": "button"
             },
             {
-             "id": "d0151a0",
+             "id": "fbe4b51",
              "elType": "widget",
              "settings": {
               "text": "Read the docs",
@@ -988,7 +994,7 @@
              "widgetType": "button"
             },
             {
-             "id": "ed5b891",
+             "id": "66f7e07",
              "elType": "container",
              "settings": {
               "flex_direction": "row",
@@ -1004,7 +1010,7 @@
              },
              "elements": [
               {
-               "id": "fbe4b51",
+               "id": "d01b2e8",
                "elType": "widget",
                "settings": {
                 "selected_icon": {
@@ -1027,7 +1033,7 @@
                "widgetType": "icon"
               },
               {
-               "id": "d01b2e8",
+               "id": "ed5b891",
                "elType": "widget",
                "settings": {
                 "title": "Same-day reply, Mon-Fri",

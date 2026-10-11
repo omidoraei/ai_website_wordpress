@@ -269,7 +269,7 @@
            "elType": "widget",
            "settings": {
             "image": {
-             "url": "https://github.com/omidoraei/ai_website_wordpress/releases/download/v1.0.0/highlight-agents.jpg",
+             "url": "https://github.com/omidoraei/ai_website_wordpress/raw/kit-assets-v1/media/highlight-agents.jpg",
              "id": "",
              "size": "large",
              "alt": "A canvas that reads like your product spec",
@@ -1110,7 +1110,7 @@
            "elType": "widget",
            "settings": {
             "image": {
-             "url": "https://github.com/omidoraei/ai_website_wordpress/releases/download/v1.0.0/highlight-insights.jpg",
+             "url": "https://github.com/omidoraei/ai_website_wordpress/raw/kit-assets-v1/media/highlight-insights.jpg",
              "id": "",
              "size": "large",
              "alt": "Evaluations that actually block bad releases",

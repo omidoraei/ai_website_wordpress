@@ -24,13 +24,17 @@ TAGLINE = "Warm, human AI infrastructure for product teams."
 KIT_TITLE = "Aurora AI - Elementor Template Kit"
 KIT_VERSION = "1.0.0"
 
-# Release assets host every image. Change ASSET_BASE and re-run `tools/build.py`
-# to point the kit at your own CDN / uploads folder.
+# Demo imagery is served from a permanent git tag, so the URLs are immutable and
+# public. Elementor downloads each file into the Media Library on template import
+# and rewrites the template to point at your own uploads folder.
+#
+# To host the images yourself, change ASSET_BASE to any public base URL (your CDN,
+# or https://example.com/wp-content/uploads/aurora) and re-run `tools/build.py`.
 GITHUB_USER = "omidoraei"
 GITHUB_REPO = "ai_website_wordpress"
-ASSET_TAG = "v1.0.0"
+ASSET_TAG = "kit-assets-v1"
 ASSET_BASE = (
-    "https://github.com/%s/%s/releases/download/%s" % (GITHUB_USER, GITHUB_REPO, ASSET_TAG)
+    "https://github.com/%s/%s/raw/%s/media" % (GITHUB_USER, GITHUB_REPO, ASSET_TAG)
 )
 
 # ---------------------------------------------------------------------------

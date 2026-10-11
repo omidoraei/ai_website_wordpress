@@ -26,7 +26,7 @@ Header shell  (full width, sticky, hairline bottom, Sand 50 background)
 
 | Setting | Value | Where to change it |
 | --- | --- | --- |
-| Sticky | **top**, on desktop / tablet / mobile, effects offset 60 | Select the header shell → **Advanced → Motion Effects → Sticky** |
+| Sticky | **top**, on desktop / tablet / mobile, effects offset 60 · *Sticky is an Elementor Pro motion effect; on Elementor Free the control shows a Pro lock and the header simply scrolls away* | Select the header shell → **Advanced → Motion Effects → Sticky** |
 | Shell background | Sand 50 | Shell → **Style → Background** |
 | Bottom hairline | 1 px, Border colour | Shell → **Style → Border** |
 | Content width | 1240 px, 100 % on tablet and mobile | Main bar → **Layout → Content Width** |
@@ -43,8 +43,10 @@ Header shell  (full width, sticky, hairline bottom, Sand 50 background)
 * **Mobile toggle** — Nav Menu → **Content → Layout**: Toggle = *Hamburger*, Breakpoint =
   *Mobile*. Set it to *Tablet* if your menu is long. The toggle colour, size and alignment
   are on the same tab.
-* **Dropdowns** — style them under Nav Menu → **Style → Dropdown**: white background,
-  1 px Border border, 14 px radius, `md` box shadow and hover colours are already set.
+* **Dropdowns** — the template deliberately leaves sub-menu styling at Elementor's
+  defaults so nothing depends on a specific Pro version. Style them under
+  Nav Menu → **Style → Dropdown** (background, border, radius, box shadow, item colours
+  and the dropdown typography group all live there).
 
 > The announcement bar hides only its call-to-action button on mobile (the text stays, so
 > the message survives). To hide the entire bar on phones, select the announcement bar
@@ -135,9 +137,11 @@ CTA           Block | Call To Action
 * The heading is the **Archive Title** widget, so it changes with the taxonomy
   automatically (*Journal*, *Category: Engineering*, *Tag: Evaluation*…).
 * The grid is the **Archive Posts** widget → **Layout → Columns**: 3 desktop, 2 tablet,
-  1 mobile, and **Pagination → Numbers**.
-* Card styling lives on **Style → Card**: white background, 1 px Border border, 20 px
-  radius — already set.
+  1 mobile, and **Pagination → Numbers** — all four values are stored in the template.
+* Card styling lives on **Style → Card**. The template stores white background, 1 px
+  Border hairline and a 20 px radius; if your Pro version uses different style-control
+  names, set them once in the panel — the widget keeps working either way, since
+  Elementor stores and re-reads whatever the panel writes.
 
 **Condition:** `Include → Archive → All Archive Pages`.
 

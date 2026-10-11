@@ -591,7 +591,7 @@
              "elType": "widget",
              "settings": {
               "image": {
-               "url": "https://github.com/omidoraei/ai_website_wordpress/releases/download/v1.0.0/hero-dashboard.jpg",
+               "url": "https://github.com/omidoraei/ai_website_wordpress/raw/kit-assets-v1/media/hero-dashboard.jpg",
                "id": "",
                "size": "large",
                "alt": "کنسول عامل آرورا در حال اجرای ارزیابی",
@@ -4320,7 +4320,7 @@
            "elType": "widget",
            "settings": {
             "image": {
-             "url": "https://github.com/omidoraei/ai_website_wordpress/releases/download/v1.0.0/highlight-agents.jpg",
+             "url": "https://github.com/omidoraei/ai_website_wordpress/raw/kit-assets-v1/media/highlight-agents.jpg",
              "id": "",
              "size": "large",
              "alt": "بوم عاملها",
@@ -5169,7 +5169,7 @@
            "elType": "widget",
            "settings": {
             "image": {
-             "url": "https://github.com/omidoraei/ai_website_wordpress/releases/download/v1.0.0/highlight-insights.jpg",
+             "url": "https://github.com/omidoraei/ai_website_wordpress/raw/kit-assets-v1/media/highlight-insights.jpg",
              "id": "",
              "size": "large",
              "alt": "ارزیابیهایی که واقعاً جلوی انتشار بد را میگیرند",
@@ -6208,7 +6208,7 @@
            "elType": "widget",
            "settings": {
             "image": {
-             "url": "https://github.com/omidoraei/ai_website_wordpress/releases/download/v1.0.0/case-retail.jpg",
+             "url": "https://github.com/omidoraei/ai_website_wordpress/raw/kit-assets-v1/media/case-retail.jpg",
              "id": "",
              "size": "large",
              "alt": "فروشگاه شمال",
@@ -6508,7 +6508,7 @@
            "elType": "widget",
            "settings": {
             "image": {
-             "url": "https://github.com/omidoraei/ai_website_wordpress/releases/download/v1.0.0/case-fintech.jpg",
+             "url": "https://github.com/omidoraei/ai_website_wordpress/raw/kit-assets-v1/media/case-fintech.jpg",
              "id": "",
              "size": "large",
              "alt": "کیاستون بانک",
@@ -6808,7 +6808,7 @@
            "elType": "widget",
            "settings": {
             "image": {
-             "url": "https://github.com/omidoraei/ai_website_wordpress/releases/download/v1.0.0/case-health.jpg",
+             "url": "https://github.com/omidoraei/ai_website_wordpress/raw/kit-assets-v1/media/case-health.jpg",
              "id": "",
              "size": "large",
              "alt": "مرکز هلثلاین",

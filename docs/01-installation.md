@@ -38,12 +38,21 @@ directly with the same *Import Templates* button.
 
 ### What happened to the images
 
-Every template references its imagery by absolute URL
-(`https://github.com/omidoraei/ai_website_wordpress/releases/download/v1.0.0/…`).
-On import **Elementor downloads each image into your Media Library** and rewrites the
-template to point at your own uploads folder — the same mechanism it uses for any
-Template Kit. After import, the images belong to you and are fully editable.
-See [the offline note](#if-your-server-cannot-reach-the-internet) if your host blocks
+Every template references its imagery by absolute URL:
+
+```
+https://github.com/omidoraei/ai_website_wordpress/raw/kit-assets-v1/media/hero-dashboard.jpg
+```
+
+That is a **permanent git tag**, so the URLs never change and never expire. On import
+**Elementor downloads each image into your Media Library** and rewrites the template to
+point at your own uploads folder — the same mechanism it uses for any Template Kit.
+After import the images belong to you, live on your domain, and are fully editable.
+
+If you would rather host the imagery yourself, upload the files from `media/` anywhere
+public and replace the base URL — see
+[02-design-system.md](02-design-system.md#hosting-the-imagery-yourself). See also
+[the offline note](#if-your-server-cannot-reach-the-internet) if your host blocks
 outbound requests.
 
 ---

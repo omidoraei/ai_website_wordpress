@@ -15,10 +15,10 @@ from .components import (
     link_column, section_head, surface,
 )
 from .dsl import (
-    Doc, button, container, divider, form, form_field, heading, icon, icon_list, image,
-    inner, nav_menu, post_comments, post_content, post_excerpt, post_info,
-    post_navigation, section, site_logo, social_icons, spacer, text, widget, dims, gap,
-    slider,
+    Doc, archive_posts, button, container, divider, form, form_field, heading, icon,
+    icon_list, image, inner, nav_menu, post_comments, post_content, post_excerpt,
+    post_info, post_navigation, section, site_logo, social_icons, spacer, text, widget,
+    dims, gap, slider,
 )
 from . import sections as S
 
@@ -55,20 +55,7 @@ def header(doc: Doc, *, fa: bool = False) -> List[Dict[str, Any]]:
         style=tk.T["fa_label"] if fa else tk.T["nav"],
         gap=32,
         menu_typography_font_size=slider(16),
-        indicator="none",
-        dropdown="yes",
-        dropdown_bg_color=tk.G["white"],
-        dropdown_border_color=tk.G["line"],
-        dropdown_border_width=dims(1),
-        dropdown_border_radius=dims(14),
-        dropdown_box_shadow_box_shadow_type="yes",
-        dropdown_box_shadow_box_shadow=tk.SHADOW["md"],
-        color_dropdown_item=tk.G["text"],
-        color_dropdown_item_hover=tk.G["secondary"],
-        dropdown_typography_typography=tk.T["fa_label"] if fa else tk.T["nav"],
-        toggle_color=tk.G["secondary"],
-        toggle_size=slider(22),
-        toggle_align="end",
+        toggle_color=tk.G["secondary"], toggle_size=22, toggle_align="end",
     )
     menu["settings"]["_flex_size"] = "grow"
     menu["settings"]["_flex_grow"] = 1
@@ -331,21 +318,11 @@ def archive(doc: Doc) -> List[Dict[str, Any]]:
     ], bg=S.BG_GRADIENT_HERO, pad_y=(72, 56, 40))
 
     listing = S._band(doc, [
-        widget(doc, "archive-posts", {
-            "_skin": "cards",
-            "columns": 3, "columns_tablet": 2, "columns_mobile": 1,
-            "posts_per_page": 9, "pagination_type": "numbers",
-            "show_title": "yes", "show_excerpt": "yes", "show_read_more": "yes",
-            "read_more_text": "Read article",
-            "card_border_width": dims(1),
-            "card_border_color": tk.G["line"],
-            "card_border_radius": dims(20),
-            "card_bg_color": tk.G["white"],
-            "title_color": tk.G["secondary"],
-            "text_color": tk.G["text"],
-            "meta_color": tk.G["muted"],
-            "_element_width": "100%",
-        }),
+        widget(doc, "archive-posts", archive_posts(
+            doc, skin="cards", per_page=9, pagination="numbers",
+            card_bg=tk.G["white"], border_color=tk.G["line"], radius=20,
+            title_color=tk.G["secondary"], text_color=tk.G["text"],
+            meta_color=tk.G["muted"])["settings"] | {"_element_width": "100%"}),
     ], bg=S.BG_PAGE, element_id="archive-list")
 
     return [hero, listing, S.newsletter_band(doc), S.cta_band(doc)]
@@ -365,14 +342,11 @@ def search_results(doc: Doc) -> List[Dict[str, Any]]:
                                     "button_type": "text", "input_size": "md"}),
     ], bg=S.BG_GRADIENT_HERO, pad_y=(72, 56, 40))
     listing = S._band(doc, [
-        widget(doc, "archive-posts", {
-            "_skin": "cards", "columns": 3, "columns_tablet": 2, "columns_mobile": 1,
-            "posts_per_page": 9, "pagination_type": "numbers",
-            "show_title": "yes", "show_excerpt": "yes", "show_read_more": "yes",
-            "card_border_width": dims(1), "card_border_color": tk.G["line"],
-            "card_border_radius": dims(20), "card_bg_color": tk.G["white"],
-            "_element_width": "100%",
-        }),
+        widget(doc, "archive-posts", archive_posts(
+            doc, skin="cards", per_page=9, pagination="numbers",
+            card_bg=tk.G["white"], border_color=tk.G["line"], radius=20,
+            title_color=tk.G["secondary"], text_color=tk.G["text"],
+            meta_color=tk.G["muted"])["settings"] | {"_element_width": "100%"}),
     ], bg=S.BG_PAGE)
     return [hero, listing, S.cta_band(doc)]
 
