@@ -66,18 +66,30 @@ jobs:
           } >> "$GITHUB_STEP_SUMMARY"
 
       # A retraction is not complete until every public surface is updated (docs/CLAIMS.md).
-      # The phrase list lives in the ledger; this guard scans the surfaces and prints its
-      # input count, so "0 hits" cannot be an artefact of scanning nothing.
+      # The phrase list lives in the ledger; this guard scans every surface a buyer can read:
+      # the working tree (docs, README, CHANGELOG, templates/INDEX.md), the pushed commit
+      # messages, the PR body/title and the CI run title. It prints its input count, so
+      # "0 hits" cannot be an artefact of scanning nothing. It fails closed when a network
+      # surface cannot be fetched at all.
       - name: Retraction guard
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPO: ${{ github.repository }}
+          RUN_ID: ${{ github.run_id }}
+          EVENT_BEFORE: ${{ github.event.before }}
+          HEAD_SHA: ${{ github.sha }}
         run: |
           python3 - <<'PY'
-          import os, re, sys
+          import json, os, re, shutil, subprocess, sys
 
           ledger = open("docs/CLAIMS.md", encoding="utf-8").read()
           block = re.search(r"```retracted-phrases\n(.*?)```", ledger, re.S)
           if not block:
               sys.exit("docs/CLAIMS.md has no retracted-phrases block")
-          phrases = [row.strip().lower() for row in block.group(1).splitlines() if row.strip()]
+          def norm(text):
+              return re.sub(r"\\s+", " ", text).lower()
+
+          phrases = [norm(row) for row in block.group(1).splitlines() if row.strip()]
 
           surfaces = ["README.md", "CHANGELOG.md", ".github/workflows/kit.yml", "templates/INDEX.md"]
           for dirpath, dirs, files in os.walk("docs"):
@@ -94,10 +106,61 @@ jobs:
 
           hits = []
           for rel in surfaces:
-              low = open(rel, encoding="utf-8").read().lower()
+              low = norm(open(rel, encoding="utf-8").read())
               hits += [(rel, phrase) for phrase in phrases if phrase in low]
-          print("retraction guard: %d file(s) scanned, %d phrase(s), %d hit(s)"
-                % (len(surfaces), len(phrases), len(hits)))
+
+          before = os.environ.get("EVENT_BEFORE", "").strip()
+          rng = ("%s..%s" % (before, os.environ.get("HEAD_SHA", "HEAD"))
+                 if before and set(before) != {"0"} else "HEAD~1..HEAD")
+          log = subprocess.run(["git", "log", "--format=%H %B", rng], capture_output=True, text=True)
+          if log.returncode != 0:
+              log = subprocess.run(["git", "log", "-1", "--format=%H %B"], capture_output=True, text=True)
+          commits = [row for row in log.stdout.splitlines() if row.strip()]
+          for row in commits:
+              for phrase in phrases:
+                  if phrase in norm(row):
+                      hits.append(("commit-message", phrase))
+
+          def fetch(path):
+              """(http_code, text) for a GitHub API path; gh first, curl fallback."""
+              if shutil.which("gh"):
+                  proc = subprocess.run(["gh", "api", path], capture_output=True, text=True)
+                  if proc.returncode == 0:
+                      return 200, proc.stdout
+              if shutil.which("curl"):
+                  url = "https://api.github.com/" + path
+                  proc = subprocess.run(["curl", "-sS", "-w", "\n%{http_code}",
+                                         "-H", "Authorization: Bearer " + os.environ.get("GH_TOKEN", ""),
+                                         "-H", "Accept: application/vnd.github+json", url],
+                                        capture_output=True, text=True)
+                  text = proc.stdout
+                  code = text.rsplit("\n", 1)[-1].strip()
+                  return (int(code) if code.isdigit() else 0), text.rsplit("\n", 1)[0]
+              return 0, ""
+
+          seen = {"pr": "skipped", "run": "skipped"}
+
+          def scan_api(name, path, keys):
+              code, text = fetch(path)
+              if code == 404:
+                  print("  - %s: not present (404), skipped" % name)
+                  return
+              if code != 200:
+                  print("::error::retraction guard could not fetch %s (http %s)" % (name, code))
+                  sys.exit(1)
+              data = json.loads(text)
+              seen[name] = "scanned"
+              for key in keys:
+                  for phrase in phrases:
+                      if phrase in norm(data.get(key) or ""):
+                          hits.append(("%s:%s" % (name, key), phrase))
+
+          scan_api("pr", "repos/%s/pulls/1" % os.environ["REPO"], ("title", "body"))
+          scan_api("run", "repos/%s/actions/runs/%s" % (os.environ["REPO"], os.environ["RUN_ID"]),
+                   ("display_title", "name"))
+
+          print("retraction guard: %d file(s), %d phrase(s), %d commit line(s), pr=%s, run=%s"
+                % (len(surfaces), len(phrases), len(commits), seen["pr"], seen["run"]))
           for rel, phrase in hits:
               print("  ! %s still says %r" % (rel, phrase))
           sys.exit(1 if hits else 0)

@@ -26,6 +26,15 @@ missing from v3.35.9
 40 templates
 artifact digest proves
 sha256 proves determinism
+all `alt` text present
+landmarks are real elements
+with Arad typography
+FAQ schema enabled
+6 Theme Builder layouts
+14 custom global colors
+18 global fonts
+16 free and 14 Pro widget types
+docs/ 7 guides
 ```
 Surfaces excluded from the guard (they are the ledger itself or recorded evidence):
 `docs/CLAIMS.md`, `HANDOFF-*.md`, `docs/_generated/**`.
@@ -59,3 +68,12 @@ Surfaces excluded from the guard (they are the ledger itself or recorded evidenc
 3. List every file that repeats the claim in `propagated-to`; if the claim is RETRACTED, add a
    line to the `retracted-phrases` block so the CI guard fails until every surface is fixed.
 4. Date in ISO form.
+| C-017 | "all `alt` text present" | PR #1 body | **RETRACTED** | P3 measured 24 image widgets across 7 image files and none carries alt text; policy and the first ten drafts are in `docs/p3/alt-text-sample.md` | `docs/p3/alt-text-sample.md` | 2026-10-11 |
+| C-018 | "so the landmarks are real elements" | PR #1 body | **RETRACTED** | 95 of 962 containers carry an `html_tag` (section 90, header 2, footer 2, main 1); 11 page-level documents lack `main` and 7 lack an `h1` | `docs/p3/landmark-audit.md` | 2026-10-11 |
+| C-019 | "Farsi documents ... with Arad typography" | PR #1 body | **RETRACTED** | B5 (AGENT-INFERRED) switched the FA type system to Vazirmatn; the Arad licence is UNVERIFIED and Arad remains only in the template bytes until the P2 swap | `docs/p1/type-decision.md`, `docs/PBRIEF-TRANSCRIPT.md` | 2026-10-11 |
+| C-020 | "FAQ schema enabled" read as a kit feature | PR #1 body | **RETRACTED** | the widget-level FAQ schema is switched on in both FAQ blocks; site-wide structured data is SEO-plugin configuration, and no Review markup ships because the testimonials are fictional | `docs/08-agent-legibility.md` §2 | 2026-10-11 |
+| C-021 | "4 system + 14 custom global colors, 18 global fonts" | PR #1, earlier revision | **RETRACTED** | canonical counters: 19 global colours (4 system + 15 custom) and 15 typography styles (4 system + 11 custom) | `docs/_generated/facts.md` | 2026-10-11 |
+| C-022 | "6 Theme Builder layouts" | PR #1, earlier revision | **RETRACTED** | canonical: 7 theme-builder layouts (2 headers + 2 footers + 3 loop templates) | `docs/_generated/facts.md` | 2026-10-11 |
+| C-023 | "16 free and 14 Pro widget types" | PR #1, earlier revision | **RETRACTED** | the control-name audit is advisory and carries unexplained keys; no widget-type count is asserted anywhere | `docs/CLAIMS.md` C-004 | 2026-10-11 |
+| C-024 | "docs/ 7 guides" | PR #1, earlier revision | **RETRACTED** | `docs/08-agent-legibility.md` exists; no guide count is asserted | `docs/08-agent-legibility.md` | 2026-10-11 |
+| C-025 | workable CTAs (implied by silence) | PR #1 body | **RETRACTED** | `#contact` resolves on 1 of the 16 documents that use it, `#docs` on 0 of 12, two of three header buttons point nowhere, and 18 of 39 template documents carry at least one dead in-page target | `docs/p3/ia-map.md` | 2026-10-11 |

@@ -107,7 +107,7 @@ document that opens in the editor and is editable by a non-developer.
 | Widgets | {widgets} |
 | Global colours | {colours} (4 system + 15 custom) |
 | Typography styles | {typography} (4 system + 11 custom) |
-| Font families | {families} (Sora, Inter, Arad) |
+| Font families | {families} (Sora, Inter; Arad still in the template bytes pending the P2 Vazirmatn swap) |
 | Images / image widgets | {images} URLs / {image_widgets} widgets |
 | Custom HTML widgets | **{html}** |
 | Custom CSS / JS | **0** |
@@ -118,8 +118,9 @@ claimed and retracted is `docs/CLAIMS.md`.
 ## How it satisfies the brief
 
 - **Elementor native** — Flexbox Containers + free and Pro widget types. No legacy
-  Section/Column anywhere. Containers carry `html_tag` (`section`, `header`, `footer`, `main`)
-  so the landmarks are real elements.
+  Section/Column anywhere. Container landmarks are partly in place: 95 of 962 containers carry
+  an `html_tag` (`section` 90, `header` 2, `footer` 2, `main` 1); the gap list — 11 page-level
+  documents without `main`, 7 without `h1` — is in `docs/p3/landmark-audit.md`.
 - **No hard coding** — enforced by `tools/verify.py`, which fails the build if a Custom HTML
   widget appears or if any `globals/colors?id=` / `globals/typography?id=` reference does not
   resolve to a global the kit defines. Text is in Heading/Text Editor widgets, CTAs in Button
@@ -129,13 +130,23 @@ claimed and retracted is `docs/CLAIMS.md`.
   button/form/heading/body styles set in the Kit document.
 - **Responsive** — every grid stores its own tablet and mobile `flex-basis`; headings, padding,
   gaps, alignment and column direction carry per-breakpoint values.
-- **Persian / RTL** — {fa_documents} Farsi documents in a parallel set with Arad typography
-  (by family name; see `docs/p1/type-decision.md` for licence status and the audited Vazirmatn
-  fallback), plus a setup guide.
+- **Persian / RTL** — {fa_documents} Farsi documents by naming convention, in a parallel set;
+  three further documents embed Persian copy (a P2 defect, `docs/METRICS.md`). The FA type system
+  is decided to Vazirmatn (SIL OFL-1.1, decision B5), but the template bytes still carry Arad,
+  whose licence is **UNVERIFIED**; the swap lands in P2 (`docs/p1/type-decision.md`).
 - **Animations** — Elementor Motion Effects only (`fadeInUp`, staggered delays). No external
   animation library.
-- **Performance** — no carousels, sliders or third-party libraries; {images} images, all `alt`
-  text present; FAQ schema enabled.
+- **Performance** — no carousels, sliders or third-party libraries; {images} image files across
+  {image_widgets} image widgets, **none of which carries alt text yet** — policy and the first ten
+  drafts are in `docs/08-agent-legibility.md` §4 and `docs/p3/alt-text-sample.md`. FAQ answer
+  blocks ship in the templates with the widget-level FAQ schema switched on; site-wide structured
+  data is SEO-plugin configuration, and no Review markup is emitted because the testimonials are
+  fictional (`docs/08-agent-legibility.md` §2).
+
+- **Link honesty** — the CTA audit found `#contact` resolving on 1 of the 16 documents that use
+  it, `#docs` on 0 of 12, two of the three header buttons pointing nowhere, and 18 of 39 template
+  documents carrying at least one dead in-page target (`docs/p3/ia-map.md`). Clearing those links
+  is the first P2 item after data labelling.
 
 ## Deliverables
 

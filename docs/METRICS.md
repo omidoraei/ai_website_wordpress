@@ -32,7 +32,7 @@ a scanner that finds nothing in nothing must fail, not pass.
 | `custom_html_widgets` | `widget_mix.get("html", 0)` — must be 0 (constitution) | 0 |
 | `pages` / `blocks` / `headers` / `footers` / `loop_templates` / `popups` | file counts per `templates/<dir>` | 9 / 22 / 2 / 2 / 3 / 1 |
 | `theme_builder_layouts` | `headers + footers + loop_templates` (Theme Builder documents: header, footer, single, archive, search) | 7 |
-| `fa_documents` | templates whose basename starts with `fa-` or ends with `-fa.json` | 8 |
+| `fa_documents` | templates whose basename starts with `fa-` or ends with `-fa.json`; this counts the named FA set only - a content check finds Persian copy additionally embedded in three EN-named documents (a P2 defect, see docs/DECISIONS.md P1.5-005) | 8 |
 | `blocks_fa` | blocks whose basename starts with `fa-` | 5 |
 
 **Not documents** (they are export artifacts, not Elementor documents): `dist/site-settings.json`,

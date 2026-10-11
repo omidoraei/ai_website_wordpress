@@ -92,3 +92,8 @@ pattern).
 Never write "done", "verified", "responsive" or "accessible" without a command, an exit code
 and a count. A claim without an artifact is not done. Numbers come from
 `python3 tools/verify.py --report`.
+
+## Decision authority
+
+`docs/DECISIONS.md` (git) is the authoritative decision ledger. Notion ("Aurora AI - Decision
+Ledger") is a convenience mirror: it can truncate and is never cited as evidence.
