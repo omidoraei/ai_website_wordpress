@@ -162,3 +162,22 @@ No tool, no template, no frozen path, no gate-2 question, no P2 work.
    summary instead of as an error annotation; the real fix is the HANDOFF-P0 residue.
 4. **Job-log retrieval** from this environment fails (`EOF`); CI evidence therefore comes from the
    API (conclusions, annotations, artifacts) and from byte-deterministic committed dist files.
+
+## 11. Final acceptance for this commit's CI (turn 6)
+
+The evidence above was gathered on `baa30d5` (the workflow fix). The phase's own evidence commit is
+`13f40c1`, and its run was verified the same way, with the same acceptance rule:
+
+| field | value |
+| --- | --- |
+| run ids | `38163793528` (pull_request) and `38163789038` (push) |
+| head sha | `13f40c16f4a73b5fe62c6dab05de0c79cf285b96` |
+| status / conclusion | `completed` / `success` (both) |
+| annotations | **0** (`114542012998`, `114542001045`) |
+| failed steps | none - 25 of 25 steps success in both runs |
+| artifact | `aurora-ai-kit` 356 144 bytes `sha256:44c8b3945cf994a17e0ea725e7574419a438188e1161f9c2eaed3383ae45e21a` |
+| deterministic dist payloads (committed, rebuild-stable) | `aurora-ai-kit.zip` `cc56ff3de26b84a580a48944a563fb0aeb9799b0678a813d29c05f2694c88354` · `aurora-ai-templates.zip` `c47837e071612d3efd3a72c74ef1b5cff920d126c30b4428f9dd628609deead1` |
+
+The artifact-archive digest differs between the two runs of the same tree while the committed zip
+payloads are byte-stable, which is why the payload digests - not the archive digest - are the ones
+quoted as the artifact's identity.
