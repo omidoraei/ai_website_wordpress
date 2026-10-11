@@ -208,7 +208,28 @@ def container_base_css(s: Dict[str, Any]) -> List[str]:
     return css
 
 
-def flex_item_css(s: Dict[str, Any]) -> List[str]:
+def flex_item_css(s: Dict[str, Any], device: str = "") -> List[str]:
+    """Flex-item CSS for one breakpoint ('' = desktop).
+
+    Elementor makes the `_flex` group fields responsive (flex-item.php marks size,
+    grow, shrink and basis as responsive), so the tablet/mobile values live in
+    `_flex_basis_tablet` / `_flex_basis_mobile` and must only be emitted inside the
+    matching media query.
+    """
+    if device:
+        suffix = "_%s" % device
+        out: List[str] = []
+        basis = s.get("_flex_basis" + suffix)
+        if basis:
+            out.append("flex-basis:%s" % slider_css(basis))
+        if s.get("_flex_grow" + suffix) is not None:
+            out.append("flex-grow:%s" % s["_flex_grow" + suffix])
+        if s.get("_flex_shrink" + suffix) is not None:
+            out.append("flex-shrink:%s" % s["_flex_shrink" + suffix])
+        if s.get("_element_width" + suffix) == "100%":
+            out.append("width:100%")
+        return out
+
     css: List[str] = []
     if s.get("_flex_size") == "grow":
         css.append("flex-grow:1")
@@ -248,7 +269,11 @@ def widget_css(s: Dict[str, Any]) -> Tuple[str, Dict[str, str]]:
     t = typo_css(s)
     if t[""]:
         base.append(t[""])
-    return " ; ".join(base), {"tablet": t["tablet"], "mobile": t["mobile"]}
+    dev = {}
+    for d in ("tablet", "mobile"):
+        parts = [p for p in (t[d], " ; ".join(flex_item_css(s, d))) if p]
+        dev[d] = " ; ".join(parts)
+    return " ; ".join(base), dev
 
 
 def animation(s: Dict[str, Any], el_type: str) -> str:
@@ -690,8 +715,9 @@ def render_node(node: Dict[str, Any], depth: int = 0) -> str:
     if tag in ("section", "header", "footer", "main", "article", "aside"):
         pass
     css = container_css(s) + container_base_css(s) + flex_item_css(s)
-    dev = {"tablet": " ; ".join(container_css(s, "tablet")),
-           "mobile": " ; ".join(container_css(s, "mobile"))}
+    dev = {}
+    for d in ("tablet", "mobile"):
+        dev[d] = " ; ".join(container_css(s, d) + flex_item_css(s, d))
     kids = "".join(render_node(c, depth + 1) for c in node.get("elements") or [])
     inner_html = kids
     link = s.get("link") or {}
