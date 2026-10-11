@@ -4,6 +4,10 @@ Project skill: **`skills/elementor-native-kit/SKILL.md`** (read it before touchi
 `templates/` or `tools/aurora/`). Deep Elementor knowledge lives in that skill's
 `references/` — load only the file you need.
 
+Phase evidence for structure and agent legibility: `docs/p3/IA.md` (page-by-page IA, CTA ladder,
+section verdicts), `docs/08-agent-legibility.md` (llms.txt, structured data, landmarks, robots,
+WebMCP), with generated companions `docs/p3/ia-map.md` and `docs/p3/landmark-audit.md`.
+
 ## Stack (fixed — not a preference)
 
 WordPress + Elementor Free/Pro only. The deliverable is Elementor template JSON that a
@@ -17,6 +21,8 @@ python3 tools/build.py --check        # validate only, write nothing
 python3 tools/verify.py               # THE GATE — must exit 0 before any commit
 python3 tools/verify.py --report      # regenerate docs/_generated/facts.md, then verify
 python3 tools/bidi_check.py           # bidi / Unicode safety (Persian strings)
+python3 tools/ia_map.py               # IA evidence: sections per document + dead CTA targets
+python3 tools/landmark_audit.py       # landmark + heading audit over every container
 python3 tools/media.py                # media/_raw/*.png -> media/*.jpg (1500x1000, q90)
 python3 tools/preview.py [--serve]    # static review render -> preview/*.html
 python3 skills/elementor-native-kit/scripts/audit_control_names.py   # control-name evidence

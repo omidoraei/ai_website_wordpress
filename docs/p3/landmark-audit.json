@@ -1,0 +1,1195 @@
+{
+ "generated_by": "tools/landmark_audit.py",
+ "floors": {
+  "documents": 30,
+  "containers": 500
+ },
+ "stats": {
+  "documents": 39,
+  "containers": 962,
+  "tagged": 95,
+  "tag_histogram": {
+   "section": 90,
+   "footer": 2,
+   "header": 2,
+   "main": 1
+  },
+  "documents_with_gaps": 12
+ },
+ "documents": [
+  {
+   "path": "blocks/capability-cards.json",
+   "type": "section",
+   "containers": 11,
+   "tagged": 1,
+   "tags": {
+    "section": 1
+   },
+   "headings": {
+    "count": 5,
+    "levels": {
+     "h2": 1,
+     "h3": 3,
+     "p": 1
+    },
+    "h1": [],
+    "widget_types": [
+     "heading"
+    ],
+    "widgets": [
+     "button",
+     "divider",
+     "heading",
+     "icon",
+     "icon-list",
+     "text-editor"
+    ]
+   },
+   "gaps": []
+  },
+  {
+   "path": "blocks/case-studies.json",
+   "type": "section",
+   "containers": 15,
+   "tagged": 1,
+   "tags": {
+    "section": 1
+   },
+   "headings": {
+    "count": 11,
+    "levels": {
+     "h2": 1,
+     "h3": 3,
+     "p": 7
+    },
+    "h1": [],
+    "widget_types": [
+     "heading"
+    ],
+    "widgets": [
+     "button",
+     "divider",
+     "heading",
+     "image",
+     "text-editor"
+    ]
+   },
+   "gaps": []
+  },
+  {
+   "path": "blocks/contact-section.json",
+   "type": "section",
+   "containers": 17,
+   "tagged": 1,
+   "tags": {
+    "section": 1
+   },
+   "headings": {
+    "count": 14,
+    "levels": {
+     "h2": 2,
+     "p": 12
+    },
+    "h1": [],
+    "widget_types": [
+     "heading"
+    ],
+    "widgets": [
+     "divider",
+     "form",
+     "heading",
+     "icon",
+     "social-icons",
+     "spacer",
+     "text-editor"
+    ]
+   },
+   "gaps": []
+  },
+  {
+   "path": "blocks/content-two-column.json",
+   "type": "section",
+   "containers": 6,
+   "tagged": 1,
+   "tags": {
+    "section": 1
+   },
+   "headings": {
+    "count": 2,
+    "levels": {
+     "h2": 1,
+     "p": 1
+    },
+    "h1": [],
+    "widget_types": [
+     "heading"
+    ],
+    "widgets": [
+     "button",
+     "divider",
+     "heading",
+     "icon-list",
+     "image",
+     "text-editor"
+    ]
+   },
+   "gaps": []
+  },
+  {
+   "path": "blocks/cta-band.json",
+   "type": "section",
+   "containers": 8,
+   "tagged": 1,
+   "tags": {
+    "section": 1
+   },
+   "headings": {
+    "count": 3,
+    "levels": {
+     "h2": 1,
+     "p": 2
+    },
+    "h1": [],
+    "widget_types": [
+     "heading"
+    ],
+    "widgets": [
+     "button",
+     "divider",
+     "heading",
+     "icon",
+     "text-editor"
+    ]
+   },
+   "gaps": []
+  },
+  {
+   "path": "blocks/fa-cta-band.json",
+   "type": "section",
+   "containers": 8,
+   "tagged": 1,
+   "tags": {
+    "section": 1
+   },
+   "headings": {
+    "count": 3,
+    "levels": {
+     "h2": 1,
+     "p": 2
+    },
+    "h1": [],
+    "widget_types": [
+     "heading"
+    ],
+    "widgets": [
+     "button",
+     "divider",
+     "heading",
+     "icon",
+     "text-editor"
+    ]
+   },
+   "gaps": []
+  },
+  {
+   "path": "blocks/fa-faq-accordion.json",
+   "type": "section",
+   "containers": 4,
+   "tagged": 1,
+   "tags": {
+    "section": 1
+   },
+   "headings": {
+    "count": 2,
+    "levels": {
+     "h2": 1,
+     "p": 1
+    },
+    "h1": [],
+    "widget_types": [
+     "heading"
+    ],
+    "widgets": [
+     "accordion",
+     "divider",
+     "heading",
+     "text-editor"
+    ]
+   },
+   "gaps": []
+  },
+  {
+   "path": "blocks/fa-feature-grid.json",
+   "type": "section",
+   "containers": 17,
+   "tagged": 1,
+   "tags": {
+    "section": 1
+   },
+   "headings": {
+    "count": 8,
+    "levels": {
+     "h2": 1,
+     "h3": 6,
+     "p": 1
+    },
+    "h1": [],
+    "widget_types": [
+     "heading"
+    ],
+    "widgets": [
+     "divider",
+     "heading",
+     "icon",
+     "text-editor"
+    ]
+   },
+   "gaps": []
+  },
+  {
+   "path": "blocks/fa-hero-split.json",
+   "type": "section",
+   "containers": 13,
+   "tagged": 1,
+   "tags": {
+    "section": 1
+   },
+   "headings": {
+    "count": 7,
+    "levels": {
+     "h1": 1,
+     "p": 6
+    },
+    "h1": [
+     "عاملهای هوش مصنوعی که واقعاً به محصول میرسند. (heading)"
+    ],
+    "widget_types": [
+     "heading"
+    ],
+    "widgets": [
+     "button",
+     "heading",
+     "icon",
+     "image",
+     "text-editor"
+    ]
+   },
+   "gaps": []
+  },
+  {
+   "path": "blocks/fa-pricing-table.json",
+   "type": "section",
+   "containers": 15,
+   "tagged": 1,
+   "tags": {
+    "section": 1
+   },
+   "headings": {
+    "count": 9,
+    "levels": {
+     "h2": 1,
+     "p": 8
+    },
+    "h1": [],
+    "widget_types": [
+     "heading"
+    ],
+    "widgets": [
+     "button",
+     "divider",
+     "heading",
+     "icon-list",
+     "text-editor"
+    ]
+   },
+   "gaps": []
+  },
+  {
+   "path": "blocks/faq-accordion.json",
+   "type": "section",
+   "containers": 4,
+   "tagged": 1,
+   "tags": {
+    "section": 1
+   },
+   "headings": {
+    "count": 2,
+    "levels": {
+     "h2": 1,
+     "p": 1
+    },
+    "h1": [],
+    "widget_types": [
+     "heading"
+    ],
+    "widgets": [
+     "accordion",
+     "divider",
+     "heading",
+     "text-editor"
+    ]
+   },
+   "gaps": []
+  },
+  {
+   "path": "blocks/feature-grid.json",
+   "type": "section",
+   "containers": 17,
+   "tagged": 1,
+   "tags": {
+    "section": 1
+   },
+   "headings": {
+    "count": 8,
+    "levels": {
+     "h2": 1,
+     "h3": 6,
+     "p": 1
+    },
+    "h1": [],
+    "widget_types": [
+     "heading"
+    ],
+    "widgets": [
+     "divider",
+     "heading",
+     "icon",
+     "text-editor"
+    ]
+   },
+   "gaps": []
+  },
+  {
+   "path": "blocks/feature-zigzag.json",
+   "type": "section",
+   "containers": 20,
+   "tagged": 1,
+   "tags": {
+    "section": 1
+   },
+   "headings": {
+    "count": 12,
+    "levels": {
+     "h2": 3,
+     "p": 9
+    },
+    "h1": [],
+    "widget_types": [
+     "heading"
+    ],
+    "widgets": [
+     "button",
+     "divider",
+     "heading",
+     "icon",
+     "image",
+     "text-editor"
+    ]
+   },
+   "gaps": []
+  },
+  {
+   "path": "blocks/hero-split.json",
+   "type": "section",
+   "containers": 13,
+   "tagged": 1,
+   "tags": {
+    "section": 1
+   },
+   "headings": {
+    "count": 7,
+    "levels": {
+     "h1": 1,
+     "p": 6
+    },
+    "h1": [
+     "AI agents that actually ship. (heading)"
+    ],
+    "widget_types": [
+     "heading"
+    ],
+    "widgets": [
+     "button",
+     "heading",
+     "icon",
+     "image",
+     "text-editor"
+    ]
+   },
+   "gaps": []
+  },
+  {
+   "path": "blocks/logo-cloud.json",
+   "type": "section",
+   "containers": 3,
+   "tagged": 1,
+   "tags": {
+    "section": 1
+   },
+   "headings": {
+    "count": 7,
+    "levels": {
+     "p": 7
+    },
+    "h1": [],
+    "widget_types": [
+     "heading"
+    ],
+    "widgets": [
+     "heading"
+    ]
+   },
+   "gaps": []
+  },
+  {
+   "path": "blocks/newsletter-band.json",
+   "type": "section",
+   "containers": 6,
+   "tagged": 1,
+   "tags": {
+    "section": 1
+   },
+   "headings": {
+    "count": 3,
+    "levels": {
+     "h2": 1,
+     "p": 2
+    },
+    "h1": [],
+    "widget_types": [
+     "heading"
+    ],
+    "widgets": [
+     "divider",
+     "form",
+     "heading",
+     "text-editor"
+    ]
+   },
+   "gaps": []
+  },
+  {
+   "path": "blocks/page-hero.json",
+   "type": "section",
+   "containers": 4,
+   "tagged": 1,
+   "tags": {
+    "section": 1
+   },
+   "headings": {
+    "count": 0,
+    "levels": {},
+    "h1": [],
+    "widget_types": [],
+    "widgets": [
+     "breadcrumbs"
+    ]
+   },
+   "gaps": []
+  },
+  {
+   "path": "blocks/pricing-table.json",
+   "type": "section",
+   "containers": 15,
+   "tagged": 1,
+   "tags": {
+    "section": 1
+   },
+   "headings": {
+    "count": 9,
+    "levels": {
+     "h2": 1,
+     "p": 8
+    },
+    "h1": [],
+    "widget_types": [
+     "heading"
+    ],
+    "widgets": [
+     "button",
+     "divider",
+     "heading",
+     "icon-list",
+     "text-editor"
+    ]
+   },
+   "gaps": []
+  },
+  {
+   "path": "blocks/process-steps.json",
+   "type": "section",
+   "containers": 13,
+   "tagged": 1,
+   "tags": {
+    "section": 1
+   },
+   "headings": {
+    "count": 10,
+    "levels": {
+     "h2": 1,
+     "h3": 4,
+     "p": 5
+    },
+    "h1": [],
+    "widget_types": [
+     "heading"
+    ],
+    "widgets": [
+     "divider",
+     "heading",
+     "text-editor"
+    ]
+   },
+   "gaps": []
+  },
+  {
+   "path": "blocks/stats-band.json",
+   "type": "section",
+   "containers": 14,
+   "tagged": 1,
+   "tags": {
+    "section": 1
+   },
+   "headings": {
+    "count": 2,
+    "levels": {
+     "h2": 1,
+     "p": 1
+    },
+    "h1": [],
+    "widget_types": [
+     "heading"
+    ],
+    "widgets": [
+     "counter",
+     "divider",
+     "heading"
+    ]
+   },
+   "gaps": []
+  },
+  {
+   "path": "blocks/team-grid.json",
+   "type": "section",
+   "containers": 17,
+   "tagged": 1,
+   "tags": {
+    "section": 1
+   },
+   "headings": {
+    "count": 14,
+    "levels": {
+     "h2": 1,
+     "h3": 4,
+     "p": 9
+    },
+    "h1": [],
+    "widget_types": [
+     "heading"
+    ],
+    "widgets": [
+     "divider",
+     "heading",
+     "icon",
+     "text-editor"
+    ]
+   },
+   "gaps": []
+  },
+  {
+   "path": "blocks/testimonials.json",
+   "type": "section",
+   "containers": 11,
+   "tagged": 1,
+   "tags": {
+    "section": 1
+   },
+   "headings": {
+    "count": 5,
+    "levels": {
+     "h2": 1,
+     "p": 4
+    },
+    "h1": [],
+    "widget_types": [
+     "heading"
+    ],
+    "widgets": [
+     "divider",
+     "heading",
+     "icon",
+     "text-editor"
+    ]
+   },
+   "gaps": []
+  },
+  {
+   "path": "footers/aurora-footer-en.json",
+   "type": "footer",
+   "containers": 15,
+   "tagged": 1,
+   "tags": {
+    "footer": 1
+   },
+   "headings": {
+    "count": 11,
+    "levels": {
+     "h3": 3,
+     "p": 8
+    },
+    "h1": [],
+    "widget_types": [
+     "heading"
+    ],
+    "widgets": [
+     "divider",
+     "heading",
+     "icon",
+     "icon-list",
+     "social-icons",
+     "text-editor"
+    ]
+   },
+   "gaps": []
+  },
+  {
+   "path": "footers/aurora-footer-fa.json",
+   "type": "footer",
+   "containers": 15,
+   "tagged": 1,
+   "tags": {
+    "footer": 1
+   },
+   "headings": {
+    "count": 11,
+    "levels": {
+     "h3": 3,
+     "p": 8
+    },
+    "h1": [],
+    "widget_types": [
+     "heading"
+    ],
+    "widgets": [
+     "divider",
+     "heading",
+     "icon",
+     "icon-list",
+     "social-icons",
+     "text-editor"
+    ]
+   },
+   "gaps": []
+  },
+  {
+   "path": "headers/aurora-header-en.json",
+   "type": "header",
+   "containers": 6,
+   "tagged": 1,
+   "tags": {
+    "header": 1
+   },
+   "headings": {
+    "count": 2,
+    "levels": {
+     "p": 2
+    },
+    "h1": [],
+    "widget_types": [
+     "heading"
+    ],
+    "widgets": [
+     "button",
+     "heading",
+     "icon",
+     "nav-menu",
+     "theme-site-logo"
+    ]
+   },
+   "gaps": []
+  },
+  {
+   "path": "headers/aurora-header-fa.json",
+   "type": "header",
+   "containers": 6,
+   "tagged": 1,
+   "tags": {
+    "header": 1
+   },
+   "headings": {
+    "count": 2,
+    "levels": {
+     "p": 2
+    },
+    "h1": [],
+    "widget_types": [
+     "heading"
+    ],
+    "widgets": [
+     "button",
+     "heading",
+     "icon",
+     "nav-menu",
+     "theme-site-logo"
+    ]
+   },
+   "gaps": []
+  },
+  {
+   "path": "loop/aurora-archive.json",
+   "type": "archive",
+   "containers": 18,
+   "tagged": 4,
+   "tags": {
+    "section": 4
+   },
+   "headings": {
+    "count": 7,
+    "levels": {
+     "h1": 1,
+     "h2": 2,
+     "p": 4
+    },
+    "h1": [
+     " (theme-archive-title)"
+    ],
+    "widget_types": [
+     "heading",
+     "theme-archive-title"
+    ],
+    "widgets": [
+     "archive-posts",
+     "button",
+     "divider",
+     "form",
+     "heading",
+     "icon",
+     "text-editor",
+     "theme-archive-title"
+    ]
+   },
+   "gaps": [
+    "no `main` landmark"
+   ]
+  },
+  {
+   "path": "loop/aurora-search-results.json",
+   "type": "search-results",
+   "containers": 12,
+   "tagged": 3,
+   "tags": {
+    "section": 3
+   },
+   "headings": {
+    "count": 4,
+    "levels": {
+     "h1": 1,
+     "h2": 1,
+     "p": 2
+    },
+    "h1": [
+     "Search results (heading)"
+    ],
+    "widget_types": [
+     "heading"
+    ],
+    "widgets": [
+     "archive-posts",
+     "button",
+     "divider",
+     "heading",
+     "icon",
+     "search-form",
+     "text-editor"
+    ]
+   },
+   "gaps": [
+    "no `main` landmark"
+   ]
+  },
+  {
+   "path": "loop/aurora-single-post.json",
+   "type": "single",
+   "containers": 10,
+   "tagged": 2,
+   "tags": {
+    "main": 1,
+    "section": 1
+   },
+   "headings": {
+    "count": 3,
+    "levels": {
+     "h2": 1,
+     "p": 2
+    },
+    "h1": [],
+    "widget_types": [
+     "heading"
+    ],
+    "widgets": [
+     "author-box",
+     "breadcrumbs",
+     "button",
+     "divider",
+     "heading",
+     "icon",
+     "post-comments",
+     "post-info",
+     "post-navigation",
+     "text-editor",
+     "theme-post-content",
+     "theme-post-featured-image"
+    ]
+   },
+   "gaps": [
+    "no post-title widget - the post renders without its visible title and without an `h1`",
+    "no `h1` heading"
+   ]
+  },
+  {
+   "path": "pages/aurora-404.json",
+   "type": "page",
+   "containers": 7,
+   "tagged": 1,
+   "tags": {
+    "section": 1
+   },
+   "headings": {
+    "count": 2,
+    "levels": {
+     "h1": 1,
+     "p": 1
+    },
+    "h1": [
+     "This page took an unplanned detour (heading)"
+    ],
+    "widget_types": [
+     "heading"
+    ],
+    "widgets": [
+     "button",
+     "divider",
+     "heading",
+     "icon",
+     "icon-list",
+     "text-editor"
+    ]
+   },
+   "gaps": [
+    "no `main` landmark"
+   ]
+  },
+  {
+   "path": "pages/aurora-about.json",
+   "type": "page",
+   "containers": 72,
+   "tagged": 7,
+   "tags": {
+    "section": 7
+   },
+   "headings": {
+    "count": 33,
+    "levels": {
+     "h2": 7,
+     "h3": 7,
+     "p": 19
+    },
+    "h1": [],
+    "widget_types": [
+     "heading"
+    ],
+    "widgets": [
+     "breadcrumbs",
+     "button",
+     "counter",
+     "divider",
+     "heading",
+     "icon",
+     "icon-list",
+     "image",
+     "text-editor"
+    ]
+   },
+   "gaps": [
+    "no `main` landmark",
+    "no `h1` heading"
+   ]
+  },
+  {
+   "path": "pages/aurora-blog.json",
+   "type": "page",
+   "containers": 15,
+   "tagged": 3,
+   "tags": {
+    "section": 3
+   },
+   "headings": {
+    "count": 7,
+    "levels": {
+     "h2": 3,
+     "p": 4
+    },
+    "h1": [],
+    "widget_types": [
+     "heading"
+    ],
+    "widgets": [
+     "breadcrumbs",
+     "divider",
+     "form",
+     "heading",
+     "posts",
+     "text-editor"
+    ]
+   },
+   "gaps": [
+    "no `main` landmark",
+    "no `h1` heading"
+   ]
+  },
+  {
+   "path": "pages/aurora-contact.json",
+   "type": "page",
+   "containers": 34,
+   "tagged": 4,
+   "tags": {
+    "section": 4
+   },
+   "headings": {
+    "count": 21,
+    "levels": {
+     "h2": 5,
+     "p": 16
+    },
+    "h1": [],
+    "widget_types": [
+     "heading"
+    ],
+    "widgets": [
+     "accordion",
+     "breadcrumbs",
+     "button",
+     "divider",
+     "form",
+     "heading",
+     "icon",
+     "social-icons",
+     "spacer",
+     "text-editor"
+    ]
+   },
+   "gaps": [
+    "no `main` landmark",
+    "no `h1` heading"
+   ]
+  },
+  {
+   "path": "pages/aurora-home-en.json",
+   "type": "page",
+   "containers": 150,
+   "tagged": 13,
+   "tags": {
+    "section": 13
+   },
+   "headings": {
+    "count": 84,
+    "levels": {
+     "h1": 1,
+     "h2": 13,
+     "h3": 16,
+     "p": 54
+    },
+    "h1": [
+     "AI agents that actually ship. (heading)"
+    ],
+    "widget_types": [
+     "heading"
+    ],
+    "widgets": [
+     "accordion",
+     "button",
+     "counter",
+     "divider",
+     "form",
+     "heading",
+     "icon",
+     "icon-list",
+     "image",
+     "text-editor"
+    ]
+   },
+   "gaps": [
+    "no `main` landmark"
+   ]
+  },
+  {
+   "path": "pages/aurora-home-fa.json",
+   "type": "page",
+   "containers": 150,
+   "tagged": 13,
+   "tags": {
+    "section": 13
+   },
+   "headings": {
+    "count": 84,
+    "levels": {
+     "h1": 1,
+     "h2": 13,
+     "h3": 16,
+     "p": 54
+    },
+    "h1": [
+     "عاملهای هوش مصنوعی که واقعاً به محصول میرسند. (heading)"
+    ],
+    "widget_types": [
+     "heading"
+    ],
+    "widgets": [
+     "accordion",
+     "button",
+     "counter",
+     "divider",
+     "form",
+     "heading",
+     "icon",
+     "icon-list",
+     "image",
+     "text-editor"
+    ]
+   },
+   "gaps": [
+    "no `main` landmark"
+   ]
+  },
+  {
+   "path": "pages/aurora-portfolio.json",
+   "type": "page",
+   "containers": 53,
+   "tagged": 5,
+   "tags": {
+    "section": 5
+   },
+   "headings": {
+    "count": 35,
+    "levels": {
+     "h2": 5,
+     "h3": 6,
+     "p": 24
+    },
+    "h1": [],
+    "widget_types": [
+     "heading"
+    ],
+    "widgets": [
+     "breadcrumbs",
+     "button",
+     "divider",
+     "heading",
+     "icon",
+     "image",
+     "text-editor"
+    ]
+   },
+   "gaps": [
+    "no `main` landmark",
+    "no `h1` heading"
+   ]
+  },
+  {
+   "path": "pages/aurora-pricing.json",
+   "type": "page",
+   "containers": 83,
+   "tagged": 6,
+   "tags": {
+    "section": 6
+   },
+   "headings": {
+    "count": 51,
+    "levels": {
+     "h2": 6,
+     "p": 45
+    },
+    "h1": [],
+    "widget_types": [
+     "heading"
+    ],
+    "widgets": [
+     "accordion",
+     "breadcrumbs",
+     "button",
+     "divider",
+     "heading",
+     "icon",
+     "icon-list",
+     "text-editor"
+    ]
+   },
+   "gaps": [
+    "no `main` landmark",
+    "no `h1` heading"
+   ]
+  },
+  {
+   "path": "pages/aurora-services.json",
+   "type": "page",
+   "containers": 60,
+   "tagged": 7,
+   "tags": {
+    "section": 7
+   },
+   "headings": {
+    "count": 32,
+    "levels": {
+     "h2": 7,
+     "h3": 13,
+     "p": 12
+    },
+    "h1": [],
+    "widget_types": [
+     "heading"
+    ],
+    "widgets": [
+     "accordion",
+     "breadcrumbs",
+     "button",
+     "divider",
+     "heading",
+     "icon",
+     "icon-list",
+     "text-editor"
+    ]
+   },
+   "gaps": [
+    "no `main` landmark",
+    "no `h1` heading"
+   ]
+  },
+  {
+   "path": "popups/aurora-lead-magnet.json",
+   "type": "popup",
+   "containers": 5,
+   "tagged": 1,
+   "tags": {
+    "section": 1
+   },
+   "headings": {
+    "count": 2,
+    "levels": {
+     "h2": 1,
+     "p": 1
+    },
+    "h1": [],
+    "widget_types": [
+     "heading"
+    ],
+    "widgets": [
+     "form",
+     "heading",
+     "icon",
+     "text-editor"
+    ]
+   },
+   "gaps": []
+  }
+ ]
+}
