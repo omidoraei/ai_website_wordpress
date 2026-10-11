@@ -166,8 +166,10 @@ jobs:
           test "$got" -ge 10
 
       # ---- 6. artifacts ---------------------------------------------------------
+      # upload-artifact@v5 still targets Node 20 (the run annotation names it), so it
+      # would keep the deprecation alive; v7 is the current stable line on Node 24.
       - name: Upload kit artifacts
-        uses: actions/upload-artifact@v5
+        uses: actions/upload-artifact@v7
         with:
           name: aurora-ai-kit
           path: |

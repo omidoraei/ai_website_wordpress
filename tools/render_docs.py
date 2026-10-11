@@ -155,14 +155,20 @@ claimed and retracted is `docs/CLAIMS.md`.
 
 ```
 $ python3 tools/build.py             # validation: OK
-$ python3 tools/verify.py --report   # RESULT: clean, and writes docs/_generated/facts.{md,json}
+$ python3 tools/verify.py --report   # RESULT: clean, and writes docs/_generated/facts.md and facts.json
 $ python3 tools/render_docs.py --check && python3 tools/bidi_check.py && python3 tools/banlist_check.py
 $ sha256sum dist/*.zip               # byte-determinism: identical after a rebuild
 ```
 
+Note on digests: the numbers GitHub reports for the *uploaded artifact* are not a
+determinism proof - they differ between runs of the same commit (observed:
+`4cc70c6f...`, `37b371f1...`, `7ea008fb...`). The stable, checkable number is
+`sha256sum dist/*.zip`, which does not move across rebuilds. Full comparison:
+`HANDOFF-P0.5.md`.
+
 Control names are verified against the Elementor source rather than guessed:
 `includes/elements/container.php`, `includes/widgets/*.php`,
-`includes/controls/groups/{flex-container,flex-item,typography,background}.php`,
+`includes/controls/groups/{{flex-container,flex-item,typography,background}}.php`,
 `includes/base/element-base.php` (responsive visibility) and `core/kits/documents/tabs/*.php`
 (every Kit key). The source subset is vendored in `vendor/elementor/` with sha256 recorded in
 `skills/elementor-native-kit/SKILL.md`, so the gate does not depend on the network.
