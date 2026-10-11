@@ -357,7 +357,7 @@ def compute_facts(kit: Dict[str, Any]) -> Dict[str, Any]:
         "typography": len(defined_typography(kit)),
         "image_widgets": widget_mix.get("image", 0),
         "images": len(collect_image_urls()),
-        "widget_mix": dict(sorted(widget_mix.items(), key=lambda kv: -kv[1])),
+        "widget_mix": dict(sorted(widget_mix.items(), key=lambda kv: (-kv[1], kv[0]))),
         "fa_documents": sum(1 for _ in ()),
     }
 
