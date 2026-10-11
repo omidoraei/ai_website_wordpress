@@ -1,5 +1,12 @@
 # Brief attestation — human paste (class-A bootstrap)
 
+**ATTESTATION_INPUT_MISSING** (P1.8, 2026-10-12). The P1.8 phase searched the phase prompt and the
+session for attestation text and found **none**. Nothing was written, no row was upgraded, and no
+answer was inferred: the ten rows below stay **CLASS-B-PENDING**. To close this item the human must
+paste the B1-B5 / C1-C5 answers below, in their own words (one line per row is enough). The agent
+then commits this file, records the commit hash and the file sha256 in `docs/CLAIMS.md`, and
+upgrades only the rows whose text is present to **CLASS-A**. Blank rows stay pending.
+
 **Status: EMPTY — awaiting the human. Highest-priority input to gate 2.**
 
 This file is the one step that converts the ten chat-channel answers into **class A**
