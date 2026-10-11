@@ -12,6 +12,7 @@ on:
 
 permissions:
   contents: read
+  pull-requests: read   # the retraction guard reads PR #1's body and title
 
 env:
   ELEMENTOR_TAG: v3.35.9
