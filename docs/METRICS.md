@@ -108,6 +108,6 @@ command where one exists.
 | `brief_assumptions` | ASSUMPTION rows carrying a risk rating and a reversal trigger | 11 | `grep -cE '^\| A[0-9]+ \|' docs/BRIEF.md` |
 | `decision_rows_total` | rows in the decision ledger, both prefixes | 33 | `grep -cE '^\| (D-[0-9]+|P-BRIEF-[0-9]+) \|' docs/DECISIONS.md` |
 | `p1_disposition_rows` | artifacts dispositioned, by verdict | 16 (VOID 4 · RE-DERIVE 1 · CONDITIONAL 3 · SURVIVES 8) | `docs/P1-DISPOSITION.md` |
-| `notion_ledger_rows_written` | decision rows actually written to the Notion ledger page | 5 (P-BRIEF-000…005) | Notion page `3f68dd8c-323d-8119-8787-fe3ad7064d66`; later appends failed — see `HANDOFF-PBRIEF.md` |
+| `notion_ledger_rows_written` | decision rows written to the Notion ledger page | 21 (P-BRIEF-000…020) | Notion page `3f68dd8c-323d-8119-8787-fe3ad7064d66`; three early appends failed on a parameter-shape error, then all rows were written — see `HANDOFF-PBRIEF.md` |
 | `calendar_gate_events` | human-gate slots created | 5 | Google Calendar event ids in `HANDOFF-PBRIEF.md` |
 | `gmail_messages_sent` | messages sent for this phase (batch 1 only, per the phase directive) | 1 | Gmail id `1a12bdee5a2ea836` |

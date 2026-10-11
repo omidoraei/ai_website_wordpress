@@ -14,7 +14,8 @@ below (`git show --stat bd46eae`).
 Commit `bd46eae` on `arena/1e298a1b-ai-website-wordpress`. CI: push run **38158655668**
 success (22/22 steps), PR run **38158658329** success. The single failure-level annotation on the
 gate is the known advisory control-name audit (`continue-on-error: true`), unchanged from P0.5.
-The **Retraction guard passed** with the new documents in scope.
+The **Retraction guard passed** with the new documents in scope. The handoff commit `37675da` also
+passed: push run **38158757802**, PR run **38158760578** (both success).
 
 ## Deliverables (all six, whitelist only)
 
@@ -68,20 +69,23 @@ Full table: `docs/BRIEF.md` §12.
   `python3 tools/verify.py --report` → exit 0, "36 claims checked";
   `python3 tools/render_docs.py --check` → 36 slots across 11 files agree;
   `python3 tools/bidi_check.py` → exit 0, 0 findings.
-- **Notion decision count** — page "Aurora AI — Decision Ledger (P-BRIEF)" created
-  (`app.notion.com/p/Aurora-AI-Decision-Ledger-P-BRIEF-3f68dd8c323d81198787fe3ad7064d66`) with
-  **5 decision rows** (P-BRIEF-000…005). Subsequent appends failed three times at the connector
-  level ("Something went wrong. Please try again." and one tool-availability error), so rows
-  006–020 exist only in `docs/DECISIONS.md`, which is the authoritative copy. This is an honest
-  deviation from "log every decision row as it is made" — recorded here, not hidden.
+- **Notion decision count** — page "Aurora AI — Decision Ledger (P-BRIEF)"
+  (`app.notion.com/p/Aurora-AI-Decision-Ledger-P-BRIEF-3f68dd8c323d81198787fe3ad7064d66`) now holds
+  **21 decision rows** (P-BRIEF-000…020) plus two batch headings. Three early append attempts
+  failed: one malformed block, then two calls using the wrong parameter name (`parent_id`; the
+  connector requires `block_id`). After the shape was corrected all rows were written. The
+  committed copy of the ledger is `docs/DECISIONS.md` (33 rows including the P0/P0.5/P1
+  retroactives).
 - **Calendar** — five gate events created on the human's primary calendar (16:00–16:45 UTC):
   gate 1 `asijgn5u9tp5kt9g4am2u90388` (10-14) · gate 2 `30t2ijlajhvinad50t4qa6u0vs` (10-16) ·
   gate 3 `h467fetc0dk14b8jhl9692f2o4` (10-19) · gate 4 `cmsots7ajq5h4qlmrah5gnu1bg` (10-21) ·
   gate 5 `btfn82a79noe57ikgus99ge8ao` (10-23).
 - **Gmail** — exactly one message, batch-1 questions only: id `1a12bdee5a2ea836`.
-- **Turn counter at stop** — 5 action batches of the 12 allowed: (1) connectors + gates + email +
-  batch 1; (2) batch 2 + Notion retry; (3) evidence sweep + four documents; (4) ledger extensions +
-  commit `bd46eae` + CI verification; (5) this handoff.
+- **Turn counter at stop** — 6 action batches of the 12 allowed: (1) connectors + gates + email +
+  batch 1; (2) batch 2 + first Notion append attempts; (3) evidence sweep + four documents;
+  (4) ledger extensions + commit `bd46eae` + CI verification; (5) handoff + corrected Notion
+  writes + CI verification of `37675da`; (6) finalisation edits (this row, the Notion count in
+  `docs/METRICS.md`) + final commit.
 - **What I did NOT ask, judged non-blocking** — hosting/domain, SEO and analytics providers,
   newsletter tooling, WooCommerce/checkout, support SLA and marketplace pricing, and Persian copy
   tone: none of them change the brief's decisions (product type, language weight, CTA, data policy,
@@ -98,8 +102,8 @@ Full table: `docs/BRIEF.md` §12.
 
 ## Residue
 
-- Notion append failures (above) — retried once more before stopping; if still failing, the ledger
-  lives in `docs/DECISIONS.md` and the Notion page must be reconciled later.
+- **(resolved)** Notion ledger reconciled: 21 rows written (P-BRIEF-000…020) after the connector
+  parameter shape was corrected.
 - Batch-3 skip → 11 assumptions; gate 1 is the only place they can be closed.
 - `banlist_check.py` cosmetic `>80%%` print bug (carried from P0.5).
 - Pro control names remain UNVERIFIED until the staging install exists (C-014).
