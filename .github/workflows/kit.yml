@@ -252,9 +252,38 @@ jobs:
             exit 1
           fi
 
-      - name: Control-name audit (advisory until HANDOFF-P0 residue is closed)
-        continue-on-error: true
-        run: python3 skills/elementor-native-kit/scripts/audit_control_names.py
+      # ---- 3c. advisory audit ---------------------------------------------------
+      # The audit exits 1 when it finds settings keys it cannot explain (228 today; the residue is
+      # recorded in docs/CLAIMS.md C-004). P1.7's run 38162832608 was green at run and step level
+      # yet carried one failure annotation, because GitHub still records the exit code of a
+      # tolerated (continue-on-error) step as "Process completed with exit code 1." Findings are
+      # now printed and summarised without any annotation; an actual crash (exit >= 2) still fails.
+      # Acceptance for a phase is therefore: conclusion success AND 0 error annotations AND 0
+      # failed steps - a green conclusion alone is not proof (docs/CLAIMS.md C-031).
+      - name: "Control-name audit (advisory, findings printed, no error annotation)"
+        run: |
+          set +e
+          python3 skills/elementor-native-kit/scripts/audit_control_names.py > /tmp/audit.txt 2>&1
+          code=$?
+          set -e
+          tail -40 /tmp/audit.txt
+          {
+            echo "### Control-name audit (advisory)"
+            echo
+            echo '```'
+            tail -20 /tmp/audit.txt
+            echo '```'
+            echo
+            echo "exit code: $code (1 = findings, recorded in docs/CLAIMS.md C-004; not a gate failure)"
+          } >> "$GITHUB_STEP_SUMMARY"
+          if [ "$code" -eq 0 ]; then
+            echo "advisory audit: clean (exit 0)"
+          elif [ "$code" -eq 1 ]; then
+            echo "advisory audit: findings (exit 1) - advisory by decision, no error annotation raised"
+          else
+            echo "::error::advisory audit crashed (exit $code) - a crash is not a findings exit"
+            exit "$code"
+          fi
 
       # The image host is a movable git tag; assert its target has not moved.
       - name: Kit-assets tag is at the recorded commit
