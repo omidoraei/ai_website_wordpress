@@ -62,7 +62,14 @@ def render_table(key: str, facts: dict) -> str:
         order = ("documents_total", "template_documents", "kit_documents", "pages", "blocks",
                  "headers", "footers", "loop_templates", "popups", "theme_builder_layouts",
                  "fa_documents", "containers", "widgets", "global_colours", "typography_styles",
-                 "font_families", "image_widgets", "images", "custom_html_widgets")
+                 "font_families", "image_widgets", "images", "custom_html_widgets",
+                 # P1.7 occurrence-level units (docs/METRICS-RECONCILIATION.md)
+                 "dead_anchor_occurrences", "dead_anchor_documents", "dead_anchor_documents_scanned",
+                 "main_containers", "main_page_level_documents",
+                 "h1_zero_documents_pages_loop", "h1_not_exactly_one_documents",
+                 "lang_mix_documents", "lang_mix_strings", "lang_mix_runs", "lang_mix_chars",
+                 "fa_documents_by_content", "alt_nonempty_count", "alt_distinct_count",
+                 "alt_quality_findings")
         rows = ["| counter | value | produced by |", "| --- | ---: | --- |"]
         for k in order:
             if k in facts:
@@ -85,6 +92,14 @@ def pr_body(facts: dict) -> str:
         families=fmt(f["font_families"]), images=fmt(f["images"]),
         image_widgets=fmt(f["image_widgets"]), fa_documents=fmt(f["fa_documents"]),
         html=fmt(f["custom_html_widgets"]),
+        lang_mix_documents=fmt(f["lang_mix_documents"]),
+        lang_mix_strings=fmt(f["lang_mix_strings"]), lang_mix_runs=fmt(f["lang_mix_runs"]),
+        dead_anchor_occurrences=fmt(f["dead_anchor_occurrences"]),
+        dead_anchor_documents=fmt(f["dead_anchor_documents"]),
+        dead_anchor_documents_scanned=fmt(f["dead_anchor_documents_scanned"]),
+        alt_distinct_count=fmt(f["alt_distinct_count"]),
+        alt_quality_findings=fmt(f["alt_quality_findings"]),
+        alt_proper_noun_only_distinct=fmt(f["alt_proper_noun_only_distinct"]),
     )
 
 
@@ -131,23 +146,26 @@ claimed and retracted is `docs/CLAIMS.md`.
 - **Responsive** — every grid stores its own tablet and mobile `flex-basis`; headings, padding,
   gaps, alignment and column direction carry per-breakpoint values.
 - **Persian / RTL** — {fa_documents} Farsi documents by naming convention, in a parallel set;
-  three further documents embed Persian copy (a P2 defect, `docs/METRICS.md`). The FA type system
+  {lang_mix_documents} further documents embed Persian copy ({lang_mix_strings} leaf strings,
+  {lang_mix_runs} script runs - a P8 defect, `docs/p1.7/lang-mix-audit.md`). The FA type system
   is decided to Vazirmatn (SIL OFL-1.1, decision B5), but the template bytes still carry Arad,
   whose licence is **UNVERIFIED**; the swap lands in P2 (`docs/p1/type-decision.md`).
 - **Animations** — Elementor Motion Effects only (`fadeInUp`, staggered delays). No external
   animation library.
 - **Performance** — no carousels, sliders or third-party libraries; {images} image files across
-  {image_widgets} image widgets, and every widget carries alt text (`settings.image.alt`; 13
-  distinct strings). Quality is the open item: three case-study images carry a client name only,
-  and one alt string inside the English set is Persian - the language-mix checker records it
-  (`tools/lang_mix_check.py`). FAQ answer
+  {image_widgets} image widgets, and all {image_widgets} carry a non-empty `settings.image.alt`;
+  {alt_distinct_count} distinct strings; descriptive quality audit tracked in
+  `docs/a11y-alt-policy.md` (`tools/alt_quality_check.py` measures {alt_quality_findings} flagged
+  instances, {alt_proper_noun_only_distinct} distinct, all client-name-only). FAQ answer
   blocks ship in the templates with the widget-level FAQ schema switched on; site-wide structured
   data is SEO-plugin configuration, and no Review markup is emitted because the testimonials are
   fictional (`docs/08-agent-legibility.md` §2).
 
 - **Link honesty** — the CTA audit found `#contact` resolving on 1 of the 16 documents that use
-  it, `#docs` on 0 of 12, two of the three header buttons pointing nowhere, and 18 of 39 template
-  documents carrying at least one dead in-page target (`docs/p3/ia-map.md`). Clearing those links
+  it, `#docs` on 0 of 12, two of the three header buttons pointing nowhere, and
+  {dead_anchor_occurrences} dead in-page targets across {dead_anchor_documents} of
+  {dead_anchor_documents_scanned} template documents (`docs/METRICS-RECONCILIATION.md` defines the
+  unit). Clearing those links
   is the first P2 item after data labelling.
 
 ## Deliverables
@@ -156,8 +174,9 @@ claimed and retracted is `docs/CLAIMS.md`.
 - `dist/aurora-ai-templates.zip` — **Templates → Saved Templates → Import Templates**
 - `dist/aurora-ai-kit.zip` — **Elementor → Tools → Import/Export Kit** (applies the design system)
 - `dist/site-settings.json` + `manifest.json`
-- `media/*.jpg` — demo imagery served from the immutable `kit-assets-v1` tag so Elementor can
-  download it into the Media Library on import
+- `media/*.jpg` — demo imagery served from the `kit-assets-v1` tag so Elementor can download it
+  into the Media Library on import. The tag is a **movable ref**: CI pins its target commit, and the
+  buyer-facing migration to commit-SHA URLs is prepared and tracked in `HANDOFF-P1.7.md` (item 4)
 - `preview/*.html` — static rendering of the design for review
 - `tools/` — token-driven generator, independent verifier, doc renderer, image pipeline
 - `vendor/elementor/` — the Elementor source subset the control index is generated from,

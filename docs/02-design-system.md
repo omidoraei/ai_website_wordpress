@@ -213,7 +213,11 @@ it, if you would rather copy from the source.
 
 ## Hosting the imagery yourself
 
-Every image widget stores a plain URL. The kit points at a permanent git tag:
+Every image widget stores a plain URL. The kit currently points at a git tag, and a tag is a
+movable ref - CI pins its target commit (`96149fa9233a4ba14f1c1aa539f406f3023843cd`), and the
+durable form carries that commit in the URL itself:
+`https://raw.githubusercontent.com/omidoraei/ai_website_wordpress/<commit>/media/<file>.jpg`.
+Moving the kit to that form is prepared and tracked in `HANDOFF-P1.7.md` (item 4); today:
 
 ```
 https://github.com/omidoraei/ai_website_wordpress/raw/kit-assets-v1/media/hero-dashboard.jpg

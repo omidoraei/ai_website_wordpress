@@ -24,6 +24,22 @@
 | `image_widgets` | 24 |
 | `images` | 7 |
 | `custom_html_widgets` | 0 |
+| `dead_anchor_occurrences` | 48 |
+| `dead_anchor_button_occurrences` | 48 |
+| `dead_anchor_documents` | 18 |
+| `main_containers` | 1 |
+| `main_page_level_documents` | 9 |
+| `h1_zero_documents` | 6 |
+| `h1_zero_documents_pages_loop` | 7 |
+| `h1_not_exactly_one_documents` | 6 |
+| `lang_mix_documents` | 3 |
+| `lang_mix_strings` | 27 |
+| `lang_mix_runs` | 63 |
+| `lang_mix_chars` | 318 |
+| `fa_documents_by_content` | 11 |
+| `alt_nonempty_count` | 24 |
+| `alt_distinct_count` | 13 |
+| `alt_quality_findings` | 9 |
 
 ## Widget mix
 

@@ -44,7 +44,15 @@ Every template references its imagery by absolute URL:
 https://github.com/omidoraei/ai_website_wordpress/raw/kit-assets-v1/media/hero-dashboard.jpg
 ```
 
-That is a **permanent git tag**, so the URLs never change and never expire. On import
+> **Buyer warning (P1.7, 2026-10-12).** That URL addresses a **git tag**, and a git tag can be
+> moved by whoever controls the repository. This repository pins the tag's current target commit in
+> CI, so a move is caught here - but a zip you already downloaded carries no such protection. The
+> durable form carries the commit hash in the URL itself:
+> `https://raw.githubusercontent.com/omidoraei/ai_website_wordpress/96149fa9233a4ba14f1c1aa539f406f3023843cd/media/hero-dashboard.jpg`.
+> That repoint is prepared and build-proven, but it rewrites every image setting in the templates,
+> which this phase is frozen against; it lands in P2 (see `HANDOFF-P1.7.md`, item 4). Until then, if
+> you need guaranteed-immutable URLs, host the seven JPEGs yourself as described at the end of this
+> page. On import
 **Elementor downloads each image into your Media Library** and rewrites the template to
 point at your own uploads folder — the same mechanism it uses for any Template Kit.
 After import the images belong to you, live on your domain, and are fully editable.

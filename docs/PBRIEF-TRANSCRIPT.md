@@ -1,6 +1,7 @@
 # P-BRIEF transcript proof (P1.5 finding, conclusion corrected in P1.6)
 
-**Verdict (corrected 2026-10-12, P1.6): the ten P-BRIEF selections are USER-ATTESTED (class B).**
+**Verdict (corrected 2026-10-12 in P1.6, re-graded in P1.7): the ten P-BRIEF selections are
+HUMAN-ASSERTED (chat) — CLASS-B-PENDING file attestation.**
 The human answered B1–B5 and C1–C5 in the Arena chat and confirms it. P1.5's conclusion that the
 answers were AGENT-INFERRED was a **false negative**: it looked for evidence in three places that
 could not contain the answers, because P-BRIEF itself instructed the human to answer in the chat.
@@ -31,18 +32,19 @@ answers there, the agent commits the file, and the commit hash is recorded in `d
 
 | id | recorded selection (option id) | evidence class | note |
 | --- | --- | --- | --- |
-| B1 | "A Template Kit to sell / distribute" (`sell_kit`), 2026-10-12 | **B — USER-ATTESTED** | answered in the chat; class A pending the paste |
-| B2 | "Genuinely bilingual, equal parity" (`equal_parity`), 2026-10-12 | **B — USER-ATTESTED** | same |
-| B3 | "Book a demo" (`book_demo`), 2026-10-12 | **B — USER-ATTESTED** | same |
-| B4 | "Mixed — I will list what is real" (`mixed`), 2026-10-12 | **B — USER-ATTESTED** (partial: the list never arrived) | same |
-| B5 | "Switch the FA type system to Vazirmatn now" (`switch_vazirmatn`), 2026-10-12 | **B — USER-ATTESTED** | supersedes the original instruction's Arad mention |
-| C1 | "Keep all nine + popup" (`full_nine`), 2026-10-12 | **B — USER-ATTESTED** | same |
-| C2 | "I'll paste 3–6 references + 2–3 anti-references" (`will_paste`), 2026-10-12 | **B — USER-ATTESTED** (partial: the links never arrived) | same |
-| C3 | "I have a logo, no photography" (`logo_only`), 2026-10-12 | **B — USER-ATTESTED** (partial: the file never arrived) | same |
-| C4 | "I can install Elementor Pro on a staging site" (`pro_available`), 2026-10-12 | **B — USER-ATTESTED** | same |
-| C5 | "Assume EU buyers → WCAG 2.2 AA baseline + no-tracking posture documented" (`eu_strict`), 2026-10-12 | **B — USER-ATTESTED** | same |
+| B1 | "A Template Kit to sell / distribute" (`sell_kit`), 2026-10-12 | **CLASS-B-PENDING - human-asserted (chat)** | answered in the chat; class A pending the paste |
+| B2 | "Genuinely bilingual, equal parity" (`equal_parity`), 2026-10-12 | **CLASS-B-PENDING - human-asserted (chat)** | same |
+| B3 | "Book a demo" (`book_demo`), 2026-10-12 | **CLASS-B-PENDING - human-asserted (chat)** | same |
+| B4 | "Mixed — I will list what is real" (`mixed`), 2026-10-12 | **CLASS-B-PENDING - human-asserted (chat)** (partial: the list never arrived) | same |
+| B5 | "Switch the FA type system to Vazirmatn now" (`switch_vazirmatn`), 2026-10-12 | **CLASS-B-PENDING - human-asserted (chat)** | supersedes the original instruction's Arad mention |
+| C1 | "Keep all nine + popup" (`full_nine`), 2026-10-12 | **CLASS-B-PENDING - human-asserted (chat)** | same |
+| C2 | "I'll paste 3–6 references + 2–3 anti-references" (`will_paste`), 2026-10-12 | **CLASS-B-PENDING - human-asserted (chat)** (partial: the links never arrived) | same |
+| C3 | "I have a logo, no photography" (`logo_only`), 2026-10-12 | **CLASS-B-PENDING - human-asserted (chat)** (partial: the file never arrived) | same |
+| C4 | "I can install Elementor Pro on a staging site" (`pro_available`), 2026-10-12 | **CLASS-B-PENDING - human-asserted (chat)** | same |
+| C5 | "Assume EU buyers → WCAG 2.2 AA baseline + no-tracking posture documented" (`eu_strict`), 2026-10-12 | **CLASS-B-PENDING - human-asserted (chat)** | same |
 
-The batch-3 skip ("keep going") is also user-attested (class B).
+The batch-3 skip ("keep going") is also human-asserted in the chat, and is CLASS-B-PENDING for
+the same reason.
 
 ## Where the user's answers expand or supersede the original instruction
 
@@ -71,8 +73,10 @@ instruction:
 
 ## What this changes downstream
 
-- `docs/BRIEF.md` rows now read **USER-ATTESTED (class B)**; the header and the evidence rule were
-  amended in P1.6 (classes A/B/C, `AGENTS.md`).
+- `docs/BRIEF.md` rows now read **HUMAN-ASSERTED (chat) — CLASS-B-PENDING file attestation**, with a
+  per-row status table; the header and the evidence rule were amended in P1.6 (classes A/B/C,
+  `AGENTS.md`) and re-graded in P1.7 (`docs/DECISIONS.md` P1.7-001). P1.6 graded these rows class B
+  before the file review existed - that was one step too generous, and P1.7 corrects it.
 - `docs/DECISIONS.md` **P1.6-001** records the repair and **P-BRIEF-010** carries the
   anti-regression wording; `docs/p1/type-decision.md` carries the P2 carry-forward rule.
 - Class A arrives only via `docs/BRIEF-ATTESTATION.md` (currently empty — the highest-priority

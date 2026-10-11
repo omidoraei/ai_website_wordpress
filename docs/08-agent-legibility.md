@@ -129,7 +129,9 @@ Rules (apply to every image the buyer keeps):
 
 **Current state (corrected 2026-10-12, P1.6): all 24 image widgets carry alt text at
 `settings.image.alt`** (13 distinct strings; `docs/p3/alt-text-sample.md`). The open item is
-quality - three client-name-only alts and one Persian alt in the EN set.
+quality - re-measured in P1.7 by `tools/alt_quality_check.py`: nine instances (three distinct
+strings) carry a client-name-only alt, and no alt string's script disagrees with its document's
+locale (`docs/a11y-alt-policy.md`).
 The first 10 drafts are in that file for approval at gate 2; the remaining instances follow the same
 pattern, batched per block.
 

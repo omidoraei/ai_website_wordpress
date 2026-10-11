@@ -1,0 +1,30 @@
+{
+ "contracts": {
+  "alt_coverage": "24/24",
+  "alt_policy_documented": "True",
+  "colours_typography_families": "19 / 15 / 3",
+  "custom_html_widgets": "0",
+  "theme_builder_layouts": "7",
+  "unqualified_widget_type_claim": "0"
+ },
+ "generated_by": "python3 tools/invariant_check.py --write-baseline",
+ "note": "Known values are allowed; any worsening FAILS the gate; any improvement must update this file in the same commit. Contracts are also recorded so that a contract break is reported as a contract break, not as drift.",
+ "ratchets": {
+  "alt_proper_noun_only_distinct": 3,
+  "alt_quality_findings": 9,
+  "asset_urls_on_mutable_tag": 24,
+  "dead_anchor_documents": 18,
+  "dead_anchor_occurrences": 48,
+  "h1_not_exactly_one_documents": 6,
+  "h1_zero_documents": 6,
+  "h1_zero_documents_pages_loop": 7,
+  "lang_mix_chars": 318,
+  "lang_mix_documents": 3,
+  "lang_mix_runs": 63,
+  "lang_mix_strings": 27,
+  "main_containers": 1
+ },
+ "ratchets_not_in_facts": {
+  "post_title_widget_present": false
+ }
+}

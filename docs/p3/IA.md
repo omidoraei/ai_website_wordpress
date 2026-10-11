@@ -260,7 +260,7 @@ rejection candidates in §6.
 | 3 | 11 page-level documents have no `main` landmark | `docs/p3/landmark-audit.md` | P2 |
 | 4 | 7 documents have no `h1` (about, blog, contact, portfolio, pricing, services, single post) | same | P2 |
 | 5 | The Single Post template renders no post title at all | `theme-post-title` absent tree-wide | P2 |
-| 6 | Alt text present on all 24 image widgets (corrected in P1.6: measured at `settings.image.alt`, not `settings.alt`); quality gaps remain - three client-name-only alts, one Persian alt in the EN set | `docs/p3/alt-text-sample.md`, `tools/lang_mix_check.py` | P2/P4 |
+| 6 | Alt text present on every image widget (corrected in P1.6: measured at `settings.image.alt`, not `settings.alt`); the P1.7 quality audit measures 9 flagged instances / 3 distinct strings, all client names, and 0 script/locale mismatches | `docs/a11y-alt-policy.md`, `tools/alt_quality_check.py` | P8 |
 | 7 | 8 fabricated metrics appear unlabelled in 4 documents | BANLIST B03 ×8 | P2 (first fix, per B4) |
 | 8 | The header nav is unbound (`menu: ""`) — install step, not a defect, but it is unverified | header JSON | P2 (Pro install) |
 

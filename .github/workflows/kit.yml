@@ -180,100 +180,38 @@ jobs:
 
       # ---- 2b. invariants, not phrases ------------------------------------------
       # A blocklist of strings is brittle (a future agent can rephrase a false claim and pass).
-      # These eight assertions are the durable contract: they read facts.json + the template
-      # tree, print measured vs required, and fail when reality drifts. REPORT-ONLY until the P2
-      # fixes land (alt quality, main landmarks, h1, post title, dead anchors); then this step
-      # drops continue-on-error and becomes a hard gate, the way BANLIST flips at P2.
-      - name: Invariant assertions (report-only until P2)
-        continue-on-error: true
+      # These assertions are the durable contract: they read facts.json + the template tree.
+      # P1.7 turned them from a report-only step into tools/invariant_check.py, a hard gate against
+      # docs/_generated/invariant-baseline.json: known defects are allowed at the recorded value,
+      # any worsening FAILS, and any improvement must update the baseline in the same commit.
+      - name: Invariant ratchet (known values allowed, regressions fail)
+        run: python3 tools/invariant_check.py
+
+      # ---- 2c. asset immutability -----------------------------------------------
+      # P1.7 item 4: the tag pin protects the repository; this protects the artifact a buyer
+      # imports. While tokens.py still emits the movable tag the count is a ratchet; the moment
+      # ASSET_BASE carries the commit SHA, any emitted "/kit-assets-v1/" URL is a hard failure.
+      - name: Asset URL immutability (strict once ASSET_BASE carries the commit SHA)
         run: |
+          python3 tools/invariant_check.py --json > /tmp/invariants.json
           python3 - <<'PY'
-          import json, re, sys
-          from pathlib import Path
-
-          fails = []
-          def show(name, ok, measured, required):
-              print("%-40s %-5s measured=%s required=%s" % (name, "PASS" if ok else "FAIL", measured, required))
-              if not ok:
-                  fails.append(name)
-
-          facts = json.loads(Path("docs/_generated/facts.json").read_text(encoding="utf-8"))
-          docs = sorted(Path("templates").rglob("*.json"))
-
-          def elements(node, out):
-              if isinstance(node, dict):
-                  if node.get("elType"):
-                      out.append(node)
-                  for v in node.values():
-                      elements(v, out)
-              elif isinstance(node, list):
-                  for v in node:
-                      elements(v, out)
-
-          def ids(node, out):
-              if isinstance(node, dict):
-                  if node.get("_element_id"):
-                      out.add(node["_element_id"])
-                  for v in node.values():
-                      ids(v, out)
-              elif isinstance(node, list):
-                  for v in node:
-                      ids(v, out)
-
-          img = alt = mains = pages = 0
-          h1_bad, dead = [], []
-          post_title = False
-          for path in docs:
-              data = json.loads(path.read_text(encoding="utf-8"))
-              ws, anchors = [], set()
-              elements(data, ws); ids(data, anchors)   # containers too: html_tag is a container setting
-              if path.parent.name == "pages":
-                  pages += 1
-              h1 = 0
-              for w in ws:
-                  s = w.get("settings") or {}
-                  wt = w.get("widgetType")
-                  if wt == "image":
-                      img += 1
-                      if isinstance(s.get("image"), dict) and s["image"].get("alt"):
-                          alt += 1
-                  if s.get("html_tag") == "main":
-                      mains += 1
-                  if s.get("header_size") == "h1":
-                      h1 += 1
-                  if wt in ("post-title", "theme-post-title"):
-                      post_title = True
-                  url = (s.get("link") or {}).get("url") if isinstance(s.get("link"), dict) else None
-                  if isinstance(url, str) and url.startswith("#") and len(url) > 1 and url[1:] not in anchors:
-                      dead.append("%s -> %s" % (path.name, url))
-              if path.parent.name == "pages" or path.name in ("aurora-archive.json", "aurora-search-results.json"):
-                  if h1 != 1:
-                      h1_bad.append("%s(h1=%d)" % (path.name, h1))
-
-          claim = re.compile(r"\b\d+\s+(free|Pro)\b[^\n]{0,40}widget", re.I)
-          surfaces = ["README.md", "CHANGELOG.md", "templates/INDEX.md"]
-          surfaces += [p.as_posix() for p in sorted(Path("docs").rglob("*.md"))
-                       if p.name != "CLAIMS.md" and not p.name.startswith("HANDOFF")]
-          claim_hits = [s for s in surfaces if claim.search(Path(s).read_text(encoding="utf-8"))]
-
-          show("alt_text == image_widgets", alt == img, "%d/%d" % (alt, img), "all")
-          show("main == page_level_docs", mains == pages, "%d/%d" % (mains, pages), "all")
-          show("h1_per_doc == 1", not h1_bad, "%d bad" % len(h1_bad), "0 exceptions")
-          show("post_title_widget_present", post_title, str(post_title), "true")
-          show("theme_builder_docs == 7", facts["theme_builder_layouts"] == 7,
-               facts["theme_builder_layouts"], 7)
-          show("colours/type/families == 19/15/3",
-               (facts["global_colours"], facts["typography_styles"], facts["font_families"]) == (19, 15, 3),
-               "%s/%s/%s" % (facts["global_colours"], facts["typography_styles"], facts["font_families"]),
-               "19/15/3")
-          show("dead_anchor_count == 0", not dead, "%d dead" % len(dead), 0)
-          show("no unqualified widget-type claim", not claim_hits, "%d surface(s)" % len(claim_hits), 0)
-          if h1_bad:
-              print("  h1 failures: " + ", ".join(h1_bad))
-          if dead:
-              print("  dead anchors: " + ", ".join(dead[:8]) + (" ..." if len(dead) > 8 else ""))
-          print("invariants: %d of 8 fail" % len(fails))
-          sys.exit(1 if fails else 0)
+          import json
+          data = json.load(open("/tmp/invariants.json"))
+          rows = {row["name"]: row for row in data["rows"]}
+          limits = json.load(open("docs/_generated/invariant-baseline.json"))["ratchets"]
+          count = int(rows["asset_urls_on_mutable_tag"]["measured"])
+          base = int(limits["asset_urls_on_mutable_tag"])
+          form = data["asset_base_form"]
+          print("asset base form: %s | emitted URLs on the movable tag: %d (allowed max %d)"
+                % (form, count, base))
+          if count > base:
+              raise SystemExit("FAIL: %d emitted URL(s) address the movable tag, baseline is %d"
+                               % (count, base))
+          if form == "sha" and count:
+              raise SystemExit("FAIL: ASSET_BASE carries the commit SHA but %d emitted URL(s) "
+                               "still address /kit-assets-v1/" % count)
+          print("OK: %s form at the recorded value; the commit-SHA repoint is tracked in "
+                "HANDOFF-P1.7.md item 4" % form)
           PY
 
       # ---- 3. evidence: control names come from the pinned source ----------------

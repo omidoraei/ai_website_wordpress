@@ -1,10 +1,13 @@
 # Aurora AI kit — signed brief (P-BRIEF)
 
-**Status: SIGNED IN THE WORKING CHANNEL - ten selections at evidence class B.** Ten of the 15
+**Status: SIGNED IN THE WORKING CHANNEL - ten selections HUMAN-ASSERTED (chat), CLASS-B-PENDING
+file attestation.** Ten of the 15
 interview questions were **answered by the human in the Arena chat on 2026-10-12** (the human
 confirms this; P1.6, 2026-10-12); the third batch (5 questions) was **skipped** (recorded as
 "keep going"). The answers below are transcribed verbatim from that channel and are marked
-**USER-ATTESTED (class B)** - they are human decisions, not agent inferences. No
+**HUMAN-ASSERTED (chat) — CLASS-B-PENDING file attestation** - they are human decisions, not
+agent inferences, but the class-B review step has not happened: the human has not read the
+recorded answers back from a file, and `docs/BRIEF-ATTESTATION.md` is still empty. No
 machine-addressable (class A) artefact exists for chat-channel answers: that is a property of the
 channel, not a doubt about the answers (`docs/PBRIEF-TRANSCRIPT.md`). The one step that converts
 them to class A is the human pasting the same answers into `docs/BRIEF-ATTESTATION.md`, the
@@ -18,10 +21,36 @@ approval.
 **B - human-attested** (the agent records the human's answer verbatim into a file, the human
 reviews it and confirms in the working channel, the agent appends the attestation + timestamp);
 **C - agent-inferred** (neither of the above; must carry a risk rating and a reversal trigger).
-The ten rows below are **class B**: recorded verbatim from the chat where the human answered
-them, confirmed by the human (2026-10-12), pending the per-row paste into
-`docs/BRIEF-ATTESTATION.md` that makes them class A. Absence of evidence in a location the agent
+The ten rows below are **CLASS-B-PENDING**: recorded verbatim from the chat where the human
+answered them, and nothing more. Class B proper requires the file review plus the human's
+confirmation in the working channel; neither exists yet, so no row is class B today and no row is
+class A. The per-row status table below is the authoritative record of what each row is missing
+(P1.7-001). Absence of evidence in a location the agent
 itself chose as un-auditable is **not** evidence of absence. Full rule: `AGENTS.md`.
+
+### Attribution status (P1.7-001)
+
+Every row is **CLASS-B-PENDING**. Class B requires the human to read the recorded answer back from
+a file and confirm it; class A requires the committed paste. Neither has happened, so the classes
+below are the honest ones. **The ten answers are not re-asked and not deleted** - only their
+evidence grade is corrected.
+
+| id | option | current class | what is missing | conversion action |
+| --- | --- | --- | --- | --- |
+| B1 | `sell_kit` | CLASS-B-PENDING (human-asserted, chat) | file review + confirmation; `docs/BRIEF-ATTESTATION.md` B1 is blank | paste the answer into `docs/BRIEF-ATTESTATION.md` B1, commit, record the hash in `docs/CLAIMS.md` |
+| B2 | `equal_parity` | CLASS-B-PENDING (human-asserted, chat) | B2 blank | same |
+| B3 | `book_demo` | CLASS-B-PENDING (human-asserted, chat) | B3 blank | same |
+| B4 | `mixed` | CLASS-B-PENDING (human-asserted, chat; partial - the real-data list never arrived) | B4 blank + the list | same, and the list |
+| B5 | `switch_vazirmatn` | CLASS-B-PENDING (human-asserted, chat) | B5 blank | same |
+| C1 | `full_nine` | CLASS-B-PENDING (human-asserted, chat) | C1 blank | same |
+| C2 | `will_paste` | CLASS-B-PENDING (human-asserted, chat; partial - the links never arrived) | C2 blank + the links | same, and the links |
+| C3 | `logo_only` | CLASS-B-PENDING (human-asserted, chat; partial - the file never arrived) | C3 blank + the logo file | same, and the file |
+| C4 | `pro_available` | CLASS-B-PENDING (human-asserted, chat) | C4 blank | same |
+| C5 | `eu_strict` | CLASS-B-PENDING (human-asserted, chat) | C5 blank | same |
+
+A committed paste promotes a row straight to class A; the class-B intermediate step is skipped
+when the artifact lands. Nothing in P2 depends on the labels, but the gate-2 bundle does.
+
 
 Question batches: batch 1 = B1–B5 (blocking), batch 2 = C1–C5, batch 3 = B4 list / C2 references /
 C3 logo + channel / C6 definition of done / C7 gates — **skipped**.
@@ -30,7 +59,7 @@ C3 logo + channel / C6 definition of done / C7 gates — **skipped**.
 
 ## 1. Product identity
 
-**USER-ATTESTED (class B) — B1.** Human-attested selection: *"A Template Kit to sell / distribute"* (option `sell_kit`,
+**HUMAN-ASSERTED (chat) — CLASS-B-PENDING file attestation — B1.** Human-asserted selection (chat): *"A Template Kit to sell / distribute"* (option `sell_kit`,
 2026-10-12).
 
 This is a **commercial product for third parties**, not a live business site. Consequences:
@@ -44,7 +73,7 @@ labelling problem). Surfaced at gate 1.
 
 ## 2. Audience and job to be done
 
-**USER-ATTESTED (class B) — B3.** Human-attested selection: *"Book a demo"* (option `book_demo`, 2026-10-12).
+**HUMAN-ASSERTED (chat) — CLASS-B-PENDING file attestation — B3.** Human-asserted selection (chat): *"Book a demo"* (option `book_demo`, 2026-10-12).
 Primary CTA = **book a demo**. KPI = **qualified demo requests**.
 
 **ASSUMPTION (risk LOW) — A2.** The visitor is a technical evaluator of an AI/SaaS product
@@ -58,7 +87,7 @@ supplies their own read of the audience at gate 1.
 
 ## 3. Language and RTL weight
 
-**USER-ATTESTED (class B) — B2.** Human-attested selection: *"Genuinely bilingual, equal parity"* (option `equal_parity`,
+**HUMAN-ASSERTED (chat) — CLASS-B-PENDING file attestation — B2.** Human-asserted selection (chat): *"Genuinely bilingual, equal parity"* (option `equal_parity`,
 2026-10-12).
 
 EN and FA are both first-class. The FA set is a **re-layout, not a mirror**: logical properties
@@ -72,7 +101,7 @@ coverage**, and P1-R/P2 must say what parity means per page.
 
 ## 4. Scope
 
-**USER-ATTESTED (class B) — C1.** Human-attested selection: *"Keep all nine + popup"* (option `full_nine`, 2026-10-12).
+**HUMAN-ASSERTED (chat) — CLASS-B-PENDING file attestation — C1.** Human-asserted selection (chat): *"Keep all nine + popup"* (option `full_nine`, 2026-10-12).
 
 Nine pages ship: Home · About · Services · Portfolio · Pricing · Blog (Journal) · Single Post ·
 Contact · 404 — plus Header/Footer theme-builder parts and one **exit-intent popup** (Pro).
@@ -81,7 +110,7 @@ bloat. Evidence: `ls templates/pages` → 9 files; `templates/popups/aurora-lead
 
 ## 5. Data policy
 
-**USER-ATTESTED (class B, partial) — B4.** Human-attested selection: *"Mixed — I will list what is real"* (option `mixed`,
+**HUMAN-ASSERTED (chat) — CLASS-B-PENDING file attestation (partial) — B4.** Human-asserted selection (chat): *"Mixed — I will list what is real"* (option `mixed`,
 2026-10-12). The list was never supplied (batch 3 skipped).
 
 **ASSUMPTION (risk HIGH) — A4.** Until the human's list arrives, **every dataset ships with a
@@ -96,7 +125,7 @@ P2 (see `docs/p1/delta-table.md` and `docs/P1-DISPOSITION.md`).
 
 ## 6. Brand, type and assets
 
-**USER-ATTESTED (class B) — B5.** Human-attested selection: *"Switch the FA type system to Vazirmatn now"* (option
+**HUMAN-ASSERTED (chat) — CLASS-B-PENDING file attestation — B5.** Human-asserted selection (chat): *"Switch the FA type system to Vazirmatn now"* (option
 `switch_vazirmatn`, 2026-10-12). Vazirmatn is SIL OFL-1.1, self-hosted through Elementor Custom
 Fonts, no custom CSS. **Arad leaves the build.** It may return only as an optional documented swap
 if the human produces licence proof.
@@ -104,7 +133,7 @@ if the human produces licence proof.
 **This is USER-CHOSEN, SUPERSEDING the original instruction's Arad mention. Do NOT reintroduce
 Arad in P2 to honour the earlier wording.**
 
-**USER-ATTESTED (class B, partial) — C3.** Human-attested selection: *"I have a logo, no photography"* (option `logo_only`,
+**HUMAN-ASSERTED (chat) — CLASS-B-PENDING file attestation (partial) — C3.** Human-asserted selection (chat): *"I have a logo, no photography"* (option `logo_only`,
 2026-10-12). The file was never supplied.
 
 **ASSUMPTION (risk LOW) — A5.** Until the logo file arrives, the kit ships an **editable demo
@@ -126,7 +155,7 @@ with an accent budget expressed as a rule.
 
 ## 7. Compliance posture
 
-**USER-ATTESTED (class B) — C5.** Human-attested selection: *"Assume EU buyers → WCAG 2.2 AA baseline + no-tracking posture
+**HUMAN-ASSERTED (chat) — CLASS-B-PENDING file attestation — C5.** Human-asserted selection (chat): *"Assume EU buyers → WCAG 2.2 AA baseline + no-tracking posture
 documented"* (option `eu_strict`, 2026-10-12).
 
 Accessibility (contrast, focus visibility, motion reduction) is a **build gate**, not a polish
@@ -138,7 +167,7 @@ mentions `llms.txt` as an option; the kit bakes in no Content Signals or pay-per
 
 ## 8. Constraints and budget
 
-**USER-ATTESTED (class B) — C4.** Human-attested selection: *"I can install Elementor Pro on a staging site"* (option
+**HUMAN-ASSERTED (chat) — CLASS-B-PENDING file attestation — C4.** Human-asserted selection (chat): *"I can install Elementor Pro on a staging site"* (option
 `pro_available`, 2026-10-12). Pro-control verification becomes an **acceptance criterion of P2**
 and closes P0's UNVERIFIED Pro debt — once the staging URL and licence are supplied.
 
@@ -148,7 +177,7 @@ paid-API spend without explicit approval. *Reversal trigger:* the human states a
 
 ## 9. Taste references
 
-**USER-ATTESTED (class B, partial) — C2.** Human-attested selection: *"I'll paste 3–6 references + 2–3 anti-references"*
+**HUMAN-ASSERTED (chat) — CLASS-B-PENDING file attestation (partial) — C2.** Human-asserted selection (chat): *"I'll paste 3–6 references + 2–3 anti-references"*
 (option `will_paste`, 2026-10-12). No references were received (batch 3 skipped).
 
 **ASSUMPTION (risk HIGH) — A9.** P1's DNA stays VOID. P1-R re-derives DNA from this brief plus the

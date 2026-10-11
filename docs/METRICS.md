@@ -93,6 +93,32 @@ the same numbers.
 _(this block is written by `python3 tools/verify.py --report && python3 tools/render_docs.py`;
 do not hand-edit — a hand-typed number here is a defect)_
 
+## 6. Occurrence-level counters (P1.7)
+
+Sections 1-4 define **document-level** counters. The metrics below were quoted in two different
+units across phases without the unit being named, so both units now exist as fields and every
+sentence must cite the one it means (`docs/METRICS-RECONCILIATION.md` is the reconciliation).
+
+| counter | definition (exact) | value |
+| --- | --- | ---: |
+| `dead_anchor_occurrences` | every `settings.link.url` of the form `#x` whose `x` matches no element's `settings._element_id` in the same document | <!--f:dead_anchor_occurrences-->48<!--/f--> |
+| `dead_anchor_button_occurrences` | the same rule, restricted to Button widgets (the P3 unit) | <!--f:dead_anchor_button_occurrences-->48<!--/f--> |
+| `dead_anchor_documents` | the **documents** carrying at least one such occurrence | <!--f:dead_anchor_documents-->18<!--/f--> |
+| `dead_anchor_documents_scanned` | denominator: template documents walked | <!--f:dead_anchor_documents_scanned-->39<!--/f--> |
+| `dead_anchor_target_documents` | per target: documents that use it, documents where it resolves (a dict field, not quoted in prose) | see `facts.json` |
+| `main_containers` / `main_page_level_documents` | containers with `html_tag = main` / documents under `pages/` | <!--f:main_containers-->1<!--/f--> / <!--f:main_page_level_documents-->9<!--/f--> |
+| `h1_zero_documents_pages_loop` | page-level documents (`pages/`, `loop/`) with zero `h1` - the P3 unit | <!--f:h1_zero_documents_pages_loop-->7<!--/f--> |
+| `h1_zero_documents` | the same predicate over the pages+archive+search scope | <!--f:h1_zero_documents-->6<!--/f--> |
+| `h1_not_exactly_one_documents` / `h1_scope_documents` | documents whose scope holds anything other than exactly one `h1` / the documents in that scope | <!--f:h1_not_exactly_one_documents-->6<!--/f--> / <!--f:h1_scope_documents-->11<!--/f--> |
+| `lang_mix_documents` | non-FA-named documents embedding Arabic-script copy | <!--f:lang_mix_documents-->3<!--/f--> |
+| `lang_mix_strings` / `lang_mix_runs` / `lang_mix_chars` | leaf string values with script / maximal script runs / script characters | <!--f:lang_mix_strings-->27<!--/f--> / <!--f:lang_mix_runs-->63<!--/f--> / <!--f:lang_mix_chars-->318<!--/f--> |
+| `fa_documents_by_content` | documents whose JSON contains at least one Arabic-script character (the **name** predicate stays `fa_documents`) | <!--f:fa_documents_by_content-->11<!--/f--> |
+| `alt_nonempty_count` / `alt_distinct_count` | Image widgets with a non-empty `settings.image.alt` / distinct alt strings | <!--f:alt_nonempty_count-->24<!--/f--> / <!--f:alt_distinct_count-->13<!--/f--> |
+| `alt_quality_findings` / `alt_proper_noun_only_distinct` | alt instances flagged by `tools/alt_quality_check.py` / distinct strings among the proper-noun findings | <!--f:alt_quality_findings-->9<!--/f--> / <!--f:alt_proper_noun_only_distinct-->3<!--/f--> |
+
+All values come from `python3 tools/verify.py --report`; the units are reproduced per widget and
+per document by `tools/alt_quality_check.py` and `tools/lang_mix_check.py --audit`.
+
 ## 5. Phase-scoped counters (P-BRIEF, 2026-10-12)
 
 These counters describe the **interview and the phase's own artifacts**, not the kit. They are
@@ -106,7 +132,7 @@ command where one exists.
 | `brief_questions_answered` | questions with a recorded human selection | 10 | ANSWERED rows in `docs/BRIEF.md` |
 | `brief_questions_skipped` | questions skipped by the human ("keep going") | 5 | P-BRIEF-019 |
 | `brief_assumptions` | ASSUMPTION rows carrying a risk rating and a reversal trigger | 11 | `grep -cE '^\| A[0-9]+ \|' docs/BRIEF.md` |
-| `decision_rows_total` | rows in the decision ledger, both prefixes | 33 | `grep -cE '^\| (D-[0-9]+|P-BRIEF-[0-9]+) \|' docs/DECISIONS.md` |
+| `decision_rows_total` | rows in the decision ledger matching `^\| (D-\d+|P-BRIEF-\d+) \|` (the phase rows carry other prefixes and are excluded, as originally defined) | 33 | `grep -cE '^\| (D-[0-9]+|P-BRIEF-[0-9]+) \|' docs/DECISIONS.md` |
 | `p1_disposition_rows` | artifacts dispositioned, by verdict | 16 (VOID 4 · RE-DERIVE 1 · CONDITIONAL 3 · SURVIVES 8) | `docs/P1-DISPOSITION.md` |
 | `notion_ledger_rows_written` | decision rows written to the Notion ledger page | 21 (P-BRIEF-000…020) | Notion page `3f68dd8c-323d-8119-8787-fe3ad7064d66`; three early appends failed on a parameter-shape error, then all rows were written — see `HANDOFF-PBRIEF.md` |
 | `calendar_gate_events` | human-gate slots created | 5 | Google Calendar event ids in `HANDOFF-PBRIEF.md` |

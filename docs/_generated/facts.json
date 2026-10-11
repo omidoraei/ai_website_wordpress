@@ -1,12 +1,55 @@
 {
+ "alt_distinct_count": 13,
+ "alt_nonempty_count": 24,
+ "alt_proper_noun_only_distinct": 3,
+ "alt_quality_findings": 9,
  "blocks": 22,
  "blocks_fa": 5,
  "containers": 962,
  "custom_colours": 15,
  "custom_html_widgets": 0,
  "custom_typography_styles": 11,
+ "dead_anchor_button_occurrences": 48,
+ "dead_anchor_documents": 18,
+ "dead_anchor_documents_scanned": 39,
+ "dead_anchor_occurrences": 48,
+ "dead_anchor_target_documents": {
+  "#about": [
+   2,
+   0
+  ],
+  "#contact": [
+   16,
+   1
+  ],
+  "#demo": [
+   5,
+   0
+  ],
+  "#docs": [
+   12,
+   0
+  ],
+  "#login": [
+   2,
+   0
+  ],
+  "#portfolio": [
+   4,
+   4
+  ],
+  "#release": [
+   2,
+   0
+  ],
+  "#services": [
+   4,
+   4
+  ]
+ },
  "documents_total": 40,
  "fa_documents": 8,
+ "fa_documents_by_content": 11,
  "font_families": 3,
  "font_family_names": [
   "Arad",
@@ -15,11 +58,21 @@
  ],
  "footers": 2,
  "global_colours": 19,
+ "h1_not_exactly_one_documents": 6,
+ "h1_scope_documents": 11,
+ "h1_zero_documents": 6,
+ "h1_zero_documents_pages_loop": 7,
  "headers": 2,
  "image_widgets": 24,
  "images": 7,
  "kit_documents": 1,
+ "lang_mix_chars": 318,
+ "lang_mix_documents": 3,
+ "lang_mix_runs": 63,
+ "lang_mix_strings": 27,
  "loop_templates": 3,
+ "main_containers": 1,
+ "main_page_level_documents": 9,
  "pages": 9,
  "popups": 1,
  "system_colours": 4,

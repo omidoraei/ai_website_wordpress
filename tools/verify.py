@@ -31,6 +31,8 @@ from typing import Any, Dict, Iterable, List, Set, Tuple
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from aurora import tokens as tk  # noqa: E402
+import alt_quality_check as altq  # noqa: E402  (P1.7: alt QUALITY, single source of truth)
+import lang_mix_check as lmix  # noqa: E402  (P1.7: language-mix units, single source of truth)
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 TEMPLATES = os.path.join(ROOT, "templates")
@@ -44,7 +46,16 @@ FACT_TABLE_KEYS = ("documents_total", "template_documents", "kit_documents", "pa
                    "blocks", "headers", "footers", "loop_templates", "popups",
                    "theme_builder_layouts", "fa_documents", "containers", "widgets",
                    "global_colours", "typography_styles", "font_families",
-                   "image_widgets", "images", "custom_html_widgets")
+                   "image_widgets", "images", "custom_html_widgets",
+                   # P1.7: document-level and occurrence-level units, side by side
+                   "dead_anchor_occurrences", "dead_anchor_button_occurrences",
+                   "dead_anchor_documents",
+                   "main_containers", "main_page_level_documents",
+                   "h1_zero_documents", "h1_zero_documents_pages_loop",
+                   "h1_not_exactly_one_documents",
+                   "lang_mix_documents", "lang_mix_strings", "lang_mix_runs", "lang_mix_chars",
+                   "fa_documents_by_content",
+                   "alt_nonempty_count", "alt_distinct_count", "alt_quality_findings")
 
 HEX = re.compile(r"^#(?:[0-9a-fA-F]{3,4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$")
 RGB = re.compile(r"^rgba?\(\s*[\d.]+\s*,\s*[\d.]+\s*,\s*[\d.]+\s*(?:,\s*[\d.]+\s*)?\)$")
@@ -401,6 +412,68 @@ def compute_facts(kit: Dict[str, Any]) -> Dict[str, Any]:
                 elif node.get("elType") == "widget":
                     wt = node.get("widgetType", "?")
                     widget_mix[wt] = widget_mix.get(wt, 0) + 1
+    # ---- occurrence-level counters (added P1.7; definitions in docs/METRICS.md) ----------
+    # A metric can drift between phases because two phases counted different things. These
+    # keys carry BOTH units so a future sentence has to name its unit to be checkable.
+    # Anchor rule (canonical, measured 2026-10-12): a `#target` resolves iff some element in the
+    # SAME document carries that value in `settings._element_id` - that is the key Elementor
+    # renders as the element's CSS id. Reading a top-level `_element_id` key instead finds nothing
+    # and reports every in-page link as dead (the P1.7 first-pass bug, 77 instead of 48).
+    dead_occurrences, dead_buttons, dead_docs = 0, 0, set()
+    main_all, h1_zero, h1_bad, h1_zero_loop = 0, [], [], []
+    target_use, target_res = {}, {}
+    for rel, data in templates:
+        nodes = [node for top in (data.get("content") or []) for node in walk(top)]
+        anchors = {(node.get("settings") or {}).get("_element_id") for node in nodes}
+        anchors.discard(None)
+        anchors.discard("")
+        base = os.path.basename(rel)
+        h1 = 0
+        links = []
+        for node in nodes:
+            settings = node.get("settings") or {}
+            link = settings.get("link")
+            url = link.get("url") if isinstance(link, dict) else None
+            if isinstance(url, str) and url.startswith("#") and len(url) > 1:
+                links.append((url, node.get("widgetType")))
+            if settings.get("html_tag") == "main":
+                main_all += 1
+            if settings.get("header_size") == "h1":
+                h1 += 1
+        for url, widget_type in links:
+            target_use.setdefault(url, set()).add(rel)
+            if url[1:] in anchors:
+                target_res.setdefault(url, set()).add(rel)
+            else:
+                dead_occurrences += 1
+                dead_docs.add(rel)
+                if widget_type == "button":
+                    dead_buttons += 1
+        in_scope = _folder(rel) == "pages" or base in ("aurora-archive.json",
+                                                       "aurora-search-results.json")
+        if in_scope:
+            if h1 == 0:
+                h1_zero.append(rel)
+            if h1 != 1:
+                h1_bad.append(rel)
+        if _folder(rel) in ("pages", "loop") and h1 == 0:
+            h1_zero_loop.append(rel)
+
+    lang_docs, lang_strings, lang_runs, lang_chars, fa_by_content = 0, 0, 0, 0, 0
+    for rel, data in docs:
+        hits = []
+        lmix.walk_strings(data, "", hits)
+        if hits:
+            fa_by_content += 1
+        if lmix.is_fa_name(os.path.basename(rel)) or not hits:
+            continue
+        lang_docs += 1
+        lang_strings += len(hits)
+        lang_runs += sum(lmix.runs_in(text) for _path, text in hits)
+        lang_chars += sum(len(lmix.ARABIC.findall(text)) for _path, text in hits)
+
+    alt = altq.measure()
+
     by_folder = collections.Counter(_folder(rel) for rel, _ in templates)
     s = kit["page_settings"]
     families = sorted({
@@ -435,6 +508,34 @@ def compute_facts(kit: Dict[str, Any]) -> Dict[str, Any]:
         "theme_builder_layouts": (by_folder.get("headers", 0) + by_folder.get("footers", 0)
                                   + by_folder.get("loop", 0)),
         "fa_documents": sum(1 for rel, _ in templates if _is_fa(rel)),
+        # P1.7 reconciliation keys: document-level AND occurrence-level units side by side.
+        "dead_anchor_occurrences": dead_occurrences,
+        "dead_anchor_button_occurrences": dead_buttons,
+        "dead_anchor_documents": len(dead_docs),
+        "dead_anchor_target_documents": {t: [len(target_use[t]), len(target_res.get(t, ()))]
+                                         for t in sorted(target_use)},
+        "dead_anchor_documents_scanned": len(templates),
+        "main_containers": main_all,
+        "main_page_level_documents": by_folder.get("pages", 0),
+        "h1_zero_documents": len(h1_zero),
+        "h1_zero_documents_pages_loop": len(h1_zero_loop),
+        "h1_not_exactly_one_documents": len(h1_bad),
+        "h1_scope_documents": sum(1 for rel, _ in templates if _folder(rel) == "pages")
+                              + sum(1 for rel, _ in templates
+                                    if os.path.basename(rel) in ("aurora-archive.json",
+                                                                 "aurora-search-results.json")),
+        "lang_mix_documents": lang_docs,
+        "lang_mix_strings": lang_strings,
+        "lang_mix_runs": lang_runs,
+        "lang_mix_chars": lang_chars,
+        "fa_documents_by_content": fa_by_content,
+        "alt_nonempty_count": alt["alt_nonempty_count"],
+        "alt_distinct_count": alt["alt_distinct_count"],
+        "alt_quality_findings": sum(len(alt[key]) for key in
+                                    ("suspected_decorative_with_nonempty_alt",
+                                     "suspected_content_with_generic_alt",
+                                     "suspected_proper_noun_only_alt", "alt_locale_mismatch")),
+        "alt_proper_noun_only_distinct": alt["suspected_proper_noun_only_alt_distinct"],
         "blocks_fa": sum(1 for rel, _ in templates
                          if _folder(rel) == "blocks" and _is_fa(rel)),
     }

@@ -2,9 +2,10 @@
 
 Measured state (corrected 2026-10-12, P1.6): **24 image widgets across 39 documents; all 24 carry
 alt text at `settings.image.alt`** (13 distinct strings). P3 measured `settings.alt`, which is
-always empty - the presence claim was wrong, and the quality claim is what survives: three
-case-study alts are client-name-only, and one alt string in the EN set is Persian. The drafts
-below are therefore a **quality upgrade proposal**, not a fix for missing text. Rule from `docs/08-agent-legibility.md` §4: per instance, descriptive,
+always empty - the presence claim was wrong. Re-measured in P1.7 with
+`tools/alt_quality_check.py`: 24 non-empty, 13 distinct, nine instances (three distinct strings)
+carry a client-name-only alt, 0 decorative/generic/locale findings. The drafts below are therefore a
+**quality upgrade proposal**, not a fix for missing text. Rule from `docs/08-agent-legibility.md` §4: per instance, descriptive,
 ≤125 characters, EN/FA paired, decorative stays empty.
 
 The ten drafts below cover all seven files plus the logo and the decorative case. Approve or edit

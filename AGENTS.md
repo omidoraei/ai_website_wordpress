@@ -96,6 +96,11 @@ pattern).
 | **B - human-attested** | the agent records the human's answer verbatim into a file; the human reviews it and confirms in the working channel; the agent appends the attestation + timestamp to the same file | survives if the file is committed |
 | **C - agent-inferred** | neither of the above | soft: MUST carry a risk rating and a reversal trigger |
 
+**CLASS-B-PENDING** - the human asserted the answer in the working channel, but the file review
+and confirmation that make it class B have not happened, and no committed artifact (class A)
+exists. Grade a chat-only answer `CLASS-B-PENDING`, never `B`: the review step is what makes a B.
+A committed paste promotes the row straight to class A.
+
 **Absence of evidence in a location the agent itself chose as un-auditable is not evidence of
 absence.** Before grading anything C, state which locations were searched and whether the agent
 had access to them. Never write "done", "verified", "responsive" or "accessible" without a

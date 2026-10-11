@@ -33,6 +33,16 @@ KIT_VERSION = "1.0.0"
 GITHUB_USER = "omidoraei"
 GITHUB_REPO = "ai_website_wordpress"
 ASSET_TAG = "kit-assets-v1"
+# P1.7 item 4: the immutability contract is a URL that carries the commit, not a movable ref.
+# `ASSET_SHA` is the recorded target of ASSET_TAG (also pinned in CI). The prepared, build-proven
+# repoint is one line:
+#     ASSET_BASE = "https://raw.githubusercontent.com/%s/%s/%s/media" % (GITHUB_USER, GITHUB_REPO, ASSET_SHA)
+# (verified form: github.com/<user>/<repo>/raw/<sha>/media/<file> returns 302 to exactly that raw
+# URL). It is NOT applied here because this phase freezes templates/**: the repoint rewrites all 24
+# image settings, and CI's reproducibility step requires the rebuild to be committed with it.
+# The ratchet in tools/invariant_check.py holds the current count and degenerates into the strict
+# "no emitted URL may address the tag" guard as soon as the repoint lands. See HANDOFF-P1.7.md.
+ASSET_SHA = "96149fa9233a4ba14f1c1aa539f406f3023843cd"
 ASSET_BASE = (
     "https://github.com/%s/%s/raw/%s/media" % (GITHUB_USER, GITHUB_REPO, ASSET_TAG)
 )
