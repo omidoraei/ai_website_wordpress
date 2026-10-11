@@ -1,7 +1,7 @@
 # Generated control index
 
-Source: `elementor/elementor@v3.35.9` (fetched from codeload.github.com/elementor/elementor).
-Regenerate with `scripts/extract_controls.py --source <checkout> --tag v3.35.9`.
+Source: `elementor/elementor@v3.35.9` — vendored in `vendor/elementor/` (sha256 in `skills/elementor-native-kit/SKILL.md`; the gate verifies the checksum before extraction).
+Regenerate with `scripts/extract_controls.py --source <extracted vendor archive> --tag v3.35.9`.
 
 **Do not edit.** If a control name is not in this file, this skill does not know it, and neither should a template.
 

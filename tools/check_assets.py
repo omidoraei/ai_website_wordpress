@@ -68,8 +68,11 @@ def main() -> int:
     args = ap.parse_args()
 
     urls = collect()
-    if not urls:
-        print("no remote asset URLs found in templates/ - expected at least one")
+    MIN_URLS = 5
+    if len(urls) < MIN_URLS:
+        print("only %d remote asset URL(s) found in templates/, floor is %d - "
+              "a scan of nothing is not a pass (docs/METRICS.md \u00a73)"
+              % (len(urls), MIN_URLS))
         return 1
 
     results = {}

@@ -43,7 +43,7 @@ python3 tools/verify.py --report
 
 | Capability | Tier | Version-safe | RTL-safe | Notes / fallback |
 | --- | --- | --- | --- | --- |
-| Flexbox Containers (all 962 containers) | **Free**, behind an experiment | identical `container.php` | ✅ `flex_direction: row` flips logically | must be Active in `Settings → Features` |
+| Flexbox Containers (all <!--f:containers-->962<!--/f-->) | **Free**, behind an experiment | identical `container.php` | ✅ `flex_direction: row` flips logically | must be Active in `Settings → Features` |
 | Global colors / fonts, Theme Style, Kit document | **Free** | `global-colors.php` / `global-typography.php` gained one `do_action` in 4.0.8; no control change | ✅ | `system_colors` = exactly 4 rows |
 | Entrance animation (`animation` on containers, `_animation` on widgets) | **Free** | identical | ⚠️ use `fadeInUp`, not `fadeInLeft/Right` | the only animation mechanism |
 | Responsive "Hide On" visibility (6 uses) | **Free** | identical | ✅ | `element-base.php:L1383` `add_hidden_device_controls()`; ids `hide_<device>`, value `hidden-<device>`, `prefix_class elementor-` |

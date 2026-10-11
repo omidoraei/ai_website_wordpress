@@ -18,11 +18,11 @@ env:
 
 jobs:
   gate:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-python@v6
         with:
           python-version: "3.11"
 
@@ -41,6 +41,9 @@ jobs:
       # ---- 2. the gate -----------------------------------------------------------
       - name: verify.py - structure, references, value shapes, media, doc numbers
         run: python3 tools/verify.py --report
+
+      - name: Render the generated numbers into the docs (no hand-typed counts)
+        run: python3 tools/render_docs.py --check
 
       - name: bidi / Unicode safety
         run: python3 tools/bidi_check.py
@@ -62,6 +65,44 @@ jobs:
             echo '```'
           } >> "$GITHUB_STEP_SUMMARY"
 
+      # A retraction is not complete until every public surface is updated (docs/CLAIMS.md).
+      # The phrase list lives in the ledger; this guard scans the surfaces and prints its
+      # input count, so "0 hits" cannot be an artefact of scanning nothing.
+      - name: Retraction guard
+        run: |
+          python3 - <<'PY'
+          import os, re, sys
+
+          ledger = open("docs/CLAIMS.md", encoding="utf-8").read()
+          block = re.search(r"```retracted-phrases\n(.*?)```", ledger, re.S)
+          if not block:
+              sys.exit("docs/CLAIMS.md has no retracted-phrases block")
+          phrases = [row.strip().lower() for row in block.group(1).splitlines() if row.strip()]
+
+          surfaces = ["README.md", "CHANGELOG.md", ".github/workflows/kit.yml", "templates/INDEX.md"]
+          for dirpath, dirs, files in os.walk("docs"):
+              if dirpath.rstrip("/").endswith("docs/_generated"):
+                  dirs[:] = []
+                  continue
+              for fn in sorted(files):
+                  if fn.endswith(".md") and fn != "CLAIMS.md" and not fn.startswith("HANDOFF"):
+                      surfaces.append(os.path.join(dirpath, fn))
+          surfaces = sorted({row for row in surfaces if os.path.exists(row)})
+          if len(surfaces) < 10 or len(phrases) < 3:
+              sys.exit("non-empty assertion failed: %d file(s), %d phrase(s)"
+                       % (len(surfaces), len(phrases)))
+
+          hits = []
+          for rel in surfaces:
+              low = open(rel, encoding="utf-8").read().lower()
+              hits += [(rel, phrase) for phrase in phrases if phrase in low]
+          print("retraction guard: %d file(s) scanned, %d phrase(s), %d hit(s)"
+                % (len(surfaces), len(phrases), len(hits)))
+          for rel, phrase in hits:
+              print("  ! %s still says %r" % (rel, phrase))
+          sys.exit(1 if hits else 0)
+          PY
+
       - name: verify.py --report produced no uncommitted facts
         run: |
           if ! git diff --quiet -- docs/_generated/; then
@@ -71,8 +112,32 @@ jobs:
           fi
 
       # ---- 3. evidence: control names come from the pinned source ----------------
-      - name: Fetch the pinned Elementor source
-        run: git clone --depth 1 --branch "$ELEMENTOR_TAG" https://github.com/elementor/elementor /tmp/elementor
+      # Hermetic on purpose: a network outage or an upstream re-tag must not be able to
+      # move a "verified" line number under us. The sources are committed; their sha256
+      # live in skills/elementor-native-kit/SKILL.md; a mismatch fails before extraction.
+      - name: Verify the vendored Elementor sources, then extract them
+        run: |
+          mkdir -p /tmp/elementor
+          python3 - <<'PY'
+          import hashlib, os, re, subprocess, sys
+
+          tag = os.environ["ELEMENTOR_TAG"]
+          front = open("skills/elementor-native-kit/SKILL.md", encoding="utf-8").read().split("---", 2)[1]
+          want = dict(re.findall(r"(v[0-9_]+):\s*sha256:([0-9a-f]{64})", front))
+          if len(want) < 2:
+              sys.exit("SKILL.md front matter does not record both elementor_source sha256s")
+
+          for key, version in (("v3_35_9", "3.35.9"), ("v4_0_8", "4.0.8")):
+              archive = "vendor/elementor/elementor-%s-src.tar.gz" % version
+              got = hashlib.sha256(open(archive, "rb").read()).hexdigest()
+              if want.get(key) != got:
+                  sys.exit("checksum mismatch for %s: %s != expected %s"
+                           % (archive, got, want.get(key)))
+              print("verified %s sha256:%s" % (archive, got))
+              if ("v%s" % version) == tag:
+                  subprocess.check_call(["tar", "xzf", archive, "-C", "/tmp/elementor"])
+                  print("extracted %s to /tmp/elementor" % archive)
+          PY
 
       - name: Regenerate the control index and diff it against the committed one
         run: |
@@ -102,7 +167,7 @@ jobs:
 
       # ---- 6. artifacts ---------------------------------------------------------
       - name: Upload kit artifacts
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         with:
           name: aurora-ai-kit
           path: |
@@ -117,6 +182,9 @@ jobs:
         run: |
           {
             echo "## Aurora kit gate"
+            echo
+            echo "deterministic dist digests:"
+            sha256sum dist/*.zip || true
             echo
             echo '```'
             python3 tools/verify.py || true

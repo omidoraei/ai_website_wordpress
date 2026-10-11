@@ -1,6 +1,6 @@
 # 03 — Template library
 
-40 Elementor documents: 9 pages, 6 Theme Builder layouts, 1 popup, 22 reusable section
+<!--f:documents_total-->40<!--/f-->: <!--f:pages-->9<!--/f-->, <!--f:theme_builder_layouts-->7<!--/f-->, 1 popup, 22 reusable section
 blocks and the kit itself. The generated catalogue with live container and widget counts
 is [`templates/INDEX.md`](../templates/INDEX.md).
 

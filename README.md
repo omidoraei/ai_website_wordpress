@@ -5,10 +5,10 @@ Everything is built from Elementor Flexbox Containers, native Elementor widgets 
 Elementor Pro widgets — there is **no custom HTML widget, no custom CSS and no
 JavaScript** anywhere in the kit.
 
-* **40 Elementor documents** — 9 pages, 2 headers, 2 footers, a single-post and archive
-  layout, a search-results layout, an exit-intent popup and 22 reusable section blocks
-* **962 containers, 1 280 widgets** — every one of them editable in the Elementor panel
-* **Global design system** — 4 system colours, 15 custom colours, 15 global typography styles
+* **<!--f:documents_total-->40<!--/f-->** — <!--f:pages-->9<!--/f-->, 2 headers, 2 footers, a single-post and archive
+  layout, a search-results layout, an exit-intent popup and <!--f:blocks-->22<!--/f--> reusable section blocks
+* **<!--f:containers-->962<!--/f-->, <!--f:widgets-->1 280<!--/f-->280** — every one of them editable in the Elementor panel
+* **Global design system** — <!--f:system_colours-->4<!--/f--> system colours, <!--f:custom_colours-->15<!--/f--> custom colours, <!--f:typography_styles-->15<!--/f--> global typography styles
 * **Bilingual** — a full English (LTR) set and a full Persian (RTL) set
 * **Theme Builder ready** — header, footer, single, archive, search and popup documents
 * **Fully responsive** — separate desktop / tablet / mobile values, not a scaled-down desktop
@@ -56,7 +56,7 @@ preview/                   static HTML preview of the design (review aid only)
 
 **1 — Import the templates**
 WordPress admin → **Templates → Saved Templates → Import Templates** →
-choose `dist/aurora-ai-templates.zip`. All 40 templates appear under *My Templates*.
+choose `dist/aurora-ai-templates.zip`. All <!--f:template_documents-->39<!--/f--> appear under *My Templates* (the kit document is applied in step 2).
 
 **2 — Apply the design system**
 WordPress admin → **Elementor → Tools → Import / Export Kit → Import Kit** →

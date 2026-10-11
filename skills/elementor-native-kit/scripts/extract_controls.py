@@ -166,6 +166,18 @@ def main() -> int:
         print("not an elementor checkout: %s" % root)
         return 1
 
+    # non-empty assertion (docs/METRICS.md \u00a73): a source tree that yields no files
+    # must fail loudly instead of writing a plausible-looking empty index.
+    counts = {"widgets": len(widget_files(root)), "elements": len(element_files(root)),
+              "groups": len(group_files(root)), "kit tabs": len(kit_tab_files(root))}
+    floors = {"widgets": 10, "elements": 1, "groups": 8, "kit tabs": 5}
+    print("source scan: " + ", ".join("%s=%d" % (k, counts[k]) for k in counts))
+    short = {k: (counts[k], floors[k]) for k in counts if counts[k] < floors[k]}
+    if short:
+        for k, (got, floor) in sorted(short.items()):
+            print("  ! %s: %d file(s), floor is %d" % (k, got, floor))
+        return 1
+
     os.makedirs(GEN, exist_ok=True)
     summary: Dict[str, Any] = {"tag": args.tag}
 
@@ -173,10 +185,11 @@ def main() -> int:
     lines_out: List[str] = []
     lines_out.append("# Generated control index")
     lines_out.append("")
-    lines_out.append("Source: `elementor/elementor@%s` (fetched from "
-                     "codeload.github.com/elementor/elementor)." % args.tag)
-    lines_out.append("Regenerate with `scripts/extract_controls.py --source <checkout> --tag %s`."
-                     % args.tag)
+    lines_out.append("Source: `elementor/elementor@%s` — vendored in `vendor/elementor/` "
+                     "(sha256 in `skills/elementor-native-kit/SKILL.md`; the gate verifies the "
+                     "checksum before extraction)." % args.tag)
+    lines_out.append("Regenerate with `scripts/extract_controls.py --source <extracted vendor "
+                     "archive> --tag %s`." % args.tag)
     lines_out.append("")
     lines_out.append("**Do not edit.** If a control name is not in this file, this skill does "
                      "not know it, and neither should a template.")

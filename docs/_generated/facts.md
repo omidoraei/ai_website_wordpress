@@ -5,14 +5,25 @@
 
 | fact | value |
 | --- | ---: |
-| `template_documents` | 39 |
 | `documents_total` | 40 |
+| `template_documents` | 39 |
+| `kit_documents` | 1 |
+| `pages` | 9 |
+| `blocks` | 22 |
+| `headers` | 2 |
+| `footers` | 2 |
+| `loop_templates` | 3 |
+| `popups` | 1 |
+| `theme_builder_layouts` | 7 |
+| `fa_documents` | 8 |
 | `containers` | 962 |
 | `widgets` | 1280 |
-| `colors` | 19 |
-| `typography` | 15 |
+| `global_colours` | 19 |
+| `typography_styles` | 15 |
+| `font_families` | 3 |
 | `image_widgets` | 24 |
 | `images` | 7 |
+| `custom_html_widgets` | 0 |
 
 ## Widget mix
 

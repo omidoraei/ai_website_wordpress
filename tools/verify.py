@@ -22,6 +22,7 @@ things that actually decide whether Elementor can render and edit a template:
 from __future__ import annotations
 
 import argparse
+import collections
 import json
 import os
 import re
@@ -34,6 +35,16 @@ from aurora import tokens as tk  # noqa: E402
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 TEMPLATES = os.path.join(ROOT, "templates")
 MEDIA = os.path.join(ROOT, "media")
+
+# non-empty assertions (docs/METRICS.md §3): a scanner that examines nothing must fail
+MEDIA_FLOOR = 3
+BANLIST_FLOORS = {"documents": 30, "sections": 50, "elements": 500}
+
+FACT_TABLE_KEYS = ("documents_total", "template_documents", "kit_documents", "pages",
+                   "blocks", "headers", "footers", "loop_templates", "popups",
+                   "theme_builder_layouts", "fa_documents", "containers", "widgets",
+                   "global_colours", "typography_styles", "font_families",
+                   "image_widgets", "images", "custom_html_widgets")
 
 HEX = re.compile(r"^#(?:[0-9a-fA-F]{3,4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$")
 RGB = re.compile(r"^rgba?\(\s*[\d.]+\s*,\s*[\d.]+\s*,\s*[\d.]+\s*(?:,\s*[\d.]+\s*)?\)$")
@@ -286,6 +297,9 @@ def verify_media(urls: Dict[str, List[str]], rep: Report) -> None:
         elif os.path.getsize(path) > 400 * 1024:
             rep.error("media: %s is %d KB - too heavy for a web image"
                       % (name, os.path.getsize(path) // 1024))
+    if len(urls) < MEDIA_FLOOR:
+        rep.error("media: only %d image URL(s) examined, floor is %d - non-empty assertion "
+                  "failed (docs/METRICS.md)" % (len(urls), MEDIA_FLOOR))
     rep.stats["images"] = len(urls)
 
 
@@ -316,87 +330,164 @@ def collect_image_urls() -> Dict[str, List[str]]:
 FACT_FILES = ("README.md", "CHANGELOG.md", "docs/01-installation.md",
               "docs/02-design-system.md", "docs/03-template-library.md",
               "docs/04-rtl-persian-setup.md", "docs/05-theme-builder.md",
-              "docs/06-performance-accessibility.md", "docs/07-faq-troubleshooting.md")
+              "docs/06-performance-accessibility.md", "docs/07-faq-troubleshooting.md",
+              "docs/METRICS.md", "docs/capability-matrix.md")
 
 # (regex, fact key, human label). The number may contain spaces as a thousands
 # separator ("1 280 widgets") because the docs use that style.
 DOC_NUMBERS = (
-    (r"(\d[\d\s]{0,7})\s+Elementor documents", "documents_total", "Elementor documents"),
-    (r"(\d[\d\s]{0,7})\s+containers", "containers", "containers"),
-    (r"(\d[\d\s]{0,7})\s+widgets", "widgets", "widgets"),
-    (r"(\d[\d\s]{0,7})\s+global (?:colours|colors)", "colors", "global colours"),
-    (r"(\d[\d\s]{0,7})\s+global typography styles", "typography", "global typography styles"),
-    (r"(\d[\d\s]{0,7})\s+image widgets", "image_widgets", "image widgets"),
-    (r"\((\d[\d\s]{0,7})\s+total\)", "colors", "colours (X total)"),
+    (r"(\d[\d\s\u00a0]{0,9})\s+Elementor documents", "documents_total", "Elementor documents"),
+    (r"(\d[\d\s\u00a0]{0,9})\s+documents\b", "documents_total", "documents"),
+    (r"(\d[\d\s\u00a0]{0,9})\s+importable templates", "template_documents", "importable templates"),
+    (r"(\d[\d\s\u00a0]{0,9})\s+templates\b", "template_documents", "templates"),
+    (r"(\d[\d\s\u00a0]{0,9})\s+containers", "containers", "containers"),
+    (r"(\d[\d\s\u00a0]{0,9})\s+widgets", "widgets", "widgets"),
+    (r"(\d[\d\s\u00a0]{0,9})\s+global (?:colours|colors)", "global_colours", "global colours"),
+    (r"(\d[\d\s\u00a0]{0,9})\s+(?:global )?typography styles", "typography_styles",
+     "typography styles"),
+    (r"(\d[\d\s\u00a0]{0,9})\s+system (?:colours|colors)", "system_colours",
+     "system colours"),
+    (r"(\d[\d\s\u00a0]{0,9})\s+custom (?:colours|colors)", "custom_colours",
+     "custom colours"),
+    (r"(\d[\d\s\u00a0]{0,9})\s+reusable section blocks", "blocks", "reusable section blocks"),
+    (r"(\d[\d\s\u00a0]{0,9})\s+font families", "font_families", "font families"),
+    (r"(\d[\d\s\u00a0]{0,9})\s+image widgets", "image_widgets", "image widgets"),
+    (r"(\d[\d\s\u00a0]{0,9})\s+pages\b", "pages", "pages"),
+    (r"(\d[\d\s\u00a0]{0,9})\s+section blocks", "blocks", "section blocks"),
+    (r"(\d[\d\s\u00a0]{0,9})\s+Theme Builder layouts", "theme_builder_layouts",
+     "Theme Builder layouts"),
+    (r"\((\d[\d\s\u00a0]{0,9})\s+total\)", "global_colours", "colours (X total)"),
 )
+
+# A number is generated only when it sits inside a slot: <!--f:key-->N<!--/f-->.
+SLOT_SPAN = re.compile(r"<!--f:[a-z_]+-->.*?<!--/f-->", re.S)
+SLOT_SPAN_GROUPED = re.compile(r"<!--f:([a-z_]+)-->(.*?)<!--/f-->", re.S)
+
+
+def _document_files() -> List[Tuple[str, Dict[str, Any]]]:
+    """Every *.json under templates/, as (path relative to templates/, data), sorted."""
+    out = []
+    for root, _dirs, names in os.walk(TEMPLATES):
+        for name in sorted(names):
+            if not name.endswith(".json"):
+                continue
+            path = os.path.join(root, name)
+            out.append((os.path.relpath(path, TEMPLATES),
+                        json.load(open(path, encoding="utf-8"))))
+    return sorted(out, key=lambda pair: pair[0])
+
+
+def _folder(rel: str) -> str:
+    return rel.split(os.sep)[0] if os.sep in rel else ""
+
+
+def _is_fa(rel: str) -> bool:
+    base = os.path.basename(rel)
+    return base.startswith("fa-") or base.endswith("-fa.json")
 
 
 def compute_facts(kit: Dict[str, Any]) -> Dict[str, Any]:
-    docs = 0
+    """The canonical counters - definitions in docs/METRICS.md. Never hand-count again."""
+    docs = _document_files()
+    templates = [(r, d) for r, d in docs if d.get("type") != "kit"]
+    kits = [(r, d) for r, d in docs if d.get("type") == "kit"]
+    containers = 0
     widget_mix: Dict[str, int] = {}
-    for root, _dirs, names in os.walk(TEMPLATES):
-        for name in sorted(names):
-            if not name.endswith(".json"):
-                continue
-            data = json.load(open(os.path.join(root, name), encoding="utf-8"))
-            if data.get("type") == "kit":
-                continue
-            docs += 1
-            for top in data["content"]:
-                for node in walk(top):
-                    if node.get("elType") == "widget":
-                        wt = node.get("widgetType", "?")
-                        widget_mix[wt] = widget_mix.get(wt, 0) + 1
+    for _rel, data in templates:
+        for top in data.get("content") or []:
+            for node in walk(top):
+                if node.get("elType") == "container":
+                    containers += 1
+                elif node.get("elType") == "widget":
+                    wt = node.get("widgetType", "?")
+                    widget_mix[wt] = widget_mix.get(wt, 0) + 1
+    by_folder = collections.Counter(_folder(rel) for rel, _ in templates)
     s = kit["page_settings"]
+    families = sorted({
+        row.get("typography_font_family")
+        for row in (s.get("system_typography") or []) + (s.get("custom_typography") or [])
+        if row.get("typography_font_family")
+    })
     return {
-        "documents_total": docs + 1,
-        "template_documents": docs,
-        "containers": sum(1 for _ in ()) or _count_type(kit, "container"),
+        "documents_total": len(templates) + len(kits),
+        "template_documents": len(templates),
+        "kit_documents": len(kits),
+        "containers": containers,
         "widgets": sum(widget_mix.values()),
-        "colors": len(defined_colors(kit)),
-        "typography": len(defined_typography(kit)),
+        "widget_mix": dict(sorted(widget_mix.items(), key=lambda kv: (-kv[1], kv[0]))),
+        "custom_html_widgets": widget_mix.get("html", 0),
         "image_widgets": widget_mix.get("image", 0),
         "images": len(collect_image_urls()),
-        "widget_mix": dict(sorted(widget_mix.items(), key=lambda kv: (-kv[1], kv[0]))),
-        "fa_documents": sum(1 for _ in ()),
+        "global_colours": len(defined_colors(kit)),
+        "system_colours": len(s.get("system_colors") or []),
+        "custom_colours": len(s.get("custom_colors") or []),
+        "system_typography_styles": len(s.get("system_typography") or []),
+        "custom_typography_styles": len(s.get("custom_typography") or []),
+        "typography_styles": len(defined_typography(kit)),
+        "font_families": len(families),
+        "font_family_names": families,
+        "pages": by_folder.get("pages", 0),
+        "blocks": by_folder.get("blocks", 0),
+        "headers": by_folder.get("headers", 0),
+        "footers": by_folder.get("footers", 0),
+        "loop_templates": by_folder.get("loop", 0),
+        "popups": by_folder.get("popups", 0),
+        "theme_builder_layouts": (by_folder.get("headers", 0) + by_folder.get("footers", 0)
+                                  + by_folder.get("loop", 0)),
+        "fa_documents": sum(1 for rel, _ in templates if _is_fa(rel)),
+        "blocks_fa": sum(1 for rel, _ in templates
+                         if _folder(rel) == "blocks" and _is_fa(rel)),
     }
 
 
-def _count_type(kit: Dict[str, Any], el_type: str) -> int:
-    n = 0
-    for root, _dirs, names in os.walk(TEMPLATES):
-        for name in sorted(names):
-            if not name.endswith(".json"):
-                continue
-            data = json.load(open(os.path.join(root, name), encoding="utf-8"))
-            if data.get("type") == "kit":
-                continue
-            for top in data["content"]:
-                for node in walk(top):
-                    if node.get("elType") == el_type:
-                        n += 1
-    return n
+def _norm(value: str) -> str:
+    return re.sub(r"[\s\u00a0]", "", value)
 
 
 def check_doc_numbers(facts: Dict[str, Any], rep: Report) -> int:
-    """Fail if a doc states a number that disagrees with the generated facts."""
+    """Two legal states for a number in a doc: inside a generated slot, or absent.
+
+    - a slot must hold the value the build produced (else run tools/render_docs.py)
+    - a bare metric number is a hand-typed number: it is an error even when it happens
+      to be correct today, because nothing regenerates it tomorrow.
+    """
     checked = 0
     for rel in FACT_FILES:
         path = os.path.join(ROOT, rel)
         if not os.path.exists(path):
             continue
         text = open(path, encoding="utf-8").read()
+        spans = []
+        for m in SLOT_SPAN_GROUPED.finditer(text):
+            key, inner = m.group(1), m.group(2)
+            spans.append((m.start(), m.end()))
+            line = text[:m.start()].count("\n") + 1
+            checked += 1
+            if key not in facts:
+                rep.error("%s:%d uses unknown fact key %r" % (rel, line, key))
+            elif _norm(inner) != _norm(str(facts[key])):
+                rep.error("%s:%d slot %s holds %r but the build has %r "
+                          "(run tools/render_docs.py)" % (rel, line, key, inner, facts[key]))
         for pattern, key, label in DOC_NUMBERS:
+            expected = facts.get(key)
+            if expected is None:
+                continue
             for match in re.finditer(pattern, text):
-                stated = int(re.sub(r"\s", "", match.group(1)))
-                expected = facts.get(key)
-                if expected is None:
+                if any(a <= match.start() < b for a, b in spans):
                     continue
+                stated = int(_norm(match.group(1)))
+                line = text[:match.start()].count("\n") + 1
                 checked += 1
                 if stated != expected:
-                    line = text[:match.start()].count("\n") + 1
                     rep.error("%s:%d states %d %s but the build has %d "
-                              "(run tools/verify.py --report)" % (rel, line, stated, label, expected))
+                              "(run tools/verify.py --report && tools/render_docs.py)"
+                              % (rel, line, stated, label, expected))
+                else:
+                    rep.error("%s:%d has a hand-typed %s (%d) - wrap the number as "
+                              "<!--f:%s-->%d<!--/f--> and run tools/render_docs.py"
+                              % (rel, line, label, stated, key, stated))
+    if checked == 0:
+        rep.error("doc numbers: 0 claims examined - non-empty assertion failed")
     return checked
 
 
@@ -412,8 +503,7 @@ def write_facts(facts: Dict[str, Any]) -> str:
         "| fact | value |",
         "| --- | ---: |",
     ]
-    for key in ("template_documents", "documents_total", "containers", "widgets",
-                "colors", "typography", "image_widgets", "images"):
+    for key in FACT_TABLE_KEYS:
         rows.append("| `%s` | %s |" % (key, facts[key]))
     rows += ["", "## Widget mix", "", "| widget | count |", "| --- | ---: |"]
     for name, count in facts["widget_mix"].items():
@@ -487,10 +577,6 @@ def main() -> int:
     verify_media(collect_image_urls(), rep)
 
     facts = compute_facts(kit)
-    facts["fa_documents"] = sum(
-        1 for root, _d, names in os.walk(TEMPLATES) for n in names
-        if n.endswith(".json") and ("-fa" in n or "persian" in open(
-            os.path.join(root, n), encoding="utf-8").read()[:2000]))
     if args.report:
         path = write_facts(facts)
         if not args.quiet:
@@ -498,6 +584,11 @@ def main() -> int:
     checked = check_doc_numbers(facts, rep)
 
     ban = banlist_advisory(args.strict_banlist, rep)
+    for key, floor in sorted(BANLIST_FLOORS.items()):
+        seen = ban.get("stats", {}).get(key)
+        if seen is None or seen < floor:
+            rep.error("banlist: examined %s %s, floor is %d - non-empty assertion failed"
+                      % (seen, key, floor))
     rep.stats["documents"] = docs
     if not args.quiet:
         print("Aurora AI - kit verification")

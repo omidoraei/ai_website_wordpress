@@ -28,7 +28,7 @@ block *inside* an Elementor container; use an Elementor widget instead.
 
 **Is anything hard-coded in HTML?**
 No. There is no HTML widget, no `<style>` block, no `functions.php` snippet and no custom
-CSS anywhere in the 40 documents. Text lives in Heading and Text Editor widgets, buttons in
+CSS anywhere in the <!--f:documents_total-->40<!--/f-->. Text lives in Heading and Text Editor widgets, buttons in
 Button widgets, images in Image widgets, and every other value is a standard Elementor
 control.
 
@@ -83,7 +83,7 @@ do not want.
 ### Everything is stacked in one column
 
 Flexbox Containers are not active. Go to **Elementor → Settings → Features**, set
-**Flexbox Container** to *Active*, then reload the editor. All 962 containers in the kit
+**Flexbox Container** to *Active*, then reload the editor. All <!--f:containers-->962<!--/f--> in the kit
 depend on it.
 
 ### My text edits look like they are being ignored

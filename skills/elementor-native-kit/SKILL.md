@@ -3,13 +3,21 @@ name: elementor-native-kit
 description: Build, modify, audit or extend the Aurora AI Elementor template kit — the 40 Elementor documents, the kit design system (global colors/fonts), the EN and FA/RTL template sets, the Theme Builder layouts, the reusable section blocks and the JSON generator in tools/aurora/. Use when a task touches templates/*.json, tools/aurora/*.py, tools/verify.py, the kit archives in dist/, Elementor control names, global color/typography references, responsive (per-breakpoint) values, Elementor Motion Effects, RTL/Persian layout, import/export mechanics, or when a control name, widget type or kit setting must be confirmed against the Elementor source before being emitted.
 version: 0.1.0
 provenance: "verified against Elementor includes/... on 2026-10-11"
+elementor_source:
+  v3_35_9: sha256:d4a235a93dd60bf9dbde78786aa95afe842de54c1e8375da1bdef71258b0a564
+  v4_0_8: sha256:643a604f07e0f3c542fba95af39bd04400b9a2f8193bd54086b2d685fd4bce05
+  archive: "vendor/elementor/elementor-<tag>-src.tar.gz - includes/** plus core/kits/documents/tabs/** only"
+  regenerate: "cd <elementor checkout> && tar --sort=name --mtime=@0 --owner=0 --group=0 --numeric-owner -cf - includes core/kits/documents/tabs | gzip -n -9 > <archive>"
+  verified: "CI verifies both sha256s before extraction; the gate never clones from the network"
 ---
 
 # Elementor-native kit skill
 
 Provenance: every control name in this skill was extracted from
 `elementor/elementor` at tags **v3.35.9** and **v4.0.8** on **2026-10-11** by
-`scripts/extract_controls.py`; the output lives in `references/_generated/`.
+`scripts/extract_controls.py`; the output lives in `references/_generated/`. The
+source subsets are vendored in `vendor/elementor/` and checksum-verified in CI, so the
+line numbers below cannot drift with the network.
 Nothing here is recalled from memory. If a name is absent from the generated
 index, it does not exist for this project.
 

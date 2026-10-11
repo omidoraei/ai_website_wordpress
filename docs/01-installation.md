@@ -18,7 +18,7 @@ code; every step is a standard Elementor screen.
 
 > **Elementor Pro?** The header, footer, single, archive, search and popup templates can
 > only be *assigned* with Pro. On Elementor Free you can still use all nine pages and all
-> 22 section blocks.
+> <!--f:blocks-->22<!--/f-->.
 
 ---
 
@@ -27,10 +27,10 @@ code; every step is a standard Elementor screen.
 1. Go to **Templates → Saved Templates**.
 2. Click **Import Templates** at the top of the screen.
 3. Choose `dist/aurora-ai-templates.zip` and confirm.
-4. When the import finishes, click **View Library** — all **40 templates** are now under
+4. When the import finishes, click **View Library** — all **<!--f:template_documents-->39<!--/f-->** are now under
    the *My Templates* tab, grouped by name:
    * `Aurora | …` — pages, headers, footers, layouts and the popup
-   * `Block | …` — the 22 reusable section blocks
+   * `Block | …` — the <!--f:blocks-->22<!--/f--> reusable section blocks
 
 The importer accepts the whole zip at once. If you would rather import one document at a
 time, every file under `templates/` is an independent Elementor JSON — import any of them
@@ -67,15 +67,15 @@ outbound requests.
 
 That single import sets:
 
-* 4 system colours + 15 custom colours (19 total)
-* 15 global typography styles (4 system slots + 11 named styles, 4 of them Persian)
+* <!--f:system_colours-->4<!--/f--> system colours + <!--f:custom_colours-->15<!--/f--> custom colours <!--f:global_colours-->19<!--/f-->
+* <!--f:typography_styles-->15<!--/f--> global typography styles (4 system slots + 11 named styles, 4 of them Persian)
 * content width 1240 px and tablet/mobile breakpoints
 * the H1–H6 ladder, body, link, button and form-field styles
 * the page background
 
 **If your Elementor version has no Import Kit screen**, apply the same values by hand —
 the complete table is in [02-design-system.md](02-design-system.md#applying-the-globals-by-hand).
-It is 19 colours and 15 typography styles and takes about four minutes.
+It is 19 colours and <!--f:typography_styles-->15<!--/f--> and takes about four minutes.
 
 Verify with **Elementor → Site Settings → Global Colors**: you should see *Amber*,
 *Ink*, *Stone* and *Coral* as the four system colours.

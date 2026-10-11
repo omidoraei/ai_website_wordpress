@@ -248,5 +248,5 @@ T = {"h2": "globals/typography?id=h2", ...}         # global font references
 SP / RADIUS / SHADOW / W / SECTION_PAD_Y            # spacing, radius, elevation, widths
 ```
 
-Change a value, run `python3 tools/build.py`, and every one of the 40 documents is
+Change a value, run `python3 tools/build.py`, and every one of the <!--f:documents_total-->40<!--/f--> is
 regenerated with the new token — including the kit's own `site-settings.json`.

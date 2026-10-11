@@ -13,7 +13,7 @@ lists what is already true, what to enable once, and what to check on your own h
 | **16 widget types total** | Elementor enqueues CSS and JS per widget type actually used. No carousel, slider, lottie, video, gallery or mega-menu libraries are pulled in. |
 | **No custom CSS, no custom JS** | Nothing in the kit adds a `<style>` or `<script>` beyond what Elementor itself emits. |
 | **Animation = Elementor Motion Effects** | `fadeInUp` with staggered 80–110 ms delays, implemented by Elementor's own tiny CSS. No ScrollTrigger, AOS, or GSAP. |
-| **One request per image** | 24 image widgets across the whole kit, 7 unique files. |
+| **One request per image** | <!--f:image_widgets-->24<!--/f--> across the whole kit, 7 unique files. |
 | **3:2 imagery at 1500 × 1000** | One honest size per slot, no 4000 px originals to re-encode. |
 | **Progressive JPEG, q90** | 91–274 KB each, ~976 KB of demo imagery in total. |
 | **Every image has `alt` text** | Checked in the build, editable per image. |

@@ -174,6 +174,12 @@ def main() -> int:
                 for top in doc.get("content") or []:
                     walk(top, rel, findings, counts, annotate)
 
+    MIN_DOCUMENTS = 30
+    if scanned < MIN_DOCUMENTS:
+        print("  ! only %d JSON document(s) examined, floor is %d - a scan of nothing is "
+              "not a pass (docs/METRICS.md \u00a73)" % (scanned, MIN_DOCUMENTS))
+        return 1
+
     by_class = collections.Counter(f[0] for f in findings)
     if args.json:
         print(json.dumps({

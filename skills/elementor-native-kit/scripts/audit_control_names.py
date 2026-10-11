@@ -138,6 +138,9 @@ def main() -> int:
 
     unknown = collections.Counter()
     where = collections.defaultdict(set)
+    per_file: dict = {}
+    templates_seen = 0
+    keys_seen = 0
     for root, _dirs, names in os.walk(TEMPLATES):
         for fn in sorted(names):
             if not fn.endswith(".json"):
@@ -146,18 +149,43 @@ def main() -> int:
             doc = json.load(open(path, encoding="utf-8"))
             if doc.get("type") == "kit":
                 continue
+            templates_seen += 1
+            total = matched = 0
+            misses = collections.Counter()
             for top in doc["content"]:
                 for el in walk(top):
                     wt = el.get("widgetType") if el.get("elType") == "widget" else "container"
                     allowed = pool.get(wt, pool["__base__"] | {""})
                     for key in (el.get("settings") or {}):
+                        total += 1
+                        keys_seen += 1
                         if key in PAGE_SETTINGS or key in allowed:
+                            matched += 1
                             continue
                         stem = re.sub(r"_(tablet|mobile|widescreen|laptop)$", "", key)
                         if stem in allowed:
+                            matched += 1
                             continue
+                        misses[key] += 1
                         unknown[(wt, key)] += 1
                         where[(wt, key)].add(os.path.relpath(path, REPO))
+            per_file[os.path.relpath(path, REPO)] = (total, matched, misses)
+
+    MIN_TEMPLATES, MIN_KEYS = 30, 500
+    index_elements = sorted(p for p in files if "/elements/" in p)
+    print("index coverage: %d file(s) in control-index.md, of which %d are "
+          "includes/elements/ : %s"
+          % (len(files), len(index_elements), ", ".join(os.path.basename(p) for p in index_elements)))
+    print("template scan: %d document(s), %d settings key(s)" % (templates_seen, keys_seen))
+    if templates_seen < MIN_TEMPLATES or keys_seen < MIN_KEYS:
+        print("  ! non-empty assertion failed (floors: %d documents, %d keys) - "
+              "a scan of nothing is not a pass" % (MIN_TEMPLATES, MIN_KEYS))
+        return 1
+    print("per file  settings_total  matched  unmatched_by_name")
+    for rel in sorted(per_file):
+        total, matched, misses = per_file[rel]
+        names = ", ".join("%s x%d" % (k, n) for k, n in sorted(misses.items())[:3]) or "-"
+        print("  %-46s %5d %8d  %s" % (rel, total, matched, names))
 
     result = {
         "unexplained_keys": len(unknown),
