@@ -113,7 +113,7 @@ Ship settings already stored in the template:
 
 ## Widgets used
 
-The kit deliberately uses a small, well-supported widget set — 16 free Elementor widgets
+The kit deliberately uses a small, well-supported widget set — sixteen free Elementor widgets (Pro-only widgets are documented per document; the control-name audit stays advisory - see `docs/CLAIMS.md` C-004)
 plus 12 Elementor Pro widgets. Nothing else, and no HTML widget.
 
 **Elementor Free**
