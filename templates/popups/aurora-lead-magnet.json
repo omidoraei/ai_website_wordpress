@@ -1,0 +1,393 @@
+{
+ "content": [
+  {
+   "id": "72b18fa",
+   "elType": "container",
+   "settings": {
+    "content_width": "full",
+    "width": {
+     "unit": "%",
+     "size": 100
+    },
+    "html_tag": "section",
+    "background_background": "classic",
+    "background_color": "rgba(20,17,16,0.82)",
+    "padding": {
+     "top": "40",
+     "right": "24",
+     "bottom": "40",
+     "left": "24",
+     "unit": "px",
+     "isLinked": false
+    },
+    "padding_tablet": {
+     "top": "40",
+     "right": "20",
+     "bottom": "40",
+     "left": "20",
+     "unit": "px",
+     "isLinked": false
+    },
+    "padding_mobile": {
+     "top": "24",
+     "right": "16",
+     "bottom": "24",
+     "left": "16",
+     "unit": "px",
+     "isLinked": false
+    }
+   },
+   "elements": [
+    {
+     "id": "428f916",
+     "elType": "container",
+     "settings": {
+      "flex_direction": "column",
+      "flex_justify_content": "center",
+      "flex_align_items": "center"
+     },
+     "elements": [
+      {
+       "id": "4d19408",
+       "elType": "container",
+       "settings": {
+        "flex_gap": {
+         "row": "20",
+         "column": "20",
+         "unit": "px",
+         "isLinked": true
+        },
+        "background_background": "classic",
+        "background_color": "globals/colors?id=white",
+        "border_border": "solid",
+        "border_width": {
+         "top": "1",
+         "right": "1",
+         "bottom": "1",
+         "left": "1",
+         "unit": "px",
+         "isLinked": true
+        },
+        "border_color": "globals/colors?id=line",
+        "border_radius": {
+         "top": "30",
+         "right": "30",
+         "bottom": "30",
+         "left": "30",
+         "unit": "px",
+         "isLinked": true
+        },
+        "box_shadow_box_shadow_type": "yes",
+        "box_shadow_box_shadow": {
+         "horizontal": 0,
+         "vertical": 40,
+         "blur": 80,
+         "spread": -24,
+         "color": "rgba(28,25,23,0.28)"
+        },
+        "padding": {
+         "top": "40",
+         "right": "40",
+         "bottom": "40",
+         "left": "40",
+         "unit": "px",
+         "isLinked": true
+        },
+        "padding_tablet": {
+         "top": "40",
+         "right": "40",
+         "bottom": "40",
+         "left": "40",
+         "unit": "px",
+         "isLinked": true
+        },
+        "padding_mobile": {
+         "top": "26",
+         "right": "26",
+         "bottom": "26",
+         "left": "26",
+         "unit": "px",
+         "isLinked": true
+        },
+        "flex_direction": "column",
+        "_flex_size": "custom",
+        "_flex_grow": 0,
+        "_flex_shrink": 1,
+        "_flex_basis_type": "custom",
+        "_flex_basis": {
+         "unit": "%",
+         "size": 100
+        },
+        "_flex_basis_type_tablet": "custom",
+        "_flex_basis_tablet": {
+         "unit": "%",
+         "size": 100
+        },
+        "_flex_basis_type_mobile": "custom",
+        "_flex_basis_mobile": {
+         "unit": "%",
+         "size": 100
+        }
+       },
+       "elements": [
+        {
+         "id": "4a01864",
+         "elType": "container",
+         "settings": {
+          "flex_direction": "row",
+          "flex_wrap": "nowrap",
+          "flex_justify_content": "flex-start",
+          "flex_align_items": "center",
+          "flex_gap": {
+           "row": "12",
+           "column": "12",
+           "unit": "px",
+           "isLinked": true
+          }
+         },
+         "elements": [
+          {
+           "id": "75f9c92",
+           "elType": "container",
+           "settings": {
+            "flex_direction": "row",
+            "flex_wrap": "nowrap",
+            "flex_justify_content": "center",
+            "flex_align_items": "center",
+            "flex_gap": {
+             "row": "0",
+             "column": "0",
+             "unit": "px",
+             "isLinked": true
+            },
+            "background_background": "classic",
+            "background_color": "globals/colors?id=sand-100",
+            "border_radius": {
+             "top": "16",
+             "right": "16",
+             "bottom": "16",
+             "left": "16",
+             "unit": "px",
+             "isLinked": true
+            },
+            "padding": {
+             "top": "14",
+             "right": "14",
+             "bottom": "14",
+             "left": "14",
+             "unit": "px",
+             "isLinked": true
+            },
+            "_element_width": "initial",
+            "_element_custom_width": {
+             "unit": "px",
+             "size": 56
+            },
+            "background_hover_background": "classic",
+            "background_hover_color": "globals/colors?id=amber-100",
+            "background_hover_transition": {
+             "unit": "s",
+             "size": 0.25
+            }
+           },
+           "elements": [
+            {
+             "id": "fb12f04",
+             "elType": "widget",
+             "settings": {
+              "selected_icon": {
+               "value": "fas fa-clipboard-check",
+               "library": "fa-solid"
+              },
+              "view": "default",
+              "shape": "circle",
+              "size": {
+               "unit": "px",
+               "size": 20
+              },
+              "icon_padding": {
+               "unit": "px",
+               "size": 0
+              },
+              "primary_color": "globals/colors?id=amber-600"
+             },
+             "elements": [],
+             "widgetType": "icon"
+            }
+           ],
+           "isInner": true
+          },
+          {
+           "id": "0df9d26",
+           "elType": "widget",
+           "settings": {
+            "title": "Free checklist",
+            "header_size": "p",
+            "title_color": "globals/colors?id=amber-600",
+            "typography_typography": "globals/typography?id=eyebrow",
+            "typography_letter_spacing": {
+             "unit": "px",
+             "size": 1.2
+            },
+            "_element_width": "initial"
+           },
+           "elements": [],
+           "widgetType": "heading"
+          }
+         ],
+         "isInner": true
+        },
+        {
+         "id": "f3f167d",
+         "elType": "widget",
+         "settings": {
+          "title": "Is your product ready for AI?",
+          "header_size": "h2",
+          "title_color": "globals/colors?id=secondary",
+          "typography_typography": "globals/typography?id=h2",
+          "typography_font_size": {
+           "unit": "px",
+           "size": 34
+          },
+          "typography_font_size_mobile": {
+           "unit": "px",
+           "size": 26
+          }
+         },
+         "elements": [],
+         "widgetType": "heading"
+        },
+        {
+         "id": "31a89fa",
+         "elType": "widget",
+         "settings": {
+          "editor": "<p>The 18-point readiness checklist we run with every new client, in a single PDF. No webinar, no follow-up sequence.</p>",
+          "text_color": "globals/colors?id=text",
+          "typography_typography": "globals/typography?id=lead"
+         },
+         "elements": [],
+         "widgetType": "text-editor"
+        },
+        {
+         "id": "0c239b6",
+         "elType": "widget",
+         "settings": {
+          "form_name": "Aurora AI readiness checklist",
+          "form_fields": [
+           {
+            "_id": "f51a6ce",
+            "custom_id": "email",
+            "field_type": "email",
+            "field_label": "Work email",
+            "field_name": "email",
+            "placeholder": "name@company.com",
+            "required": "true",
+            "width": "100",
+            "width_mobile": "100"
+           }
+          ],
+          "button_text": "Send me the checklist",
+          "button_size": "lg",
+          "button_align": "center",
+          "button_width": "100",
+          "email_to": "hello@aurora.example",
+          "email_subject": "AI readiness checklist request",
+          "email_content": "[all-fields]",
+          "email_from_name": "Aurora AI",
+          "email_from": "no-reply@aurora.example",
+          "email_reply_to": "email",
+          "submit_actions": [
+           "email",
+           "email2"
+          ],
+          "success_message": "Check your inbox - the checklist is on its way.",
+          "error_message": "Something went wrong. Please try again.",
+          "input_size": "md",
+          "label_color": "globals/colors?id=secondary",
+          "field_text_color": "globals/colors?id=secondary",
+          "field_background_color": "globals/colors?id=white",
+          "field_border_color": "globals/colors?id=line",
+          "field_border_width": {
+           "top": "1",
+           "right": "1",
+           "bottom": "1",
+           "left": "1",
+           "unit": "px",
+           "isLinked": true
+          },
+          "field_border_radius": {
+           "top": "12",
+           "right": "12",
+           "bottom": "12",
+           "left": "12",
+           "unit": "px",
+           "isLinked": true
+          },
+          "button_text_color": "globals/colors?id=ink-900",
+          "button_background_color": "globals/colors?id=primary",
+          "label_typography_typography": "globals/typography?id=eyebrow",
+          "label_typography_text_transform": "none",
+          "label_typography_font_size": {
+           "unit": "px",
+           "size": 13
+          },
+          "label_typography_letter_spacing": {
+           "unit": "px",
+           "size": 0.2
+          },
+          "field_typography_typography": "globals/typography?id=text",
+          "button_typography_typography": "globals/typography?id=accent",
+          "_element_width": "100%"
+         },
+         "elements": [],
+         "widgetType": "form"
+        },
+        {
+         "id": "6391a28",
+         "elType": "widget",
+         "settings": {
+          "editor": "<p>We store your email only to send the checklist. Unsubscribe any time.</p>",
+          "text_color": "globals/colors?id=muted",
+          "align": "center",
+          "typography_typography": "globals/typography?id=text",
+          "typography_typography_font_size": {
+           "unit": "px",
+           "size": 13
+          }
+         },
+         "elements": [],
+         "widgetType": "text-editor"
+        }
+       ],
+       "isInner": true
+      }
+     ],
+     "isInner": true
+    }
+   ],
+   "isInner": false
+  }
+ ],
+ "page_settings": {
+  "popup_type": "exit_intent",
+  "popup_entrance_animation": "fadeInUp",
+  "popup_exit_animation": "fadeOutDown",
+  "popup_entrance_animation_duration": {
+   "unit": "px",
+   "size": 0.4
+  },
+  "prevent_scroll": "yes",
+  "close_button": "yes",
+  "close_button_position": "outside",
+  "close_button_delay": 300,
+  "overlay_background_background": "classic",
+  "overlay_background_color": "rgba(20,17,16,0.8)",
+  "page_load_delay": 0,
+  "exit_intent_behavior": "show",
+  "avoid_multiple_popups": "yes",
+  "popup_conditions": []
+ },
+ "version": "0.4",
+ "title": "Aurora | Popup - AI Readiness Checklist",
+ "type": "popup"
+}

@@ -1,0 +1,335 @@
+name: kit
+
+# The repo receives no automatic third-party review, so this workflow IS the gate.
+# Every step must exit 0 unless it is explicitly marked advisory; any non-zero exit
+# fails the build (constitution rule C).
+
+on:
+  push:
+    branches: ["**"]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pull-requests: read   # the retraction guard reads PR #1's body and title
+
+env:
+  ELEMENTOR_TAG: v3.35.9
+  # The image host is a git TAG, and git tags are movable on GitHub (force-move/delete).
+  # Recorded target of kit-assets-v1 (lightweight tag); the step below fails if it moves.
+  KIT_ASSETS_TAG_SHA: 96149fa9233a4ba14f1c1aa539f406f3023843cd
+
+jobs:
+  gate:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.11"
+
+      # ---- 1. rebuild deterministically, then prove the tree did not drift -------
+      - name: Build the kit
+        run: python3 tools/build.py
+
+      - name: Templates are reproducible (a rebuild produces no diff)
+        run: |
+          if ! git diff --quiet -- templates/ dist/; then
+            echo "::error::templates/ or dist/ changed after a rebuild - commit the output"
+            git --no-pager diff --stat -- templates/ dist/
+            exit 1
+          fi
+
+      # ---- 2. the gate -----------------------------------------------------------
+      - name: verify.py - structure, references, value shapes, media, doc numbers
+        run: python3 tools/verify.py --report
+
+      - name: Render the generated numbers into the docs (no hand-typed counts)
+        run: python3 tools/render_docs.py --check
+
+      - name: bidi / Unicode safety
+        run: python3 tools/bidi_check.py
+
+      # BANLIST.md is the numeric contract for taste. P1 diagnosis found 7 rules
+      # tripped by working detectors, plus 4 with a declared detector gap
+      # (docs/p1/delta-table.md). They become fatal at P2, at which point this step
+      # drops --report-only and matches verify.py --strict-banlist.
+      - name: BANLIST enforcement, diagnosis only until P2
+        run: python3 tools/banlist_check.py --report-only
+
+      - name: BANLIST report to job summary
+        if: always()
+        run: |
+          {
+            echo "### BANLIST detectors"
+            echo '```'
+            python3 tools/banlist_check.py --report-only
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      # A retraction is not complete until every public surface is updated (docs/CLAIMS.md).
+      # The phrase list lives in the ledger; this guard scans every surface a buyer can read:
+      # the working tree (docs, README, CHANGELOG, templates/INDEX.md), the pushed commit
+      # messages, the PR body/title and the CI run title. It prints its input count, so
+      # "0 hits" cannot be an artefact of scanning nothing. It fails closed when a network
+      # surface cannot be fetched at all.
+      - name: Retraction guard
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPO: ${{ github.repository }}
+          RUN_ID: ${{ github.run_id }}
+          EVENT_BEFORE: ${{ github.event.before }}
+          HEAD_SHA: ${{ github.sha }}
+        run: |
+          python3 - <<'PY'
+          import json, os, re, shutil, subprocess, sys
+
+          ledger = open("docs/CLAIMS.md", encoding="utf-8").read()
+          block = re.search(r"```retracted-phrases\n(.*?)```", ledger, re.S)
+          if not block:
+              sys.exit("docs/CLAIMS.md has no retracted-phrases block")
+          def norm(text):
+              return re.sub(r"\s+", " ", text).lower()
+
+          phrases = [norm(row) for row in block.group(1).splitlines() if row.strip()]
+
+          surfaces = ["README.md", "CHANGELOG.md", ".github/workflows/kit.yml", "templates/INDEX.md"]
+          for dirpath, dirs, files in os.walk("docs"):
+              if dirpath.rstrip("/").endswith("docs/_generated"):
+                  dirs[:] = []
+                  continue
+              for fn in sorted(files):
+                  if fn.endswith(".md") and fn != "CLAIMS.md" and not fn.startswith("HANDOFF"):
+                      surfaces.append(os.path.join(dirpath, fn))
+          surfaces = sorted({row for row in surfaces if os.path.exists(row)})
+          if len(surfaces) < 10 or len(phrases) < 3:
+              sys.exit("non-empty assertion failed: %d file(s), %d phrase(s)"
+                       % (len(surfaces), len(phrases)))
+
+          hits = []
+          for rel in surfaces:
+              low = norm(open(rel, encoding="utf-8").read())
+              hits += [(rel, phrase) for phrase in phrases if phrase in low]
+
+          before = os.environ.get("EVENT_BEFORE", "").strip()
+          rng = ("%s..%s" % (before, os.environ.get("HEAD_SHA", "HEAD"))
+                 if before and set(before) != {"0"} else "HEAD~1..HEAD")
+          log = subprocess.run(["git", "log", "--format=%H %B", rng], capture_output=True, text=True)
+          if log.returncode != 0:
+              log = subprocess.run(["git", "log", "-1", "--format=%H %B"], capture_output=True, text=True)
+          commits = [row for row in log.stdout.splitlines() if row.strip()]
+          for row in commits:
+              for phrase in phrases:
+                  if phrase in norm(row):
+                      hits.append(("commit-message", phrase))
+
+          def fetch(path):
+              """(http_code, text) for a GitHub API path; gh first, curl fallback."""
+              if shutil.which("gh"):
+                  proc = subprocess.run(["gh", "api", path], capture_output=True, text=True)
+                  if proc.returncode == 0:
+                      return 200, proc.stdout
+              if shutil.which("curl"):
+                  url = "https://api.github.com/" + path
+                  proc = subprocess.run(["curl", "-sS", "-w", "\n%{http_code}",
+                                         "-H", "Authorization: Bearer " + os.environ.get("GH_TOKEN", ""),
+                                         "-H", "Accept: application/vnd.github+json", url],
+                                        capture_output=True, text=True)
+                  text = proc.stdout
+                  code = text.rsplit("\n", 1)[-1].strip()
+                  return (int(code) if code.isdigit() else 0), text.rsplit("\n", 1)[0]
+              return 0, ""
+
+          seen = {"pr": "skipped", "run": "skipped"}
+
+          def scan_api(name, path, keys):
+              code, text = fetch(path)
+              if code == 404:
+                  print("  - %s: not present (404), skipped" % name)
+                  return
+              if code != 200:
+                  print("::error::retraction guard could not fetch %s (http %s)" % (name, code))
+                  sys.exit(1)
+              data = json.loads(text)
+              seen[name] = "scanned"
+              for key in keys:
+                  for phrase in phrases:
+                      if phrase in norm(data.get(key) or ""):
+                          hits.append(("%s:%s" % (name, key), phrase))
+
+          scan_api("pr", "repos/%s/pulls/1" % os.environ["REPO"], ("title", "body"))
+          scan_api("run", "repos/%s/actions/runs/%s" % (os.environ["REPO"], os.environ["RUN_ID"]),
+                   ("display_title", "name"))
+
+          print("retraction guard: %d file(s), %d phrase(s), %d commit line(s), pr=%s, run=%s"
+                % (len(surfaces), len(phrases), len(commits), seen["pr"], seen["run"]))
+          for rel, phrase in hits:
+              print("  ! %s still says %r" % (rel, phrase))
+          sys.exit(1 if hits else 0)
+          PY
+
+      - name: verify.py --report produced no uncommitted facts
+        run: |
+          if ! git diff --quiet -- docs/_generated/; then
+            echo "::error::docs/_generated/facts.md is stale - run tools/verify.py --report and commit"
+            git --no-pager diff -- docs/_generated/
+            exit 1
+          fi
+
+      # ---- 2b. invariants, not phrases ------------------------------------------
+      # A blocklist of strings is brittle (a future agent can rephrase a false claim and pass).
+      # These assertions are the durable contract: they read facts.json + the template tree.
+      # P1.7 turned them from a report-only step into tools/invariant_check.py, a hard gate against
+      # docs/_generated/invariant-baseline.json: known defects are allowed at the recorded value,
+      # any worsening FAILS, and any improvement must update the baseline in the same commit.
+      - name: Invariant ratchet (known values allowed, regressions fail)
+        run: python3 tools/invariant_check.py
+
+      # ---- 2c. asset immutability -----------------------------------------------
+      # P1.7 item 4: the tag pin protects the repository; this protects the artifact a buyer
+      # imports. While tokens.py still emits the movable tag the count is a ratchet; the moment
+      # ASSET_BASE carries the commit SHA, any emitted "/kit-assets-v1/" URL is a hard failure.
+      - name: Asset URL immutability (strict once ASSET_BASE carries the commit SHA)
+        run: |
+          python3 tools/invariant_check.py --json > /tmp/invariants.json
+          python3 - <<'PY'
+          import json
+          data = json.load(open("/tmp/invariants.json"))
+          rows = {row["name"]: row for row in data["rows"]}
+          limits = json.load(open("docs/_generated/invariant-baseline.json"))["ratchets"]
+          count = int(rows["asset_urls_on_mutable_tag"]["measured"])
+          base = int(limits["asset_urls_on_mutable_tag"])
+          form = data["asset_base_form"]
+          print("asset base form: %s | emitted URLs on the movable tag: %d (allowed max %d)"
+                % (form, count, base))
+          if count > base:
+              raise SystemExit("FAIL: %d emitted URL(s) address the movable tag, baseline is %d"
+                               % (count, base))
+          if form == "sha" and count:
+              raise SystemExit("FAIL: ASSET_BASE carries the commit SHA but %d emitted URL(s) "
+                               "still address /kit-assets-v1/" % count)
+          print("OK: %s form at the recorded value; the commit-SHA repoint is tracked in "
+                "HANDOFF-P1.7.md item 4" % form)
+          PY
+
+      # ---- 3. evidence: control names come from the pinned source ----------------
+      # Hermetic on purpose: a network outage or an upstream re-tag must not be able to
+      # move a "verified" line number under us. The sources are committed; their sha256
+      # live in skills/elementor-native-kit/SKILL.md; a mismatch fails before extraction.
+      - name: Verify the vendored Elementor sources, then extract them
+        run: |
+          mkdir -p /tmp/elementor
+          python3 - <<'PY'
+          import hashlib, os, re, subprocess, sys
+
+          tag = os.environ["ELEMENTOR_TAG"]
+          front = open("skills/elementor-native-kit/SKILL.md", encoding="utf-8").read().split("---", 2)[1]
+          want = dict(re.findall(r"(v[0-9_]+):\s*sha256:([0-9a-f]{64})", front))
+          if len(want) < 2:
+              sys.exit("SKILL.md front matter does not record both elementor_source sha256s")
+
+          for key, version in (("v3_35_9", "3.35.9"), ("v4_0_8", "4.0.8")):
+              archive = "vendor/elementor/elementor-%s-src.tar.gz" % version
+              got = hashlib.sha256(open(archive, "rb").read()).hexdigest()
+              if want.get(key) != got:
+                  sys.exit("checksum mismatch for %s: %s != expected %s"
+                           % (archive, got, want.get(key)))
+              print("verified %s sha256:%s" % (archive, got))
+              if ("v%s" % version) == tag:
+                  subprocess.check_call(["tar", "xzf", archive, "-C", "/tmp/elementor"])
+                  print("extracted %s to /tmp/elementor" % archive)
+          PY
+
+      - name: Regenerate the control index and diff it against the committed one
+        run: |
+          python3 skills/elementor-native-kit/scripts/extract_controls.py \
+            --source /tmp/elementor --tag "$ELEMENTOR_TAG"
+          if ! git diff --quiet -- skills/elementor-native-kit/references/_generated/; then
+            echo "::error::the committed control index no longer matches the pinned source"
+            git --no-pager diff --stat -- skills/elementor-native-kit/references/_generated/
+            exit 1
+          fi
+
+      # ---- 3c. advisory audit ---------------------------------------------------
+      # The audit exits 1 when it finds settings keys it cannot explain (228 today; the residue is
+      # recorded in docs/CLAIMS.md C-004). P1.7's run 38162832608 was green at run and step level
+      # yet carried one failure annotation, because GitHub still records the exit code of a
+      # tolerated (continue-on-error) step as "Process completed with exit code 1." Findings are
+      # now printed and summarised without any annotation; an actual crash (exit >= 2) still fails.
+      # Acceptance for a phase is therefore: conclusion success AND 0 error annotations AND 0
+      # failed steps - a green conclusion alone is not proof (docs/CLAIMS.md C-031).
+      - name: "Control-name audit (advisory, findings printed, no error annotation)"
+        run: |
+          set +e
+          python3 skills/elementor-native-kit/scripts/audit_control_names.py > /tmp/audit.txt 2>&1
+          code=$?
+          set -e
+          tail -40 /tmp/audit.txt
+          {
+            echo "### Control-name audit (advisory)"
+            echo
+            echo '```'
+            tail -20 /tmp/audit.txt
+            echo '```'
+            echo
+            echo "exit code: $code (1 = findings, recorded in docs/CLAIMS.md C-004; not a gate failure)"
+          } >> "$GITHUB_STEP_SUMMARY"
+          if [ "$code" -eq 0 ]; then
+            echo "advisory audit: clean (exit 0)"
+          elif [ "$code" -eq 1 ]; then
+            echo "advisory audit: findings (exit 1) - advisory by decision, no error annotation raised"
+          else
+            echo "::error::advisory audit crashed (exit $code) - a crash is not a findings exit"
+            exit "$code"
+          fi
+
+      # The image host is a movable git tag; assert its target has not moved.
+      - name: Kit-assets tag is at the recorded commit
+        run: |
+          got=$(git ls-remote --tags origin refs/tags/kit-assets-v1 | head -1 | cut -f1)
+          echo "kit-assets-v1 -> ${got:-<remote miss>} (pinned ${KIT_ASSETS_TAG_SHA})"
+          test -n "$got" && test "$got" = "$KIT_ASSETS_TAG_SHA"
+
+      # ---- 4. media: every referenced asset must be reachable -------------------
+      - name: Asset URLs are live
+        run: python3 tools/check_assets.py
+
+      # ---- 5. visual suite ------------------------------------------------------
+      - name: Preview renders every page
+        run: |
+          python3 tools/preview.py
+          got=$(ls preview/*.html | wc -l)
+          echo "preview pages: $got (expected >= 10)"
+          test "$got" -ge 10
+
+      # ---- 6. artifacts ---------------------------------------------------------
+      # upload-artifact@v5 still targets Node 20 (the run annotation names it), so it
+      # would keep the deprecation alive; v7 is the current stable line on Node 24.
+      - name: Upload kit artifacts
+        uses: actions/upload-artifact@v7
+        with:
+          name: aurora-ai-kit
+          path: |
+            dist/*.zip
+            dist/*.json
+            templates/INDEX.md
+            docs/_generated/facts.md
+          if-no-files-found: error
+
+      - name: Job summary
+        if: always()
+        run: |
+          {
+            echo "## Aurora kit gate"
+            echo
+            echo "deterministic dist digests:"
+            sha256sum dist/*.zip || true
+            echo
+            echo '```'
+            python3 tools/verify.py || true
+            echo '```'
+            echo
+            if [ -f docs/_generated/facts.md ]; then cat docs/_generated/facts.md; fi
+          } >> "$GITHUB_STEP_SUMMARY"

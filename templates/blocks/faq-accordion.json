@@ -1,0 +1,264 @@
+{
+ "content": [
+  {
+   "id": "f807d41",
+   "elType": "container",
+   "settings": {
+    "content_width": "full",
+    "width": {
+     "unit": "%",
+     "size": 100
+    },
+    "html_tag": "section",
+    "background_background": "classic",
+    "background_color": "globals/colors?id=white",
+    "_element_id": "faq",
+    "padding": {
+     "top": "120",
+     "right": "24",
+     "bottom": "120",
+     "left": "24",
+     "unit": "px",
+     "isLinked": false
+    },
+    "padding_tablet": {
+     "top": "80",
+     "right": "24",
+     "bottom": "80",
+     "left": "24",
+     "unit": "px",
+     "isLinked": false
+    },
+    "padding_mobile": {
+     "top": "56",
+     "right": "20",
+     "bottom": "56",
+     "left": "20",
+     "unit": "px",
+     "isLinked": false
+    }
+   },
+   "elements": [
+    {
+     "id": "19e90c8",
+     "elType": "container",
+     "settings": {
+      "flex_direction": "column",
+      "boxed_width": {
+       "unit": "px",
+       "size": 1240
+      },
+      "boxed_width_tablet": {
+       "unit": "%",
+       "size": 100
+      },
+      "boxed_width_mobile": {
+       "unit": "%",
+       "size": 100
+      }
+     },
+     "elements": [
+      {
+       "id": "ae9fb83",
+       "elType": "container",
+       "settings": {
+        "flex_direction": "column",
+        "flex_align_items": "center",
+        "flex_gap": {
+         "row": "18",
+         "column": "18",
+         "unit": "px",
+         "isLinked": true
+        },
+        "boxed_width": {
+         "unit": "px",
+         "size": 780
+        },
+        "boxed_width_mobile": {
+         "unit": "px",
+         "size": 780
+        }
+       },
+       "elements": [
+        {
+         "id": "88e67f4",
+         "elType": "container",
+         "settings": {
+          "flex_direction": "row",
+          "flex_wrap": "nowrap",
+          "flex_justify_content": "center",
+          "flex_align_items": "center",
+          "flex_gap": {
+           "row": "12",
+           "column": "12",
+           "unit": "px",
+           "isLinked": true
+          },
+          "_element_width": "100%"
+         },
+         "elements": [
+          {
+           "id": "4b529aa",
+           "elType": "widget",
+           "settings": {
+            "style": "solid",
+            "weight": {
+             "unit": "px",
+             "size": 2
+            },
+            "color": "globals/colors?id=amber-600",
+            "width": {
+             "unit": "px",
+             "size": 26
+            },
+            "gap": {
+             "unit": "px",
+             "size": 0
+            }
+           },
+           "elements": [],
+           "widgetType": "divider"
+          },
+          {
+           "id": "47a89c8",
+           "elType": "widget",
+           "settings": {
+            "title": "FAQ",
+            "header_size": "p",
+            "title_color": "globals/colors?id=amber-600",
+            "typography_typography": "globals/typography?id=eyebrow",
+            "_element_width": "initial"
+           },
+           "elements": [],
+           "widgetType": "heading"
+          }
+         ],
+         "isInner": true
+        },
+        {
+         "id": "c17c405",
+         "elType": "widget",
+         "settings": {
+          "title": "Questions we get every week",
+          "header_size": "h2",
+          "align": "center",
+          "typography_typography": "globals/typography?id=h2",
+          "_animation": "fadeInUp",
+          "_animation_delay": 80
+         },
+         "elements": [],
+         "widgetType": "heading"
+        },
+        {
+         "id": "3578775",
+         "elType": "widget",
+         "settings": {
+          "editor": "<p>Cannot find your answer? Our team replies the same day.</p>",
+          "text_color": "globals/colors?id=text",
+          "align": "center",
+          "typography_typography": "globals/typography?id=lead",
+          "_animation": "fadeInUp",
+          "_animation_delay": 160
+         },
+         "elements": [],
+         "widgetType": "text-editor"
+        }
+       ],
+       "isInner": true
+      },
+      {
+       "id": "d0cf826",
+       "elType": "widget",
+       "settings": {
+        "tabs": [
+         {
+          "_id": "0f6a473",
+          "tab_title": "What do we need to get started?",
+          "tab_content": "A product owner, access to a representative dataset and one engineer. We run the first workshop inside your workspace, so nothing leaves your environment."
+         },
+         {
+          "_id": "2efe35a",
+          "tab_title": "Which models can Aurora orchestrate?",
+          "tab_content": "Aurora is model-agnostic. Route between OpenAI, Anthropic, Google, Mistral and your own fine-tunes per step, and switch providers without touching application code."
+         },
+         {
+          "_id": "fba08b6",
+          "tab_title": "How do you handle data privacy?",
+          "tab_content": "Data can stay in the EU or the US, is encrypted in transit and at rest, and PII is redacted before it reaches a model. We are SOC 2 Type II certified and GDPR ready."
+         },
+         {
+          "_id": "3d7c0ae",
+          "tab_title": "Can we self-host?",
+          "tab_content": "Yes. The Enterprise plan ships as a container image you can run inside your own VPC, with the control plane either managed or fully air-gapped."
+         },
+         {
+          "_id": "d3300d5",
+          "tab_title": "What does onboarding cost?",
+          "tab_content": "Growth includes a guided 30-day onboarding. Enterprise engagements include a named success manager and a quarterly review of your agent portfolio."
+         },
+         {
+          "_id": "653e33f",
+          "tab_title": "Is there a long-term contract?",
+          "tab_content": "Monthly plans are month-to-month. Annual agreements include a discount and a commercial SLA with committed uptime and response times."
+         }
+        ],
+        "selected_icon": {
+         "value": "fas fa-plus",
+         "library": "fa-solid"
+        },
+        "selected_active_icon": {
+         "value": "fas fa-minus",
+         "library": "fa-solid"
+        },
+        "title_html_tag": "h3",
+        "border_width": {
+         "unit": "px",
+         "size": 1
+        },
+        "border_color": "globals/colors?id=line",
+        "title_background": "globals/colors?id=white",
+        "title_color": "globals/colors?id=secondary",
+        "tab_active_color": "globals/colors?id=primary",
+        "content_background_color": "globals/colors?id=white",
+        "content_color": "globals/colors?id=text",
+        "title_padding": {
+         "top": "18",
+         "right": "22",
+         "bottom": "18",
+         "left": "22",
+         "unit": "px",
+         "isLinked": false
+        },
+        "content_padding": {
+         "top": "4",
+         "right": "24",
+         "bottom": "24",
+         "left": "24",
+         "unit": "px",
+         "isLinked": false
+        },
+        "icon_color": "globals/colors?id=secondary",
+        "icon_active_color": "globals/colors?id=primary",
+        "icon_space": {
+         "unit": "px",
+         "size": 16
+        },
+        "faq_schema": "yes",
+        "title_typography_typography": "globals/typography?id=h3",
+        "content_typography_typography": "globals/typography?id=text"
+       },
+       "elements": [],
+       "widgetType": "accordion"
+      }
+     ],
+     "isInner": true
+    }
+   ],
+   "isInner": false
+  }
+ ],
+ "page_settings": {},
+ "version": "0.4",
+ "title": "Block | FAQ - Accordion",
+ "type": "section"
+}

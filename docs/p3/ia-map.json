@@ -1,0 +1,3890 @@
+{
+ "generated_by": "tools/ia_map.py",
+ "floors": {
+  "documents": 30,
+  "sections": 50
+ },
+ "stats": {
+  "documents": 39,
+  "sections": 95,
+  "kit_documents": [
+   "kit/aurora-site-settings.json"
+  ],
+  "documents_with_dead_cta_targets": 18
+ },
+ "anchor_reuse": {
+  "contact": [
+   "blocks/contact-section",
+   "pages/aurora-contact"
+  ],
+  "cta": [
+   "blocks/cta-band",
+   "blocks/fa-cta-band",
+   "loop/aurora-archive",
+   "loop/aurora-search-results",
+   "loop/aurora-single-post",
+   "pages/aurora-about",
+   "pages/aurora-contact",
+   "pages/aurora-home-en",
+   "pages/aurora-home-fa",
+   "pages/aurora-portfolio",
+   "pages/aurora-pricing",
+   "pages/aurora-services"
+  ],
+  "faq": [
+   "blocks/fa-faq-accordion",
+   "blocks/faq-accordion",
+   "pages/aurora-contact",
+   "pages/aurora-home-en",
+   "pages/aurora-home-fa",
+   "pages/aurora-pricing",
+   "pages/aurora-services"
+  ],
+  "hero": [
+   "blocks/fa-hero-split",
+   "blocks/hero-split",
+   "pages/aurora-home-en",
+   "pages/aurora-home-fa"
+  ],
+  "how": [
+   "blocks/feature-zigzag",
+   "pages/aurora-home-en",
+   "pages/aurora-home-fa"
+  ],
+  "newsletter": [
+   "blocks/newsletter-band",
+   "loop/aurora-archive",
+   "pages/aurora-blog",
+   "pages/aurora-home-en",
+   "pages/aurora-home-fa"
+  ],
+  "portfolio": [
+   "blocks/case-studies",
+   "pages/aurora-home-en",
+   "pages/aurora-home-fa",
+   "pages/aurora-portfolio"
+  ],
+  "pricing": [
+   "blocks/fa-pricing-table",
+   "blocks/pricing-table",
+   "pages/aurora-home-en",
+   "pages/aurora-home-fa",
+   "pages/aurora-pricing"
+  ],
+  "process": [
+   "blocks/process-steps",
+   "pages/aurora-home-en",
+   "pages/aurora-home-fa",
+   "pages/aurora-services"
+  ],
+  "results": [
+   "blocks/stats-band",
+   "pages/aurora-about",
+   "pages/aurora-home-en",
+   "pages/aurora-home-fa"
+  ],
+  "services": [
+   "blocks/capability-cards",
+   "pages/aurora-home-en",
+   "pages/aurora-home-fa",
+   "pages/aurora-services"
+  ],
+  "story": [
+   "blocks/content-two-column",
+   "pages/aurora-about"
+  ],
+  "team": [
+   "blocks/team-grid",
+   "pages/aurora-about"
+  ],
+  "testimonials": [
+   "blocks/testimonials",
+   "pages/aurora-about",
+   "pages/aurora-home-en",
+   "pages/aurora-home-fa",
+   "pages/aurora-portfolio",
+   "pages/aurora-pricing"
+  ]
+ },
+ "cta_targets": {
+  "#about": {
+   "used_in": [
+    "blocks/content-two-column.json",
+    "pages/aurora-about.json"
+   ],
+   "resolves_in": []
+  },
+  "#contact": {
+   "used_in": [
+    "blocks/cta-band.json",
+    "blocks/fa-cta-band.json",
+    "blocks/fa-hero-split.json",
+    "blocks/hero-split.json",
+    "headers/aurora-header-en.json",
+    "headers/aurora-header-fa.json",
+    "loop/aurora-archive.json",
+    "loop/aurora-search-results.json",
+    "loop/aurora-single-post.json",
+    "pages/aurora-about.json",
+    "pages/aurora-contact.json",
+    "pages/aurora-home-en.json",
+    "pages/aurora-home-fa.json",
+    "pages/aurora-portfolio.json",
+    "pages/aurora-pricing.json",
+    "pages/aurora-services.json"
+   ],
+   "resolves_in": [
+    "pages/aurora-contact.json"
+   ]
+  },
+  "#demo": {
+   "used_in": [
+    "blocks/fa-hero-split.json",
+    "blocks/feature-zigzag.json",
+    "blocks/hero-split.json",
+    "pages/aurora-home-en.json",
+    "pages/aurora-home-fa.json"
+   ],
+   "resolves_in": []
+  },
+  "#docs": {
+   "used_in": [
+    "blocks/cta-band.json",
+    "blocks/fa-cta-band.json",
+    "loop/aurora-archive.json",
+    "loop/aurora-search-results.json",
+    "loop/aurora-single-post.json",
+    "pages/aurora-about.json",
+    "pages/aurora-contact.json",
+    "pages/aurora-home-en.json",
+    "pages/aurora-home-fa.json",
+    "pages/aurora-portfolio.json",
+    "pages/aurora-pricing.json",
+    "pages/aurora-services.json"
+   ],
+   "resolves_in": []
+  },
+  "#login": {
+   "used_in": [
+    "headers/aurora-header-en.json",
+    "headers/aurora-header-fa.json"
+   ],
+   "resolves_in": []
+  },
+  "#portfolio": {
+   "used_in": [
+    "blocks/case-studies.json",
+    "pages/aurora-home-en.json",
+    "pages/aurora-home-fa.json",
+    "pages/aurora-portfolio.json"
+   ],
+   "resolves_in": [
+    "blocks/case-studies.json",
+    "pages/aurora-home-en.json",
+    "pages/aurora-home-fa.json",
+    "pages/aurora-portfolio.json"
+   ]
+  },
+  "#release": {
+   "used_in": [
+    "headers/aurora-header-en.json",
+    "headers/aurora-header-fa.json"
+   ],
+   "resolves_in": []
+  },
+  "#services": {
+   "used_in": [
+    "blocks/capability-cards.json",
+    "pages/aurora-home-en.json",
+    "pages/aurora-home-fa.json",
+    "pages/aurora-services.json"
+   ],
+   "resolves_in": [
+    "blocks/capability-cards.json",
+    "pages/aurora-home-en.json",
+    "pages/aurora-home-fa.json",
+    "pages/aurora-services.json"
+   ]
+  }
+ },
+ "documents": [
+  {
+   "path": "loop/aurora-archive.json",
+   "type": "archive",
+   "title": "Aurora | Blog Archive",
+   "lang": "en",
+   "sections": [
+    {
+     "index": 0,
+     "anchor": "",
+     "html_tag": "section",
+     "responsive_keys": [
+      "padding_mobile",
+      "padding_tablet"
+     ],
+     "hidden": [],
+     "first_heading": "Engineering notes, evaluation patterns and release write-ups",
+     "widget_types": [
+      "text-editor",
+      "theme-archive-title"
+     ],
+     "counts": {
+      "containers": 2,
+      "widgets": 2,
+      "buttons": 0,
+      "images": 0,
+      "forms": 0
+     },
+     "buttons": []
+    },
+    {
+     "index": 1,
+     "anchor": "archive-list",
+     "html_tag": "section",
+     "responsive_keys": [
+      "padding_mobile",
+      "padding_tablet"
+     ],
+     "hidden": [],
+     "first_heading": "",
+     "widget_types": [
+      "archive-posts"
+     ],
+     "counts": {
+      "containers": 2,
+      "widgets": 1,
+      "buttons": 0,
+      "images": 0,
+      "forms": 0
+     },
+     "buttons": []
+    },
+    {
+     "index": 2,
+     "anchor": "newsletter",
+     "html_tag": "section",
+     "responsive_keys": [
+      "padding_mobile",
+      "padding_tablet"
+     ],
+     "hidden": [],
+     "first_heading": "Newsletter",
+     "widget_types": [
+      "divider",
+      "form",
+      "heading",
+      "text-editor"
+     ],
+     "counts": {
+      "containers": 6,
+      "widgets": 6,
+      "buttons": 0,
+      "images": 0,
+      "forms": 1
+     },
+     "buttons": []
+    },
+    {
+     "index": 3,
+     "anchor": "cta",
+     "html_tag": "section",
+     "responsive_keys": [
+      "padding_mobile",
+      "padding_tablet"
+     ],
+     "hidden": [],
+     "first_heading": "Get started",
+     "widget_types": [
+      "button",
+      "divider",
+      "heading",
+      "icon",
+      "text-editor"
+     ],
+     "counts": {
+      "containers": 8,
+      "widgets": 8,
+      "buttons": 2,
+      "images": 0,
+      "forms": 0
+     },
+     "buttons": [
+      {
+       "label": "Book the call",
+       "link": "#contact"
+      },
+      {
+       "label": "Read the docs",
+       "link": "#docs"
+      }
+     ]
+    }
+   ],
+   "totals": {
+    "containers": 18,
+    "widgets": 17,
+    "buttons": 2,
+    "images": 0,
+    "forms": 1
+   },
+   "cta_targets": {
+    "in_page": [
+     "#contact",
+     "#docs"
+    ],
+    "dead": [
+     "#contact",
+     "#docs"
+    ]
+   }
+  },
+  {
+   "path": "footers/aurora-footer-en.json",
+   "type": "footer",
+   "title": "Aurora | Footer (English)",
+   "lang": "en",
+   "sections": [
+    {
+     "index": 0,
+     "anchor": "",
+     "html_tag": "footer",
+     "responsive_keys": [
+      "padding_mobile",
+      "padding_tablet"
+     ],
+     "hidden": [],
+     "first_heading": "Aurora AI",
+     "widget_types": [
+      "divider",
+      "heading",
+      "icon",
+      "icon-list",
+      "social-icons",
+      "text-editor"
+     ],
+     "counts": {
+      "containers": 15,
+      "widgets": 20,
+      "buttons": 0,
+      "images": 0,
+      "forms": 0
+     },
+     "buttons": []
+    }
+   ],
+   "totals": {
+    "containers": 15,
+    "widgets": 20,
+    "buttons": 0,
+    "images": 0,
+    "forms": 0
+   },
+   "cta_targets": {
+    "in_page": [],
+    "dead": []
+   }
+  },
+  {
+   "path": "footers/aurora-footer-fa.json",
+   "type": "footer",
+   "title": "Aurora | پابرگ (فارسی)",
+   "lang": "fa",
+   "sections": [
+    {
+     "index": 0,
+     "anchor": "",
+     "html_tag": "footer",
+     "responsive_keys": [
+      "padding_mobile",
+      "padding_tablet"
+     ],
+     "hidden": [],
+     "first_heading": "آرورا",
+     "widget_types": [
+      "divider",
+      "heading",
+      "icon",
+      "icon-list",
+      "social-icons",
+      "text-editor"
+     ],
+     "counts": {
+      "containers": 15,
+      "widgets": 20,
+      "buttons": 0,
+      "images": 0,
+      "forms": 0
+     },
+     "buttons": []
+    }
+   ],
+   "totals": {
+    "containers": 15,
+    "widgets": 20,
+    "buttons": 0,
+    "images": 0,
+    "forms": 0
+   },
+   "cta_targets": {
+    "in_page": [],
+    "dead": []
+   }
+  },
+  {
+   "path": "headers/aurora-header-en.json",
+   "type": "header",
+   "title": "Aurora | Header (English)",
+   "lang": "en",
+   "sections": [
+    {
+     "index": 0,
+     "anchor": "",
+     "html_tag": "header",
+     "responsive_keys": [],
+     "hidden": [],
+     "first_heading": "Aurora Agents 2.0 is live - evaluations, guardrails and rout",
+     "widget_types": [
+      "button",
+      "heading",
+      "icon",
+      "nav-menu",
+      "theme-site-logo"
+     ],
+     "counts": {
+      "containers": 6,
+      "widgets": 8,
+      "buttons": 3,
+      "images": 0,
+      "forms": 0
+     },
+     "buttons": [
+      {
+       "label": "Read the release",
+       "link": "#release"
+      },
+      {
+       "label": "Sign in",
+       "link": "#login"
+      },
+      {
+       "label": "Book a demo",
+       "link": "#contact"
+      }
+     ]
+    }
+   ],
+   "totals": {
+    "containers": 6,
+    "widgets": 8,
+    "buttons": 3,
+    "images": 0,
+    "forms": 0
+   },
+   "cta_targets": {
+    "in_page": [
+     "#contact",
+     "#login",
+     "#release"
+    ],
+    "dead": [
+     "#contact",
+     "#login",
+     "#release"
+    ]
+   }
+  },
+  {
+   "path": "headers/aurora-header-fa.json",
+   "type": "header",
+   "title": "Aurora | سربرگ (فارسی)",
+   "lang": "fa",
+   "sections": [
+    {
+     "index": 0,
+     "anchor": "",
+     "html_tag": "header",
+     "responsive_keys": [],
+     "hidden": [],
+     "first_heading": "آرورا ایجنت ۲.۰ منتشر شد - ارزیابی، محافظ و مسیریابی.",
+     "widget_types": [
+      "button",
+      "heading",
+      "icon",
+      "nav-menu",
+      "theme-site-logo"
+     ],
+     "counts": {
+      "containers": 6,
+      "widgets": 8,
+      "buttons": 3,
+      "images": 0,
+      "forms": 0
+     },
+     "buttons": [
+      {
+       "label": "خواندن خبر",
+       "link": "#release"
+      },
+      {
+       "label": "ورود",
+       "link": "#login"
+      },
+      {
+       "label": "درخواست دمو",
+       "link": "#contact"
+      }
+     ]
+    }
+   ],
+   "totals": {
+    "containers": 6,
+    "widgets": 8,
+    "buttons": 3,
+    "images": 0,
+    "forms": 0
+   },
+   "cta_targets": {
+    "in_page": [
+     "#contact",
+     "#login",
+     "#release"
+    ],
+    "dead": [
+     "#contact",
+     "#login",
+     "#release"
+    ]
+   }
+  },
+  {
+   "path": "pages/aurora-404.json",
+   "type": "page",
+   "title": "Aurora | 404 Not Found",
+   "lang": "en",
+   "sections": [
+    {
+     "index": 0,
+     "anchor": "error-404",
+     "html_tag": "section",
+     "responsive_keys": [
+      "padding_mobile",
+      "padding_tablet"
+     ],
+     "hidden": [],
+     "first_heading": "404",
+     "widget_types": [
+      "button",
+      "divider",
+      "heading",
+      "icon",
+      "icon-list",
+      "text-editor"
+     ],
+     "counts": {
+      "containers": 7,
+      "widgets": 8,
+      "buttons": 2,
+      "images": 0,
+      "forms": 0
+     },
+     "buttons": [
+      {
+       "label": "Back to homepage",
+       "link": "/"
+      },
+      {
+       "label": "Browse case studies",
+       "link": "/portfolio/"
+      }
+     ]
+    }
+   ],
+   "totals": {
+    "containers": 7,
+    "widgets": 8,
+    "buttons": 2,
+    "images": 0,
+    "forms": 0
+   },
+   "cta_targets": {
+    "in_page": [],
+    "dead": []
+   }
+  },
+  {
+   "path": "pages/aurora-about.json",
+   "type": "page",
+   "title": "Aurora | About",
+   "lang": "en",
+   "sections": [
+    {
+     "index": 0,
+     "anchor": "",
+     "html_tag": "section",
+     "responsive_keys": [
+      "padding_mobile",
+      "padding_tablet"
+     ],
+     "hidden": [],
+     "first_heading": "About us",
+     "widget_types": [
+      "breadcrumbs",
+      "divider",
+      "heading",
+      "text-editor"
+     ],
+     "counts": {
+      "containers": 5,
+      "widgets": 5,
+      "buttons": 0,
+      "images": 0,
+      "forms": 0
+     },
+     "buttons": []
+    },
+    {
+     "index": 1,
+     "anchor": "story",
+     "html_tag": "section",
+     "responsive_keys": [
+      "padding_mobile",
+      "padding_tablet"
+     ],
+     "hidden": [],
+     "first_heading": "Our story",
+     "widget_types": [
+      "button",
+      "divider",
+      "heading",
+      "icon-list",
+      "image",
+      "text-editor"
+     ],
+     "counts": {
+      "containers": 6,
+      "widgets": 7,
+      "buttons": 1,
+      "images": 1,
+      "forms": 0
+     },
+     "buttons": [
+      {
+       "label": "Meet the team",
+       "link": "#about"
+      }
+     ]
+    },
+    {
+     "index": 2,
+     "anchor": "results",
+     "html_tag": "section",
+     "responsive_keys": [
+      "padding_mobile",
+      "padding_tablet"
+     ],
+     "hidden": [],
+     "first_heading": "Proof, not promises",
+     "widget_types": [
+      "counter",
+      "divider",
+      "heading"
+     ],
+     "counts": {
+      "containers": 14,
+      "widgets": 8,
+      "buttons": 0,
+      "images": 0,
+      "forms": 0
+     },
+     "buttons": []
+    },
+    {
+     "index": 3,
+     "anchor": "values",
+     "html_tag": "section",
+     "responsive_keys": [
+      "padding_mobile",
+      "padding_tablet"
+     ],
+     "hidden": [],
+     "first_heading": "About Aurora",
+     "widget_types": [
+      "divider",
+      "heading",
+      "icon",
+      "text-editor"
+     ],
+     "counts": {
+      "containers": 11,
+      "widgets": 13,
+      "buttons": 0,
+      "images": 0,
+      "forms": 0
+     },
+     "buttons": []
+    },
+    {
+     "index": 4,
+     "anchor": "team",
+     "html_tag": "section",
+     "responsive_keys": [
+      "padding_mobile",
+      "padding_tablet"
+     ],
+     "hidden": [],
+     "first_heading": "The team",
+     "widget_types": [
+      "divider",
+      "heading",
+      "icon",
+      "text-editor"
+     ],
+     "counts": {
+      "containers": 17,
+      "widgets": 28,
+      "buttons": 0,
+      "images": 0,
+      "forms": 0
+     },
+     "buttons": []
+    },
+    {
+     "index": 5,
+     "anchor": "testimonials",
+     "html_tag": "section",
+     "responsive_keys": [
+      "padding_mobile",
+      "padding_tablet"
+     ],
+     "hidden": [],
+     "first_heading": "Customer voices",
+     "widget_types": [
+      "divider",
+      "heading",
+      "icon",
+      "text-editor"
+     ],
+     "counts": {
+      "containers": 11,
+      "widgets": 19,
+      "buttons": 0,
+      "images": 0,
+      "forms": 0
+     },
+     "buttons": []
+    },
+    {
+     "index": 6,
+     "anchor": "cta",
+     "html_tag": "section",
+     "responsive_keys": [
+      "padding_mobile",
+      "padding_tablet"
+     ],
+     "hidden": [],
+     "first_heading": "Get started",
+     "widget_types": [
+      "button",
+      "divider",
+      "heading",
+      "icon",
+      "text-editor"
+     ],
+     "counts": {
+      "containers": 8,
+      "widgets": 8,
+      "buttons": 2,
+      "images": 0,
+      "forms": 0
+     },
+     "buttons": [
+      {
+       "label": "Book the call",
+       "link": "#contact"
+      },
+      {
+       "label": "Read the docs",
+       "link": "#docs"
+      }
+     ]
+    }
+   ],
+   "totals": {
+    "containers": 72,
+    "widgets": 88,
+    "buttons": 3,
+    "images": 1,
+    "forms": 0
+   },
+   "cta_targets": {
+    "in_page": [
+     "#about",
+     "#contact",
+     "#docs"
+    ],
+    "dead": [
+     "#about",
+     "#contact",
+     "#docs"
+    ]
+   }
+  },
+  {
+   "path": "pages/aurora-blog.json",
+   "type": "page",
+   "title": "Aurora | Journal",
+   "lang": "en",
+   "sections": [
+    {
+     "index": 0,
+     "anchor": "",
+     "html_tag": "section",
+     "responsive_keys": [
+      "padding_mobile",
+      "padding_tablet"
+     ],
+     "hidden": [],
+     "first_heading": "Journal",
+     "widget_types": [
+      "breadcrumbs",
+      "divider",
+      "heading",
+      "text-editor"
+     ],
+     "counts": {
+      "containers": 5,
+      "widgets": 5,
+      "buttons": 0,
+      "images": 0,
+      "forms": 0
+     },
+     "buttons": []
+    },
+    {
+     "index": 1,
+     "anchor": "posts",
+     "html_tag": "section",
+     "responsive_keys": [
+      "padding_mobile",
+      "padding_tablet"
+     ],
+     "hidden": [],
+     "first_heading": "Journal",
+     "widget_types": [
+      "divider",
+      "heading",
+      "posts",
+      "text-editor"
+     ],
+     "counts": {
+      "containers": 4,
+      "widgets": 5,
+      "buttons": 0,
+      "images": 0,
+      "forms": 0
+     },
+     "buttons": []
+    },
+    {
+     "index": 2,
+     "anchor": "newsletter",
+     "html_tag": "section",
+     "responsive_keys": [
+      "padding_mobile",
+      "padding_tablet"
+     ],
+     "hidden": [],
+     "first_heading": "Newsletter",
+     "widget_types": [
+      "divider",
+      "form",
+      "heading",
+      "text-editor"
+     ],
+     "counts": {
+      "containers": 6,
+      "widgets": 6,
+      "buttons": 0,
+      "images": 0,
+      "forms": 1
+     },
+     "buttons": []
+    }
+   ],
+   "totals": {
+    "containers": 15,
+    "widgets": 16,
+    "buttons": 0,
+    "images": 0,
+    "forms": 1
+   },
+   "cta_targets": {
+    "in_page": [],
+    "dead": []
+   }
+  },
+  {
+   "path": "pages/aurora-contact.json",
+   "type": "page",
+   "title": "Aurora | Contact",
+   "lang": "en",
+   "sections": [
+    {
+     "index": 0,
+     "anchor": "",
+     "html_tag": "section",
+     "responsive_keys": [
+      "padding_mobile",
+      "padding_tablet"
+     ],
+     "hidden": [],
+     "first_heading": "Contact",
+     "widget_types": [
+      "breadcrumbs",
+      "divider",
+      "heading",
+      "text-editor"
+     ],
+     "counts": {
+      "containers": 5,
+      "widgets": 5,
+      "buttons": 0,
+      "images": 0,
+      "forms": 0
+     },
+     "buttons": []
+    },
+    {
+     "index": 1,
+     "anchor": "contact",
+     "html_tag": "section",
+     "responsive_keys": [
+      "padding_mobile",
+      "padding_tablet"
+     ],
+     "hidden": [],
+     "first_heading": "Contact",
+     "widget_types": [
+      "divider",
+      "form",
+      "heading",
+      "icon",
+      "social-icons",
+      "spacer",
+      "text-editor"
+     ],
+     "counts": {
+      "containers": 17,
+      "widgets": 26,
+      "buttons": 0,
+      "images": 0,
+      "forms": 1
+     },
+     "buttons": []
+    },
+    {
+     "index": 2,
+     "anchor": "faq",
+     "html_tag": "section",
+     "responsive_keys": [
+      "padding_mobile",
+      "padding_tablet"
+     ],
+     "hidden": [],
+     "first_heading": "FAQ",
+     "widget_types": [
+      "accordion",
+      "divider",
+      "heading",
+      "text-editor"
+     ],
+     "counts": {
+      "containers": 4,
+      "widgets": 5,
+      "buttons": 0,
+      "images": 0,
+      "forms": 0
+     },
+     "buttons": []
+    },
+    {
+     "index": 3,
+     "anchor": "cta",
+     "html_tag": "section",
+     "responsive_keys": [
+      "padding_mobile",
+      "padding_tablet"
+     ],
+     "hidden": [],
+     "first_heading": "Get started",
+     "widget_types": [
+      "button",
+      "divider",
+      "heading",
+      "icon",
+      "text-editor"
+     ],
+     "counts": {
+      "containers": 8,
+      "widgets": 8,
+      "buttons": 2,
+      "images": 0,
+      "forms": 0
+     },
+     "buttons": [
+      {
+       "label": "Book the call",
+       "link": "#contact"
+      },
+      {
+       "label": "Read the docs",
+       "link": "#docs"
+      }
+     ]
+    }
+   ],
+   "totals": {
+    "containers": 34,
+    "widgets": 44,
+    "buttons": 2,
+    "images": 0,
+    "forms": 1
+   },
+   "cta_targets": {
+    "in_page": [
+     "#contact",
+     "#docs"
+    ],
+    "dead": [
+     "#docs"
+    ]
+   }
+  },
+  {
+   "path": "pages/aurora-home-en.json",
+   "type": "page",
+   "title": "Aurora | Home (English)",
+   "lang": "en",
+   "sections": [
+    {
+     "index": 0,
+     "anchor": "hero",
+     "html_tag": "section",
+     "responsive_keys": [
+      "padding_mobile",
+      "padding_tablet"
+     ],
+     "hidden": [],
+     "first_heading": "Aurora Agents 2.0 - now generally available",
+     "widget_types": [
+      "button",
+      "heading",
+      "icon",
+      "image",
+      "text-editor"
+     ],
+     "counts": {
+      "containers": 13,
+      "widgets": 17,
+      "buttons": 2,
+      "images": 1,
+      "forms": 0
+     },
+     "buttons": [
+      {
+       "label": "Start free trial",
+       "link": "#contact"
+      },
+      {
+       "label": "Book a live demo",
+       "link": "#demo"
+      }
+     ]
+    },
+    {
+     "index": 1,
+     "anchor": "",
+     "html_tag": "section",
+     "responsive_keys": [
+      "padding_mobile",
+      "padding_tablet"
+     ],
+     "hidden": [],
+     "first_heading": "Trusted by teams shipping in production",
+     "widget_types": [
+      "heading"
+     ],
+     "counts": {
+      "containers": 3,
+      "widgets": 7,
+      "buttons": 0,
+      "images": 0,
+      "forms": 0
+     },
+     "buttons": []
+    },
+    {
+     "index": 2,
+     "anchor": "",
+     "html_tag": "section",
+     "responsive_keys": [
+      "padding_mobile",
+      "padding_tablet"
+     ],
+     "hidden": [],
+     "first_heading": "Why Aurora",
+     "widget_types": [
+      "divider",
+      "heading",
+      "icon",
+      "text-editor"
+     ],
+     "counts": {
+      "containers": 17,
+      "widgets": 22,
+      "buttons": 0,
+      "images": 0,
+      "forms": 0
+     },
+     "buttons": []
+    },
+    {
+     "index": 3,
+     "anchor": "how",
+     "html_tag": "section",
+     "responsive_keys": [
+      "padding_mobile",
+      "padding_tablet"
+     ],
+     "hidden": [],
+     "first_heading": "How it works",
+     "widget_types": [
+      "button",
+      "divider",
+      "heading",
+      "icon",
+      "image",
+      "text-editor"
+     ],
+     "counts": {
+      "containers": 20,
+      "widgets": 28,
+      "buttons": 2,
+      "images": 2,
+      "forms": 0
+     },
+     "buttons": [
+      {
+       "label": "See it in action",
+       "link": "#demo"
+      },
+      {
+       "label": "See it in action",
+       "link": "#demo"
+      }
+     ]
+    },
+    {
+     "index": 4,
+     "anchor": "results",
+     "html_tag": "section",
+     "responsive_keys": [
+      "padding_mobile",
+      "padding_tablet"
+     ],
+     "hidden": [],
+     "first_heading": "Proof, not promises",
+     "widget_types": [
+      "counter",
+      "divider",
+      "heading"
+     ],
+     "counts": {
+      "containers": 14,
+      "widgets": 8,
+      "buttons": 0,
+      "images": 0,
+      "forms": 0
+     },
+     "buttons": []
+    },
+    {
+     "index": 5,
+     "anchor": "services",
+     "html_tag": "section",
+     "responsive_keys": [
+      "padding_mobile",
+      "padding_tablet"
+     ],
+     "hidden": [],
+     "first_heading": "Services",
+     "widget_types": [
+      "button",
+      "divider",
+      "heading",
+      "icon",
+      "icon-list",
+      "text-editor"
+     ],
+     "counts": {
+      "containers": 11,
+      "widgets": 19,
+      "buttons": 3,
+      "images": 0,
+      "forms": 0
+     },
+     "buttons": [
+      {
+       "label": "Explore the service",
+       "link": "#services"
+      },
+      {
+       "label": "Explore the service",
+       "link": "#services"
+      },
+      {
+       "label": "Explore the service",
+       "link": "#services"
+      }
+     ]
+    },
+    {
+     "index": 6,
+     "anchor": "process",
+     "html_tag": "section",
+     "responsive_keys": [
+      "padding_mobile",
+      "padding_tablet"
+     ],
+     "hidden": [],
+     "first_heading": "Our process",
+     "widget_types": [
+      "divider",
+      "heading",
+      "text-editor"
+     ],
+     "counts": {
+      "containers": 13,
+      "widgets": 16,
+      "buttons": 0,
+      "images": 0,
+      "forms": 0
+     },
+     "buttons": []
+    },
+    {
+     "index": 7,
+     "anchor": "portfolio",
+     "html_tag": "section",
+     "responsive_keys": [
+      "padding_mobile",
+      "padding_tablet"
+     ],
+     "hidden": [],
+     "first_heading": "Case studies",
+     "widget_types": [
+      "button",
+      "divider",
+      "heading",
+      "image",
+      "text-editor"
+     ],
+     "counts": {
+      "containers": 15,
+      "widgets": 23,
+      "buttons": 4,
+      "images": 3,
+      "forms": 0
+     },
+     "buttons": [
+      {
+       "label": "Read the case study",
+       "link": "#portfolio"
+      },
+      {
+       "label": "Read the case study",
+       "link": "#portfolio"
+      },
+      {
+       "label": "Read the case study",
+       "link": "#portfolio"
+      },
+      {
+       "label": "Browse all case studies",
+       "link": "#portfolio"
+      }
+     ]
+    },
+    {
+     "index": 8,
+     "anchor": "testimonials",
+     "html_tag": "section",
+     "responsive_keys": [
+      "padding_mobile",
+      "padding_tablet"
+     ],
+     "hidden": [],
+     "first_heading": "Customer voices",
+     "widget_types": [
+      "divider",
+      "heading",
+      "icon",
+      "text-editor"
+     ],
+     "counts": {
+      "containers": 11,
+      "widgets": 19,
+      "buttons": 0,
+      "images": 0,
+      "forms": 0
+     },
+     "buttons": []
+    },
+    {
+     "index": 9,
+     "anchor": "pricing",
+     "html_tag": "section",
+     "responsive_keys": [
+      "padding_mobile",
+      "padding_tablet"
+     ],
+     "hidden": [],
+     "first_heading": "Pricing",
+     "widget_types": [
+      "button",
+      "divider",
+      "heading",
+      "icon-list",
+      "text-editor"
+     ],
+     "counts": {
+      "containers": 15,
+      "widgets": 27,
+      "buttons": 3,
+      "images": 0,
+      "forms": 0
+     },
+     "buttons": [
+      {
+       "label": "Start building",
+       "link": "#"
+      },
+      {
+       "label": "Start 14-day trial",
+       "link": "#"
+      },
+      {
+       "label": "Contact sales",
+       "link": "#"
+      }
+     ]
+    },
+    {
+     "index": 10,
+     "anchor": "faq",
+     "html_tag": "section",
+     "responsive_keys": [
+      "padding_mobile",
+      "padding_tablet"
+     ],
+     "hidden": [],
+     "first_heading": "FAQ",
+     "widget_types": [
+      "accordion",
+      "divider",
+      "heading",
+      "text-editor"
+     ],
+     "counts": {
+      "containers": 4,
+      "widgets": 5,
+      "buttons": 0,
+      "images": 0,
+      "forms": 0
+     },
+     "buttons": []
+    },
+    {
+     "index": 11,
+     "anchor": "newsletter",
+     "html_tag": "section",
+     "responsive_keys": [
+      "padding_mobile",
+      "padding_tablet"
+     ],
+     "hidden": [],
+     "first_heading": "Newsletter",
+     "widget_types": [
+      "divider",
+      "form",
+      "heading",
+      "text-editor"
+     ],
+     "counts": {
+      "containers": 6,
+      "widgets": 6,
+      "buttons": 0,
+      "images": 0,
+      "forms": 1
+     },
+     "buttons": []
+    },
+    {
+     "index": 12,
+     "anchor": "cta",
+     "html_tag": "section",
+     "responsive_keys": [
+      "padding_mobile",
+      "padding_tablet"
+     ],
+     "hidden": [],
+     "first_heading": "Get started",
+     "widget_types": [
+      "button",
+      "divider",
+      "heading",
+      "icon",
+      "text-editor"
+     ],
+     "counts": {
+      "containers": 8,
+      "widgets": 8,
+      "buttons": 2,
+      "images": 0,
+      "forms": 0
+     },
+     "buttons": [
+      {
+       "label": "Book the call",
+       "link": "#contact"
+      },
+      {
+       "label": "Read the docs",
+       "link": "#docs"
+      }
+     ]
+    }
+   ],
+   "totals": {
+    "containers": 150,
+    "widgets": 205,
+    "buttons": 16,
+    "images": 6,
+    "forms": 1
+   },
+   "cta_targets": {
+    "in_page": [
+     "#contact",
+     "#demo",
+     "#docs",
+     "#portfolio",
+     "#services"
+    ],
+    "dead": [
+     "#contact",
+     "#demo",
+     "#docs"
+    ]
+   }
+  },
+  {
+   "path": "pages/aurora-home-fa.json",
+   "type": "page",
+   "title": "Aurora | Home (Persian / RTL)",
+   "lang": "fa",
+   "sections": [
+    {
+     "index": 0,
+     "anchor": "hero",
+     "html_tag": "section",
+     "responsive_keys": [
+      "padding_mobile",
+      "padding_tablet"
+     ],
+     "hidden": [],
+     "first_heading": "عاملهای آرورا ۲.۰ - اکنون در دسترس عمومی",
+     "widget_types": [
+      "button",
+      "heading",
+      "icon",
+      "image",
+      "text-editor"
+     ],
+     "counts": {
+      "containers": 13,
+      "widgets": 17,
+      "buttons": 2,
+      "images": 1,
+      "forms": 0
+     },
+     "buttons": [
+      {
+       "label": "شروع دوره آزمایشی رایگان",
+       "link": "#contact"
+      },
+      {
+       "label": "درخواست دموی زنده",
+       "link": "#demo"
+      }
+     ]
+    },
+    {
+     "index": 1,
+     "anchor": "",
+     "html_tag": "section",
+     "responsive_keys": [
+      "padding_mobile",
+      "padding_tablet"
+     ],
+     "hidden": [],
+     "first_heading": "منتخب تیمهای پیشرو",
+     "widget_types": [
+      "heading"
+     ],
+     "counts": {
+      "containers": 3,
+      "widgets": 7,
+      "buttons": 0,
+      "images": 0,
+      "forms": 0
+     },
+     "buttons": []
+    },
+    {
+     "index": 2,
+     "anchor": "",
+     "html_tag": "section",
+     "responsive_keys": [
+      "padding_mobile",
+      "padding_tablet"
+     ],
+     "hidden": [],
+     "first_heading": "چرا آرورا",
+     "widget_types": [
+      "divider",
+      "heading",
+      "icon",
+      "text-editor"
+     ],
+     "counts": {
+      "containers": 17,
+      "widgets": 22,
+      "buttons": 0,
+      "images": 0,
+      "forms": 0
+     },
+     "buttons": []
+    },
+    {
+     "index": 3,
+     "anchor": "results",
+     "html_tag": "section",
+     "responsive_keys": [
+      "padding_mobile",
+      "padding_tablet"
+     ],
+     "hidden": [],
+     "first_heading": "نتایج واقعی",
+     "widget_types": [
+      "counter",
+      "divider",
+      "heading"
+     ],
+     "counts": {
+      "containers": 14,
+      "widgets": 8,
+      "buttons": 0,
+      "images": 0,
+      "forms": 0
+     },
+     "buttons": []
+    },
+    {
+     "index": 4,
+     "anchor": "services",
+     "html_tag": "section",
+     "responsive_keys": [
+      "padding_mobile",
+      "padding_tablet"
+     ],
+     "hidden": [],
+     "first_heading": "خدمات",
+     "widget_types": [
+      "button",
+      "divider",
+      "heading",
+      "icon",
+      "icon-list",
+      "text-editor"
+     ],
+     "counts": {
+      "containers": 11,
+      "widgets": 19,
+      "buttons": 3,
+      "images": 0,
+      "forms": 0
+     },
+     "buttons": [
+      {
+       "label": "جزئیات خدمات",
+       "link": "#services"
+      },
+      {
+       "label": "جزئیات خدمات",
+       "link": "#services"
+      },
+      {
+       "label": "جزئیات خدمات",
+       "link": "#services"
+      }
+     ]
+    },
+    {
+     "index": 5,
+     "anchor": "how",
+     "html_tag": "section",
+     "responsive_keys": [
+      "padding_mobile",
+      "padding_tablet"
+     ],
+     "hidden": [],
+     "first_heading": "چطور کار میکند",
+     "widget_types": [
+      "button",
+      "divider",
+      "heading",
+      "icon",
+      "image",
+      "text-editor"
+     ],
+     "counts": {
+      "containers": 20,
+      "widgets": 28,
+      "buttons": 2,
+      "images": 2,
+      "forms": 0
+     },
+     "buttons": [
+      {
+       "label": "بیشتر بدانید",
+       "link": "#demo"
+      },
+      {
+       "label": "بیشتر بدانید",
+       "link": "#demo"
+      }
+     ]
+    },
+    {
+     "index": 6,
+     "anchor": "process",
+     "html_tag": "section",
+     "responsive_keys": [
+      "padding_mobile",
+      "padding_tablet"
+     ],
+     "hidden": [],
+     "first_heading": "فرایند",
+     "widget_types": [
+      "divider",
+      "heading",
+      "text-editor"
+     ],
+     "counts": {
+      "containers": 13,
+      "widgets": 16,
+      "buttons": 0,
+      "images": 0,
+      "forms": 0
+     },
+     "buttons": []
+    },
+    {
+     "index": 7,
+     "anchor": "portfolio",
+     "html_tag": "section",
+     "responsive_keys": [
+      "padding_mobile",
+      "padding_tablet"
+     ],
+     "hidden": [],
+     "first_heading": "پروندهها",
+     "widget_types": [
+      "button",
+      "divider",
+      "heading",
+      "image",
+      "text-editor"
+     ],
+     "counts": {
+      "containers": 15,
+      "widgets": 23,
+      "buttons": 4,
+      "images": 3,
+      "forms": 0
+     },
+     "buttons": [
+      {
+       "label": "پرونده کامل",
+       "link": "#portfolio"
+      },
+      {
+       "label": "پرونده کامل",
+       "link": "#portfolio"
+      },
+      {
+       "label": "پرونده کامل",
+       "link": "#portfolio"
+      },
+      {
+       "label": "همه پروندهها",
+       "link": "#portfolio"
+      }
+     ]
+    },
+    {
+     "index": 8,
+     "anchor": "testimonials",
+     "html_tag": "section",
+     "responsive_keys": [
+      "padding_mobile",
+      "padding_tablet"
+     ],
+     "hidden": [],
+     "first_heading": "نظر مشتریان",
+     "widget_types": [
+      "divider",
+      "heading",
+      "icon",
+      "text-editor"
+     ],
+     "counts": {
+      "containers": 11,
+      "widgets": 19,
+      "buttons": 0,
+      "images": 0,
+      "forms": 0
+     },
+     "buttons": []
+    },
+    {
+     "index": 9,
+     "anchor": "pricing",
+     "html_tag": "section",
+     "responsive_keys": [
+      "padding_mobile",
+      "padding_tablet"
+     ],
+     "hidden": [],
+     "first_heading": "قیمتگذاری",
+     "widget_types": [
+      "button",
+      "divider",
+      "heading",
+      "icon-list",
+      "text-editor"
+     ],
+     "counts": {
+      "containers": 15,
+      "widgets": 27,
+      "buttons": 3,
+      "images": 0,
+      "forms": 0
+     },
+     "buttons": [
+      {
+       "label": "شروع کنید",
+       "link": "#"
+      },
+      {
+       "label": "شروع دوره",
+       "link": "#"
+      },
+      {
+       "label": "گفتگو با فروش",
+       "link": "#"
+      }
+     ]
+    },
+    {
+     "index": 10,
+     "anchor": "faq",
+     "html_tag": "section",
+     "responsive_keys": [
+      "padding_mobile",
+      "padding_tablet"
+     ],
+     "hidden": [],
+     "first_heading": "پرسشهای پرتکرار",
+     "widget_types": [
+      "accordion",
+      "divider",
+      "heading",
+      "text-editor"
+     ],
+     "counts": {
+      "containers": 4,
+      "widgets": 5,
+      "buttons": 0,
+      "images": 0,
+      "forms": 0
+     },
+     "buttons": []
+    },
+    {
+     "index": 11,
+     "anchor": "newsletter",
+     "html_tag": "section",
+     "responsive_keys": [
+      "padding_mobile",
+      "padding_tablet"
+     ],
+     "hidden": [],
+     "first_heading": "خبرنامه",
+     "widget_types": [
+      "divider",
+      "form",
+      "heading",
+      "text-editor"
+     ],
+     "counts": {
+      "containers": 6,
+      "widgets": 6,
+      "buttons": 0,
+      "images": 0,
+      "forms": 1
+     },
+     "buttons": []
+    },
+    {
+     "index": 12,
+     "anchor": "cta",
+     "html_tag": "section",
+     "responsive_keys": [
+      "padding_mobile",
+      "padding_tablet"
+     ],
+     "hidden": [],
+     "first_heading": "شروع کنیم",
+     "widget_types": [
+      "button",
+      "divider",
+      "heading",
+      "icon",
+      "text-editor"
+     ],
+     "counts": {
+      "containers": 8,
+      "widgets": 8,
+      "buttons": 2,
+      "images": 0,
+      "forms": 0
+     },
+     "buttons": [
+      {
+       "label": "رزرو جلسه",
+       "link": "#contact"
+      },
+      {
+       "label": "مشاهده مستندات",
+       "link": "#docs"
+      }
+     ]
+    }
+   ],
+   "totals": {
+    "containers": 150,
+    "widgets": 205,
+    "buttons": 16,
+    "images": 6,
+    "forms": 1
+   },
+   "cta_targets": {
+    "in_page": [
+     "#contact",
+     "#demo",
+     "#docs",
+     "#portfolio",
+     "#services"
+    ],
+    "dead": [
+     "#contact",
+     "#demo",
+     "#docs"
+    ]
+   }
+  },
+  {
+   "path": "pages/aurora-portfolio.json",
+   "type": "page",
+   "title": "Aurora | Case Studies",
+   "lang": "en",
+   "sections": [
+    {
+     "index": 0,
+     "anchor": "",
+     "html_tag": "section",
+     "responsive_keys": [
+      "padding_mobile",
+      "padding_tablet"
+     ],
+     "hidden": [],
+     "first_heading": "Case studies",
+     "widget_types": [
+      "breadcrumbs",
+      "divider",
+      "heading",
+      "text-editor"
+     ],
+     "counts": {
+      "containers": 5,
+      "widgets": 5,
+      "buttons": 0,
+      "images": 0,
+      "forms": 0
+     },
+     "buttons": []
+    },
+    {
+     "index": 1,
+     "anchor": "portfolio",
+     "html_tag": "section",
+     "responsive_keys": [
+      "padding_mobile",
+      "padding_tablet"
+     ],
+     "hidden": [],
+     "first_heading": "Case studies",
+     "widget_types": [
+      "button",
+      "divider",
+      "heading",
+      "image",
+      "text-editor"
+     ],
+     "counts": {
+      "containers": 15,
+      "widgets": 23,
+      "buttons": 4,
+      "images": 3,
+      "forms": 0
+     },
+     "buttons": [
+      {
+       "label": "Read the case study",
+       "link": "#portfolio"
+      },
+      {
+       "label": "Read the case study",
+       "link": "#portfolio"
+      },
+      {
+       "label": "Read the case study",
+       "link": "#portfolio"
+      },
+      {
+       "label": "Browse all case studies",
+       "link": "#portfolio"
+      }
+     ]
+    },
+    {
+     "index": 2,
+     "anchor": "more-work",
+     "html_tag": "section",
+     "responsive_keys": [
+      "padding_mobile",
+      "padding_tablet"
+     ],
+     "hidden": [],
+     "first_heading": "More work",
+     "widget_types": [
+      "divider",
+      "heading",
+      "text-editor"
+     ],
+     "counts": {
+      "containers": 14,
+      "widgets": 19,
+      "buttons": 0,
+      "images": 0,
+      "forms": 0
+     },
+     "buttons": []
+    },
+    {
+     "index": 3,
+     "anchor": "testimonials",
+     "html_tag": "section",
+     "responsive_keys": [
+      "padding_mobile",
+      "padding_tablet"
+     ],
+     "hidden": [],
+     "first_heading": "Customer voices",
+     "widget_types": [
+      "divider",
+      "heading",
+      "icon",
+      "text-editor"
+     ],
+     "counts": {
+      "containers": 11,
+      "widgets": 19,
+      "buttons": 0,
+      "images": 0,
+      "forms": 0
+     },
+     "buttons": []
+    },
+    {
+     "index": 4,
+     "anchor": "cta",
+     "html_tag": "section",
+     "responsive_keys": [
+      "padding_mobile",
+      "padding_tablet"
+     ],
+     "hidden": [],
+     "first_heading": "Get started",
+     "widget_types": [
+      "button",
+      "divider",
+      "heading",
+      "icon",
+      "text-editor"
+     ],
+     "counts": {
+      "containers": 8,
+      "widgets": 8,
+      "buttons": 2,
+      "images": 0,
+      "forms": 0
+     },
+     "buttons": [
+      {
+       "label": "Book the call",
+       "link": "#contact"
+      },
+      {
+       "label": "Read the docs",
+       "link": "#docs"
+      }
+     ]
+    }
+   ],
+   "totals": {
+    "containers": 53,
+    "widgets": 74,
+    "buttons": 6,
+    "images": 3,
+    "forms": 0
+   },
+   "cta_targets": {
+    "in_page": [
+     "#contact",
+     "#docs",
+     "#portfolio"
+    ],
+    "dead": [
+     "#contact",
+     "#docs"
+    ]
+   }
+  },
+  {
+   "path": "pages/aurora-pricing.json",
+   "type": "page",
+   "title": "Aurora | Pricing",
+   "lang": "en",
+   "sections": [
+    {
+     "index": 0,
+     "anchor": "",
+     "html_tag": "section",
+     "responsive_keys": [
+      "padding_mobile",
+      "padding_tablet"
+     ],
+     "hidden": [],
+     "first_heading": "Pricing",
+     "widget_types": [
+      "breadcrumbs",
+      "divider",
+      "heading",
+      "text-editor"
+     ],
+     "counts": {
+      "containers": 5,
+      "widgets": 5,
+      "buttons": 0,
+      "images": 0,
+      "forms": 0
+     },
+     "buttons": []
+    },
+    {
+     "index": 1,
+     "anchor": "pricing",
+     "html_tag": "section",
+     "responsive_keys": [
+      "padding_mobile",
+      "padding_tablet"
+     ],
+     "hidden": [],
+     "first_heading": "Pricing",
+     "widget_types": [
+      "button",
+      "divider",
+      "heading",
+      "icon-list",
+      "text-editor"
+     ],
+     "counts": {
+      "containers": 15,
+      "widgets": 27,
+      "buttons": 3,
+      "images": 0,
+      "forms": 0
+     },
+     "buttons": [
+      {
+       "label": "Start building",
+       "link": "#"
+      },
+      {
+       "label": "Start 14-day trial",
+       "link": "#"
+      },
+      {
+       "label": "Contact sales",
+       "link": "#"
+      }
+     ]
+    },
+    {
+     "index": 2,
+     "anchor": "compare",
+     "html_tag": "section",
+     "responsive_keys": [
+      "padding_mobile",
+      "padding_tablet"
+     ],
+     "hidden": [],
+     "first_heading": "Compare plans",
+     "widget_types": [
+      "divider",
+      "heading",
+      "text-editor"
+     ],
+     "counts": {
+      "containers": 40,
+      "widgets": 38,
+      "buttons": 0,
+      "images": 0,
+      "forms": 0
+     },
+     "buttons": []
+    },
+    {
+     "index": 3,
+     "anchor": "faq",
+     "html_tag": "section",
+     "responsive_keys": [
+      "padding_mobile",
+      "padding_tablet"
+     ],
+     "hidden": [],
+     "first_heading": "FAQ",
+     "widget_types": [
+      "accordion",
+      "divider",
+      "heading",
+      "text-editor"
+     ],
+     "counts": {
+      "containers": 4,
+      "widgets": 5,
+      "buttons": 0,
+      "images": 0,
+      "forms": 0
+     },
+     "buttons": []
+    },
+    {
+     "index": 4,
+     "anchor": "testimonials",
+     "html_tag": "section",
+     "responsive_keys": [
+      "padding_mobile",
+      "padding_tablet"
+     ],
+     "hidden": [],
+     "first_heading": "Customer voices",
+     "widget_types": [
+      "divider",
+      "heading",
+      "icon",
+      "text-editor"
+     ],
+     "counts": {
+      "containers": 11,
+      "widgets": 19,
+      "buttons": 0,
+      "images": 0,
+      "forms": 0
+     },
+     "buttons": []
+    },
+    {
+     "index": 5,
+     "anchor": "cta",
+     "html_tag": "section",
+     "responsive_keys": [
+      "padding_mobile",
+      "padding_tablet"
+     ],
+     "hidden": [],
+     "first_heading": "Get started",
+     "widget_types": [
+      "button",
+      "divider",
+      "heading",
+      "icon",
+      "text-editor"
+     ],
+     "counts": {
+      "containers": 8,
+      "widgets": 8,
+      "buttons": 2,
+      "images": 0,
+      "forms": 0
+     },
+     "buttons": [
+      {
+       "label": "Book the call",
+       "link": "#contact"
+      },
+      {
+       "label": "Read the docs",
+       "link": "#docs"
+      }
+     ]
+    }
+   ],
+   "totals": {
+    "containers": 83,
+    "widgets": 102,
+    "buttons": 5,
+    "images": 0,
+    "forms": 0
+   },
+   "cta_targets": {
+    "in_page": [
+     "#contact",
+     "#docs"
+    ],
+    "dead": [
+     "#contact",
+     "#docs"
+    ]
+   }
+  },
+  {
+   "path": "pages/aurora-services.json",
+   "type": "page",
+   "title": "Aurora | Services",
+   "lang": "en",
+   "sections": [
+    {
+     "index": 0,
+     "anchor": "",
+     "html_tag": "section",
+     "responsive_keys": [
+      "padding_mobile",
+      "padding_tablet"
+     ],
+     "hidden": [],
+     "first_heading": "Services",
+     "widget_types": [
+      "breadcrumbs",
+      "divider",
+      "heading",
+      "text-editor"
+     ],
+     "counts": {
+      "containers": 5,
+      "widgets": 5,
+      "buttons": 0,
+      "images": 0,
+      "forms": 0
+     },
+     "buttons": []
+    },
+    {
+     "index": 1,
+     "anchor": "services",
+     "html_tag": "section",
+     "responsive_keys": [
+      "padding_mobile",
+      "padding_tablet"
+     ],
+     "hidden": [],
+     "first_heading": "Capabilities",
+     "widget_types": [
+      "button",
+      "divider",
+      "heading",
+      "icon",
+      "icon-list",
+      "text-editor"
+     ],
+     "counts": {
+      "containers": 11,
+      "widgets": 19,
+      "buttons": 3,
+      "images": 0,
+      "forms": 0
+     },
+     "buttons": [
+      {
+       "label": "Explore the service",
+       "link": "#services"
+      },
+      {
+       "label": "Explore the service",
+       "link": "#services"
+      },
+      {
+       "label": "Explore the service",
+       "link": "#services"
+      }
+     ]
+    },
+    {
+     "index": 2,
+     "anchor": "engagements",
+     "html_tag": "section",
+     "responsive_keys": [
+      "padding_mobile",
+      "padding_tablet"
+     ],
+     "hidden": [],
+     "first_heading": "Engagements",
+     "widget_types": [
+      "button",
+      "divider",
+      "heading",
+      "icon",
+      "icon-list",
+      "text-editor"
+     ],
+     "counts": {
+      "containers": 11,
+      "widgets": 19,
+      "buttons": 3,
+      "images": 0,
+      "forms": 0
+     },
+     "buttons": [
+      {
+       "label": "Scope this engagement",
+       "link": "#contact"
+      },
+      {
+       "label": "Scope this engagement",
+       "link": "#contact"
+      },
+      {
+       "label": "Scope this engagement",
+       "link": "#contact"
+      }
+     ]
+    },
+    {
+     "index": 3,
+     "anchor": "deliverables",
+     "html_tag": "section",
+     "responsive_keys": [
+      "padding_mobile",
+      "padding_tablet"
+     ],
+     "hidden": [],
+     "first_heading": "Deliverables",
+     "widget_types": [
+      "divider",
+      "heading",
+      "icon",
+      "text-editor"
+     ],
+     "counts": {
+      "containers": 8,
+      "widgets": 13,
+      "buttons": 0,
+      "images": 0,
+      "forms": 0
+     },
+     "buttons": []
+    },
+    {
+     "index": 4,
+     "anchor": "process",
+     "html_tag": "section",
+     "responsive_keys": [
+      "padding_mobile",
+      "padding_tablet"
+     ],
+     "hidden": [],
+     "first_heading": "Our process",
+     "widget_types": [
+      "divider",
+      "heading",
+      "text-editor"
+     ],
+     "counts": {
+      "containers": 13,
+      "widgets": 16,
+      "buttons": 0,
+      "images": 0,
+      "forms": 0
+     },
+     "buttons": []
+    },
+    {
+     "index": 5,
+     "anchor": "faq",
+     "html_tag": "section",
+     "responsive_keys": [
+      "padding_mobile",
+      "padding_tablet"
+     ],
+     "hidden": [],
+     "first_heading": "FAQ",
+     "widget_types": [
+      "accordion",
+      "divider",
+      "heading",
+      "text-editor"
+     ],
+     "counts": {
+      "containers": 4,
+      "widgets": 5,
+      "buttons": 0,
+      "images": 0,
+      "forms": 0
+     },
+     "buttons": []
+    },
+    {
+     "index": 6,
+     "anchor": "cta",
+     "html_tag": "section",
+     "responsive_keys": [
+      "padding_mobile",
+      "padding_tablet"
+     ],
+     "hidden": [],
+     "first_heading": "Get started",
+     "widget_types": [
+      "button",
+      "divider",
+      "heading",
+      "icon",
+      "text-editor"
+     ],
+     "counts": {
+      "containers": 8,
+      "widgets": 8,
+      "buttons": 2,
+      "images": 0,
+      "forms": 0
+     },
+     "buttons": [
+      {
+       "label": "Book the call",
+       "link": "#contact"
+      },
+      {
+       "label": "Read the docs",
+       "link": "#docs"
+      }
+     ]
+    }
+   ],
+   "totals": {
+    "containers": 60,
+    "widgets": 85,
+    "buttons": 8,
+    "images": 0,
+    "forms": 0
+   },
+   "cta_targets": {
+    "in_page": [
+     "#contact",
+     "#docs",
+     "#services"
+    ],
+    "dead": [
+     "#contact",
+     "#docs"
+    ]
+   }
+  },
+  {
+   "path": "popups/aurora-lead-magnet.json",
+   "type": "popup",
+   "title": "Aurora | Popup - AI Readiness Checklist",
+   "lang": "en",
+   "sections": [
+    {
+     "index": 0,
+     "anchor": "",
+     "html_tag": "section",
+     "responsive_keys": [
+      "padding_mobile",
+      "padding_tablet"
+     ],
+     "hidden": [],
+     "first_heading": "Free checklist",
+     "widget_types": [
+      "form",
+      "heading",
+      "icon",
+      "text-editor"
+     ],
+     "counts": {
+      "containers": 5,
+      "widgets": 6,
+      "buttons": 0,
+      "images": 0,
+      "forms": 1
+     },
+     "buttons": []
+    }
+   ],
+   "totals": {
+    "containers": 5,
+    "widgets": 6,
+    "buttons": 0,
+    "images": 0,
+    "forms": 1
+   },
+   "cta_targets": {
+    "in_page": [],
+    "dead": []
+   }
+  },
+  {
+   "path": "loop/aurora-search-results.json",
+   "type": "search-results",
+   "title": "Aurora | Search Results",
+   "lang": "en",
+   "sections": [
+    {
+     "index": 0,
+     "anchor": "",
+     "html_tag": "section",
+     "responsive_keys": [
+      "padding_mobile",
+      "padding_tablet"
+     ],
+     "hidden": [],
+     "first_heading": "Search results",
+     "widget_types": [
+      "heading",
+      "search-form",
+      "text-editor"
+     ],
+     "counts": {
+      "containers": 2,
+      "widgets": 3,
+      "buttons": 0,
+      "images": 0,
+      "forms": 1
+     },
+     "buttons": []
+    },
+    {
+     "index": 1,
+     "anchor": "",
+     "html_tag": "section",
+     "responsive_keys": [
+      "padding_mobile",
+      "padding_tablet"
+     ],
+     "hidden": [],
+     "first_heading": "",
+     "widget_types": [
+      "archive-posts"
+     ],
+     "counts": {
+      "containers": 2,
+      "widgets": 1,
+      "buttons": 0,
+      "images": 0,
+      "forms": 0
+     },
+     "buttons": []
+    },
+    {
+     "index": 2,
+     "anchor": "cta",
+     "html_tag": "section",
+     "responsive_keys": [
+      "padding_mobile",
+      "padding_tablet"
+     ],
+     "hidden": [],
+     "first_heading": "Get started",
+     "widget_types": [
+      "button",
+      "divider",
+      "heading",
+      "icon",
+      "text-editor"
+     ],
+     "counts": {
+      "containers": 8,
+      "widgets": 8,
+      "buttons": 2,
+      "images": 0,
+      "forms": 0
+     },
+     "buttons": [
+      {
+       "label": "Book the call",
+       "link": "#contact"
+      },
+      {
+       "label": "Read the docs",
+       "link": "#docs"
+      }
+     ]
+    }
+   ],
+   "totals": {
+    "containers": 12,
+    "widgets": 12,
+    "buttons": 2,
+    "images": 0,
+    "forms": 1
+   },
+   "cta_targets": {
+    "in_page": [
+     "#contact",
+     "#docs"
+    ],
+    "dead": [
+     "#contact",
+     "#docs"
+    ]
+   }
+  },
+  {
+   "path": "blocks/capability-cards.json",
+   "type": "section",
+   "title": "Block | Capability Cards - Three services",
+   "lang": "en",
+   "sections": [
+    {
+     "index": 0,
+     "anchor": "services",
+     "html_tag": "section",
+     "responsive_keys": [
+      "padding_mobile",
+      "padding_tablet"
+     ],
+     "hidden": [],
+     "first_heading": "Services",
+     "widget_types": [
+      "button",
+      "divider",
+      "heading",
+      "icon",
+      "icon-list",
+      "text-editor"
+     ],
+     "counts": {
+      "containers": 11,
+      "widgets": 19,
+      "buttons": 3,
+      "images": 0,
+      "forms": 0
+     },
+     "buttons": [
+      {
+       "label": "Explore the service",
+       "link": "#services"
+      },
+      {
+       "label": "Explore the service",
+       "link": "#services"
+      },
+      {
+       "label": "Explore the service",
+       "link": "#services"
+      }
+     ]
+    }
+   ],
+   "totals": {
+    "containers": 11,
+    "widgets": 19,
+    "buttons": 3,
+    "images": 0,
+    "forms": 0
+   },
+   "cta_targets": {
+    "in_page": [
+     "#services"
+    ],
+    "dead": []
+   }
+  },
+  {
+   "path": "blocks/case-studies.json",
+   "type": "section",
+   "title": "Block | Case Studies - Three cards",
+   "lang": "en",
+   "sections": [
+    {
+     "index": 0,
+     "anchor": "portfolio",
+     "html_tag": "section",
+     "responsive_keys": [
+      "padding_mobile",
+      "padding_tablet"
+     ],
+     "hidden": [],
+     "first_heading": "Case studies",
+     "widget_types": [
+      "button",
+      "divider",
+      "heading",
+      "image",
+      "text-editor"
+     ],
+     "counts": {
+      "containers": 15,
+      "widgets": 23,
+      "buttons": 4,
+      "images": 3,
+      "forms": 0
+     },
+     "buttons": [
+      {
+       "label": "Read the case study",
+       "link": "#portfolio"
+      },
+      {
+       "label": "Read the case study",
+       "link": "#portfolio"
+      },
+      {
+       "label": "Read the case study",
+       "link": "#portfolio"
+      },
+      {
+       "label": "Browse all case studies",
+       "link": "#portfolio"
+      }
+     ]
+    }
+   ],
+   "totals": {
+    "containers": 15,
+    "widgets": 23,
+    "buttons": 4,
+    "images": 3,
+    "forms": 0
+   },
+   "cta_targets": {
+    "in_page": [
+     "#portfolio"
+    ],
+    "dead": []
+   }
+  },
+  {
+   "path": "blocks/contact-section.json",
+   "type": "section",
+   "title": "Block | Contact - Form + details",
+   "lang": "en",
+   "sections": [
+    {
+     "index": 0,
+     "anchor": "contact",
+     "html_tag": "section",
+     "responsive_keys": [
+      "padding_mobile",
+      "padding_tablet"
+     ],
+     "hidden": [],
+     "first_heading": "Contact",
+     "widget_types": [
+      "divider",
+      "form",
+      "heading",
+      "icon",
+      "social-icons",
+      "spacer",
+      "text-editor"
+     ],
+     "counts": {
+      "containers": 17,
+      "widgets": 26,
+      "buttons": 0,
+      "images": 0,
+      "forms": 1
+     },
+     "buttons": []
+    }
+   ],
+   "totals": {
+    "containers": 17,
+    "widgets": 26,
+    "buttons": 0,
+    "images": 0,
+    "forms": 1
+   },
+   "cta_targets": {
+    "in_page": [],
+    "dead": []
+   }
+  },
+  {
+   "path": "blocks/content-two-column.json",
+   "type": "section",
+   "title": "Block | Content - Two column story",
+   "lang": "en",
+   "sections": [
+    {
+     "index": 0,
+     "anchor": "story",
+     "html_tag": "section",
+     "responsive_keys": [
+      "padding_mobile",
+      "padding_tablet"
+     ],
+     "hidden": [],
+     "first_heading": "Our story",
+     "widget_types": [
+      "button",
+      "divider",
+      "heading",
+      "icon-list",
+      "image",
+      "text-editor"
+     ],
+     "counts": {
+      "containers": 6,
+      "widgets": 7,
+      "buttons": 1,
+      "images": 1,
+      "forms": 0
+     },
+     "buttons": [
+      {
+       "label": "Meet the team",
+       "link": "#about"
+      }
+     ]
+    }
+   ],
+   "totals": {
+    "containers": 6,
+    "widgets": 7,
+    "buttons": 1,
+    "images": 1,
+    "forms": 0
+   },
+   "cta_targets": {
+    "in_page": [
+     "#about"
+    ],
+    "dead": [
+     "#about"
+    ]
+   }
+  },
+  {
+   "path": "blocks/cta-band.json",
+   "type": "section",
+   "title": "Block | Call To Action - Gradient card",
+   "lang": "en",
+   "sections": [
+    {
+     "index": 0,
+     "anchor": "cta",
+     "html_tag": "section",
+     "responsive_keys": [
+      "padding_mobile",
+      "padding_tablet"
+     ],
+     "hidden": [],
+     "first_heading": "Get started",
+     "widget_types": [
+      "button",
+      "divider",
+      "heading",
+      "icon",
+      "text-editor"
+     ],
+     "counts": {
+      "containers": 8,
+      "widgets": 8,
+      "buttons": 2,
+      "images": 0,
+      "forms": 0
+     },
+     "buttons": [
+      {
+       "label": "Book the call",
+       "link": "#contact"
+      },
+      {
+       "label": "Read the docs",
+       "link": "#docs"
+      }
+     ]
+    }
+   ],
+   "totals": {
+    "containers": 8,
+    "widgets": 8,
+    "buttons": 2,
+    "images": 0,
+    "forms": 0
+   },
+   "cta_targets": {
+    "in_page": [
+     "#contact",
+     "#docs"
+    ],
+    "dead": [
+     "#contact",
+     "#docs"
+    ]
+   }
+  },
+  {
+   "path": "blocks/fa-cta-band.json",
+   "type": "section",
+   "title": "Block | فراخوان به اقدام (فارسی)",
+   "lang": "fa",
+   "sections": [
+    {
+     "index": 0,
+     "anchor": "cta",
+     "html_tag": "section",
+     "responsive_keys": [
+      "padding_mobile",
+      "padding_tablet"
+     ],
+     "hidden": [],
+     "first_heading": "شروع کنیم",
+     "widget_types": [
+      "button",
+      "divider",
+      "heading",
+      "icon",
+      "text-editor"
+     ],
+     "counts": {
+      "containers": 8,
+      "widgets": 8,
+      "buttons": 2,
+      "images": 0,
+      "forms": 0
+     },
+     "buttons": [
+      {
+       "label": "رزرو جلسه",
+       "link": "#contact"
+      },
+      {
+       "label": "مشاهده مستندات",
+       "link": "#docs"
+      }
+     ]
+    }
+   ],
+   "totals": {
+    "containers": 8,
+    "widgets": 8,
+    "buttons": 2,
+    "images": 0,
+    "forms": 0
+   },
+   "cta_targets": {
+    "in_page": [
+     "#contact",
+     "#docs"
+    ],
+    "dead": [
+     "#contact",
+     "#docs"
+    ]
+   }
+  },
+  {
+   "path": "blocks/fa-faq-accordion.json",
+   "type": "section",
+   "title": "Block | پرسشهای پرتکرار (فارسی)",
+   "lang": "fa",
+   "sections": [
+    {
+     "index": 0,
+     "anchor": "faq",
+     "html_tag": "section",
+     "responsive_keys": [
+      "padding_mobile",
+      "padding_tablet"
+     ],
+     "hidden": [],
+     "first_heading": "پرسشهای پرتکرار",
+     "widget_types": [
+      "accordion",
+      "divider",
+      "heading",
+      "text-editor"
+     ],
+     "counts": {
+      "containers": 4,
+      "widgets": 5,
+      "buttons": 0,
+      "images": 0,
+      "forms": 0
+     },
+     "buttons": []
+    }
+   ],
+   "totals": {
+    "containers": 4,
+    "widgets": 5,
+    "buttons": 0,
+    "images": 0,
+    "forms": 0
+   },
+   "cta_targets": {
+    "in_page": [],
+    "dead": []
+   }
+  },
+  {
+   "path": "blocks/fa-feature-grid.json",
+   "type": "section",
+   "title": "Block | شبکه ویژگیها (فارسی)",
+   "lang": "fa",
+   "sections": [
+    {
+     "index": 0,
+     "anchor": "",
+     "html_tag": "section",
+     "responsive_keys": [
+      "padding_mobile",
+      "padding_tablet"
+     ],
+     "hidden": [],
+     "first_heading": "چرا آرورا",
+     "widget_types": [
+      "divider",
+      "heading",
+      "icon",
+      "text-editor"
+     ],
+     "counts": {
+      "containers": 17,
+      "widgets": 22,
+      "buttons": 0,
+      "images": 0,
+      "forms": 0
+     },
+     "buttons": []
+    }
+   ],
+   "totals": {
+    "containers": 17,
+    "widgets": 22,
+    "buttons": 0,
+    "images": 0,
+    "forms": 0
+   },
+   "cta_targets": {
+    "in_page": [],
+    "dead": []
+   }
+  },
+  {
+   "path": "blocks/fa-hero-split.json",
+   "type": "section",
+   "title": "Block | قهرمان - دوقسمتی",
+   "lang": "fa",
+   "sections": [
+    {
+     "index": 0,
+     "anchor": "hero",
+     "html_tag": "section",
+     "responsive_keys": [
+      "padding_mobile",
+      "padding_tablet"
+     ],
+     "hidden": [],
+     "first_heading": "عاملهای آرورا ۲.۰ - اکنون در دسترس عمومی",
+     "widget_types": [
+      "button",
+      "heading",
+      "icon",
+      "image",
+      "text-editor"
+     ],
+     "counts": {
+      "containers": 13,
+      "widgets": 17,
+      "buttons": 2,
+      "images": 1,
+      "forms": 0
+     },
+     "buttons": [
+      {
+       "label": "شروع دوره آزمایشی رایگان",
+       "link": "#contact"
+      },
+      {
+       "label": "درخواست دموی زنده",
+       "link": "#demo"
+      }
+     ]
+    }
+   ],
+   "totals": {
+    "containers": 13,
+    "widgets": 17,
+    "buttons": 2,
+    "images": 1,
+    "forms": 0
+   },
+   "cta_targets": {
+    "in_page": [
+     "#contact",
+     "#demo"
+    ],
+    "dead": [
+     "#contact",
+     "#demo"
+    ]
+   }
+  },
+  {
+   "path": "blocks/fa-pricing-table.json",
+   "type": "section",
+   "title": "Block | جدول قیمت (فارسی)",
+   "lang": "fa",
+   "sections": [
+    {
+     "index": 0,
+     "anchor": "pricing",
+     "html_tag": "section",
+     "responsive_keys": [
+      "padding_mobile",
+      "padding_tablet"
+     ],
+     "hidden": [],
+     "first_heading": "قیمتگذاری",
+     "widget_types": [
+      "button",
+      "divider",
+      "heading",
+      "icon-list",
+      "text-editor"
+     ],
+     "counts": {
+      "containers": 15,
+      "widgets": 27,
+      "buttons": 3,
+      "images": 0,
+      "forms": 0
+     },
+     "buttons": [
+      {
+       "label": "شروع کنید",
+       "link": "#"
+      },
+      {
+       "label": "شروع دوره",
+       "link": "#"
+      },
+      {
+       "label": "گفتگو با فروش",
+       "link": "#"
+      }
+     ]
+    }
+   ],
+   "totals": {
+    "containers": 15,
+    "widgets": 27,
+    "buttons": 3,
+    "images": 0,
+    "forms": 0
+   },
+   "cta_targets": {
+    "in_page": [],
+    "dead": []
+   }
+  },
+  {
+   "path": "blocks/faq-accordion.json",
+   "type": "section",
+   "title": "Block | FAQ - Accordion",
+   "lang": "en",
+   "sections": [
+    {
+     "index": 0,
+     "anchor": "faq",
+     "html_tag": "section",
+     "responsive_keys": [
+      "padding_mobile",
+      "padding_tablet"
+     ],
+     "hidden": [],
+     "first_heading": "FAQ",
+     "widget_types": [
+      "accordion",
+      "divider",
+      "heading",
+      "text-editor"
+     ],
+     "counts": {
+      "containers": 4,
+      "widgets": 5,
+      "buttons": 0,
+      "images": 0,
+      "forms": 0
+     },
+     "buttons": []
+    }
+   ],
+   "totals": {
+    "containers": 4,
+    "widgets": 5,
+    "buttons": 0,
+    "images": 0,
+    "forms": 0
+   },
+   "cta_targets": {
+    "in_page": [],
+    "dead": []
+   }
+  },
+  {
+   "path": "blocks/feature-grid.json",
+   "type": "section",
+   "title": "Block | Feature Grid - Six icon cards",
+   "lang": "en",
+   "sections": [
+    {
+     "index": 0,
+     "anchor": "",
+     "html_tag": "section",
+     "responsive_keys": [
+      "padding_mobile",
+      "padding_tablet"
+     ],
+     "hidden": [],
+     "first_heading": "Why Aurora",
+     "widget_types": [
+      "divider",
+      "heading",
+      "icon",
+      "text-editor"
+     ],
+     "counts": {
+      "containers": 17,
+      "widgets": 22,
+      "buttons": 0,
+      "images": 0,
+      "forms": 0
+     },
+     "buttons": []
+    }
+   ],
+   "totals": {
+    "containers": 17,
+    "widgets": 22,
+    "buttons": 0,
+    "images": 0,
+    "forms": 0
+   },
+   "cta_targets": {
+    "in_page": [],
+    "dead": []
+   }
+  },
+  {
+   "path": "blocks/feature-zigzag.json",
+   "type": "section",
+   "title": "Block | Feature Zigzag - Two alternating rows",
+   "lang": "en",
+   "sections": [
+    {
+     "index": 0,
+     "anchor": "how",
+     "html_tag": "section",
+     "responsive_keys": [
+      "padding_mobile",
+      "padding_tablet"
+     ],
+     "hidden": [],
+     "first_heading": "How it works",
+     "widget_types": [
+      "button",
+      "divider",
+      "heading",
+      "icon",
+      "image",
+      "text-editor"
+     ],
+     "counts": {
+      "containers": 20,
+      "widgets": 28,
+      "buttons": 2,
+      "images": 2,
+      "forms": 0
+     },
+     "buttons": [
+      {
+       "label": "See it in action",
+       "link": "#demo"
+      },
+      {
+       "label": "See it in action",
+       "link": "#demo"
+      }
+     ]
+    }
+   ],
+   "totals": {
+    "containers": 20,
+    "widgets": 28,
+    "buttons": 2,
+    "images": 2,
+    "forms": 0
+   },
+   "cta_targets": {
+    "in_page": [
+     "#demo"
+    ],
+    "dead": [
+     "#demo"
+    ]
+   }
+  },
+  {
+   "path": "blocks/hero-split.json",
+   "type": "section",
+   "title": "Block | Hero - Split with product shot",
+   "lang": "en",
+   "sections": [
+    {
+     "index": 0,
+     "anchor": "hero",
+     "html_tag": "section",
+     "responsive_keys": [
+      "padding_mobile",
+      "padding_tablet"
+     ],
+     "hidden": [],
+     "first_heading": "Aurora Agents 2.0 - now generally available",
+     "widget_types": [
+      "button",
+      "heading",
+      "icon",
+      "image",
+      "text-editor"
+     ],
+     "counts": {
+      "containers": 13,
+      "widgets": 17,
+      "buttons": 2,
+      "images": 1,
+      "forms": 0
+     },
+     "buttons": [
+      {
+       "label": "Start free trial",
+       "link": "#contact"
+      },
+      {
+       "label": "Book a live demo",
+       "link": "#demo"
+      }
+     ]
+    }
+   ],
+   "totals": {
+    "containers": 13,
+    "widgets": 17,
+    "buttons": 2,
+    "images": 1,
+    "forms": 0
+   },
+   "cta_targets": {
+    "in_page": [
+     "#contact",
+     "#demo"
+    ],
+    "dead": [
+     "#contact",
+     "#demo"
+    ]
+   }
+  },
+  {
+   "path": "blocks/logo-cloud.json",
+   "type": "section",
+   "title": "Block | Logo Cloud - Trusted by",
+   "lang": "en",
+   "sections": [
+    {
+     "index": 0,
+     "anchor": "",
+     "html_tag": "section",
+     "responsive_keys": [
+      "padding_mobile",
+      "padding_tablet"
+     ],
+     "hidden": [],
+     "first_heading": "Trusted by teams shipping in production",
+     "widget_types": [
+      "heading"
+     ],
+     "counts": {
+      "containers": 3,
+      "widgets": 7,
+      "buttons": 0,
+      "images": 0,
+      "forms": 0
+     },
+     "buttons": []
+    }
+   ],
+   "totals": {
+    "containers": 3,
+    "widgets": 7,
+    "buttons": 0,
+    "images": 0,
+    "forms": 0
+   },
+   "cta_targets": {
+    "in_page": [],
+    "dead": []
+   }
+  },
+  {
+   "path": "blocks/newsletter-band.json",
+   "type": "section",
+   "title": "Block | Newsletter - Subscribe",
+   "lang": "en",
+   "sections": [
+    {
+     "index": 0,
+     "anchor": "newsletter",
+     "html_tag": "section",
+     "responsive_keys": [
+      "padding_mobile",
+      "padding_tablet"
+     ],
+     "hidden": [],
+     "first_heading": "Newsletter",
+     "widget_types": [
+      "divider",
+      "form",
+      "heading",
+      "text-editor"
+     ],
+     "counts": {
+      "containers": 6,
+      "widgets": 6,
+      "buttons": 0,
+      "images": 0,
+      "forms": 1
+     },
+     "buttons": []
+    }
+   ],
+   "totals": {
+    "containers": 6,
+    "widgets": 6,
+    "buttons": 0,
+    "images": 0,
+    "forms": 1
+   },
+   "cta_targets": {
+    "in_page": [],
+    "dead": []
+   }
+  },
+  {
+   "path": "blocks/page-hero.json",
+   "type": "section",
+   "title": "Block | Page Hero - Inner page header",
+   "lang": "en",
+   "sections": [
+    {
+     "index": 0,
+     "anchor": "",
+     "html_tag": "section",
+     "responsive_keys": [
+      "padding_mobile",
+      "padding_tablet"
+     ],
+     "hidden": [],
+     "first_heading": "",
+     "widget_types": [
+      "breadcrumbs"
+     ],
+     "counts": {
+      "containers": 4,
+      "widgets": 1,
+      "buttons": 0,
+      "images": 0,
+      "forms": 0
+     },
+     "buttons": []
+    }
+   ],
+   "totals": {
+    "containers": 4,
+    "widgets": 1,
+    "buttons": 0,
+    "images": 0,
+    "forms": 0
+   },
+   "cta_targets": {
+    "in_page": [],
+    "dead": []
+   }
+  },
+  {
+   "path": "blocks/pricing-table.json",
+   "type": "section",
+   "title": "Block | Pricing Table - Three plans",
+   "lang": "en",
+   "sections": [
+    {
+     "index": 0,
+     "anchor": "pricing",
+     "html_tag": "section",
+     "responsive_keys": [
+      "padding_mobile",
+      "padding_tablet"
+     ],
+     "hidden": [],
+     "first_heading": "Pricing",
+     "widget_types": [
+      "button",
+      "divider",
+      "heading",
+      "icon-list",
+      "text-editor"
+     ],
+     "counts": {
+      "containers": 15,
+      "widgets": 27,
+      "buttons": 3,
+      "images": 0,
+      "forms": 0
+     },
+     "buttons": [
+      {
+       "label": "Start building",
+       "link": "#"
+      },
+      {
+       "label": "Start 14-day trial",
+       "link": "#"
+      },
+      {
+       "label": "Contact sales",
+       "link": "#"
+      }
+     ]
+    }
+   ],
+   "totals": {
+    "containers": 15,
+    "widgets": 27,
+    "buttons": 3,
+    "images": 0,
+    "forms": 0
+   },
+   "cta_targets": {
+    "in_page": [],
+    "dead": []
+   }
+  },
+  {
+   "path": "blocks/process-steps.json",
+   "type": "section",
+   "title": "Block | Process Steps - Four numbered stages",
+   "lang": "en",
+   "sections": [
+    {
+     "index": 0,
+     "anchor": "process",
+     "html_tag": "section",
+     "responsive_keys": [
+      "padding_mobile",
+      "padding_tablet"
+     ],
+     "hidden": [],
+     "first_heading": "Our process",
+     "widget_types": [
+      "divider",
+      "heading",
+      "text-editor"
+     ],
+     "counts": {
+      "containers": 13,
+      "widgets": 16,
+      "buttons": 0,
+      "images": 0,
+      "forms": 0
+     },
+     "buttons": []
+    }
+   ],
+   "totals": {
+    "containers": 13,
+    "widgets": 16,
+    "buttons": 0,
+    "images": 0,
+    "forms": 0
+   },
+   "cta_targets": {
+    "in_page": [],
+    "dead": []
+   }
+  },
+  {
+   "path": "blocks/stats-band.json",
+   "type": "section",
+   "title": "Block | Stats Band - Dark counters",
+   "lang": "en",
+   "sections": [
+    {
+     "index": 0,
+     "anchor": "results",
+     "html_tag": "section",
+     "responsive_keys": [
+      "padding_mobile",
+      "padding_tablet"
+     ],
+     "hidden": [],
+     "first_heading": "Proof, not promises",
+     "widget_types": [
+      "counter",
+      "divider",
+      "heading"
+     ],
+     "counts": {
+      "containers": 14,
+      "widgets": 8,
+      "buttons": 0,
+      "images": 0,
+      "forms": 0
+     },
+     "buttons": []
+    }
+   ],
+   "totals": {
+    "containers": 14,
+    "widgets": 8,
+    "buttons": 0,
+    "images": 0,
+    "forms": 0
+   },
+   "cta_targets": {
+    "in_page": [],
+    "dead": []
+   }
+  },
+  {
+   "path": "blocks/team-grid.json",
+   "type": "section",
+   "title": "Block | Team Grid - Four members",
+   "lang": "en",
+   "sections": [
+    {
+     "index": 0,
+     "anchor": "team",
+     "html_tag": "section",
+     "responsive_keys": [
+      "padding_mobile",
+      "padding_tablet"
+     ],
+     "hidden": [],
+     "first_heading": "The team",
+     "widget_types": [
+      "divider",
+      "heading",
+      "icon",
+      "text-editor"
+     ],
+     "counts": {
+      "containers": 17,
+      "widgets": 28,
+      "buttons": 0,
+      "images": 0,
+      "forms": 0
+     },
+     "buttons": []
+    }
+   ],
+   "totals": {
+    "containers": 17,
+    "widgets": 28,
+    "buttons": 0,
+    "images": 0,
+    "forms": 0
+   },
+   "cta_targets": {
+    "in_page": [],
+    "dead": []
+   }
+  },
+  {
+   "path": "blocks/testimonials.json",
+   "type": "section",
+   "title": "Block | Testimonials - Three quotes",
+   "lang": "en",
+   "sections": [
+    {
+     "index": 0,
+     "anchor": "testimonials",
+     "html_tag": "section",
+     "responsive_keys": [
+      "padding_mobile",
+      "padding_tablet"
+     ],
+     "hidden": [],
+     "first_heading": "Customer voices",
+     "widget_types": [
+      "divider",
+      "heading",
+      "icon",
+      "text-editor"
+     ],
+     "counts": {
+      "containers": 11,
+      "widgets": 19,
+      "buttons": 0,
+      "images": 0,
+      "forms": 0
+     },
+     "buttons": []
+    }
+   ],
+   "totals": {
+    "containers": 11,
+    "widgets": 19,
+    "buttons": 0,
+    "images": 0,
+    "forms": 0
+   },
+   "cta_targets": {
+    "in_page": [],
+    "dead": []
+   }
+  },
+  {
+   "path": "loop/aurora-single-post.json",
+   "type": "single",
+   "title": "Aurora | Single Post",
+   "lang": "en",
+   "sections": [
+    {
+     "index": 0,
+     "anchor": "",
+     "html_tag": "main",
+     "responsive_keys": [
+      "padding_mobile"
+     ],
+     "hidden": [],
+     "first_heading": "",
+     "widget_types": [
+      "author-box",
+      "breadcrumbs",
+      "divider",
+      "post-comments",
+      "post-info",
+      "post-navigation",
+      "theme-post-content",
+      "theme-post-featured-image"
+     ],
+     "counts": {
+      "containers": 2,
+      "widgets": 8,
+      "buttons": 0,
+      "images": 0,
+      "forms": 0
+     },
+     "buttons": []
+    },
+    {
+     "index": 1,
+     "anchor": "cta",
+     "html_tag": "section",
+     "responsive_keys": [
+      "padding_mobile",
+      "padding_tablet"
+     ],
+     "hidden": [],
+     "first_heading": "Get started",
+     "widget_types": [
+      "button",
+      "divider",
+      "heading",
+      "icon",
+      "text-editor"
+     ],
+     "counts": {
+      "containers": 8,
+      "widgets": 8,
+      "buttons": 2,
+      "images": 0,
+      "forms": 0
+     },
+     "buttons": [
+      {
+       "label": "Book the call",
+       "link": "#contact"
+      },
+      {
+       "label": "Read the docs",
+       "link": "#docs"
+      }
+     ]
+    }
+   ],
+   "totals": {
+    "containers": 10,
+    "widgets": 16,
+    "buttons": 2,
+    "images": 0,
+    "forms": 0
+   },
+   "cta_targets": {
+    "in_page": [
+     "#contact",
+     "#docs"
+    ],
+    "dead": [
+     "#contact",
+     "#docs"
+    ]
+   }
+  }
+ ]
+}

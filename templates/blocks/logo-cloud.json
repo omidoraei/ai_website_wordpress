@@ -1,0 +1,245 @@
+{
+ "content": [
+  {
+   "id": "a2f9064",
+   "elType": "container",
+   "settings": {
+    "content_width": "full",
+    "width": {
+     "unit": "%",
+     "size": 100
+    },
+    "html_tag": "section",
+    "background_background": "classic",
+    "background_color": "globals/colors?id=white",
+    "padding": {
+     "top": "56",
+     "right": "24",
+     "bottom": "56",
+     "left": "24",
+     "unit": "px",
+     "isLinked": false
+    },
+    "padding_tablet": {
+     "top": "44",
+     "right": "24",
+     "bottom": "44",
+     "left": "24",
+     "unit": "px",
+     "isLinked": false
+    },
+    "padding_mobile": {
+     "top": "40",
+     "right": "20",
+     "bottom": "40",
+     "left": "20",
+     "unit": "px",
+     "isLinked": false
+    }
+   },
+   "elements": [
+    {
+     "id": "86462f8",
+     "elType": "container",
+     "settings": {
+      "flex_direction": "column",
+      "boxed_width": {
+       "unit": "px",
+       "size": 1240
+      },
+      "boxed_width_tablet": {
+       "unit": "%",
+       "size": 100
+      },
+      "boxed_width_mobile": {
+       "unit": "%",
+       "size": 100
+      }
+     },
+     "elements": [
+      {
+       "id": "9b19d18",
+       "elType": "widget",
+       "settings": {
+        "title": "Trusted by teams shipping in production",
+        "header_size": "p",
+        "title_color": "globals/colors?id=muted",
+        "align": "center",
+        "typography_typography": "globals/typography?id=eyebrow",
+        "typography_letter_spacing": {
+         "unit": "px",
+         "size": 1.4
+        }
+       },
+       "elements": [],
+       "widgetType": "heading"
+      },
+      {
+       "id": "8f56d85",
+       "elType": "container",
+       "settings": {
+        "flex_direction": "row",
+        "flex_wrap": "wrap",
+        "flex_justify_content": "space-between",
+        "flex_align_items": "center",
+        "flex_gap": {
+         "row": "44",
+         "column": "44",
+         "unit": "px",
+         "isLinked": true
+        },
+        "flex_gap_mobile": {
+         "row": "26",
+         "column": "26",
+         "unit": "px",
+         "isLinked": true
+        }
+       },
+       "elements": [
+        {
+         "id": "a53ecd8",
+         "elType": "widget",
+         "settings": {
+          "title": "NORTHWIND",
+          "header_size": "span",
+          "title_color": "globals/colors?id=muted",
+          "align": "center",
+          "typography_typography": "globals/typography?id=h3",
+          "typography_letter_spacing": {
+           "unit": "px",
+           "size": 1.4
+          },
+          "typography_typography_font_size": {
+           "unit": "px",
+           "size": 18
+          },
+          "_element_width": "initial"
+         },
+         "elements": [],
+         "widgetType": "heading"
+        },
+        {
+         "id": "fba7835",
+         "elType": "widget",
+         "settings": {
+          "title": "LUMEN",
+          "header_size": "span",
+          "title_color": "globals/colors?id=muted",
+          "align": "center",
+          "typography_typography": "globals/typography?id=h3",
+          "typography_letter_spacing": {
+           "unit": "px",
+           "size": 1.4
+          },
+          "typography_typography_font_size": {
+           "unit": "px",
+           "size": 18
+          },
+          "_element_width": "initial"
+         },
+         "elements": [],
+         "widgetType": "heading"
+        },
+        {
+         "id": "5930711",
+         "elType": "widget",
+         "settings": {
+          "title": "ORBITAL",
+          "header_size": "span",
+          "title_color": "globals/colors?id=muted",
+          "align": "center",
+          "typography_typography": "globals/typography?id=h3",
+          "typography_letter_spacing": {
+           "unit": "px",
+           "size": 1.4
+          },
+          "typography_typography_font_size": {
+           "unit": "px",
+           "size": 18
+          },
+          "_element_width": "initial"
+         },
+         "elements": [],
+         "widgetType": "heading"
+        },
+        {
+         "id": "1421fd4",
+         "elType": "widget",
+         "settings": {
+          "title": "HELIOS",
+          "header_size": "span",
+          "title_color": "globals/colors?id=muted",
+          "align": "center",
+          "typography_typography": "globals/typography?id=h3",
+          "typography_letter_spacing": {
+           "unit": "px",
+           "size": 1.4
+          },
+          "typography_typography_font_size": {
+           "unit": "px",
+           "size": 18
+          },
+          "_element_width": "initial"
+         },
+         "elements": [],
+         "widgetType": "heading"
+        },
+        {
+         "id": "26c0d78",
+         "elType": "widget",
+         "settings": {
+          "title": "KOMMA",
+          "header_size": "span",
+          "title_color": "globals/colors?id=muted",
+          "align": "center",
+          "typography_typography": "globals/typography?id=h3",
+          "typography_letter_spacing": {
+           "unit": "px",
+           "size": 1.4
+          },
+          "typography_typography_font_size": {
+           "unit": "px",
+           "size": 18
+          },
+          "_element_width": "initial"
+         },
+         "elements": [],
+         "widgetType": "heading"
+        },
+        {
+         "id": "c2bfdc8",
+         "elType": "widget",
+         "settings": {
+          "title": "FIELDNOTE",
+          "header_size": "span",
+          "title_color": "globals/colors?id=muted",
+          "align": "center",
+          "typography_typography": "globals/typography?id=h3",
+          "typography_letter_spacing": {
+           "unit": "px",
+           "size": 1.4
+          },
+          "typography_typography_font_size": {
+           "unit": "px",
+           "size": 18
+          },
+          "_element_width": "initial"
+         },
+         "elements": [],
+         "widgetType": "heading"
+        }
+       ],
+       "isInner": true
+      }
+     ],
+     "isInner": true
+    }
+   ],
+   "isInner": false
+  }
+ ],
+ "page_settings": {},
+ "version": "0.4",
+ "title": "Block | Logo Cloud - Trusted by",
+ "type": "section"
+}

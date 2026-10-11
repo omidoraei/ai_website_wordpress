@@ -1,0 +1,567 @@
+{
+ "content": [
+  {
+   "id": "cea9d02",
+   "elType": "container",
+   "settings": {
+    "content_width": "full",
+    "width": {
+     "unit": "%",
+     "size": 100
+    },
+    "html_tag": "section",
+    "background_background": "classic",
+    "background_color": "globals/colors?id=ink-900",
+    "_element_id": "results",
+    "padding": {
+     "top": "96",
+     "right": "24",
+     "bottom": "96",
+     "left": "24",
+     "unit": "px",
+     "isLinked": false
+    },
+    "padding_tablet": {
+     "top": "72",
+     "right": "24",
+     "bottom": "72",
+     "left": "24",
+     "unit": "px",
+     "isLinked": false
+    },
+    "padding_mobile": {
+     "top": "56",
+     "right": "20",
+     "bottom": "56",
+     "left": "20",
+     "unit": "px",
+     "isLinked": false
+    }
+   },
+   "elements": [
+    {
+     "id": "0ac7ec5",
+     "elType": "container",
+     "settings": {
+      "flex_direction": "column",
+      "boxed_width": {
+       "unit": "px",
+       "size": 1240
+      },
+      "boxed_width_tablet": {
+       "unit": "%",
+       "size": 100
+      },
+      "boxed_width_mobile": {
+       "unit": "%",
+       "size": 100
+      }
+     },
+     "elements": [
+      {
+       "id": "7a51801",
+       "elType": "container",
+       "settings": {
+        "flex_direction": "row",
+        "flex_wrap": "wrap",
+        "flex_justify_content": "space-between",
+        "flex_align_items": "center",
+        "flex_gap": {
+         "row": "0",
+         "column": "0",
+         "unit": "px",
+         "isLinked": true
+        }
+       },
+       "elements": [
+        {
+         "id": "87d1229",
+         "elType": "container",
+         "settings": {
+          "flex_direction": "column",
+          "flex_align_items": "flex-start",
+          "flex_gap": {
+           "row": "16",
+           "column": "16",
+           "unit": "px",
+           "isLinked": true
+          },
+          "_flex_size": "custom",
+          "_flex_grow": 0,
+          "_flex_shrink": 1,
+          "_flex_basis_type": "custom",
+          "_flex_basis": {
+           "unit": "%",
+           "size": 52
+          },
+          "_flex_basis_type_tablet": "custom",
+          "_flex_basis_tablet": {
+           "unit": "%",
+           "size": 100
+          },
+          "_flex_basis_type_mobile": "custom",
+          "_flex_basis_mobile": {
+           "unit": "%",
+           "size": 100
+          }
+         },
+         "elements": [
+          {
+           "id": "ac06d79",
+           "elType": "container",
+           "settings": {
+            "flex_direction": "row",
+            "flex_wrap": "nowrap",
+            "flex_justify_content": "flex-start",
+            "flex_align_items": "center",
+            "flex_gap": {
+             "row": "12",
+             "column": "12",
+             "unit": "px",
+             "isLinked": true
+            }
+           },
+           "elements": [
+            {
+             "id": "4d4a1b6",
+             "elType": "widget",
+             "settings": {
+              "style": "solid",
+              "weight": {
+               "unit": "px",
+               "size": 2
+              },
+              "color": "globals/colors?id=amber-600",
+              "width": {
+               "unit": "px",
+               "size": 26
+              },
+              "gap": {
+               "unit": "px",
+               "size": 0
+              }
+             },
+             "elements": [],
+             "widgetType": "divider"
+            },
+            {
+             "id": "8554354",
+             "elType": "widget",
+             "settings": {
+              "title": "Proof, not promises",
+              "header_size": "p",
+              "title_color": "globals/colors?id=amber-600",
+              "typography_typography": "globals/typography?id=eyebrow",
+              "_element_width": "initial"
+             },
+             "elements": [],
+             "widgetType": "heading"
+            }
+           ],
+           "isInner": true
+          },
+          {
+           "id": "c985b42",
+           "elType": "widget",
+           "settings": {
+            "title": "Numbers your product leaders actually care about",
+            "header_size": "h2",
+            "title_color": "globals/colors?id=white",
+            "typography_typography": "globals/typography?id=h2",
+            "typography_font_size": {
+             "unit": "px",
+             "size": 38
+            },
+            "typography_font_size_mobile": {
+             "unit": "px",
+             "size": 26
+            },
+            "_animation": "fadeInUp"
+           },
+           "elements": [],
+           "widgetType": "heading"
+          }
+         ],
+         "isInner": true
+        }
+       ],
+       "isInner": true
+      },
+      {
+       "id": "a94b844",
+       "elType": "widget",
+       "settings": {
+        "style": "solid",
+        "weight": {
+         "unit": "px",
+         "size": 1
+        },
+        "color": "rgba(255,255,255,0.12)",
+        "width": {
+         "unit": "%",
+         "size": 100
+        },
+        "align": "center",
+        "gap": {
+         "unit": "px",
+         "size": 0
+        },
+        "_element_width": "100%"
+       },
+       "elements": [],
+       "widgetType": "divider"
+      },
+      {
+       "id": "4101b2b",
+       "elType": "container",
+       "settings": {
+        "flex_direction": "row",
+        "flex_wrap": "wrap",
+        "flex_justify_content": "flex-start",
+        "flex_align_items": "stretch",
+        "flex_gap": {
+         "row": "32",
+         "column": "32",
+         "unit": "px",
+         "isLinked": true
+        },
+        "flex_gap_tablet": {
+         "row": "32",
+         "column": "32",
+         "unit": "px",
+         "isLinked": true
+        },
+        "flex_gap_mobile": {
+         "row": "28",
+         "column": "28",
+         "unit": "px",
+         "isLinked": true
+        }
+       },
+       "elements": [
+        {
+         "id": "cad68bf",
+         "elType": "container",
+         "settings": {
+          "flex_direction": "column",
+          "flex_align_items": "flex-start",
+          "flex_gap": {
+           "row": "6",
+           "column": "6",
+           "unit": "px",
+           "isLinked": true
+          },
+          "animation": "fadeInUp",
+          "_flex_size": "custom",
+          "_flex_grow": 1,
+          "_flex_shrink": 1,
+          "_flex_basis_type": "custom",
+          "_flex_basis": {
+           "unit": "%",
+           "size": 23
+          },
+          "_flex_basis_type_tablet": "custom",
+          "_flex_basis_tablet": {
+           "unit": "%",
+           "size": 48
+          },
+          "_flex_basis_type_mobile": "custom",
+          "_flex_basis_mobile": {
+           "unit": "%",
+           "size": 100
+          }
+         },
+         "elements": [
+          {
+           "id": "7ac707b",
+           "elType": "container",
+           "settings": {
+            "flex_direction": "row",
+            "flex_wrap": "nowrap",
+            "flex_justify_content": "flex-start",
+            "flex_align_items": "center",
+            "flex_gap": {
+             "row": "0",
+             "column": "0",
+             "unit": "px",
+             "isLinked": true
+            }
+           },
+           "elements": [
+            {
+             "id": "3f0ea59",
+             "elType": "widget",
+             "settings": {
+              "starting_number": 0,
+              "ending_number": 380,
+              "prefix": "",
+              "suffix": "M",
+              "duration": 2000,
+              "title": "Model calls per month",
+              "title_tag": "p",
+              "title_position": "below",
+              "number_alignment": "left",
+              "number_color": "globals/colors?id=white",
+              "title_color": "globals/colors?id=muted-dark",
+              "thousand_separator": ",",
+              "typography_number_typography": "globals/typography?id=stat",
+              "typography_title_typography": "globals/typography?id=eyebrow"
+             },
+             "elements": [],
+             "widgetType": "counter"
+            }
+           ],
+           "isInner": true
+          }
+         ],
+         "isInner": true
+        },
+        {
+         "id": "ac7349f",
+         "elType": "container",
+         "settings": {
+          "flex_direction": "column",
+          "flex_align_items": "flex-start",
+          "flex_gap": {
+           "row": "6",
+           "column": "6",
+           "unit": "px",
+           "isLinked": true
+          },
+          "animation": "fadeInUp",
+          "animation_delay": 100,
+          "_flex_size": "custom",
+          "_flex_grow": 1,
+          "_flex_shrink": 1,
+          "_flex_basis_type": "custom",
+          "_flex_basis": {
+           "unit": "%",
+           "size": 23
+          },
+          "_flex_basis_type_tablet": "custom",
+          "_flex_basis_tablet": {
+           "unit": "%",
+           "size": 48
+          },
+          "_flex_basis_type_mobile": "custom",
+          "_flex_basis_mobile": {
+           "unit": "%",
+           "size": 100
+          }
+         },
+         "elements": [
+          {
+           "id": "8cff133",
+           "elType": "container",
+           "settings": {
+            "flex_direction": "row",
+            "flex_wrap": "nowrap",
+            "flex_justify_content": "flex-start",
+            "flex_align_items": "center",
+            "flex_gap": {
+             "row": "0",
+             "column": "0",
+             "unit": "px",
+             "isLinked": true
+            }
+           },
+           "elements": [
+            {
+             "id": "1254eb1",
+             "elType": "widget",
+             "settings": {
+              "starting_number": 0,
+              "ending_number": 38,
+              "prefix": "",
+              "suffix": "%",
+              "duration": 2000,
+              "title": "Lower support cost",
+              "title_tag": "p",
+              "title_position": "below",
+              "number_alignment": "left",
+              "number_color": "globals/colors?id=white",
+              "title_color": "globals/colors?id=muted-dark",
+              "thousand_separator": ",",
+              "typography_number_typography": "globals/typography?id=stat",
+              "typography_title_typography": "globals/typography?id=eyebrow"
+             },
+             "elements": [],
+             "widgetType": "counter"
+            }
+           ],
+           "isInner": true
+          }
+         ],
+         "isInner": true
+        },
+        {
+         "id": "d5ba7a8",
+         "elType": "container",
+         "settings": {
+          "flex_direction": "column",
+          "flex_align_items": "flex-start",
+          "flex_gap": {
+           "row": "6",
+           "column": "6",
+           "unit": "px",
+           "isLinked": true
+          },
+          "animation": "fadeInUp",
+          "animation_delay": 200,
+          "_flex_size": "custom",
+          "_flex_grow": 1,
+          "_flex_shrink": 1,
+          "_flex_basis_type": "custom",
+          "_flex_basis": {
+           "unit": "%",
+           "size": 23
+          },
+          "_flex_basis_type_tablet": "custom",
+          "_flex_basis_tablet": {
+           "unit": "%",
+           "size": 48
+          },
+          "_flex_basis_type_mobile": "custom",
+          "_flex_basis_mobile": {
+           "unit": "%",
+           "size": 100
+          }
+         },
+         "elements": [
+          {
+           "id": "3d2ecf2",
+           "elType": "container",
+           "settings": {
+            "flex_direction": "row",
+            "flex_wrap": "nowrap",
+            "flex_justify_content": "flex-start",
+            "flex_align_items": "center",
+            "flex_gap": {
+             "row": "0",
+             "column": "0",
+             "unit": "px",
+             "isLinked": true
+            }
+           },
+           "elements": [
+            {
+             "id": "c959264",
+             "elType": "widget",
+             "settings": {
+              "starting_number": 0,
+              "ending_number": 99,
+              "prefix": "",
+              "suffix": ".98%",
+              "duration": 2000,
+              "title": "Contracted uptime",
+              "title_tag": "p",
+              "title_position": "below",
+              "number_alignment": "left",
+              "number_color": "globals/colors?id=white",
+              "title_color": "globals/colors?id=muted-dark",
+              "thousand_separator": ",",
+              "typography_number_typography": "globals/typography?id=stat",
+              "typography_title_typography": "globals/typography?id=eyebrow"
+             },
+             "elements": [],
+             "widgetType": "counter"
+            }
+           ],
+           "isInner": true
+          }
+         ],
+         "isInner": true
+        },
+        {
+         "id": "4ea06f0",
+         "elType": "container",
+         "settings": {
+          "flex_direction": "column",
+          "flex_align_items": "flex-start",
+          "flex_gap": {
+           "row": "6",
+           "column": "6",
+           "unit": "px",
+           "isLinked": true
+          },
+          "animation": "fadeInUp",
+          "animation_delay": 300,
+          "_flex_size": "custom",
+          "_flex_grow": 1,
+          "_flex_shrink": 1,
+          "_flex_basis_type": "custom",
+          "_flex_basis": {
+           "unit": "%",
+           "size": 23
+          },
+          "_flex_basis_type_tablet": "custom",
+          "_flex_basis_tablet": {
+           "unit": "%",
+           "size": 48
+          },
+          "_flex_basis_type_mobile": "custom",
+          "_flex_basis_mobile": {
+           "unit": "%",
+           "size": 100
+          }
+         },
+         "elements": [
+          {
+           "id": "3af9bd2",
+           "elType": "container",
+           "settings": {
+            "flex_direction": "row",
+            "flex_wrap": "nowrap",
+            "flex_justify_content": "flex-start",
+            "flex_align_items": "center",
+            "flex_gap": {
+             "row": "0",
+             "column": "0",
+             "unit": "px",
+             "isLinked": true
+            }
+           },
+           "elements": [
+            {
+             "id": "a7293aa",
+             "elType": "widget",
+             "settings": {
+              "starting_number": 0,
+              "ending_number": 12,
+              "prefix": "",
+              "suffix": "",
+              "duration": 2000,
+              "title": "Days to first release",
+              "title_tag": "p",
+              "title_position": "below",
+              "number_alignment": "left",
+              "number_color": "globals/colors?id=white",
+              "title_color": "globals/colors?id=muted-dark",
+              "thousand_separator": ",",
+              "typography_number_typography": "globals/typography?id=stat",
+              "typography_title_typography": "globals/typography?id=eyebrow"
+             },
+             "elements": [],
+             "widgetType": "counter"
+            }
+           ],
+           "isInner": true
+          }
+         ],
+         "isInner": true
+        }
+       ],
+       "isInner": true
+      }
+     ],
+     "isInner": true
+    }
+   ],
+   "isInner": false
+  }
+ ],
+ "page_settings": {},
+ "version": "0.4",
+ "title": "Block | Stats Band - Dark counters",
+ "type": "section"
+}

@@ -1,0 +1,415 @@
+{
+ "content": [
+  {
+   "id": "253d4e5",
+   "elType": "container",
+   "settings": {
+    "content_width": "full",
+    "width": {
+     "unit": "%",
+     "size": 100
+    },
+    "html_tag": "section",
+    "background_background": "classic",
+    "background_color": "globals/colors?id=white",
+    "_element_id": "story",
+    "padding": {
+     "top": "120",
+     "right": "24",
+     "bottom": "120",
+     "left": "24",
+     "unit": "px",
+     "isLinked": false
+    },
+    "padding_tablet": {
+     "top": "80",
+     "right": "24",
+     "bottom": "80",
+     "left": "24",
+     "unit": "px",
+     "isLinked": false
+    },
+    "padding_mobile": {
+     "top": "56",
+     "right": "20",
+     "bottom": "56",
+     "left": "20",
+     "unit": "px",
+     "isLinked": false
+    }
+   },
+   "elements": [
+    {
+     "id": "4179b95",
+     "elType": "container",
+     "settings": {
+      "flex_direction": "column",
+      "boxed_width": {
+       "unit": "px",
+       "size": 1240
+      },
+      "boxed_width_tablet": {
+       "unit": "%",
+       "size": 100
+      },
+      "boxed_width_mobile": {
+       "unit": "%",
+       "size": 100
+      }
+     },
+     "elements": [
+      {
+       "id": "de88dd4",
+       "elType": "container",
+       "settings": {
+        "flex_direction": "row",
+        "flex_wrap": "wrap",
+        "flex_justify_content": "space-between",
+        "flex_align_items": "center",
+        "flex_gap": {
+         "row": "56",
+         "column": "56",
+         "unit": "px",
+         "isLinked": true
+        },
+        "flex_gap_mobile": {
+         "row": "30",
+         "column": "30",
+         "unit": "px",
+         "isLinked": true
+        }
+       },
+       "elements": [
+        {
+         "id": "413f4ad",
+         "elType": "container",
+         "settings": {
+          "flex_direction": "column",
+          "flex_align_items": "flex-start",
+          "flex_gap": {
+           "row": "20",
+           "column": "20",
+           "unit": "px",
+           "isLinked": true
+          },
+          "_flex_size": "custom",
+          "_flex_grow": 0,
+          "_flex_shrink": 1,
+          "_flex_basis_type": "custom",
+          "_flex_basis": {
+           "unit": "%",
+           "size": 50
+          },
+          "_flex_basis_type_tablet": "custom",
+          "_flex_basis_tablet": {
+           "unit": "%",
+           "size": 100
+          },
+          "_flex_basis_type_mobile": "custom",
+          "_flex_basis_mobile": {
+           "unit": "%",
+           "size": 100
+          }
+         },
+         "elements": [
+          {
+           "id": "86d8420",
+           "elType": "container",
+           "settings": {
+            "flex_direction": "row",
+            "flex_wrap": "nowrap",
+            "flex_justify_content": "flex-start",
+            "flex_align_items": "center",
+            "flex_gap": {
+             "row": "12",
+             "column": "12",
+             "unit": "px",
+             "isLinked": true
+            }
+           },
+           "elements": [
+            {
+             "id": "c309387",
+             "elType": "widget",
+             "settings": {
+              "style": "solid",
+              "weight": {
+               "unit": "px",
+               "size": 2
+              },
+              "color": "globals/colors?id=amber-600",
+              "width": {
+               "unit": "px",
+               "size": 26
+              },
+              "gap": {
+               "unit": "px",
+               "size": 0
+              }
+             },
+             "elements": [],
+             "widgetType": "divider"
+            },
+            {
+             "id": "87c4a46",
+             "elType": "widget",
+             "settings": {
+              "title": "Our story",
+              "header_size": "p",
+              "title_color": "globals/colors?id=amber-600",
+              "typography_typography": "globals/typography?id=eyebrow",
+              "_element_width": "initial"
+             },
+             "elements": [],
+             "widgetType": "heading"
+            }
+           ],
+           "isInner": true
+          },
+          {
+           "id": "8cb371b",
+           "elType": "widget",
+           "settings": {
+            "title": "Shipping AI should feel calm, not chaotic",
+            "header_size": "h2",
+            "title_color": "globals/colors?id=secondary",
+            "typography_typography": "globals/typography?id=h2",
+            "typography_font_size": {
+             "unit": "px",
+             "size": 40
+            },
+            "typography_font_size_tablet": {
+             "unit": "px",
+             "size": 32
+            },
+            "typography_font_size_mobile": {
+             "unit": "px",
+             "size": 26
+            },
+            "_animation": "fadeInUp"
+           },
+           "elements": [],
+           "widgetType": "heading"
+          },
+          {
+           "id": "0fc7ea6",
+           "elType": "widget",
+           "settings": {
+            "editor": "<p>Aurora started in 2021 with a simple idea: AI tooling should be as pleasant to use as the design tools we already love. Today teams in 14 countries build on it.</p>",
+            "text_color": "globals/colors?id=text",
+            "typography_typography": "globals/typography?id=lead"
+           },
+           "elements": [],
+           "widgetType": "text-editor"
+          },
+          {
+           "id": "9bf3f72",
+           "elType": "widget",
+           "settings": {
+            "icon_list": [
+             {
+              "text": "Median 14 years of engineering experience",
+              "_id": "ba74ee7",
+              "selected_icon": {
+               "value": "fas fa-check",
+               "library": "fa-solid"
+              }
+             },
+             {
+              "text": "14 countries, 9 languages spoken",
+              "_id": "8f0606d",
+              "selected_icon": {
+               "value": "fas fa-check",
+               "library": "fa-solid"
+              }
+             },
+             {
+              "text": "Bootstrapped and profitable since 2023",
+              "_id": "644116a",
+              "selected_icon": {
+               "value": "fas fa-check",
+               "library": "fa-solid"
+              }
+             }
+            ],
+            "space_between": {
+             "unit": "px",
+             "size": 12
+            },
+            "icon_size": {
+             "unit": "px",
+             "size": 15
+            },
+            "icon_color": "globals/colors?id=primary",
+            "text_color": "globals/colors?id=text",
+            "text_indent": {
+             "unit": "px",
+             "size": 10
+            },
+            "icon_align": "left",
+            "link_click": "link",
+            "icon_typography_typography": "globals/typography?id=text",
+            "typography_font_size": {
+             "unit": "px",
+             "size": 16
+            }
+           },
+           "elements": [],
+           "widgetType": "icon-list"
+          },
+          {
+           "id": "12ed0af",
+           "elType": "widget",
+           "settings": {
+            "text": "Meet the team",
+            "link": {
+             "url": "#about",
+             "is_external": "",
+             "nofollow": ""
+            },
+            "size": "md",
+            "selected_icon": {
+             "value": "fas fa-arrow-right",
+             "library": "fa-solid"
+            },
+            "icon_align": "right",
+            "icon_indent": {
+             "unit": "px",
+             "size": 10
+            },
+            "button_text_color": "globals/colors?id=white",
+            "background_background": "classic",
+            "background_color": "globals/colors?id=ink-900",
+            "hover_color": "globals/colors?id=white",
+            "button_background_hover_background": "classic",
+            "button_background_hover_color": "globals/colors?id=ink-800"
+           },
+           "elements": [],
+           "widgetType": "button"
+          }
+         ],
+         "isInner": true
+        },
+        {
+         "id": "fa1a6e8",
+         "elType": "container",
+         "settings": {
+          "flex_direction": "column",
+          "flex_align_items": "center",
+          "flex_gap": {
+           "row": "0",
+           "column": "0",
+           "unit": "px",
+           "isLinked": true
+          },
+          "background_background": "classic",
+          "background_color": "globals/colors?id=white",
+          "border_border": "solid",
+          "border_width": {
+           "top": "1",
+           "right": "1",
+           "bottom": "1",
+           "left": "1",
+           "unit": "px",
+           "isLinked": true
+          },
+          "border_color": "globals/colors?id=line",
+          "border_radius": {
+           "top": "30",
+           "right": "30",
+           "bottom": "30",
+           "left": "30",
+           "unit": "px",
+           "isLinked": true
+          },
+          "box_shadow_box_shadow_type": "yes",
+          "box_shadow_box_shadow": {
+           "horizontal": 0,
+           "vertical": 10,
+           "blur": 24,
+           "spread": -8,
+           "color": "rgba(28,25,23,0.14)"
+          },
+          "_flex_size": "custom",
+          "_flex_grow": 0,
+          "_flex_shrink": 1,
+          "_flex_basis_type": "custom",
+          "_flex_basis": {
+           "unit": "%",
+           "size": 46
+          },
+          "_flex_basis_type_tablet": "custom",
+          "_flex_basis_tablet": {
+           "unit": "%",
+           "size": 100
+          },
+          "_flex_basis_type_mobile": "custom",
+          "_flex_basis_mobile": {
+           "unit": "%",
+           "size": 100
+          },
+          "padding": {
+           "top": "10",
+           "right": "10",
+           "bottom": "10",
+           "left": "10",
+           "unit": "px",
+           "isLinked": true
+          },
+          "padding_mobile": {
+           "top": "8",
+           "right": "8",
+           "bottom": "8",
+           "left": "8",
+           "unit": "px",
+           "isLinked": true
+          }
+         },
+         "elements": [
+          {
+           "id": "3b206e0",
+           "elType": "widget",
+           "settings": {
+            "image": {
+             "url": "https://github.com/omidoraei/ai_website_wordpress/raw/kit-assets-v1/media/about-studio.jpg",
+             "id": "",
+             "size": "large",
+             "alt": "Aurora AI studio in Amsterdam",
+             "source": "library"
+            },
+            "image_size": "large",
+            "object_fit": "cover",
+            "width": {
+             "unit": "%",
+             "size": 100
+            },
+            "image_border_radius": {
+             "top": "22",
+             "right": "22",
+             "bottom": "22",
+             "left": "22",
+             "unit": "px",
+             "isLinked": true
+            }
+           },
+           "elements": [],
+           "widgetType": "image"
+          }
+         ],
+         "isInner": true
+        }
+       ],
+       "isInner": true
+      }
+     ],
+     "isInner": true
+    }
+   ],
+   "isInner": false
+  }
+ ],
+ "page_settings": {},
+ "version": "0.4",
+ "title": "Block | Content - Two column story",
+ "type": "section"
+}

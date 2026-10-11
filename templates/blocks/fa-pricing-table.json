@@ -1,0 +1,1258 @@
+{
+ "content": [
+  {
+   "id": "0529adb",
+   "elType": "container",
+   "settings": {
+    "content_width": "full",
+    "width": {
+     "unit": "%",
+     "size": 100
+    },
+    "html_tag": "section",
+    "background_background": "classic",
+    "background_color": "globals/colors?id=sand-50",
+    "_element_id": "pricing",
+    "padding": {
+     "top": "120",
+     "right": "24",
+     "bottom": "120",
+     "left": "24",
+     "unit": "px",
+     "isLinked": false
+    },
+    "padding_tablet": {
+     "top": "80",
+     "right": "24",
+     "bottom": "80",
+     "left": "24",
+     "unit": "px",
+     "isLinked": false
+    },
+    "padding_mobile": {
+     "top": "56",
+     "right": "20",
+     "bottom": "56",
+     "left": "20",
+     "unit": "px",
+     "isLinked": false
+    }
+   },
+   "elements": [
+    {
+     "id": "4ae38fc",
+     "elType": "container",
+     "settings": {
+      "flex_direction": "column",
+      "boxed_width": {
+       "unit": "px",
+       "size": 1240
+      },
+      "boxed_width_tablet": {
+       "unit": "%",
+       "size": 100
+      },
+      "boxed_width_mobile": {
+       "unit": "%",
+       "size": 100
+      }
+     },
+     "elements": [
+      {
+       "id": "6c64c93",
+       "elType": "container",
+       "settings": {
+        "flex_direction": "column",
+        "flex_align_items": "center",
+        "flex_gap": {
+         "row": "18",
+         "column": "18",
+         "unit": "px",
+         "isLinked": true
+        },
+        "boxed_width": {
+         "unit": "px",
+         "size": 780
+        },
+        "boxed_width_mobile": {
+         "unit": "px",
+         "size": 780
+        }
+       },
+       "elements": [
+        {
+         "id": "41d639b",
+         "elType": "container",
+         "settings": {
+          "flex_direction": "row",
+          "flex_wrap": "nowrap",
+          "flex_justify_content": "center",
+          "flex_align_items": "center",
+          "flex_gap": {
+           "row": "12",
+           "column": "12",
+           "unit": "px",
+           "isLinked": true
+          },
+          "_element_width": "100%"
+         },
+         "elements": [
+          {
+           "id": "1f0f6d5",
+           "elType": "widget",
+           "settings": {
+            "style": "solid",
+            "weight": {
+             "unit": "px",
+             "size": 2
+            },
+            "color": "globals/colors?id=amber-600",
+            "width": {
+             "unit": "px",
+             "size": 26
+            },
+            "gap": {
+             "unit": "px",
+             "size": 0
+            }
+           },
+           "elements": [],
+           "widgetType": "divider"
+          },
+          {
+           "id": "846249d",
+           "elType": "widget",
+           "settings": {
+            "title": "قیمتگذاری",
+            "header_size": "p",
+            "title_color": "globals/colors?id=amber-600",
+            "typography_typography": "globals/typography?id=fa-label",
+            "typography_letter_spacing": {
+             "unit": "px",
+             "size": 0
+            },
+            "_element_width": "initial"
+           },
+           "elements": [],
+           "widgetType": "heading"
+          }
+         ],
+         "isInner": true
+        },
+        {
+         "id": "d134777",
+         "elType": "widget",
+         "settings": {
+          "title": "قیمت شفاف، بدون تله",
+          "header_size": "h2",
+          "align": "center",
+          "typography_typography": "globals/typography?id=fa-heading",
+          "_animation": "fadeInUp",
+          "_animation_delay": 80
+         },
+         "elements": [],
+         "widgetType": "heading"
+        },
+        {
+         "id": "95260dc",
+         "elType": "widget",
+         "settings": {
+          "editor": "<p>شروع رایگان است؛ فقط وقتی رشد کردید پرداخت میکنید.</p>",
+          "text_color": "globals/colors?id=text",
+          "align": "center",
+          "typography_typography": "globals/typography?id=fa-body",
+          "_animation": "fadeInUp",
+          "_animation_delay": 160
+         },
+         "elements": [],
+         "widgetType": "text-editor"
+        }
+       ],
+       "isInner": true
+      },
+      {
+       "id": "44c0878",
+       "elType": "container",
+       "settings": {
+        "flex_direction": "row",
+        "flex_wrap": "wrap",
+        "flex_justify_content": "flex-start",
+        "flex_align_items": "stretch",
+        "flex_gap": {
+         "row": "26",
+         "column": "26",
+         "unit": "px",
+         "isLinked": true
+        },
+        "flex_gap_tablet": {
+         "row": "26",
+         "column": "26",
+         "unit": "px",
+         "isLinked": true
+        },
+        "flex_gap_mobile": {
+         "row": "22",
+         "column": "22",
+         "unit": "px",
+         "isLinked": true
+        }
+       },
+       "elements": [
+        {
+         "id": "40497bb",
+         "elType": "container",
+         "settings": {
+          "flex_gap": {
+           "row": "20",
+           "column": "20",
+           "unit": "px",
+           "isLinked": true
+          },
+          "background_background": "classic",
+          "background_color": "globals/colors?id=white",
+          "border_border": "solid",
+          "border_width": {
+           "top": "1",
+           "right": "1",
+           "bottom": "1",
+           "left": "1",
+           "unit": "px",
+           "isLinked": true
+          },
+          "border_color": "globals/colors?id=line",
+          "border_radius": {
+           "top": "22",
+           "right": "22",
+           "bottom": "22",
+           "left": "22",
+           "unit": "px",
+           "isLinked": true
+          },
+          "animation": "fadeInUp",
+          "_flex_size": "custom",
+          "_flex_grow": 1,
+          "_flex_shrink": 1,
+          "_flex_basis_type": "custom",
+          "_flex_basis": {
+           "unit": "%",
+           "size": 31
+          },
+          "_flex_basis_type_tablet": "custom",
+          "_flex_basis_tablet": {
+           "unit": "%",
+           "size": 48
+          },
+          "_flex_basis_type_mobile": "custom",
+          "_flex_basis_mobile": {
+           "unit": "%",
+           "size": 100
+          },
+          "padding": {
+           "top": "32",
+           "right": "32",
+           "bottom": "32",
+           "left": "32",
+           "unit": "px",
+           "isLinked": true
+          },
+          "padding_tablet": {
+           "top": "32",
+           "right": "32",
+           "bottom": "32",
+           "left": "32",
+           "unit": "px",
+           "isLinked": true
+          },
+          "padding_mobile": {
+           "top": "26",
+           "right": "26",
+           "bottom": "26",
+           "left": "26",
+           "unit": "px",
+           "isLinked": true
+          },
+          "border_hover_border": "solid",
+          "border_hover_color": "globals/colors?id=primary",
+          "background_hover_transition": {
+           "unit": "s",
+           "size": 0.3
+          },
+          "border_hover_transition": {
+           "unit": "s",
+           "size": 0.3
+          },
+          "box_shadow_hover_box_shadow_type": "yes",
+          "box_shadow_hover_box_shadow": {
+           "horizontal": 0,
+           "vertical": 10,
+           "blur": 24,
+           "spread": -8,
+           "color": "rgba(28,25,23,0.14)"
+          },
+          "flex_direction": "column"
+         },
+         "elements": [
+          {
+           "id": "a20b53e",
+           "elType": "container",
+           "settings": {
+            "flex_direction": "row",
+            "flex_wrap": "wrap",
+            "flex_justify_content": "space-between",
+            "flex_align_items": "center",
+            "flex_gap": {
+             "row": "12",
+             "column": "12",
+             "unit": "px",
+             "isLinked": true
+            }
+           },
+           "elements": [
+            {
+             "id": "482a9ad",
+             "elType": "widget",
+             "settings": {
+              "title": "شروع",
+              "header_size": "p",
+              "title_color": "globals/colors?id=amber-600",
+              "typography_typography": "globals/typography?id=eyebrow",
+              "typography_letter_spacing": {
+               "unit": "px",
+               "size": 0
+              },
+              "_element_width": "initial"
+             },
+             "elements": [],
+             "widgetType": "heading"
+            }
+           ],
+           "isInner": true
+          },
+          {
+           "id": "d4283ed",
+           "elType": "container",
+           "settings": {
+            "flex_direction": "row",
+            "flex_wrap": "wrap",
+            "flex_justify_content": "flex-start",
+            "flex_align_items": "flex-end",
+            "flex_gap": {
+             "row": "10",
+             "column": "10",
+             "unit": "px",
+             "isLinked": true
+            }
+           },
+           "elements": [
+            {
+             "id": "b7b0139",
+             "elType": "widget",
+             "settings": {
+              "title": "$0",
+              "header_size": "span",
+              "title_color": "globals/colors?id=secondary",
+              "typography_typography": "globals/typography?id=display",
+              "typography_font_size": {
+               "unit": "px",
+               "size": 46
+              },
+              "typography_font_size_mobile": {
+               "unit": "px",
+               "size": 36
+              },
+              "_element_width": "initial"
+             },
+             "elements": [],
+             "widgetType": "heading"
+            },
+            {
+             "id": "8c22b89",
+             "elType": "widget",
+             "settings": {
+              "editor": "<p>برای همیشه رایگان</p>",
+              "text_color": "globals/colors?id=muted",
+              "typography_typography": "globals/typography?id=text",
+              "typography_typography_font_size": {
+               "unit": "px",
+               "size": 16
+              },
+              "_element_width": "initial",
+              "_margin": {
+               "top": "8",
+               "right": "0",
+               "bottom": "0",
+               "left": "0",
+               "unit": "px",
+               "isLinked": false
+              }
+             },
+             "elements": [],
+             "widgetType": "text-editor"
+            }
+           ],
+           "isInner": true
+          },
+          {
+           "id": "99a3978",
+           "elType": "widget",
+           "settings": {
+            "editor": "<p>برای ساخت نخستین عامل و آزمایش ایده.</p>",
+            "text_color": "globals/colors?id=text",
+            "typography_typography": "globals/typography?id=text"
+           },
+           "elements": [],
+           "widgetType": "text-editor"
+          },
+          {
+           "id": "5f80fd3",
+           "elType": "widget",
+           "settings": {
+            "style": "solid",
+            "weight": {
+             "unit": "px",
+             "size": 1
+            },
+            "color": "globals/colors?id=line",
+            "width": {
+             "unit": "%",
+             "size": 100
+            },
+            "align": "center",
+            "gap": {
+             "unit": "px",
+             "size": 0
+            },
+            "_element_width": "100%"
+           },
+           "elements": [],
+           "widgetType": "divider"
+          },
+          {
+           "id": "38809c2",
+           "elType": "widget",
+           "settings": {
+            "icon_list": [
+             {
+              "text": "۱ پروژه فعال",
+              "_id": "65c3144",
+              "selected_icon": {
+               "value": "fas fa-check",
+               "library": "fa-solid"
+              }
+             },
+             {
+              "text": "۵۰٬۰۰۰ فراخوانی مدل در ماه",
+              "_id": "7084717",
+              "selected_icon": {
+               "value": "fas fa-check",
+               "library": "fa-solid"
+              }
+             },
+             {
+              "text": "عاملهای بصری",
+              "_id": "7347bf2",
+              "selected_icon": {
+               "value": "fas fa-check",
+               "library": "fa-solid"
+              }
+             },
+             {
+              "text": "پشتیبانی انجمن",
+              "_id": "b3adcc7",
+              "selected_icon": {
+               "value": "fas fa-check",
+               "library": "fa-solid"
+              }
+             }
+            ],
+            "space_between": {
+             "unit": "px",
+             "size": 12
+            },
+            "icon_size": {
+             "unit": "px",
+             "size": 15
+            },
+            "icon_color": "globals/colors?id=primary",
+            "text_color": "globals/colors?id=text",
+            "text_indent": {
+             "unit": "px",
+             "size": 10
+            },
+            "icon_align": "left",
+            "link_click": "link",
+            "icon_typography_typography": "globals/typography?id=fa-body",
+            "typography_font_size": {
+             "unit": "px",
+             "size": 16
+            }
+           },
+           "elements": [],
+           "widgetType": "icon-list"
+          },
+          {
+           "id": "99ef2c7",
+           "elType": "widget",
+           "settings": {
+            "text": "شروع کنید",
+            "link": {
+             "url": "#",
+             "is_external": "",
+             "nofollow": ""
+            },
+            "size": "md",
+            "align": "center",
+            "hover_animation": "grow",
+            "button_text_color": "globals/colors?id=white",
+            "background_background": "classic",
+            "background_color": "globals/colors?id=ink-900",
+            "hover_color": "globals/colors?id=white",
+            "button_background_hover_background": "classic",
+            "button_background_hover_color": "globals/colors?id=ink-800",
+            "_element_width": "100%",
+            "_element_custom_width": {
+             "unit": "%",
+             "size": 100
+            }
+           },
+           "elements": [],
+           "widgetType": "button"
+          }
+         ],
+         "isInner": true
+        },
+        {
+         "id": "a6a53ea",
+         "elType": "container",
+         "settings": {
+          "flex_gap": {
+           "row": "20",
+           "column": "20",
+           "unit": "px",
+           "isLinked": true
+          },
+          "background_background": "classic",
+          "background_color": "globals/colors?id=ink-900",
+          "border_border": "solid",
+          "border_width": {
+           "top": "1",
+           "right": "1",
+           "bottom": "1",
+           "left": "1",
+           "unit": "px",
+           "isLinked": true
+          },
+          "border_color": "rgba(255,255,255,0.10)",
+          "border_radius": {
+           "top": "22",
+           "right": "22",
+           "bottom": "22",
+           "left": "22",
+           "unit": "px",
+           "isLinked": true
+          },
+          "box_shadow_box_shadow_type": "yes",
+          "box_shadow_box_shadow": {
+           "horizontal": 0,
+           "vertical": 24,
+           "blur": 48,
+           "spread": -16,
+           "color": "rgba(28,25,23,0.22)"
+          },
+          "animation": "fadeInUp",
+          "animation_delay": 110,
+          "_flex_size": "custom",
+          "_flex_grow": 1,
+          "_flex_shrink": 1,
+          "_flex_basis_type": "custom",
+          "_flex_basis": {
+           "unit": "%",
+           "size": 31
+          },
+          "_flex_basis_type_tablet": "custom",
+          "_flex_basis_tablet": {
+           "unit": "%",
+           "size": 48
+          },
+          "_flex_basis_type_mobile": "custom",
+          "_flex_basis_mobile": {
+           "unit": "%",
+           "size": 100
+          },
+          "padding": {
+           "top": "36",
+           "right": "36",
+           "bottom": "36",
+           "left": "36",
+           "unit": "px",
+           "isLinked": true
+          },
+          "padding_tablet": {
+           "top": "36",
+           "right": "36",
+           "bottom": "36",
+           "left": "36",
+           "unit": "px",
+           "isLinked": true
+          },
+          "padding_mobile": {
+           "top": "26",
+           "right": "26",
+           "bottom": "26",
+           "left": "26",
+           "unit": "px",
+           "isLinked": true
+          },
+          "flex_direction": "column"
+         },
+         "elements": [
+          {
+           "id": "3f77575",
+           "elType": "container",
+           "settings": {
+            "flex_direction": "row",
+            "flex_wrap": "wrap",
+            "flex_justify_content": "space-between",
+            "flex_align_items": "center",
+            "flex_gap": {
+             "row": "12",
+             "column": "12",
+             "unit": "px",
+             "isLinked": true
+            }
+           },
+           "elements": [
+            {
+             "id": "961be21",
+             "elType": "widget",
+             "settings": {
+              "title": "رشد",
+              "header_size": "p",
+              "title_color": "globals/colors?id=primary",
+              "typography_typography": "globals/typography?id=eyebrow",
+              "typography_letter_spacing": {
+               "unit": "px",
+               "size": 0
+              },
+              "_element_width": "initial"
+             },
+             "elements": [],
+             "widgetType": "heading"
+            },
+            {
+             "id": "83ff164",
+             "elType": "container",
+             "settings": {
+              "flex_direction": "row",
+              "flex_wrap": "nowrap",
+              "flex_justify_content": "flex-start",
+              "flex_align_items": "center",
+              "flex_gap": {
+               "row": "0",
+               "column": "0",
+               "unit": "px",
+               "isLinked": true
+              },
+              "background_background": "classic",
+              "background_color": "globals/colors?id=primary",
+              "border_radius": {
+               "top": "999",
+               "right": "999",
+               "bottom": "999",
+               "left": "999",
+               "unit": "px",
+               "isLinked": true
+              },
+              "padding": {
+               "top": "6",
+               "right": "14",
+               "bottom": "6",
+               "left": "14",
+               "unit": "px",
+               "isLinked": false
+              },
+              "_element_width": "initial"
+             },
+             "elements": [
+              {
+               "id": "78076f6",
+               "elType": "widget",
+               "settings": {
+                "title": "محبوبترین",
+                "header_size": "span",
+                "title_color": "globals/colors?id=ink-900",
+                "typography_typography": "globals/typography?id=fa-label",
+                "typography_letter_spacing": {
+                 "unit": "px",
+                 "size": 0
+                }
+               },
+               "elements": [],
+               "widgetType": "heading"
+              }
+             ],
+             "isInner": true
+            }
+           ],
+           "isInner": true
+          },
+          {
+           "id": "53438b0",
+           "elType": "container",
+           "settings": {
+            "flex_direction": "row",
+            "flex_wrap": "wrap",
+            "flex_justify_content": "flex-start",
+            "flex_align_items": "flex-end",
+            "flex_gap": {
+             "row": "10",
+             "column": "10",
+             "unit": "px",
+             "isLinked": true
+            }
+           },
+           "elements": [
+            {
+             "id": "e178763",
+             "elType": "widget",
+             "settings": {
+              "title": "$490",
+              "header_size": "span",
+              "title_color": "globals/colors?id=white",
+              "typography_typography": "globals/typography?id=display",
+              "typography_font_size": {
+               "unit": "px",
+               "size": 46
+              },
+              "typography_font_size_mobile": {
+               "unit": "px",
+               "size": 36
+              },
+              "_element_width": "initial"
+             },
+             "elements": [],
+             "widgetType": "heading"
+            },
+            {
+             "id": "51af045",
+             "elType": "widget",
+             "settings": {
+              "editor": "<p>/ ماه</p>",
+              "text_color": "globals/colors?id=muted-dark",
+              "typography_typography": "globals/typography?id=text",
+              "typography_typography_font_size": {
+               "unit": "px",
+               "size": 16
+              },
+              "_element_width": "initial",
+              "_margin": {
+               "top": "8",
+               "right": "0",
+               "bottom": "0",
+               "left": "0",
+               "unit": "px",
+               "isLinked": false
+              }
+             },
+             "elements": [],
+             "widgetType": "text-editor"
+            }
+           ],
+           "isInner": true
+          },
+          {
+           "id": "c2607ba",
+           "elType": "widget",
+           "settings": {
+            "editor": "<p>برای تیمهایی که در حال رساندن عامل به تولید هستند.</p>",
+            "text_color": "globals/colors?id=muted-dark",
+            "typography_typography": "globals/typography?id=text"
+           },
+           "elements": [],
+           "widgetType": "text-editor"
+          },
+          {
+           "id": "ae5699f",
+           "elType": "widget",
+           "settings": {
+            "style": "solid",
+            "weight": {
+             "unit": "px",
+             "size": 1
+            },
+            "color": "rgba(255,255,255,0.14)",
+            "width": {
+             "unit": "%",
+             "size": 100
+            },
+            "align": "center",
+            "gap": {
+             "unit": "px",
+             "size": 0
+            },
+            "_element_width": "100%"
+           },
+           "elements": [],
+           "widgetType": "divider"
+          },
+          {
+           "id": "83f5326",
+           "elType": "widget",
+           "settings": {
+            "icon_list": [
+             {
+              "text": "۱۰ پروژه فعال",
+              "_id": "95d3a71",
+              "selected_icon": {
+               "value": "fas fa-check",
+               "library": "fa-solid"
+              }
+             },
+             {
+              "text": "۲ میلیون فراخوانی مدل",
+              "_id": "f920134",
+              "selected_icon": {
+               "value": "fas fa-check",
+               "library": "fa-solid"
+              }
+             },
+             {
+              "text": "ارزیابی و مجموعه طلایی",
+              "_id": "8558d17",
+              "selected_icon": {
+               "value": "fas fa-check",
+               "library": "fa-solid"
+              }
+             },
+             {
+              "text": "محافظهای سازمانی",
+              "_id": "ea6f9ea",
+              "selected_icon": {
+               "value": "fas fa-check",
+               "library": "fa-solid"
+              }
+             },
+             {
+              "text": "پشتیبانی ۲۴ ساعته",
+              "_id": "07edc05",
+              "selected_icon": {
+               "value": "fas fa-check",
+               "library": "fa-solid"
+              }
+             }
+            ],
+            "space_between": {
+             "unit": "px",
+             "size": 12
+            },
+            "icon_size": {
+             "unit": "px",
+             "size": 15
+            },
+            "icon_color": "globals/colors?id=primary",
+            "text_color": "globals/colors?id=muted-dark",
+            "text_indent": {
+             "unit": "px",
+             "size": 10
+            },
+            "icon_align": "left",
+            "link_click": "link",
+            "icon_typography_typography": "globals/typography?id=fa-body",
+            "typography_font_size": {
+             "unit": "px",
+             "size": 16
+            }
+           },
+           "elements": [],
+           "widgetType": "icon-list"
+          },
+          {
+           "id": "bd454a4",
+           "elType": "widget",
+           "settings": {
+            "text": "شروع دوره",
+            "link": {
+             "url": "#",
+             "is_external": "",
+             "nofollow": ""
+            },
+            "size": "md",
+            "align": "center",
+            "hover_animation": "grow",
+            "button_text_color": "globals/colors?id=ink-900",
+            "background_background": "classic",
+            "background_color": "globals/colors?id=primary",
+            "hover_color": "globals/colors?id=ink-900",
+            "button_background_hover_background": "classic",
+            "button_background_hover_color": "globals/colors?id=amber-600",
+            "_element_width": "100%",
+            "_element_custom_width": {
+             "unit": "%",
+             "size": 100
+            }
+           },
+           "elements": [],
+           "widgetType": "button"
+          }
+         ],
+         "isInner": true
+        },
+        {
+         "id": "bb563d1",
+         "elType": "container",
+         "settings": {
+          "flex_gap": {
+           "row": "20",
+           "column": "20",
+           "unit": "px",
+           "isLinked": true
+          },
+          "background_background": "classic",
+          "background_color": "globals/colors?id=white",
+          "border_border": "solid",
+          "border_width": {
+           "top": "1",
+           "right": "1",
+           "bottom": "1",
+           "left": "1",
+           "unit": "px",
+           "isLinked": true
+          },
+          "border_color": "globals/colors?id=line",
+          "border_radius": {
+           "top": "22",
+           "right": "22",
+           "bottom": "22",
+           "left": "22",
+           "unit": "px",
+           "isLinked": true
+          },
+          "animation": "fadeInUp",
+          "animation_delay": 220,
+          "_flex_size": "custom",
+          "_flex_grow": 1,
+          "_flex_shrink": 1,
+          "_flex_basis_type": "custom",
+          "_flex_basis": {
+           "unit": "%",
+           "size": 31
+          },
+          "_flex_basis_type_tablet": "custom",
+          "_flex_basis_tablet": {
+           "unit": "%",
+           "size": 48
+          },
+          "_flex_basis_type_mobile": "custom",
+          "_flex_basis_mobile": {
+           "unit": "%",
+           "size": 100
+          },
+          "padding": {
+           "top": "32",
+           "right": "32",
+           "bottom": "32",
+           "left": "32",
+           "unit": "px",
+           "isLinked": true
+          },
+          "padding_tablet": {
+           "top": "32",
+           "right": "32",
+           "bottom": "32",
+           "left": "32",
+           "unit": "px",
+           "isLinked": true
+          },
+          "padding_mobile": {
+           "top": "26",
+           "right": "26",
+           "bottom": "26",
+           "left": "26",
+           "unit": "px",
+           "isLinked": true
+          },
+          "border_hover_border": "solid",
+          "border_hover_color": "globals/colors?id=primary",
+          "background_hover_transition": {
+           "unit": "s",
+           "size": 0.3
+          },
+          "border_hover_transition": {
+           "unit": "s",
+           "size": 0.3
+          },
+          "box_shadow_hover_box_shadow_type": "yes",
+          "box_shadow_hover_box_shadow": {
+           "horizontal": 0,
+           "vertical": 10,
+           "blur": 24,
+           "spread": -8,
+           "color": "rgba(28,25,23,0.14)"
+          },
+          "flex_direction": "column"
+         },
+         "elements": [
+          {
+           "id": "29a62d8",
+           "elType": "container",
+           "settings": {
+            "flex_direction": "row",
+            "flex_wrap": "wrap",
+            "flex_justify_content": "space-between",
+            "flex_align_items": "center",
+            "flex_gap": {
+             "row": "12",
+             "column": "12",
+             "unit": "px",
+             "isLinked": true
+            }
+           },
+           "elements": [
+            {
+             "id": "7ba2701",
+             "elType": "widget",
+             "settings": {
+              "title": "سازمانی",
+              "header_size": "p",
+              "title_color": "globals/colors?id=amber-600",
+              "typography_typography": "globals/typography?id=eyebrow",
+              "typography_letter_spacing": {
+               "unit": "px",
+               "size": 0
+              },
+              "_element_width": "initial"
+             },
+             "elements": [],
+             "widgetType": "heading"
+            }
+           ],
+           "isInner": true
+          },
+          {
+           "id": "7334b1d",
+           "elType": "container",
+           "settings": {
+            "flex_direction": "row",
+            "flex_wrap": "wrap",
+            "flex_justify_content": "flex-start",
+            "flex_align_items": "flex-end",
+            "flex_gap": {
+             "row": "10",
+             "column": "10",
+             "unit": "px",
+             "isLinked": true
+            }
+           },
+           "elements": [
+            {
+             "id": "fd3b949",
+             "elType": "widget",
+             "settings": {
+              "title": "تماس",
+              "header_size": "span",
+              "title_color": "globals/colors?id=secondary",
+              "typography_typography": "globals/typography?id=display",
+              "typography_font_size": {
+               "unit": "px",
+               "size": 46
+              },
+              "typography_font_size_mobile": {
+               "unit": "px",
+               "size": 36
+              },
+              "_element_width": "initial"
+             },
+             "elements": [],
+             "widgetType": "heading"
+            },
+            {
+             "id": "18a27f9",
+             "elType": "widget",
+             "settings": {
+              "editor": "<p></p>",
+              "text_color": "globals/colors?id=muted",
+              "typography_typography": "globals/typography?id=text",
+              "typography_typography_font_size": {
+               "unit": "px",
+               "size": 16
+              },
+              "_element_width": "initial",
+              "_margin": {
+               "top": "8",
+               "right": "0",
+               "bottom": "0",
+               "left": "0",
+               "unit": "px",
+               "isLinked": false
+              }
+             },
+             "elements": [],
+             "widgetType": "text-editor"
+            }
+           ],
+           "isInner": true
+          },
+          {
+           "id": "b442342",
+           "elType": "widget",
+           "settings": {
+            "editor": "<p>برای سازمانهای با الزامات انطباقی.</p>",
+            "text_color": "globals/colors?id=text",
+            "typography_typography": "globals/typography?id=text"
+           },
+           "elements": [],
+           "widgetType": "text-editor"
+          },
+          {
+           "id": "a976d55",
+           "elType": "widget",
+           "settings": {
+            "style": "solid",
+            "weight": {
+             "unit": "px",
+             "size": 1
+            },
+            "color": "globals/colors?id=line",
+            "width": {
+             "unit": "%",
+             "size": 100
+            },
+            "align": "center",
+            "gap": {
+             "unit": "px",
+             "size": 0
+            },
+            "_element_width": "100%"
+           },
+           "elements": [],
+           "widgetType": "divider"
+          },
+          {
+           "id": "052c349",
+           "elType": "widget",
+           "settings": {
+            "icon_list": [
+             {
+              "text": "پروژه نامحدود",
+              "_id": "fd4ec2b",
+              "selected_icon": {
+               "value": "fas fa-check",
+               "library": "fa-solid"
+              }
+             },
+             {
+              "text": "حجم سفارشی",
+              "_id": "cf50c09",
+              "selected_icon": {
+               "value": "fas fa-check",
+               "library": "fa-solid"
+              }
+             },
+             {
+              "text": "استقرار در منطقه شما",
+              "_id": "09c706d",
+              "selected_icon": {
+               "value": "fas fa-check",
+               "library": "fa-solid"
+              }
+             },
+             {
+              "text": "SSO و SCIM",
+              "_id": "00a2ef9",
+              "selected_icon": {
+               "value": "fas fa-check",
+               "library": "fa-solid"
+              }
+             },
+             {
+              "text": "مدیر موفقیت اختصاصی",
+              "_id": "90c0737",
+              "selected_icon": {
+               "value": "fas fa-check",
+               "library": "fa-solid"
+              }
+             }
+            ],
+            "space_between": {
+             "unit": "px",
+             "size": 12
+            },
+            "icon_size": {
+             "unit": "px",
+             "size": 15
+            },
+            "icon_color": "globals/colors?id=primary",
+            "text_color": "globals/colors?id=text",
+            "text_indent": {
+             "unit": "px",
+             "size": 10
+            },
+            "icon_align": "left",
+            "link_click": "link",
+            "icon_typography_typography": "globals/typography?id=fa-body",
+            "typography_font_size": {
+             "unit": "px",
+             "size": 16
+            }
+           },
+           "elements": [],
+           "widgetType": "icon-list"
+          },
+          {
+           "id": "e9a749a",
+           "elType": "widget",
+           "settings": {
+            "text": "گفتگو با فروش",
+            "link": {
+             "url": "#",
+             "is_external": "",
+             "nofollow": ""
+            },
+            "size": "md",
+            "align": "center",
+            "hover_animation": "grow",
+            "button_text_color": "globals/colors?id=white",
+            "background_background": "classic",
+            "background_color": "globals/colors?id=ink-900",
+            "hover_color": "globals/colors?id=white",
+            "button_background_hover_background": "classic",
+            "button_background_hover_color": "globals/colors?id=ink-800",
+            "_element_width": "100%",
+            "_element_custom_width": {
+             "unit": "%",
+             "size": 100
+            }
+           },
+           "elements": [],
+           "widgetType": "button"
+          }
+         ],
+         "isInner": true
+        }
+       ],
+       "isInner": true
+      },
+      {
+       "id": "b725d82",
+       "elType": "widget",
+       "settings": {
+        "editor": "<p>همه قیمتها بدون مالیات است. میتوانید هر زمان لغو کنید.</p>",
+        "text_color": "globals/colors?id=muted",
+        "align": "center",
+        "typography_typography": "globals/typography?id=fa-body"
+       },
+       "elements": [],
+       "widgetType": "text-editor"
+      }
+     ],
+     "isInner": true
+    }
+   ],
+   "isInner": false
+  }
+ ],
+ "page_settings": {},
+ "version": "0.4",
+ "title": "Block | جدول قیمت (فارسی)",
+ "type": "section"
+}

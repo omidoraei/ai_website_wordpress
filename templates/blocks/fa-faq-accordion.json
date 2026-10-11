@@ -1,0 +1,268 @@
+{
+ "content": [
+  {
+   "id": "92f3bc3",
+   "elType": "container",
+   "settings": {
+    "content_width": "full",
+    "width": {
+     "unit": "%",
+     "size": 100
+    },
+    "html_tag": "section",
+    "background_background": "classic",
+    "background_color": "globals/colors?id=white",
+    "_element_id": "faq",
+    "padding": {
+     "top": "120",
+     "right": "24",
+     "bottom": "120",
+     "left": "24",
+     "unit": "px",
+     "isLinked": false
+    },
+    "padding_tablet": {
+     "top": "80",
+     "right": "24",
+     "bottom": "80",
+     "left": "24",
+     "unit": "px",
+     "isLinked": false
+    },
+    "padding_mobile": {
+     "top": "56",
+     "right": "20",
+     "bottom": "56",
+     "left": "20",
+     "unit": "px",
+     "isLinked": false
+    }
+   },
+   "elements": [
+    {
+     "id": "fc273c7",
+     "elType": "container",
+     "settings": {
+      "flex_direction": "column",
+      "boxed_width": {
+       "unit": "px",
+       "size": 1240
+      },
+      "boxed_width_tablet": {
+       "unit": "%",
+       "size": 100
+      },
+      "boxed_width_mobile": {
+       "unit": "%",
+       "size": 100
+      }
+     },
+     "elements": [
+      {
+       "id": "00f25dd",
+       "elType": "container",
+       "settings": {
+        "flex_direction": "column",
+        "flex_align_items": "center",
+        "flex_gap": {
+         "row": "18",
+         "column": "18",
+         "unit": "px",
+         "isLinked": true
+        },
+        "boxed_width": {
+         "unit": "px",
+         "size": 780
+        },
+        "boxed_width_mobile": {
+         "unit": "px",
+         "size": 780
+        }
+       },
+       "elements": [
+        {
+         "id": "441f617",
+         "elType": "container",
+         "settings": {
+          "flex_direction": "row",
+          "flex_wrap": "nowrap",
+          "flex_justify_content": "center",
+          "flex_align_items": "center",
+          "flex_gap": {
+           "row": "12",
+           "column": "12",
+           "unit": "px",
+           "isLinked": true
+          },
+          "_element_width": "100%"
+         },
+         "elements": [
+          {
+           "id": "b8bdcda",
+           "elType": "widget",
+           "settings": {
+            "style": "solid",
+            "weight": {
+             "unit": "px",
+             "size": 2
+            },
+            "color": "globals/colors?id=amber-600",
+            "width": {
+             "unit": "px",
+             "size": 26
+            },
+            "gap": {
+             "unit": "px",
+             "size": 0
+            }
+           },
+           "elements": [],
+           "widgetType": "divider"
+          },
+          {
+           "id": "b546996",
+           "elType": "widget",
+           "settings": {
+            "title": "پرسشهای پرتکرار",
+            "header_size": "p",
+            "title_color": "globals/colors?id=amber-600",
+            "typography_typography": "globals/typography?id=fa-label",
+            "typography_letter_spacing": {
+             "unit": "px",
+             "size": 0
+            },
+            "_element_width": "initial"
+           },
+           "elements": [],
+           "widgetType": "heading"
+          }
+         ],
+         "isInner": true
+        },
+        {
+         "id": "2ed4c42",
+         "elType": "widget",
+         "settings": {
+          "title": "پاسخ به پرسشهای رایج",
+          "header_size": "h2",
+          "align": "center",
+          "typography_typography": "globals/typography?id=fa-heading",
+          "_animation": "fadeInUp",
+          "_animation_delay": 80
+         },
+         "elements": [],
+         "widgetType": "heading"
+        },
+        {
+         "id": "3681b90",
+         "elType": "widget",
+         "settings": {
+          "editor": "<p>پاسخ خود را پیدا نکردید؟ تیم ما در دسترس است.</p>",
+          "text_color": "globals/colors?id=text",
+          "align": "center",
+          "typography_typography": "globals/typography?id=fa-body",
+          "_animation": "fadeInUp",
+          "_animation_delay": 160
+         },
+         "elements": [],
+         "widgetType": "text-editor"
+        }
+       ],
+       "isInner": true
+      },
+      {
+       "id": "e58081c",
+       "elType": "widget",
+       "settings": {
+        "tabs": [
+         {
+          "_id": "fcb7747",
+          "tab_title": "برای شروع به چه چیزی نیاز داریم؟",
+          "tab_content": "یک مالک محصول، دسترسی به یک مجموعه داده نماینده و یک مهندس. نخستین کارگاه را داخل محیط خودتان برگزار میکنیم تا هیچ دادهای خارج نشود."
+         },
+         {
+          "_id": "68237f2",
+          "tab_title": "آرورا از چه مدلهایی پشتیبانی میکند؟",
+          "tab_content": "آرورا مستقل از مدل است. میتوانید میان OpenAI، Anthropic، Google، Mistral و مدلهای آموزشدیده خودتان در هر مرحله جابهجا شوید."
+         },
+         {
+          "_id": "a5d2d33",
+          "tab_title": "امنیت داده چگونه تأمین میشود؟",
+          "tab_content": "دادهها میتوانند در اروپا یا آمریکا بمانند، در انتقال و ذخیره رمزنگاری میشوند و دادههای هویتی پیش از ارسال به مدل حذف میشوند."
+         },
+         {
+          "_id": "64a8aae",
+          "tab_title": "امکان میزبانی روی سرور خودمان وجود دارد؟",
+          "tab_content": "بله. نسخه سازمانی بهصورت ایمیج کانتینری ارائه میشود که میتوانید داخل VPC خود اجرا کنید، بهصورت مدیریتشده یا کاملاً جدا از اینترنت."
+         },
+         {
+          "_id": "393ed9e",
+          "tab_title": "هزینه راهاندازی چقدر است؟",
+          "tab_content": "پلن رشد شامل ۳۰ روز راهاندازی هدایتشده است. قراردادهای سازمانی شامل مدیر موفقیت اختصاصی و بازبینی فصلی است."
+         },
+         {
+          "_id": "de4df38",
+          "tab_title": "آیا قرارداد بلندمدت لازم است؟",
+          "tab_content": "پلنهای ماهانه بدون تعهد هستند. قرارداد سالانه شامل تخفیف و توافق سطح خدمت با زمان پاسخ تضمینشده است."
+         }
+        ],
+        "selected_icon": {
+         "value": "fas fa-plus",
+         "library": "fa-solid"
+        },
+        "selected_active_icon": {
+         "value": "fas fa-minus",
+         "library": "fa-solid"
+        },
+        "title_html_tag": "h3",
+        "border_width": {
+         "unit": "px",
+         "size": 1
+        },
+        "border_color": "globals/colors?id=line",
+        "title_background": "globals/colors?id=white",
+        "title_color": "globals/colors?id=secondary",
+        "tab_active_color": "globals/colors?id=primary",
+        "content_background_color": "globals/colors?id=white",
+        "content_color": "globals/colors?id=text",
+        "title_padding": {
+         "top": "18",
+         "right": "22",
+         "bottom": "18",
+         "left": "22",
+         "unit": "px",
+         "isLinked": false
+        },
+        "content_padding": {
+         "top": "4",
+         "right": "24",
+         "bottom": "24",
+         "left": "24",
+         "unit": "px",
+         "isLinked": false
+        },
+        "icon_color": "globals/colors?id=secondary",
+        "icon_active_color": "globals/colors?id=primary",
+        "icon_space": {
+         "unit": "px",
+         "size": 16
+        },
+        "faq_schema": "yes",
+        "title_typography_typography": "globals/typography?id=fa-heading",
+        "content_typography_typography": "globals/typography?id=fa-body"
+       },
+       "elements": [],
+       "widgetType": "accordion"
+      }
+     ],
+     "isInner": true
+    }
+   ],
+   "isInner": false
+  }
+ ],
+ "page_settings": {},
+ "version": "0.4",
+ "title": "Block | پرسشهای پرتکرار (فارسی)",
+ "type": "section"
+}

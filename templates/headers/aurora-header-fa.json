@@ -1,0 +1,402 @@
+{
+ "content": [
+  {
+   "id": "455bbed",
+   "elType": "container",
+   "settings": {
+    "flex_direction": "column",
+    "padding": {
+     "top": "0",
+     "right": "0",
+     "bottom": "0",
+     "left": "0",
+     "unit": "px",
+     "isLinked": true
+    },
+    "flex_gap": {
+     "row": "0",
+     "column": "0",
+     "unit": "px",
+     "isLinked": true
+    },
+    "background_background": "classic",
+    "background_color": "globals/colors?id=sand-50",
+    "border_border": "solid",
+    "border_width": {
+     "top": "0",
+     "right": "0",
+     "bottom": "1",
+     "left": "0",
+     "unit": "px",
+     "isLinked": false
+    },
+    "border_color": "globals/colors?id=line",
+    "sticky": "top",
+    "sticky_on": [
+     "desktop",
+     "tablet",
+     "mobile"
+    ],
+    "sticky_effects_offset": 60,
+    "_element_width": "100%",
+    "html_tag": "header",
+    "content_width": "full"
+   },
+   "elements": [
+    {
+     "id": "c20ea96",
+     "elType": "container",
+     "settings": {
+      "flex_direction": "row",
+      "flex_justify_content": "center",
+      "flex_align_items": "center",
+      "background_background": "classic",
+      "background_color": "globals/colors?id=ink-950",
+      "padding": {
+       "top": "11",
+       "right": "24",
+       "bottom": "11",
+       "left": "24",
+       "unit": "px",
+       "isLinked": false
+      },
+      "flex_wrap": "wrap",
+      "flex_wrap_mobile": "wrap"
+     },
+     "elements": [
+      {
+       "id": "9341996",
+       "elType": "container",
+       "settings": {
+        "flex_direction": "row",
+        "flex_wrap": "nowrap",
+        "flex_justify_content": "center",
+        "flex_align_items": "center",
+        "flex_gap": {
+         "row": "12",
+         "column": "12",
+         "unit": "px",
+         "isLinked": true
+        }
+       },
+       "elements": [
+        {
+         "id": "837f583",
+         "elType": "widget",
+         "settings": {
+          "selected_icon": {
+           "value": "fas fa-bolt",
+           "library": "fa-solid"
+          },
+          "view": "default",
+          "shape": "circle",
+          "size": {
+           "unit": "px",
+           "size": 12
+          },
+          "icon_padding": {
+           "unit": "px",
+           "size": 0
+          },
+          "primary_color": "globals/colors?id=primary"
+         },
+         "elements": [],
+         "widgetType": "icon"
+        },
+        {
+         "id": "dee72d1",
+         "elType": "widget",
+         "settings": {
+          "title": "آرورا ایجنت ۲.۰ منتشر شد - ارزیابی، محافظ و مسیریابی.",
+          "header_size": "p",
+          "title_color": "globals/colors?id=muted-dark",
+          "typography_typography": "globals/typography?id=fa-label",
+          "typography_letter_spacing": {
+           "unit": "px",
+           "size": 0
+          },
+          "typography_typography_font_size": {
+           "unit": "px",
+           "size": 14
+          },
+          "_element_width": "initial"
+         },
+         "elements": [],
+         "widgetType": "heading"
+        },
+        {
+         "id": "961b140",
+         "elType": "widget",
+         "settings": {
+          "text": "خواندن خبر",
+          "link": {
+           "url": "#release",
+           "is_external": "",
+           "nofollow": ""
+          },
+          "size": "sm",
+          "selected_icon": {
+           "value": "fas fa-arrow-right",
+           "library": "fa-solid"
+          },
+          "icon_align": "right",
+          "icon_indent": {
+           "unit": "px",
+           "size": 8
+          },
+          "button_text_color": "globals/colors?id=primary",
+          "background_background": "classic",
+          "background_color": "rgba(255,255,255,0)",
+          "hover_color": "globals/colors?id=white",
+          "button_background_hover_background": "classic",
+          "button_background_hover_color": "rgba(255,255,255,0)",
+          "typography_typography": "globals/typography?id=fa-label",
+          "text_padding": {
+           "top": "0",
+           "right": "0",
+           "bottom": "0",
+           "left": "0",
+           "unit": "px",
+           "isLinked": true
+          },
+          "hide_mobile": "hidden-mobile"
+         },
+         "elements": [],
+         "widgetType": "button"
+        }
+       ],
+       "isInner": true
+      }
+     ],
+     "isInner": true
+    },
+    {
+     "id": "d11f671",
+     "elType": "container",
+     "settings": {
+      "flex_direction": "row",
+      "flex_justify_content": "space-between",
+      "flex_align_items": "center",
+      "flex_gap": {
+       "row": "24",
+       "column": "24",
+       "unit": "px",
+       "isLinked": true
+      },
+      "boxed_width": {
+       "unit": "px",
+       "size": 1240
+      },
+      "boxed_width_tablet": {
+       "unit": "%",
+       "size": 100
+      },
+      "boxed_width_mobile": {
+       "unit": "%",
+       "size": 100
+      },
+      "padding": {
+       "top": "14",
+       "right": "24",
+       "bottom": "14",
+       "left": "24",
+       "unit": "px",
+       "isLinked": false
+      },
+      "padding_tablet": {
+       "top": "12",
+       "right": "20",
+       "bottom": "12",
+       "left": "20",
+       "unit": "px",
+       "isLinked": false
+      },
+      "padding_mobile": {
+       "top": "10",
+       "right": "16",
+       "bottom": "10",
+       "left": "16",
+       "unit": "px",
+       "isLinked": false
+      },
+      "flex_wrap": "nowrap",
+      "flex_gap_mobile": {
+       "row": "12",
+       "column": "12",
+       "unit": "px",
+       "isLinked": true
+      },
+      "_element_width": "100%"
+     },
+     "elements": [
+      {
+       "id": "e7941d1",
+       "elType": "container",
+       "settings": {
+        "flex_direction": "row",
+        "flex_wrap": "nowrap",
+        "flex_justify_content": "flex-start",
+        "flex_align_items": "center",
+        "flex_gap": {
+         "row": "10",
+         "column": "10",
+         "unit": "px",
+         "isLinked": true
+        },
+        "_element_width": "initial",
+        "flex_gap_mobile": {
+         "row": "8",
+         "column": "8",
+         "unit": "px",
+         "isLinked": true
+        }
+       },
+       "elements": [
+        {
+         "id": "867e4d3",
+         "elType": "widget",
+         "settings": {
+          "width": {
+           "unit": "px",
+           "size": 46
+          },
+          "width_mobile": {
+           "unit": "px",
+           "size": 38
+          },
+          "_element_width": "initial"
+         },
+         "elements": [],
+         "widgetType": "theme-site-logo"
+        },
+        {
+         "id": "caa2c0a",
+         "elType": "widget",
+         "settings": {
+          "title": "آرورا",
+          "header_size": "span",
+          "title_color": "globals/colors?id=secondary",
+          "typography_typography": "globals/typography?id=fa-label",
+          "typography_letter_spacing": {
+           "unit": "px",
+           "size": -0.2
+          },
+          "_element_width": "initial"
+         },
+         "elements": [],
+         "widgetType": "heading"
+        }
+       ],
+       "isInner": true
+      },
+      {
+       "id": "a6b2019",
+       "elType": "widget",
+       "settings": {
+        "menu": "",
+        "layout": "horizontal",
+        "align_items": "center",
+        "pointer": "underline",
+        "pointer_color": "globals/colors?id=primary",
+        "color_menu": "globals/colors?id=secondary",
+        "color_menu_hover": "globals/colors?id=amber-600",
+        "color_menu_active": "globals/colors?id=amber-600",
+        "menu_space_between": {
+         "unit": "px",
+         "size": 32
+        },
+        "toggle_color": "globals/colors?id=secondary",
+        "toggle_size": {
+         "unit": "px",
+         "size": 22
+        },
+        "toggle_align": "end",
+        "menu_typography_typography": "globals/typography?id=fa-label",
+        "menu_typography_font_size": {
+         "unit": "px",
+         "size": 16
+        },
+        "_flex_size": "grow",
+        "_flex_grow": 1,
+        "_flex_shrink": 1
+       },
+       "elements": [],
+       "widgetType": "nav-menu"
+      },
+      {
+       "id": "0590ce0",
+       "elType": "container",
+       "settings": {
+        "flex_direction": "row",
+        "flex_wrap": "nowrap",
+        "flex_justify_content": "flex-start",
+        "flex_align_items": "center",
+        "flex_gap": {
+         "row": "10",
+         "column": "10",
+         "unit": "px",
+         "isLinked": true
+        },
+        "hide_tablet": "hidden-tablet",
+        "hide_mobile": "hidden-mobile",
+        "_element_width": "initial"
+       },
+       "elements": [
+        {
+         "id": "187bb81",
+         "elType": "widget",
+         "settings": {
+          "text": "ورود",
+          "link": {
+           "url": "#login",
+           "is_external": "",
+           "nofollow": ""
+          },
+          "size": "sm",
+          "button_text_color": "globals/colors?id=secondary",
+          "background_background": "classic",
+          "background_color": "rgba(255,255,255,0)",
+          "hover_color": "globals/colors?id=amber-600",
+          "button_background_hover_background": "classic",
+          "button_background_hover_color": "rgba(255,255,255,0)"
+         },
+         "elements": [],
+         "widgetType": "button"
+        },
+        {
+         "id": "4ef9574",
+         "elType": "widget",
+         "settings": {
+          "text": "درخواست دمو",
+          "link": {
+           "url": "#contact",
+           "is_external": "",
+           "nofollow": ""
+          },
+          "size": "sm",
+          "hover_animation": "grow",
+          "button_text_color": "globals/colors?id=ink-900",
+          "background_background": "classic",
+          "background_color": "globals/colors?id=primary",
+          "hover_color": "globals/colors?id=ink-900",
+          "button_background_hover_background": "classic",
+          "button_background_hover_color": "globals/colors?id=amber-600"
+         },
+         "elements": [],
+         "widgetType": "button"
+        }
+       ],
+       "isInner": true
+      }
+     ],
+     "isInner": true
+    }
+   ],
+   "isInner": false
+  }
+ ],
+ "page_settings": {},
+ "version": "0.4",
+ "title": "Aurora | سربرگ (فارسی)",
+ "type": "header"
+}

@@ -1,0 +1,1086 @@
+{
+ "content": [
+  {
+   "id": "23db5de",
+   "elType": "container",
+   "settings": {
+    "flex_direction": "column",
+    "flex_gap": {
+     "row": "0",
+     "column": "0",
+     "unit": "px",
+     "isLinked": true
+    },
+    "content_width": "full",
+    "width": {
+     "unit": "%",
+     "size": 100
+    },
+    "html_tag": "footer",
+    "background_background": "classic",
+    "background_color": "globals/colors?id=ink-950",
+    "padding": {
+     "top": "0",
+     "right": "0",
+     "bottom": "0",
+     "left": "0",
+     "unit": "px",
+     "isLinked": true
+    },
+    "padding_tablet": {
+     "top": "0",
+     "right": "0",
+     "bottom": "0",
+     "left": "0",
+     "unit": "px",
+     "isLinked": true
+    },
+    "padding_mobile": {
+     "top": "0",
+     "right": "0",
+     "bottom": "0",
+     "left": "0",
+     "unit": "px",
+     "isLinked": true
+    }
+   },
+   "elements": [
+    {
+     "id": "353ef8e",
+     "elType": "container",
+     "settings": {
+      "flex_direction": "column",
+      "flex_gap": {
+       "row": "44",
+       "column": "44",
+       "unit": "px",
+       "isLinked": true
+      },
+      "boxed_width": {
+       "unit": "px",
+       "size": 1240
+      },
+      "boxed_width_tablet": {
+       "unit": "%",
+       "size": 100
+      },
+      "boxed_width_mobile": {
+       "unit": "%",
+       "size": 100
+      },
+      "padding": {
+       "top": "80",
+       "right": "24",
+       "bottom": "32",
+       "left": "24",
+       "unit": "px",
+       "isLinked": false
+      },
+      "padding_tablet": {
+       "top": "64",
+       "right": "24",
+       "bottom": "28",
+       "left": "24",
+       "unit": "px",
+       "isLinked": false
+      },
+      "padding_mobile": {
+       "top": "52",
+       "right": "20",
+       "bottom": "24",
+       "left": "20",
+       "unit": "px",
+       "isLinked": false
+      }
+     },
+     "elements": [
+      {
+       "id": "d504237",
+       "elType": "container",
+       "settings": {
+        "flex_direction": "row",
+        "flex_wrap": "wrap",
+        "flex_justify_content": "space-between",
+        "flex_align_items": "flex-start",
+        "flex_gap": {
+         "row": "40",
+         "column": "40",
+         "unit": "px",
+         "isLinked": true
+        },
+        "flex_gap_mobile": {
+         "row": "32",
+         "column": "32",
+         "unit": "px",
+         "isLinked": true
+        }
+       },
+       "elements": [
+        {
+         "id": "39ad3c3",
+         "elType": "container",
+         "settings": {
+          "flex_direction": "column",
+          "flex_align_items": "flex-start",
+          "flex_gap": {
+           "row": "20",
+           "column": "20",
+           "unit": "px",
+           "isLinked": true
+          },
+          "_flex_size": "custom",
+          "_flex_grow": 1,
+          "_flex_shrink": 1,
+          "_flex_basis_type": "custom",
+          "_flex_basis": {
+           "unit": "%",
+           "size": 31
+          },
+          "_flex_basis_type_tablet": "custom",
+          "_flex_basis_tablet": {
+           "unit": "%",
+           "size": 100
+          },
+          "_flex_basis_type_mobile": "custom",
+          "_flex_basis_mobile": {
+           "unit": "%",
+           "size": 100
+          }
+         },
+         "elements": [
+          {
+           "id": "7cfc442",
+           "elType": "container",
+           "settings": {
+            "flex_direction": "row",
+            "flex_wrap": "nowrap",
+            "flex_justify_content": "flex-start",
+            "flex_align_items": "center",
+            "flex_gap": {
+             "row": "0",
+             "column": "0",
+             "unit": "px",
+             "isLinked": true
+            },
+            "_element_width": "initial"
+           },
+           "elements": [
+            {
+             "id": "8769e0f",
+             "elType": "widget",
+             "settings": {
+              "title": "آرورا",
+              "header_size": "p",
+              "title_color": "globals/colors?id=white",
+              "typography_typography": "globals/typography?id=fa-label",
+              "typography_letter_spacing": {
+               "unit": "px",
+               "size": -0.2
+              },
+              "_element_width": "initial"
+             },
+             "elements": [],
+             "widgetType": "heading"
+            }
+           ],
+           "isInner": true
+          },
+          {
+           "id": "0acdef4",
+           "elType": "widget",
+           "settings": {
+            "editor": "<p>زیرساخت هوش مصنوعی گرم و انسانی برای تیمهای محصول. ساختهشده در آمستردام، مورد استفاده در ۱۴ کشور.</p>",
+            "text_color": "globals/colors?id=muted-dark",
+            "typography_typography": "globals/typography?id=fa-body",
+            "typography_typography_font_size": {
+             "unit": "px",
+             "size": 16
+            }
+           },
+           "elements": [],
+           "widgetType": "text-editor"
+          },
+          {
+           "id": "1874e9b",
+           "elType": "widget",
+           "settings": {
+            "social_icon_list": [
+             {
+              "_id": "036db57",
+              "social_icon": {
+               "value": "fab fa-linkedin-in",
+               "library": "fa-brands"
+              },
+              "link": {
+               "url": "#",
+               "is_external": "on",
+               "nofollow": ""
+              }
+             },
+             {
+              "_id": "2c05307",
+              "social_icon": {
+               "value": "fab fa-x-twitter",
+               "library": "fa-brands"
+              },
+              "link": {
+               "url": "#",
+               "is_external": "on",
+               "nofollow": ""
+              }
+             },
+             {
+              "_id": "dec1629",
+              "social_icon": {
+               "value": "fab fa-github",
+               "library": "fa-brands"
+              },
+              "link": {
+               "url": "#",
+               "is_external": "on",
+               "nofollow": ""
+              }
+             },
+             {
+              "_id": "29da000",
+              "social_icon": {
+               "value": "fab fa-youtube",
+               "library": "fa-brands"
+              },
+              "link": {
+               "url": "#",
+               "is_external": "on",
+               "nofollow": ""
+              }
+             }
+            ],
+            "shape": "circle",
+            "size": "sm",
+            "icon_padding": {
+             "unit": "px",
+             "size": 11
+            },
+            "icon_spacing": {
+             "unit": "px",
+             "size": 10
+            },
+            "icon_size": {
+             "unit": "px",
+             "size": 15
+            },
+            "icon_primary_color": "rgba(255,255,255,0.08)",
+            "icon_secondary_color": "globals/colors?id=white",
+            "hover_primary_color": "globals/colors?id=primary",
+            "hover_secondary_color": "globals/colors?id=ink-900"
+           },
+           "elements": [],
+           "widgetType": "social-icons"
+          }
+         ],
+         "isInner": true
+        },
+        {
+         "id": "9eeb56f",
+         "elType": "container",
+         "settings": {
+          "flex_direction": "column",
+          "flex_align_items": "flex-start",
+          "flex_gap": {
+           "row": "20",
+           "column": "20",
+           "unit": "px",
+           "isLinked": true
+          },
+          "_flex_size": "custom",
+          "_flex_grow": 1,
+          "_flex_shrink": 1,
+          "_flex_basis_type": "custom",
+          "_flex_basis": {
+           "unit": "%",
+           "size": 23
+          },
+          "_flex_basis_type_tablet": "custom",
+          "_flex_basis_tablet": {
+           "unit": "%",
+           "size": 46
+          },
+          "_flex_basis_type_mobile": "custom",
+          "_flex_basis_mobile": {
+           "unit": "%",
+           "size": 100
+          }
+         },
+         "elements": [
+          {
+           "id": "2a851d0",
+           "elType": "widget",
+           "settings": {
+            "title": "محصول",
+            "header_size": "h3",
+            "title_color": "globals/colors?id=white",
+            "typography_typography": "globals/typography?id=eyebrow",
+            "typography_letter_spacing": {
+             "unit": "px",
+             "size": 0
+            }
+           },
+           "elements": [],
+           "widgetType": "heading"
+          },
+          {
+           "id": "20fa3eb",
+           "elType": "widget",
+           "settings": {
+            "icon_list": [
+             {
+              "text": "سازنده عامل",
+              "_id": "e283a2a",
+              "selected_icon": {
+               "value": "fas fa-minus",
+               "library": "fa-solid"
+              },
+              "link": {
+               "url": "#",
+               "is_external": "",
+               "nofollow": ""
+              }
+             },
+             {
+              "text": "ارزیابی",
+              "_id": "23739ec",
+              "selected_icon": {
+               "value": "fas fa-minus",
+               "library": "fa-solid"
+              },
+              "link": {
+               "url": "#",
+               "is_external": "",
+               "nofollow": ""
+              }
+             },
+             {
+              "text": "محافظها",
+              "_id": "4933815",
+              "selected_icon": {
+               "value": "fas fa-minus",
+               "library": "fa-solid"
+              },
+              "link": {
+               "url": "#",
+               "is_external": "",
+               "nofollow": ""
+              }
+             },
+             {
+              "text": "اتصالها",
+              "_id": "2fd9764",
+              "selected_icon": {
+               "value": "fas fa-minus",
+               "library": "fa-solid"
+              },
+              "link": {
+               "url": "#",
+               "is_external": "",
+               "nofollow": ""
+              }
+             },
+             {
+              "text": "تغییرات",
+              "_id": "796bf0f",
+              "selected_icon": {
+               "value": "fas fa-minus",
+               "library": "fa-solid"
+              },
+              "link": {
+               "url": "#",
+               "is_external": "",
+               "nofollow": ""
+              }
+             }
+            ],
+            "space_between": {
+             "unit": "px",
+             "size": 13
+            },
+            "icon_size": {
+             "unit": "px",
+             "size": 13
+            },
+            "icon_color": "rgba(244,166,42,0.65)",
+            "text_color": "globals/colors?id=muted-dark",
+            "text_indent": {
+             "unit": "px",
+             "size": 12
+            },
+            "icon_align": "left",
+            "link_click": "link",
+            "icon_typography_typography": "globals/typography?id=fa-body",
+            "typography_font_size": {
+             "unit": "px",
+             "size": 16
+            },
+            "text_color_hover": "globals/colors?id=primary"
+           },
+           "elements": [],
+           "widgetType": "icon-list"
+          }
+         ],
+         "isInner": true
+        },
+        {
+         "id": "1916682",
+         "elType": "container",
+         "settings": {
+          "flex_direction": "column",
+          "flex_align_items": "flex-start",
+          "flex_gap": {
+           "row": "20",
+           "column": "20",
+           "unit": "px",
+           "isLinked": true
+          },
+          "_flex_size": "custom",
+          "_flex_grow": 1,
+          "_flex_shrink": 1,
+          "_flex_basis_type": "custom",
+          "_flex_basis": {
+           "unit": "%",
+           "size": 23
+          },
+          "_flex_basis_type_tablet": "custom",
+          "_flex_basis_tablet": {
+           "unit": "%",
+           "size": 46
+          },
+          "_flex_basis_type_mobile": "custom",
+          "_flex_basis_mobile": {
+           "unit": "%",
+           "size": 100
+          }
+         },
+         "elements": [
+          {
+           "id": "cfedb86",
+           "elType": "widget",
+           "settings": {
+            "title": "شرکت",
+            "header_size": "h3",
+            "title_color": "globals/colors?id=white",
+            "typography_typography": "globals/typography?id=eyebrow",
+            "typography_letter_spacing": {
+             "unit": "px",
+             "size": 0
+            }
+           },
+           "elements": [],
+           "widgetType": "heading"
+          },
+          {
+           "id": "0646c1f",
+           "elType": "widget",
+           "settings": {
+            "icon_list": [
+             {
+              "text": "درباره ما",
+              "_id": "58d40f5",
+              "selected_icon": {
+               "value": "fas fa-minus",
+               "library": "fa-solid"
+              },
+              "link": {
+               "url": "#",
+               "is_external": "",
+               "nofollow": ""
+              }
+             },
+             {
+              "text": "پروندهها",
+              "_id": "9c1a7c7",
+              "selected_icon": {
+               "value": "fas fa-minus",
+               "library": "fa-solid"
+              },
+              "link": {
+               "url": "#",
+               "is_external": "",
+               "nofollow": ""
+              }
+             },
+             {
+              "text": "ژورنال",
+              "_id": "3935c4c",
+              "selected_icon": {
+               "value": "fas fa-minus",
+               "library": "fa-solid"
+              },
+              "link": {
+               "url": "#",
+               "is_external": "",
+               "nofollow": ""
+              }
+             },
+             {
+              "text": "فرصتهای شغلی",
+              "_id": "d60da8f",
+              "selected_icon": {
+               "value": "fas fa-minus",
+               "library": "fa-solid"
+              },
+              "link": {
+               "url": "#",
+               "is_external": "",
+               "nofollow": ""
+              }
+             },
+             {
+              "text": "تماس",
+              "_id": "1098073",
+              "selected_icon": {
+               "value": "fas fa-minus",
+               "library": "fa-solid"
+              },
+              "link": {
+               "url": "#",
+               "is_external": "",
+               "nofollow": ""
+              }
+             }
+            ],
+            "space_between": {
+             "unit": "px",
+             "size": 13
+            },
+            "icon_size": {
+             "unit": "px",
+             "size": 13
+            },
+            "icon_color": "rgba(244,166,42,0.65)",
+            "text_color": "globals/colors?id=muted-dark",
+            "text_indent": {
+             "unit": "px",
+             "size": 12
+            },
+            "icon_align": "left",
+            "link_click": "link",
+            "icon_typography_typography": "globals/typography?id=fa-body",
+            "typography_font_size": {
+             "unit": "px",
+             "size": 16
+            },
+            "text_color_hover": "globals/colors?id=primary"
+           },
+           "elements": [],
+           "widgetType": "icon-list"
+          }
+         ],
+         "isInner": true
+        },
+        {
+         "id": "d3dfc65",
+         "elType": "container",
+         "settings": {
+          "flex_direction": "column",
+          "flex_align_items": "flex-start",
+          "flex_gap": {
+           "row": "18",
+           "column": "18",
+           "unit": "px",
+           "isLinked": true
+          },
+          "_flex_size": "custom",
+          "_flex_grow": 1,
+          "_flex_shrink": 1,
+          "_flex_basis_type": "custom",
+          "_flex_basis": {
+           "unit": "%",
+           "size": 23
+          },
+          "_flex_basis_type_tablet": "custom",
+          "_flex_basis_tablet": {
+           "unit": "%",
+           "size": 48
+          },
+          "_flex_basis_type_mobile": "custom",
+          "_flex_basis_mobile": {
+           "unit": "%",
+           "size": 100
+          }
+         },
+         "elements": [
+          {
+           "id": "15ad6b6",
+           "elType": "widget",
+           "settings": {
+            "title": "تماس با ما",
+            "header_size": "h3",
+            "title_color": "globals/colors?id=white",
+            "typography_typography": "globals/typography?id=eyebrow",
+            "typography_letter_spacing": {
+             "unit": "px",
+             "size": 0
+            }
+           },
+           "elements": [],
+           "widgetType": "heading"
+          },
+          {
+           "id": "5d80aa0",
+           "elType": "container",
+           "settings": {
+            "flex_direction": "row",
+            "flex_wrap": "nowrap",
+            "flex_justify_content": "flex-start",
+            "flex_align_items": "flex-start",
+            "flex_gap": {
+             "row": "14",
+             "column": "14",
+             "unit": "px",
+             "isLinked": true
+            }
+           },
+           "elements": [
+            {
+             "id": "6ec8dbc",
+             "elType": "widget",
+             "settings": {
+              "selected_icon": {
+               "value": "fas fa-envelope",
+               "library": "fa-solid"
+              },
+              "view": "default",
+              "shape": "circle",
+              "size": {
+               "unit": "px",
+               "size": 17
+              },
+              "icon_padding": {
+               "unit": "px",
+               "size": 0
+              },
+              "primary_color": "globals/colors?id=primary"
+             },
+             "elements": [],
+             "widgetType": "icon"
+            },
+            {
+             "id": "c508fea",
+             "elType": "container",
+             "settings": {
+              "flex_direction": "column",
+              "flex_align_items": "flex-start",
+              "flex_gap": {
+               "row": "3",
+               "column": "3",
+               "unit": "px",
+               "isLinked": true
+              }
+             },
+             "elements": [
+              {
+               "id": "ac3825d",
+               "elType": "widget",
+               "settings": {
+                "title": "ایمیل",
+                "header_size": "p",
+                "title_color": "globals/colors?id=muted-dark",
+                "typography_typography": "globals/typography?id=eyebrow",
+                "typography_letter_spacing": {
+                 "unit": "px",
+                 "size": 0
+                },
+                "typography_typography_font_size": {
+                 "unit": "px",
+                 "size": 12
+                }
+               },
+               "elements": [],
+               "widgetType": "heading"
+              },
+              {
+               "id": "6be05b1",
+               "elType": "widget",
+               "settings": {
+                "title": "hello@aurora.example",
+                "header_size": "p",
+                "title_color": "globals/colors?id=white",
+                "link": {
+                 "url": "mailto:hello@aurora.example",
+                 "is_external": "",
+                 "nofollow": ""
+                },
+                "typography_typography": "globals/typography?id=text",
+                "typography_letter_spacing": {
+                 "unit": "px",
+                 "size": 0
+                }
+               },
+               "elements": [],
+               "widgetType": "heading"
+              }
+             ],
+             "isInner": true
+            }
+           ],
+           "isInner": true
+          },
+          {
+           "id": "b294395",
+           "elType": "container",
+           "settings": {
+            "flex_direction": "row",
+            "flex_wrap": "nowrap",
+            "flex_justify_content": "flex-start",
+            "flex_align_items": "flex-start",
+            "flex_gap": {
+             "row": "14",
+             "column": "14",
+             "unit": "px",
+             "isLinked": true
+            }
+           },
+           "elements": [
+            {
+             "id": "1445c8d",
+             "elType": "widget",
+             "settings": {
+              "selected_icon": {
+               "value": "fas fa-phone-alt",
+               "library": "fa-solid"
+              },
+              "view": "default",
+              "shape": "circle",
+              "size": {
+               "unit": "px",
+               "size": 17
+              },
+              "icon_padding": {
+               "unit": "px",
+               "size": 0
+              },
+              "primary_color": "globals/colors?id=primary"
+             },
+             "elements": [],
+             "widgetType": "icon"
+            },
+            {
+             "id": "59a8735",
+             "elType": "container",
+             "settings": {
+              "flex_direction": "column",
+              "flex_align_items": "flex-start",
+              "flex_gap": {
+               "row": "3",
+               "column": "3",
+               "unit": "px",
+               "isLinked": true
+              }
+             },
+             "elements": [
+              {
+               "id": "f37b421",
+               "elType": "widget",
+               "settings": {
+                "title": "تلفن",
+                "header_size": "p",
+                "title_color": "globals/colors?id=muted-dark",
+                "typography_typography": "globals/typography?id=eyebrow",
+                "typography_letter_spacing": {
+                 "unit": "px",
+                 "size": 0
+                },
+                "typography_typography_font_size": {
+                 "unit": "px",
+                 "size": 12
+                }
+               },
+               "elements": [],
+               "widgetType": "heading"
+              },
+              {
+               "id": "6c505fa",
+               "elType": "widget",
+               "settings": {
+                "title": "+31 20 123 4567",
+                "header_size": "p",
+                "title_color": "globals/colors?id=white",
+                "link": {
+                 "url": "tel:+31201234567",
+                 "is_external": "",
+                 "nofollow": ""
+                },
+                "typography_typography": "globals/typography?id=text",
+                "typography_letter_spacing": {
+                 "unit": "px",
+                 "size": 0
+                }
+               },
+               "elements": [],
+               "widgetType": "heading"
+              }
+             ],
+             "isInner": true
+            }
+           ],
+           "isInner": true
+          },
+          {
+           "id": "505d813",
+           "elType": "container",
+           "settings": {
+            "flex_direction": "row",
+            "flex_wrap": "nowrap",
+            "flex_justify_content": "flex-start",
+            "flex_align_items": "flex-start",
+            "flex_gap": {
+             "row": "14",
+             "column": "14",
+             "unit": "px",
+             "isLinked": true
+            }
+           },
+           "elements": [
+            {
+             "id": "2989eca",
+             "elType": "widget",
+             "settings": {
+              "selected_icon": {
+               "value": "fas fa-map-marker-alt",
+               "library": "fa-solid"
+              },
+              "view": "default",
+              "shape": "circle",
+              "size": {
+               "unit": "px",
+               "size": 17
+              },
+              "icon_padding": {
+               "unit": "px",
+               "size": 0
+              },
+              "primary_color": "globals/colors?id=primary"
+             },
+             "elements": [],
+             "widgetType": "icon"
+            },
+            {
+             "id": "bc12afb",
+             "elType": "container",
+             "settings": {
+              "flex_direction": "column",
+              "flex_align_items": "flex-start",
+              "flex_gap": {
+               "row": "3",
+               "column": "3",
+               "unit": "px",
+               "isLinked": true
+              }
+             },
+             "elements": [
+              {
+               "id": "0813373",
+               "elType": "widget",
+               "settings": {
+                "title": "استودیو",
+                "header_size": "p",
+                "title_color": "globals/colors?id=muted-dark",
+                "typography_typography": "globals/typography?id=eyebrow",
+                "typography_letter_spacing": {
+                 "unit": "px",
+                 "size": 0
+                },
+                "typography_typography_font_size": {
+                 "unit": "px",
+                 "size": 12
+                }
+               },
+               "elements": [],
+               "widgetType": "heading"
+              },
+              {
+               "id": "fdf7471",
+               "elType": "widget",
+               "settings": {
+                "title": "کیزرزگراخت ۲۴۱، آمستردام",
+                "header_size": "p",
+                "title_color": "globals/colors?id=white",
+                "typography_typography": "globals/typography?id=text",
+                "typography_letter_spacing": {
+                 "unit": "px",
+                 "size": 0
+                }
+               },
+               "elements": [],
+               "widgetType": "heading"
+              }
+             ],
+             "isInner": true
+            }
+           ],
+           "isInner": true
+          }
+         ],
+         "isInner": true
+        }
+       ],
+       "isInner": true
+      },
+      {
+       "id": "eb203ad",
+       "elType": "widget",
+       "settings": {
+        "style": "solid",
+        "weight": {
+         "unit": "px",
+         "size": 1
+        },
+        "color": "rgba(255,255,255,0.12)",
+        "width": {
+         "unit": "%",
+         "size": 100
+        },
+        "align": "center",
+        "gap": {
+         "unit": "px",
+         "size": 0
+        },
+        "_element_width": "100%"
+       },
+       "elements": [],
+       "widgetType": "divider"
+      },
+      {
+       "id": "1fcb9d7",
+       "elType": "container",
+       "settings": {
+        "flex_direction": "row",
+        "flex_wrap": "wrap",
+        "flex_justify_content": "space-between",
+        "flex_align_items": "center",
+        "flex_gap": {
+         "row": "18",
+         "column": "18",
+         "unit": "px",
+         "isLinked": true
+        },
+        "flex_gap_mobile": {
+         "row": "14",
+         "column": "14",
+         "unit": "px",
+         "isLinked": true
+        }
+       },
+       "elements": [
+        {
+         "id": "7bda3c4",
+         "elType": "widget",
+         "settings": {
+          "title": "© ۲۰۲۶ آرورا ای آی. تمام حقوق محفوظ است.",
+          "header_size": "p",
+          "title_color": "globals/colors?id=muted-dark",
+          "typography_typography": "globals/typography?id=fa-label",
+          "typography_letter_spacing": {
+           "unit": "px",
+           "size": 0
+          },
+          "typography_typography_font_size": {
+           "unit": "px",
+           "size": 15
+          },
+          "_element_width": "initial"
+         },
+         "elements": [],
+         "widgetType": "heading"
+        },
+        {
+         "id": "61f7871",
+         "elType": "widget",
+         "settings": {
+          "icon_list": [
+           {
+            "text": "حریم خصوصی",
+            "_id": "3d5f181",
+            "selected_icon": {
+             "value": "fas fa-minus",
+             "library": "fa-solid"
+            },
+            "link": {
+             "url": "#",
+             "is_external": "",
+             "nofollow": ""
+            }
+           },
+           {
+            "text": "شرایط",
+            "_id": "5e31f76",
+            "selected_icon": {
+             "value": "fas fa-minus",
+             "library": "fa-solid"
+            },
+            "link": {
+             "url": "#",
+             "is_external": "",
+             "nofollow": ""
+            }
+           },
+           {
+            "text": "کوکیها",
+            "_id": "402c570",
+            "selected_icon": {
+             "value": "fas fa-minus",
+             "library": "fa-solid"
+            },
+            "link": {
+             "url": "#",
+             "is_external": "",
+             "nofollow": ""
+            }
+           }
+          ],
+          "space_between": {
+           "unit": "px",
+           "size": 0
+          },
+          "icon_size": {
+           "unit": "px",
+           "size": 11
+          },
+          "icon_color": "rgba(244,166,42,0.55)",
+          "text_color": "globals/colors?id=muted-dark",
+          "text_indent": {
+           "unit": "px",
+           "size": 10
+          },
+          "icon_align": "left",
+          "link_click": "link",
+          "icon_typography_typography": "globals/typography?id=fa-label",
+          "typography_font_size": {
+           "unit": "px",
+           "size": 15
+          },
+          "text_color_hover": "globals/colors?id=primary",
+          "view": "inline",
+          "extra": {
+           "space_between": {
+            "unit": "px",
+            "size": 22
+           }
+          }
+         },
+         "elements": [],
+         "widgetType": "icon-list"
+        }
+       ],
+       "isInner": true
+      }
+     ],
+     "isInner": true
+    }
+   ],
+   "isInner": false
+  }
+ ],
+ "page_settings": {},
+ "version": "0.4",
+ "title": "Aurora | پابرگ (فارسی)",
+ "type": "footer"
+}
