@@ -1,0 +1,109 @@
+name: kit
+
+# The repo receives no automatic third-party review, so this workflow IS the gate.
+# Every step must exit 0 unless it is explicitly marked advisory; any non-zero exit
+# fails the build (constitution rule C).
+
+on:
+  push:
+    branches: ["**"]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+env:
+  ELEMENTOR_TAG: v3.35.9
+
+jobs:
+  gate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      # ---- 1. rebuild deterministically, then prove the tree did not drift -------
+      - name: Build the kit
+        run: python3 tools/build.py
+
+      - name: Templates are reproducible (a rebuild produces no diff)
+        run: |
+          if ! git diff --quiet -- templates/ dist/; then
+            echo "::error::templates/ or dist/ changed after a rebuild - commit the output"
+            git --no-pager diff --stat -- templates/ dist/
+            exit 1
+          fi
+
+      # ---- 2. the gate -----------------------------------------------------------
+      - name: verify.py - structure, references, value shapes, media, doc numbers
+        run: python3 tools/verify.py --report
+
+      - name: bidi / Unicode safety
+        run: python3 tools/bidi_check.py
+
+      - name: verify.py --report produced no uncommitted facts
+        run: |
+          if ! git diff --quiet -- docs/_generated/; then
+            echo "::error::docs/_generated/facts.md is stale - run tools/verify.py --report and commit"
+            git --no-pager diff -- docs/_generated/
+            exit 1
+          fi
+
+      # ---- 3. evidence: control names come from the pinned source ----------------
+      - name: Fetch the pinned Elementor source
+        run: git clone --depth 1 --branch "$ELEMENTOR_TAG" https://github.com/elementor/elementor /tmp/elementor
+
+      - name: Regenerate the control index and diff it against the committed one
+        run: |
+          python3 skills/elementor-native-kit/scripts/extract_controls.py \
+            --source /tmp/elementor --tag "$ELEMENTOR_TAG"
+          if ! git diff --quiet -- skills/elementor-native-kit/references/_generated/; then
+            echo "::error::the committed control index no longer matches the pinned source"
+            git --no-pager diff --stat -- skills/elementor-native-kit/references/_generated/
+            exit 1
+          fi
+
+      - name: Control-name audit (advisory until HANDOFF-P0 residue is closed)
+        continue-on-error: true
+        run: python3 skills/elementor-native-kit/scripts/audit_control_names.py
+
+      # ---- 4. media: every referenced asset must be reachable -------------------
+      - name: Asset URLs are live
+        run: python3 tools/check_assets.py
+
+      # ---- 5. visual suite ------------------------------------------------------
+      - name: Preview renders every page
+        run: |
+          python3 tools/preview.py
+          got=$(ls preview/*.html | wc -l)
+          echo "preview pages: $got (expected >= 10)"
+          test "$got" -ge 10
+
+      # ---- 6. artifacts ---------------------------------------------------------
+      - name: Upload kit artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: aurora-ai-kit
+          path: |
+            dist/*.zip
+            dist/*.json
+            templates/INDEX.md
+            docs/_generated/facts.md
+          if-no-files-found: error
+
+      - name: Job summary
+        if: always()
+        run: |
+          {
+            echo "## Aurora kit gate"
+            echo
+            echo '```'
+            python3 tools/verify.py || true
+            echo '```'
+            echo
+            if [ -f docs/_generated/facts.md ]; then cat docs/_generated/facts.md; fi
+          } >> "$GITHUB_STEP_SUMMARY"

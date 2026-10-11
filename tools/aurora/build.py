@@ -322,21 +322,32 @@ def build(check_only: bool = False) -> int:
 
     # ---- ZIP 1: flat template archive -----------------------------------
     zip_templates = os.path.join(out_dist, "aurora-ai-templates.zip")
+    # Fixed timestamps keep the archives byte-identical across rebuilds, so CI can
+    # prove the committed output matches the generator.
+    FIXED = (2026, 1, 1, 0, 0, 0)
+
+    def add(zf, name: str, payload: str) -> None:
+        info = zipfile.ZipInfo(name, date_time=FIXED)
+        info.compress_type = zipfile.ZIP_DEFLATED
+        info.external_attr = 0o644 << 16
+        zf.writestr(info, payload)
+
     with zipfile.ZipFile(zip_templates, "w", zipfile.ZIP_DEFLATED) as zf:
         for rel, payload in files:
-            zf.writestr(rel.replace("/", "-"), json.dumps(payload, ensure_ascii=False, indent=1))
+            add(zf, rel.replace("/", "-"),
+                json.dumps(payload, ensure_ascii=False, indent=1))
 
     # ---- ZIP 2: kit archive ---------------------------------------------
     zip_kit = os.path.join(out_dist, "aurora-ai-kit.zip")
     with zipfile.ZipFile(zip_kit, "w", zipfile.ZIP_DEFLATED) as zf:
-        zf.writestr("manifest.json",
+        add(zf, "manifest.json",
                     json.dumps(kit_mod.manifest(template_index), ensure_ascii=False, indent=1))
-        zf.writestr("site-settings.json",
+        add(zf, "site-settings.json",
                     json.dumps(kit_mod.site_settings_file(), ensure_ascii=False, indent=1))
         for rel, payload in files:
-            zf.writestr("templates-source/" + rel,
-                        json.dumps(payload, ensure_ascii=False, indent=1))
-        zf.writestr("README.txt", KIT_README)
+            add(zf, "templates-source/" + rel,
+                json.dumps(payload, ensure_ascii=False, indent=1))
+        add(zf, "README.txt", KIT_README)
 
     # ---- generated index -------------------------------------------------
     with open(os.path.join(out_templates, "INDEX.md"), "w", encoding="utf-8") as fh:

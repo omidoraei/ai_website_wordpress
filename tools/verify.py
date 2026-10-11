@@ -310,10 +310,129 @@ def collect_image_urls() -> Dict[str, List[str]]:
 
 
 # ---------------------------------------------------------------------------
+# generated facts (rule B: numbers in docs come from here, never from a hand)
+# ---------------------------------------------------------------------------
+
+FACT_FILES = ("README.md", "CHANGELOG.md", "docs/01-installation.md",
+              "docs/02-design-system.md", "docs/03-template-library.md",
+              "docs/04-rtl-persian-setup.md", "docs/05-theme-builder.md",
+              "docs/06-performance-accessibility.md", "docs/07-faq-troubleshooting.md")
+
+# (regex, fact key, human label). The number may contain spaces as a thousands
+# separator ("1 280 widgets") because the docs use that style.
+DOC_NUMBERS = (
+    (r"(\d[\d\s]{0,7})\s+Elementor documents", "documents_total", "Elementor documents"),
+    (r"(\d[\d\s]{0,7})\s+containers", "containers", "containers"),
+    (r"(\d[\d\s]{0,7})\s+widgets", "widgets", "widgets"),
+    (r"(\d[\d\s]{0,7})\s+global (?:colours|colors)", "colors", "global colours"),
+    (r"(\d[\d\s]{0,7})\s+global typography styles", "typography", "global typography styles"),
+    (r"(\d[\d\s]{0,7})\s+image widgets", "image_widgets", "image widgets"),
+    (r"\((\d[\d\s]{0,7})\s+total\)", "colors", "colours (X total)"),
+)
+
+
+def compute_facts(kit: Dict[str, Any]) -> Dict[str, Any]:
+    docs = 0
+    widget_mix: Dict[str, int] = {}
+    for root, _dirs, names in os.walk(TEMPLATES):
+        for name in sorted(names):
+            if not name.endswith(".json"):
+                continue
+            data = json.load(open(os.path.join(root, name), encoding="utf-8"))
+            if data.get("type") == "kit":
+                continue
+            docs += 1
+            for top in data["content"]:
+                for node in walk(top):
+                    if node.get("elType") == "widget":
+                        wt = node.get("widgetType", "?")
+                        widget_mix[wt] = widget_mix.get(wt, 0) + 1
+    s = kit["page_settings"]
+    return {
+        "documents_total": docs + 1,
+        "template_documents": docs,
+        "containers": sum(1 for _ in ()) or _count_type(kit, "container"),
+        "widgets": sum(widget_mix.values()),
+        "colors": len(defined_colors(kit)),
+        "typography": len(defined_typography(kit)),
+        "image_widgets": widget_mix.get("image", 0),
+        "images": len(collect_image_urls()),
+        "widget_mix": dict(sorted(widget_mix.items(), key=lambda kv: -kv[1])),
+        "fa_documents": sum(1 for _ in ()),
+    }
+
+
+def _count_type(kit: Dict[str, Any], el_type: str) -> int:
+    n = 0
+    for root, _dirs, names in os.walk(TEMPLATES):
+        for name in sorted(names):
+            if not name.endswith(".json"):
+                continue
+            data = json.load(open(os.path.join(root, name), encoding="utf-8"))
+            if data.get("type") == "kit":
+                continue
+            for top in data["content"]:
+                for node in walk(top):
+                    if node.get("elType") == el_type:
+                        n += 1
+    return n
+
+
+def check_doc_numbers(facts: Dict[str, Any], rep: Report) -> int:
+    """Fail if a doc states a number that disagrees with the generated facts."""
+    checked = 0
+    for rel in FACT_FILES:
+        path = os.path.join(ROOT, rel)
+        if not os.path.exists(path):
+            continue
+        text = open(path, encoding="utf-8").read()
+        for pattern, key, label in DOC_NUMBERS:
+            for match in re.finditer(pattern, text):
+                stated = int(re.sub(r"\s", "", match.group(1)))
+                expected = facts.get(key)
+                if expected is None:
+                    continue
+                checked += 1
+                if stated != expected:
+                    line = text[:match.start()].count("\n") + 1
+                    rep.error("%s:%d states %d %s but the build has %d "
+                              "(run tools/verify.py --report)" % (rel, line, stated, label, expected))
+    return checked
+
+
+def write_facts(facts: Dict[str, Any]) -> str:
+    out_dir = os.path.join(ROOT, "docs", "_generated")
+    os.makedirs(out_dir, exist_ok=True)
+    rows = [
+        "# Generated facts",
+        "",
+        "**Do not edit.** Written by `python3 tools/verify.py --report` from the JSON in",
+        "`templates/`. Every number quoted in README, CHANGELOG and docs/ must match this file.",
+        "",
+        "| fact | value |",
+        "| --- | ---: |",
+    ]
+    for key in ("template_documents", "documents_total", "containers", "widgets",
+                "colors", "typography", "image_widgets", "images"):
+        rows.append("| `%s` | %s |" % (key, facts[key]))
+    rows += ["", "## Widget mix", "", "| widget | count |", "| --- | ---: |"]
+    for name, count in facts["widget_mix"].items():
+        rows.append("| `%s` | %d |" % (name, count))
+    rows.append("")
+    with open(os.path.join(out_dir, "facts.md"), "w", encoding="utf-8") as fh:
+        fh.write("\n".join(rows))
+    with open(os.path.join(out_dir, "facts.json"), "w", encoding="utf-8") as fh:
+        json.dump(facts, fh, indent=1, sort_keys=True)
+    return os.path.relpath(os.path.join(out_dir, "facts.md"), ROOT)
+
+
+# ---------------------------------------------------------------------------
 
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--quiet", action="store_true")
+    ap.add_argument("--report", action="store_true",
+                    help="write docs/_generated/facts.md from the current build, then verify")
     args = ap.parse_args()
 
     rep = Report()
@@ -341,6 +460,17 @@ def main() -> int:
 
     verify_media(collect_image_urls(), rep)
 
+    facts = compute_facts(kit)
+    facts["fa_documents"] = sum(
+        1 for root, _d, names in os.walk(TEMPLATES) for n in names
+        if n.endswith(".json") and ("-fa" in n or "persian" in open(
+            os.path.join(root, n), encoding="utf-8").read()[:2000]))
+    if args.report:
+        path = write_facts(facts)
+        if not args.quiet:
+            print("  facts      : wrote %s" % path)
+    checked = check_doc_numbers(facts, rep)
+
     rep.stats["documents"] = docs
     if not args.quiet:
         print("Aurora AI - kit verification")
@@ -350,6 +480,7 @@ def main() -> int:
         print("  colours    : %d defined globals" % rep.stats.get("colors", 0))
         print("  typography : %d global styles" % rep.stats.get("typography", 0))
         print("  images     : %d referenced URLs, all present" % rep.stats.get("images", 0))
+        print("  doc numbers: %d claims checked against generated facts" % checked)
 
     if rep.errors:
         print("  RESULT     : %d problem(s)" % len(rep.errors))
